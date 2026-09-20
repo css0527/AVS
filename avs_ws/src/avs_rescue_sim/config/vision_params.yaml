@@ -1,0 +1,22 @@
+vision_node:
+  ros__parameters:
+    use_sim_time: true
+    image_topic: /camera/image_raw
+    camera_info_topic: /camera/camera_info
+    map_frame: map
+    process_every_n: 2
+    min_hazard_area: 900
+    tag_size: 0.1875
+    marker_smoothing_alpha: 0.35
+    hazard_names: [FIRE, CHEMICAL, RADIATION, ELECTRICAL, BIOHAZARD]
+    tag_labels: [COLLAPSE, TOXIC_LEAK, TRAPPED_PERSON, HIGH_TEMPERATURE]
+    hsv.FIRE.lower: [0, 110, 70]
+    hsv.FIRE.upper: [7, 255, 255]
+    hsv.CHEMICAL.lower: [8, 110, 80]
+    hsv.CHEMICAL.upper: [22, 255, 255]
+    hsv.RADIATION.lower: [23, 110, 90]
+    hsv.RADIATION.upper: [38, 255, 255]
+    hsv.ELECTRICAL.lower: [98, 110, 60]
+    hsv.ELECTRICAL.upper: [125, 255, 255]
+    hsv.BIOHAZARD.lower: [138, 90, 60]
+    hsv.BIOHAZARD.upper: [170, 255, 255]
