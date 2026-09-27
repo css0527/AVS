@@ -2,13 +2,18 @@
 """Hazard classification and AprilTag localization for the rescue course."""
 
 import json
+from collections import deque
+from pathlib import Path
+from ament_index_python.packages import get_package_share_directory
+from avs_rescue_sim.hazard_classifier import HazardClassifier
+from avs_rescue_sim.barrier_detector import BarrierDetector
 
 import cv2
 import numpy as np
 import rclpy
 from rclpy.duration import Duration
 from rclpy.node import Node
-from rclpy.qos import qos_profile_sensor_data
+from rclpy.qos import DurabilityPolicy, QoSProfile, qos_profile_sensor_data
 from sensor_msgs.msg import CameraInfo, Image
 from std_msgs.msg import String
 from tf2_ros import Buffer, TransformException, TransformListener
@@ -22,6 +27,20 @@ def rotate_vector(vector, quaternion):
     return v + 2.0 * np.cross(q, np.cross(q, v) + quaternion.w * v)
 
 
+def annotate_label(frame, lines, anchor, color):
+    """Keep recognition text readable even when a target is near an image edge."""
+    scale, thickness, spacing = .52, 1, 21
+    width = max(cv2.getTextSize(line, cv2.FONT_HERSHEY_SIMPLEX, scale, thickness)[0][0]
+                for line in lines) + 12
+    height = spacing * len(lines) + 8
+    x = max(0, min(int(anchor[0]), frame.shape[1] - width))
+    y = max(0, min(int(anchor[1]) - height, frame.shape[0] - height))
+    cv2.rectangle(frame, (x, y), (x + width, y + height), (20, 25, 30), -1)
+    for index, line in enumerate(lines):
+        cv2.putText(frame, line, (x + 6, y + 20 + index * spacing),
+                    cv2.FONT_HERSHEY_SIMPLEX, scale, color, thickness, cv2.LINE_AA)
+
+
 class VisionNode(Node):
     def __init__(self):
         super().__init__(
@@ -29,6 +48,7 @@ class VisionNode(Node):
             allow_undeclared_parameters=True,
             automatically_declare_parameters_from_overrides=True,
         )
+        cv2.setNumThreads(2)
         self.image_topic = self._param('image_topic', '/camera/image_raw')
         self.camera_info_topic = self._param('camera_info_topic', '/camera/camera_info')
         self.map_frame = self._param('map_frame', 'map')
@@ -36,31 +56,36 @@ class VisionNode(Node):
         self.tag_size = float(self._param('tag_size', 0.1875))
         self.process_every_n = max(1, int(self._param('process_every_n', 2)))
         self.marker_alpha = float(self._param('marker_smoothing_alpha', 0.35))
+        self.core_bounds = list(self._param('core_bounds', [1.15, 0.05, 2.95, 1.85]))
+        self.tag_samples = {}
+        self.tag_confirmations = int(self._param('tag_confirmation_frames', 4))
+        self.max_reprojection_error = float(self._param('max_reprojection_error', 2.5))
         self.hazard_names = list(self._param(
             'hazard_names', ['FIRE', 'CHEMICAL', 'RADIATION', 'ELECTRICAL', 'BIOHAZARD']))
         self.tag_labels = list(self._param(
             'tag_labels', ['COLLAPSE', 'TOXIC_LEAK', 'TRAPPED_PERSON', 'HIGH_TEMPERATURE']))
 
-        default_ranges = {
-            'FIRE': ([0, 110, 70], [7, 255, 255]),
-            'CHEMICAL': ([8, 110, 80], [22, 255, 255]),
-            'RADIATION': ([23, 110, 90], [38, 255, 255]),
-            'ELECTRICAL': ([98, 110, 60], [125, 255, 255]),
-            'BIOHAZARD': ([138, 90, 60], [170, 255, 255]),
-        }
-        self.hsv_ranges = {}
-        for name in self.hazard_names:
-            lower, upper = default_ranges[name]
-            self.hsv_ranges[name] = (
-                np.array(self._param(f'hsv.{name}.lower', lower), dtype=np.uint8),
-                np.array(self._param(f'hsv.{name}.upper', upper), dtype=np.uint8),
-            )
+        self.hazard_classifier = HazardClassifier(
+            Path(get_package_share_directory('avs_rescue_sim')) / 'models/rescue_course/materials/textures',
+            self.hazard_names, min_inliers=int(self._param('min_pattern_inliers', 7)),
+            min_area=self.min_hazard_area)
+        self.hazard_hits = {}
+        self.barrier_detector = BarrierDetector(
+            min_area=int(self._param('barrier_min_area', 700)),
+            min_fill=float(self._param('barrier_min_fill', .82)),
+            max_white_fraction=float(self._param('barrier_max_white_fraction', .08)))
+        self.visible_hazard_polygons = []
+        self.visible_barriers = []
+        self.hazard_last_frame = {}
+        self.confirmation_frames = int(self._param('confirmation_frames', 3))
 
         self.detected_hazards = set()
         self.stable_tag_positions = {}
         self.camera_matrix = None
         self.distortion = None
         self.frame_count = 0
+        self.core_visible = False
+        self.pending_images = deque(maxlen=8)
 
         dictionary = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_APRILTAG_36h11)
         detector_parameters = cv2.aruco.DetectorParameters()
@@ -69,13 +94,18 @@ class VisionNode(Node):
 
         self.tf_buffer = Buffer(cache_time=Duration(seconds=10.0))
         self.tf_listener = TransformListener(self.tf_buffer, self)
-        self.detection_pub = self.create_publisher(String, '/hazards/detections', 10)
-        self.marker_pub = self.create_publisher(MarkerArray, '/hazards/core_markers', 10)
+        # Retain all nine discoveries for the mission, which starts later.
+        detection_qos = QoSProfile(depth=20, durability=DurabilityPolicy.TRANSIENT_LOCAL)
+        self.detection_pub = self.create_publisher(String, '/hazards/detections', detection_qos)
+        self.marker_pub = self.create_publisher(MarkerArray, '/hazards/core_markers', QoSProfile(depth=1, durability=DurabilityPolicy.TRANSIENT_LOCAL))
         self.annotated_pub = self.create_publisher(Image, '/camera/annotated', 10)
+        self.obstacle_pub = self.create_publisher(String, '/obstacles/detections', 10)
         self.create_subscription(CameraInfo, self.camera_info_topic, self.camera_info_callback,
                                  qos_profile_sensor_data)
         self.create_subscription(Image, self.image_topic, self.image_callback,
                                  qos_profile_sensor_data)
+        self.create_timer(0.5, self.publish_markers)
+        self.create_timer(0.04, self.process_pending_image)
         self.get_logger().info(
             f'Vision ready: {self.image_topic}, five hazard classes, AprilTag 36h11 IDs 0-3')
 
@@ -105,6 +135,25 @@ class VisionNode(Node):
         self.frame_count += 1
         if self.frame_count % self.process_every_n:
             return
+        self.pending_images.append(msg)
+
+    def process_pending_image(self):
+        if not self.pending_images:
+            return
+        msg = self.pending_images[0]
+        age = (self.get_clock().now() - rclpy.time.Time.from_msg(msg.header.stamp)).nanoseconds / 1e9
+        # Sensor messages can precede the joint/odometry TF for their timestamp.
+        # A synchronous TF wait cannot receive those callbacks on this executor.
+        if age < 0.15:
+            return
+        if age > 1.0:
+            self.pending_images.popleft()
+            return
+        if not self.tf_buffer.can_transform(self.map_frame,
+                msg.header.frame_id or 'camera_optical_frame',
+                rclpy.time.Time.from_msg(msg.header.stamp)):
+            return
+        self.pending_images.popleft()
         try:
             frame = self.decode_image(msg)
         except (ValueError, IndexError) as exc:
@@ -113,38 +162,57 @@ class VisionNode(Node):
 
         annotated = frame.copy()
         self.detect_hazards(frame, annotated)
-        self.detect_tags(frame, annotated, msg.header.frame_id)
+        self.detect_barrier(frame, annotated, msg.header)
+        self.detect_tags(frame, annotated, msg.header.frame_id, msg.header.stamp)
         self.publish_annotated(annotated, msg)
 
     def detect_hazards(self, frame, annotated):
-        hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
-        kernel = np.ones((5, 5), np.uint8)
-        for name, (lower, upper) in self.hsv_ranges.items():
-            mask = cv2.inRange(hsv, lower, upper)
-            mask[int(mask.shape[0] * 0.86):, :] = 0
-            mask = cv2.morphologyEx(mask, cv2.MORPH_OPEN, kernel)
-            mask = cv2.morphologyEx(mask, cv2.MORPH_CLOSE, kernel)
-            contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
-            if not contours:
-                continue
-            contour = max(contours, key=cv2.contourArea)
-            area = cv2.contourArea(contour)
-            if area < self.min_hazard_area:
-                continue
-            x, y, width, height = cv2.boundingRect(contour)
-            cv2.rectangle(annotated, (x, y), (x + width, y + height), (80, 255, 80), 3)
-            cv2.putText(annotated, name, (x, max(28, y - 8)), cv2.FONT_HERSHEY_SIMPLEX,
-                        0.75, (80, 255, 80), 2, cv2.LINE_AA)
-            if name not in self.detected_hazards:
+        visible = set()
+        self.visible_hazard_polygons = []
+        for name, polygon, inliers, area in self.hazard_classifier.detect(frame):
+            visible.add(name)
+            self.visible_hazard_polygons.append(polygon)
+            recent = self.frame_count - self.hazard_last_frame.get(name, -1000) <= 10 * self.process_every_n
+            self.hazard_hits[name] = self.hazard_hits.get(name, 0) + 1 if recent else 1
+            self.hazard_last_frame[name] = self.frame_count
+            cv2.polylines(annotated, [polygon], True, (80, 255, 80), 2)
+            x, y = polygon.reshape(-1, 2).min(axis=0)
+            if name not in self.detected_hazards and self.hazard_hits[name] >= self.confirmation_frames:
                 self.detected_hazards.add(name)
-                payload = {'kind': 'corridor_hazard', 'label': name, 'area_px': round(area, 1)}
+                payload = {'kind': 'corridor_hazard', 'label': name,
+                           'area_px': round(area, 1), 'pattern_inliers': inliers}
                 self.detection_pub.publish(String(data=json.dumps(payload)))
-                self.get_logger().info(
-                    f'[CORRIDOR {len(self.detected_hazards)}/5] detected {name} (area={area:.0f}px)')
+                self.get_logger().info(f'[CORRIDOR {len(self.detected_hazards)}/5] confirmed {name} '
+                                       f'with artwork matching ({inliers} inliers)')
+            state = ('CONFIRMED' if name in self.detected_hazards else
+                     f'confirming {self.hazard_hits[name]}/{self.confirmation_frames}')
+            annotate_label(annotated, [f'{name} | {state}', f'pattern inliers: {inliers}'],
+                           (x, y), (80, 255, 80))
 
-    def detect_tags(self, frame, annotated, camera_frame):
+    def detect_barrier(self, frame, annotated, header):
+        self.visible_barriers = self.barrier_detector.detect(frame, self.visible_hazard_polygons)
+        for x, y, w, h in self.visible_barriers:
+            cv2.rectangle(annotated, (x, y), (x + w - 1, y + h - 1), (255, 100, 255), 3)
+            annotate_label(annotated, ['PUSH BARRIER'], (x, y), (255, 100, 255))
+        # Image measurements only; an empty list explicitly clears stale boxes.
+        self.obstacle_pub.publish(String(data=json.dumps({
+            'kind': 'push_barrier', 'frame_id': header.frame_id,
+            'stamp': {'sec': header.stamp.sec, 'nanosec': header.stamp.nanosec},
+            'boxes': [{'x': x, 'y': y, 'width': w, 'height': h}
+                      for x, y, w, h in self.visible_barriers],
+        })))
+
+    def detect_tags(self, frame, annotated, camera_frame, stamp=None):
+        self.core_visible = False
         if self.camera_matrix is None:
             return
+        # Core scoring begins after entering the rescue room. No layout ground
+        # truth is used to estimate tags; this rectangle only defines task phase.
+        base = self.to_map(np.zeros(3), 'base_link', stamp)
+        if base is None or not (self.core_bounds[0] < base[0] < self.core_bounds[2]
+                               and self.core_bounds[1] < base[1] < self.core_bounds[3]):
+            return
+        self.core_visible = True
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         corners, ids, _ = self.tag_detector.detectMarkers(gray)
         if ids is None:
@@ -162,14 +230,31 @@ class VisionNode(Node):
             ok, rvec, tvec = cv2.solvePnP(
                 object_points, image_corners.reshape(4, 2).astype(np.float32),
                 self.camera_matrix, self.distortion, flags=cv2.SOLVEPNP_IPPE_SQUARE)
-            if not ok or float(tvec[2]) <= 0.0:
+            if not ok or float(tvec[2, 0]) <= 0.0:
+                continue
+            reprojection, _ = cv2.projectPoints(object_points, rvec, tvec,
+                                               self.camera_matrix, self.distortion)
+            error = np.linalg.norm(reprojection.reshape(4, 2) - image_corners.reshape(4, 2), axis=1).mean()
+            if not np.isfinite(tvec).all() or error > self.max_reprojection_error:
                 continue
             cv2.drawFrameAxes(annotated, self.camera_matrix, self.distortion,
                               rvec, tvec, self.tag_size * 0.5)
-            map_position = self.to_map(tvec.reshape(3), camera_frame)
+            map_position = self.to_map(tvec.reshape(3), camera_frame, stamp)
             if map_position is None:
                 continue
             previous = self.stable_tag_positions.get(tag_id)
+            if previous is not None and np.linalg.norm(map_position[:2] - previous[:2]) > .20:
+                continue
+            samples = self.tag_samples.setdefault(tag_id, [])
+            samples.append(map_position)
+            del samples[:-20]
+            if len(samples) < self.tag_confirmations:
+                annotate_label(annotated,
+                    [f'T{tag_id} {self.tag_labels[tag_id]}',
+                     f'confirming {len(samples)}/{self.tag_confirmations}'],
+                    image_corners.reshape(4, 2).min(axis=0), (0, 220, 255))
+                continue
+            map_position = np.median(samples, axis=0)
             if previous is None:
                 stable = map_position
                 first_detection = True
@@ -177,6 +262,10 @@ class VisionNode(Node):
                 stable = self.marker_alpha * map_position + (1.0 - self.marker_alpha) * previous
                 first_detection = False
             self.stable_tag_positions[tag_id] = stable
+            annotate_label(annotated,
+                [f'T{tag_id} {self.tag_labels[tag_id]}',
+                 f'MARKER T{tag_id} | map ({stable[0]:.2f}, {stable[1]:.2f}) m'],
+                image_corners.reshape(4, 2).min(axis=0), (80, 255, 80))
             if first_detection:
                 label = self.tag_labels[tag_id]
                 self.detection_pub.publish(String(data=json.dumps({
@@ -187,11 +276,13 @@ class VisionNode(Node):
                     f'[CORE] AprilTag {tag_id} {label} at map ({stable[0]:.2f}, {stable[1]:.2f})')
         self.publish_markers()
 
-    def to_map(self, camera_point, camera_frame):
+    def to_map(self, camera_point, camera_frame, stamp=None):
         camera_frame = camera_frame or 'camera_optical_frame'
         try:
             transform = self.tf_buffer.lookup_transform(
-                self.map_frame, camera_frame, rclpy.time.Time(), timeout=Duration(seconds=0.08))
+                self.map_frame, camera_frame,
+                rclpy.time.Time.from_msg(stamp) if stamp is not None else rclpy.time.Time(),
+                timeout=Duration(seconds=0.0))
         except TransformException as exc:
             self.get_logger().debug(f'TF {self.map_frame} <- {camera_frame} unavailable: {exc}')
             return None
@@ -226,17 +317,27 @@ class VisionNode(Node):
             text.id = tag_id + 100
             text.type = Marker.TEXT_VIEW_FACING
             text.action = Marker.ADD
-            text.pose.position.x = float(position[0])
-            text.pose.position.y = float(position[1])
+            # Put readable IDs inside the room; cube centres retain the actual
+            # PnP estimate, while full class names are printed in detections.
+            text.pose.position.x = float(position[0]) - (0.18 if tag_id < 2 else 0.0)
+            text.pose.position.y = float(position[1]) + (0.18 if tag_id >= 2 else 0.0)
             text.pose.position.z = 0.34
             text.pose.orientation.w = 1.0
-            text.scale.z = 0.13
+            text.scale.z = 0.09
             text.color.r = text.color.g = text.color.b = text.color.a = 1.0
-            text.text = f'TAG {tag_id}: {self.tag_labels[tag_id]}'
+            text.text = f'T{tag_id}'
             markers.markers.append(text)
         self.marker_pub.publish(markers)
 
     def publish_annotated(self, frame, source):
+        # Counts are confirmed discoveries, not detections invented by the UI.
+        h, w = frame.shape[:2]
+        cv2.rectangle(frame, (0, h - 28), (w, h), (20, 25, 30), -1)
+        phase = 'CORE ROOM' if self.core_visible else 'CORRIDOR / RETURN'
+        cv2.putText(frame,
+                    f'{phase} | confirmed {len(self.detected_hazards)}/5 | markers {len(self.stable_tag_positions)}/4',
+                    (8, h - 9), cv2.FONT_HERSHEY_SIMPLEX, .48,
+                    (235, 245, 250), 1, cv2.LINE_AA)
         output = Image()
         output.header = source.header
         output.height, output.width = frame.shape[:2]

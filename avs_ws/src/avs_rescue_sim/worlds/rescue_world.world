@@ -1,6 +1,11 @@
 <?xml version="1.0"?>
 <sdf version="1.6">
   <world name="rescue_world">
+    <!-- Ground truth is published for independent acceptance measurements only;
+         navigation and perception use lidar, camera, odometry and TF. -->
+    <plugin name="evaluation_state" filename="libgazebo_ros_state.so">
+      <ros><namespace>/evaluation</namespace></ros><update_rate>10</update_rate>
+    </plugin>
     <physics name="competition_physics" type="ode">
       <max_step_size>0.002</max_step_size><real_time_factor>1.0</real_time_factor><real_time_update_rate>500</real_time_update_rate>
       <ode><solver><type>quick</type><iters>80</iters><sor>1.3</sor></solver><constraints><cfm>0.0</cfm><erp>0.2</erp><contact_max_correcting_vel>1.0</contact_max_correcting_vel><contact_surface_layer>0.001</contact_surface_layer></constraints></ode>
@@ -22,7 +27,7 @@
     <model name="core_north_left"><static>true</static><pose>1.175 1.90 0.35 0 0 0</pose><link name="wall"><collision name="collision"><geometry><box><size>0.15 0.10 0.70</size></box></geometry></collision><visual name="visual"><geometry><box><size>0.15 0.10 0.70</size></box></geometry><material><ambient>0.20 0.22 0.25 1</ambient><diffuse>0.34 0.37 0.41 1</diffuse></material></visual></link></model>
     <model name="core_north_right"><static>true</static><pose>2.375 1.90 0.35 0 0 0</pose><link name="wall"><collision name="collision"><geometry><box><size>1.25 0.10 0.70</size></box></geometry></collision><visual name="visual"><geometry><box><size>1.25 0.10 0.70</size></box></geometry><material><ambient>0.20 0.22 0.25 1</ambient><diffuse>0.34 0.37 0.41 1</diffuse></material></visual></link></model>
 
-    <model name="start_zone"><static>true</static><pose>0.50 0.35 0.006 0 0 0</pose><link name="zone"><visual name="visual"><geometry><box><size>0.72 0.52 0.012</size></box></geometry><material><ambient>0.05 0.25 0.80 1</ambient><diffuse>0.08 0.42 0.95 1</diffuse></material></visual></link></model>
+    <model name="start_zone"><static>true</static><pose>0.55 0.54 0.006 0 0 0</pose><link name="zone"><visual name="visual"><geometry><box><size>0.72 0.72 0.012</size></box></geometry><material><ambient>0.05 0.25 0.80 1</ambient><diffuse>0.08 0.42 0.95 1</diffuse></material></visual></link></model>
     <model name="core_zone"><static>true</static><pose>2.05 0.95 0.004 0 0 0</pose><link name="zone"><visual name="visual"><geometry><box><size>1.75 1.75 0.008</size></box></geometry><material><ambient>0.48 0.38 0.12 1</ambient><diffuse>0.68 0.58 0.22 1</diffuse></material></visual></link></model>
 
     <model name="push_barrier"><static>false</static><pose>1.50 1.90 0.15 0 0 0</pose><link name="barrier">
@@ -37,13 +42,16 @@
     <model name="hazard_chemical"><static>true</static><pose>1.042 1.42 0.34 0 0 0</pose><link name="sign"><visual name="visual"><geometry><box><size>0.016 0.28 0.28</size></box></geometry><material><script><uri>model://rescue_course/materials/scripts</uri><uri>model://rescue_course/materials/textures</uri><name>AVS/HazardChemical</name></script></material></visual></link></model>
     <model name="hazard_radiation"><static>true</static><pose>0.058 2.30 0.34 0 0 0</pose><link name="sign"><visual name="visual"><geometry><box><size>0.016 0.28 0.28</size></box></geometry><material><script><uri>model://rescue_course/materials/scripts</uri><uri>model://rescue_course/materials/textures</uri><name>AVS/HazardRadiation</name></script></material></visual></link></model>
     <model name="hazard_electrical"><static>true</static><pose>1.42 2.942 0.34 0 0 0</pose><link name="sign"><visual name="visual"><geometry><box><size>0.28 0.016 0.28</size></box></geometry><material><script><uri>model://rescue_course/materials/scripts</uri><uri>model://rescue_course/materials/textures</uri><name>AVS/HazardElectrical</name></script></material></visual></link></model>
-    <model name="hazard_biohazard"><static>true</static><pose>2.48 2.942 0.34 0 0 0</pose><link name="sign"><visual name="visual"><geometry><box><size>0.28 0.016 0.28</size></box></geometry><material><script><uri>model://rescue_course/materials/scripts</uri><uri>model://rescue_course/materials/textures</uri><name>AVS/HazardBiohazard</name></script></material></visual></link></model>
+    <model name="hazard_biohazard"><static>true</static><pose>1.95 2.942 0.34 0 0 0</pose><link name="sign"><visual name="visual"><geometry><box><size>0.28 0.016 0.28</size></box></geometry><material><script><uri>model://rescue_course/materials/scripts</uri><uri>model://rescue_course/materials/textures</uri><name>AVS/HazardBiohazard</name></script></material></visual></link></model>
 
-    <model name="core_tag_0"><static>true</static><pose>2.942 1.45 0.34 0 0 0</pose><link name="tag"><visual name="visual"><geometry><box><size>0.016 0.24 0.24</size></box></geometry><material><script><uri>model://rescue_course/materials/scripts</uri><uri>model://rescue_course/materials/textures</uri><name>AVS/AprilTag0</name></script></material></visual></link></model>
-    <model name="core_tag_1"><static>true</static><pose>2.942 0.70 0.34 0 0 0</pose><link name="tag"><visual name="visual"><geometry><box><size>0.016 0.24 0.24</size></box></geometry><material><script><uri>model://rescue_course/materials/scripts</uri><uri>model://rescue_course/materials/textures</uri><name>AVS/AprilTag1</name></script></material></visual></link></model>
-    <model name="core_tag_2"><static>true</static><pose>2.35 0.058 0.34 0 0 0</pose><link name="tag"><visual name="visual"><geometry><box><size>0.24 0.016 0.24</size></box></geometry><material><script><uri>model://rescue_course/materials/scripts</uri><uri>model://rescue_course/materials/textures</uri><name>AVS/AprilTag2</name></script></material></visual></link></model>
-    <model name="core_tag_3"><static>true</static><pose>1.55 0.058 0.34 0 0 0</pose><link name="tag"><visual name="visual"><geometry><box><size>0.24 0.016 0.24</size></box></geometry><material><script><uri>model://rescue_course/materials/scripts</uri><uri>model://rescue_course/materials/textures</uri><name>AVS/AprilTag3</name></script></material></visual></link></model>
+    <!-- The rover settles with a slight forward pitch.  At the mission's close
+         observation poses, z=0.22 keeps each complete tag in the camera frame. -->
+    <model name="core_tag_0"><static>true</static><pose>2.942 1.45 0.22 0 0 0</pose><link name="tag"><visual name="visual"><geometry><box><size>0.016 0.24 0.24</size></box></geometry><material><script><uri>model://rescue_course/materials/scripts</uri><uri>model://rescue_course/materials/textures</uri><name>AVS/AprilTag0</name></script></material></visual></link></model>
+    <model name="core_tag_1"><static>true</static><pose>2.942 0.70 0.22 0 0 0</pose><link name="tag"><visual name="visual"><geometry><box><size>0.016 0.24 0.24</size></box></geometry><material><script><uri>model://rescue_course/materials/scripts</uri><uri>model://rescue_course/materials/textures</uri><name>AVS/AprilTag1</name></script></material></visual></link></model>
+    <model name="core_tag_2"><static>true</static><pose>2.35 0.058 0.22 0 0 0</pose><link name="tag"><visual name="visual"><geometry><box><size>0.24 0.016 0.24</size></box></geometry><material><script><uri>model://rescue_course/materials/scripts</uri><uri>model://rescue_course/materials/textures</uri><name>AVS/AprilTag2</name></script></material></visual></link></model>
+    <model name="core_tag_3"><static>true</static><pose>1.55 0.058 0.22 0 0 0</pose><link name="tag"><visual name="visual"><geometry><box><size>0.24 0.016 0.24</size></box></geometry><material><script><uri>model://rescue_course/materials/scripts</uri><uri>model://rescue_course/materials/textures</uri><name>AVS/AprilTag3</name></script></material></visual></link></model>
 
-    <gui fullscreen="0"><camera name="overview"><pose>1.5 -2.8 5.5 0 0.72 1.57</pose><view_controller>orbit</view_controller></camera></gui>
+    <!-- Aim at the centre of the 3 x 3 m course, rather than beyond its north wall. -->
+    <gui fullscreen="0"><camera name="overview"><pose>1.5 -1.8 4.8 0 0.969 1.5708</pose><view_controller>orbit</view_controller></camera></gui>
   </world>
 </sdf>

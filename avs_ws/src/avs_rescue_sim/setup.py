@@ -27,7 +27,7 @@ setup(
         ('share/' + package_name, ['package.xml']),
     ] + sum(
         (package_data(directory) for directory in
-         ('launch', 'config', 'worlds', 'models', 'urdf', 'rviz', 'maps')),
+         ('launch', 'config', 'behavior_trees', 'worlds', 'models', 'urdf', 'rviz', 'maps')),
         [],
     ),
     install_requires=['setuptools'],
@@ -41,6 +41,9 @@ setup(
         'console_scripts': [
             'vision_node = avs_rescue_sim.vision_node:main',
             'mission_node = avs_rescue_sim.mission_node:main',
+            'camera_scan_node = avs_rescue_sim.camera_scan_node:main',
+            'safety_node = avs_rescue_sim.safety_node:main',
+            'navigation_map_node = avs_rescue_sim.navigation_map_node:main',
         ],
     },
 )

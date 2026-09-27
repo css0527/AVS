@@ -1,0 +1,5 @@
+navigation_map_node:
+  ros__parameters:
+    use_sim_time: true
+    # Saved SLAM scans contain the moved box here. Excludes structural walls.
+    movable_region: [1.18, 0.70, 1.72, 1.70]

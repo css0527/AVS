@@ -3,6 +3,8 @@ Panels:
     Name: Displays
   - Class: rviz_common/Views
     Name: Views
+  - Class: nav2_rviz_plugins/Navigation 2
+    Name: Navigation 2
 Visualization Manager:
   Class: ""
   Global Options:
@@ -90,15 +92,15 @@ Visualization Manager:
     - Class: rviz_default_plugins/SetInitialPose
       Topic:
         Value: /initialpose
-    - Class: rviz_default_plugins/SetGoal
-      Topic:
-        Value: /goal_pose
+    - Class: nav2_rviz_plugins/GoalTool
   Views:
     Current:
       Class: rviz_default_plugins/TopDownOrtho
       Name: Top Down
       Scale: 85
       Target Frame: map
+      X: 1.5
+      Y: 1.5
 Window Geometry:
   Height: 900
   Width: 1200

@@ -1,0 +1,120 @@
+{
+  "executed_date": "2026-09-24",
+  "status": "deleted",
+  "recoverability_zh": "构建、安装、日志和缓存可由源码重新生成；v1-v13 原始录像及完整日志不可由本清单恢复，精简摘要保存在 debug_history.json。",
+  "estimated_apparent_bytes": 357783484,
+  "paths": [
+    {
+      "path": "/home/c/AVS/build",
+      "apparent_bytes": 761907
+    },
+    {
+      "path": "/home/c/AVS/install",
+      "apparent_bytes": 83126
+    },
+    {
+      "path": "/home/c/AVS/log",
+      "apparent_bytes": 129041
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/build",
+      "apparent_bytes": 16539004
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/install",
+      "apparent_bytes": 257419
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/log",
+      "apparent_bytes": 9434371
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/submission/recording_v1",
+      "apparent_bytes": 3185669
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/submission/recording_v2",
+      "apparent_bytes": 3040898
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/submission/recording_v3",
+      "apparent_bytes": 28029188
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/submission/recording_v4",
+      "apparent_bytes": 21381569
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/submission/recording_v5",
+      "apparent_bytes": 11255691
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/submission/recording_v6",
+      "apparent_bytes": 16954879
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/submission/recording_v7",
+      "apparent_bytes": 34257781
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/submission/recording_v8",
+      "apparent_bytes": 54775968
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/submission/recording_v9",
+      "apparent_bytes": 26782603
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/submission/recording_v10",
+      "apparent_bytes": 17002540
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/submission/recording_v11",
+      "apparent_bytes": 39429015
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/submission/recording_v12",
+      "apparent_bytes": 26032654
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/submission/recording_v13",
+      "apparent_bytes": 48149730
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/generated_maps/.save-UBeVTTQG",
+      "apparent_bytes": 29841
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/frames_2026-09-19_20.18.32.pdf",
+      "apparent_bytes": 5940
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/frames_2026-09-19_20.18.32.gv",
+      "apparent_bytes": 35
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/src/avs_rescue_sim/CMakeLists.txt",
+      "apparent_bytes": 626
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/src/avs_rescue_sim/avs_rescue_sim/__pycache__",
+      "apparent_bytes": 59810
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/src/avs_rescue_sim/launch/__pycache__",
+      "apparent_bytes": 11558
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/src/avs_rescue_sim/test/__pycache__",
+      "apparent_bytes": 120462
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/src/avs_rescue_sim/tools/__pycache__",
+      "apparent_bytes": 52413
+    },
+    {
+      "path": "/home/c/AVS/avs_ws/src/avs_rescue_sim/.pytest_cache",
+      "apparent_bytes": 19746
+    }
+  ]
+}

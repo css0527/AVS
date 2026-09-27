@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
-"""Generate deterministic competition textures and the navigation map."""
+"""Generate textures; optionally export a matched synthetic PGM/YAML map pair."""
 
+import argparse
 from pathlib import Path
 
 import cv2
@@ -9,10 +10,9 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 TEXTURES = ROOT / 'models' / 'rescue_course' / 'materials' / 'textures'
-MAPS = ROOT / 'maps'
 
 
-def make_hazard(filename, bgr, title, symbol):
+def make_hazard(filename, bgr, symbol):
     image = np.full((512, 512, 3), bgr, dtype=np.uint8)
     cv2.rectangle(image, (14, 14), (497, 497), (245, 245, 245), 22)
     cv2.rectangle(image, (42, 42), (469, 469), (20, 20, 20), 6)
@@ -39,20 +39,31 @@ def make_hazard(filename, bgr, title, symbol):
         cv2.circle(image, (256, 260), 44, (255, 255, 255), -1)
         for center in ((256, 150), (160, 316), (352, 316)):
             cv2.circle(image, center, 73, (255, 255, 255), 25)
-    cv2.rectangle(image, (65, 425), (447, 487), (20, 20, 20), -1)
-    scale = 1.05 if len(title) < 9 else 0.78
-    width = cv2.getTextSize(title, cv2.FONT_HERSHEY_DUPLEX, scale, 2)[0][0]
-    cv2.putText(image, title, ((512 - width) // 2, 469), cv2.FONT_HERSHEY_DUPLEX,
-                scale, (255, 255, 255), 2, cv2.LINE_AA)
+    # Distinct geometric details preserve feature matching without printed
+    # letters or numbers. These are part of each pictogram, not text labels.
+    details = {
+        'triangle': [(78, 87, 10), (424, 102, 16), (94, 424, 13), (175, 457, 8), (361, 452, 15)],
+        'diamond': [(86, 96, 15), (425, 76, 9), (83, 410, 10), (169, 455, 16), (355, 457, 8)],
+        'radiation': [(86, 81, 8), (417, 93, 14), (77, 422, 16), (188, 457, 10), (347, 454, 13)],
+        'bolt': [(83, 106, 12), (418, 78, 17), (100, 422, 8), (160, 457, 12), (361, 449, 17)],
+        'bio': [(88, 86, 17), (417, 101, 11), (91, 433, 10), (187, 457, 14), (342, 454, 9)],
+    }
+    for x, y, radius in details[symbol]:
+        cv2.circle(image, (x, y), radius + 5, (20, 20, 20), -1)
+        cv2.circle(image, (x, y), radius, (255, 255, 255), -1)
     cv2.imwrite(str(TEXTURES / filename), image)
 
 
 def make_tags():
     dictionary = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_APRILTAG_36h11)
+    colors = [(30, 30, 210), (0, 160, 240), (220, 120, 20), (190, 35, 170)]
     for tag_id in range(4):
         marker = cv2.aruco.generateImageMarker(dictionary, tag_id, 400, borderBits=1)
         canvas = np.full((512, 512), 255, dtype=np.uint8)
         canvas[56:456, 56:456] = marker
+        canvas = cv2.cvtColor(canvas, cv2.COLOR_GRAY2BGR)
+        cv2.rectangle(canvas, (0, 0), (511, 25), colors[tag_id], -1)
+        cv2.rectangle(canvas, (0, 480), (511, 511), colors[tag_id], -1)
         cv2.imwrite(str(TEXTURES / f'apriltag_{tag_id}.png'), canvas)
 
 
@@ -62,7 +73,9 @@ def world_to_pixel(x, y, resolution, origin_y, height):
     return px, py
 
 
-def make_map():
+def make_map(output_dir):
+    output_dir = Path(output_dir)
+    output_dir.mkdir(parents=True, exist_ok=True)
     resolution = 0.02
     origin_y = -0.2
     size = 170
@@ -80,25 +93,41 @@ def make_map():
     wall(1.10, 0, 1.10, 1.90)
     wall(1.10, 1.90, 1.25, 1.90)
     wall(1.75, 1.90, 3.00, 1.90)
-    cv2.imwrite(str(MAPS / 'rescue_map.pgm'), image)
+    if not cv2.imwrite(str(output_dir / 'rescue_map.pgm'), image):
+        raise OSError(f'Could not write map in {output_dir}')
+    # The generated pixels use this origin; never reuse a SLAM map's YAML.
+    (output_dir / 'rescue_map.yaml').write_text(
+        'image: rescue_map.pgm\n'
+        'mode: trinary\n'
+        f'resolution: {resolution}\n'
+        f'origin: [-0.2, {origin_y}, 0.0]\n'
+        'negate: 0\n'
+        'occupied_thresh: 0.65\n'
+        'free_thresh: 0.25\n')
 
 
-def main():
+def main(argv=None):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        '--map-output', type=Path,
+        help='Also write a synthetic rescue_map.pgm/YAML pair in this directory. '
+             'Omit to preserve the saved navigation map.')
+    args = parser.parse_args(argv)
     TEXTURES.mkdir(parents=True, exist_ok=True)
-    MAPS.mkdir(parents=True, exist_ok=True)
     hazards = [
-        ('hazard_fire.png', (25, 25, 220), 'FIRE', 'triangle'),
-        ('hazard_chemical.png', (0, 125, 245), 'CHEMICAL', 'diamond'),
-        ('hazard_radiation.png', (0, 225, 235), 'RADIATION', 'radiation'),
-        ('hazard_electrical.png', (220, 80, 20), 'ELECTRICAL', 'bolt'),
-        ('hazard_biohazard.png', (180, 20, 180), 'BIOHAZARD', 'bio'),
+        ('hazard_fire.png', (25, 25, 220), 'triangle'),
+        ('hazard_chemical.png', (0, 125, 245), 'diamond'),
+        ('hazard_radiation.png', (0, 225, 235), 'radiation'),
+        ('hazard_electrical.png', (220, 80, 20), 'bolt'),
+        ('hazard_biohazard.png', (180, 20, 180), 'bio'),
     ]
-    for args in hazards:
-        make_hazard(*args)
+    for hazard_args in hazards:
+        make_hazard(*hazard_args)
     make_tags()
-    make_map()
     print(f'Generated textures in {TEXTURES}')
-    print(f'Generated map in {MAPS}')
+    if args.map_output is not None:
+        make_map(args.map_output)
+        print(f'Generated map pair in {args.map_output}')
 
 
 if __name__ == '__main__':

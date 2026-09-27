@@ -10,13 +10,12 @@ vision_node:
     marker_smoothing_alpha: 0.35
     hazard_names: [FIRE, CHEMICAL, RADIATION, ELECTRICAL, BIOHAZARD]
     tag_labels: [COLLAPSE, TOXIC_LEAK, TRAPPED_PERSON, HIGH_TEMPERATURE]
-    hsv.FIRE.lower: [0, 110, 70]
-    hsv.FIRE.upper: [7, 255, 255]
-    hsv.CHEMICAL.lower: [8, 110, 80]
-    hsv.CHEMICAL.upper: [22, 255, 255]
-    hsv.RADIATION.lower: [23, 110, 90]
-    hsv.RADIATION.upper: [38, 255, 255]
-    hsv.ELECTRICAL.lower: [98, 110, 60]
-    hsv.ELECTRICAL.upper: [125, 255, 255]
-    hsv.BIOHAZARD.lower: [138, 90, 60]
-    hsv.BIOHAZARD.upper: [170, 255, 255]
+    min_pattern_inliers: 7
+    confirmation_frames: 3
+    core_bounds: [1.15, 0.05, 2.95, 1.85]
+    tag_confirmation_frames: 4
+    max_reprojection_error: 2.5
+    # Only the course's solid red push box; printed signs are excluded.
+    barrier_min_area: 700
+    barrier_min_fill: 0.82
+    barrier_max_white_fraction: 0.08

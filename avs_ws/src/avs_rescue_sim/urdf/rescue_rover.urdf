@@ -68,29 +68,29 @@
   <link name="pusher_link">
     <visual>
       <origin xyz="0.22 0 0.105"/>
-      <geometry><box size="0.14 0.32 0.10"/></geometry>
+      <geometry><box size="0.14 0.28 0.10"/></geometry>
       <material name="safety_yellow"/>
     </visual>
     <collision>
       <origin xyz="0.22 0 0.105"/>
-      <geometry><box size="0.14 0.32 0.10"/></geometry>
+      <geometry><box size="0.14 0.28 0.10"/></geometry>
     </collision>
     <visual>
-      <origin xyz="0.26 0.13 0.105" rpy="0 0 -0.45"/>
+      <origin xyz="0.26 0.075 0.105" rpy="0 0 -0.45"/>
       <geometry><box size="0.18 0.055 0.10"/></geometry>
       <material name="safety_yellow"/>
     </visual>
     <collision>
-      <origin xyz="0.26 0.13 0.105" rpy="0 0 -0.45"/>
+      <origin xyz="0.26 0.075 0.105" rpy="0 0 -0.45"/>
       <geometry><box size="0.18 0.055 0.10"/></geometry>
     </collision>
     <visual>
-      <origin xyz="0.26 -0.13 0.105" rpy="0 0 0.45"/>
+      <origin xyz="0.26 -0.075 0.105" rpy="0 0 0.45"/>
       <geometry><box size="0.18 0.055 0.10"/></geometry>
       <material name="safety_yellow"/>
     </visual>
     <collision>
-      <origin xyz="0.26 -0.13 0.105" rpy="0 0 0.45"/>
+      <origin xyz="0.26 -0.075 0.105" rpy="0 0 0.45"/>
       <geometry><box size="0.18 0.055 0.10"/></geometry>
     </collision>
   </link>
@@ -118,10 +118,12 @@
       <material name="dark"/>
     </visual>
   </link>
-  <joint name="camera_joint" type="fixed">
+  <joint name="camera_joint" type="revolute">
     <parent link="base_link"/>
     <child link="camera_link"/>
     <origin xyz="0.20 0 0.27"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.95" upper="1.95" effort="2" velocity="1.2"/>
   </joint>
 
   <link name="camera_optical_frame"/>
