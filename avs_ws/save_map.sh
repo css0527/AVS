@@ -63,4 +63,4 @@ install -m 0644 "${STAGED_PREFIX}.yaml" "$GENERATED_DIR/rescue_map.yaml"
 install -m 0644 "${STAGED_PREFIX}.pgm" "$GENERATED_DIR/rescue_map.pgm"
 
 echo "新地图已保存并设为导航地图：$MAP_DIR/rescue_map.yaml"
-echo "现在可结束建图，然后运行 ./start_navigation.sh 开始 A* + DWB 导航。"
+echo "现在可结束建图，然后运行 ./start_navigation.sh 开始 Smac2D A* + RPP 导航。"

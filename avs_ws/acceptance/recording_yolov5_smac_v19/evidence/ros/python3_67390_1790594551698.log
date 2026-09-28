@@ -1,0 +1,6 @@
+[INFO] [1790594551.781935262] [spawn_entity]: Spawn Entity started
+[INFO] [1790594551.782731722] [spawn_entity]: Loading entity XML from file /home/c/AVS/avs_ws/src/avs_rescue_sim/models/rescue_rover/model.sdf
+[INFO] [1790594551.783701875] [spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[INFO] [1790594551.784103388] [spawn_entity]: Waiting for service /spawn_entity
+[INFO] [1790594551.789478517] [spawn_entity]: Calling service /spawn_entity
+[INFO] [1790594552.271265375] [spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [rescue_rover]

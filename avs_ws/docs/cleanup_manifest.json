@@ -116,5 +116,23 @@
       "path": "/home/c/AVS/avs_ws/src/avs_rescue_sim/.pytest_cache",
       "apparent_bytes": 19746
     }
+  ],
+  "latest_cleanup_date": "2026-09-28",
+  "latest_cleanup_summary_zh": "按规则仅留最终 ZIP、MP4、PDF 于 submission；保留 v19 同次原始录像/验收和 v18 无界面验收在 acceptance，删除 v14/v15 旧成功录屏及 v16/v17/v18 失败录屏、旧中间验收、构建缓存、空目录与正式地图的重复副本。原始历史录像删除后无法由本清单恢复。 已清理未被引用的旧地图备份，正式地图保留在 src/avs_rescue_sim/maps。",
+  "latest_removed_paths": [
+    "/home/c/AVS/avs_ws/submission/recording_v14",
+    "/home/c/AVS/avs_ws/submission/recording_yolov5_v15",
+    "/home/c/AVS/avs_ws/submission/recording_yolov5_v16",
+    "/home/c/AVS/avs_ws/submission/recording_yolov5_v17",
+    "/home/c/AVS/avs_ws/submission/recording_yolov5_smac_v18",
+    "/home/c/AVS/avs_ws/acceptance/yolov5_v15",
+    "/home/c/AVS/avs_ws/acceptance/yolov5_filter_only",
+    "/home/c/AVS/avs_ws/acceptance/yolov5_v16",
+    "/home/c/AVS/avs_ws/build",
+    "/home/c/AVS/avs_ws/install",
+    "/home/c/AVS/avs_ws/log",
+    "/home/c/AVS/avs_ws/generated_maps/rescue_map.pgm",
+    "/home/c/AVS/avs_ws/generated_maps/rescue_map.yaml",
+    "/home/c/AVS/avs_ws/generated_maps/backups-2TFAE29Q"
   ]
 }

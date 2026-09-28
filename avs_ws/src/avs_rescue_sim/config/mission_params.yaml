@@ -8,7 +8,9 @@ mission_node:
     startup_timeout: 90.0
     observation_timeout: 28.0 # Two full 12 s sweeps allow multi-frame tag confirmation.
     navigation_timeout: 60.0
-    max_nav_retries: 0
+    # A single fresh plan can recover from a transient costmap obstruction at
+    # the narrow room exit. A second failure still stops the mission.
+    max_nav_retries: 1
     abort_on_nav_failure: true
     max_outbound_rotation: 2.2 # Stop an unexpected U-turn; allow 90 degree corners.
     max_rotation_travel: 3.6 # Allow small path corrections; reject repeated circling.
@@ -64,7 +66,10 @@ mission_node:
     # the slightly westward goal retains right-door clearance with map offset.
     waypoints.room_exit_inside: [1.55, 1.56, 3.14159]
     waypoints.room_exit_align: [1.55, 1.56, 1.75]
-    waypoints.room_exit_outside: [1.40, 2.40, 3.14159]
+    # Put the destination on the surveyed doorway centreline. A goal 10 cm
+    # to its west repeatedly caused the global planner to lose the narrow
+    # passage just as the rover crossed the threshold.
+    waypoints.room_exit_outside: [1.50, 2.40, 3.14159]
     waypoints.return_corner: [0.55, 2.45, -1.5708]
     waypoints.return_corridor: [0.55, 0.75, -1.5708]
     waypoints.return_start: [0.55, 0.54, -1.5708]

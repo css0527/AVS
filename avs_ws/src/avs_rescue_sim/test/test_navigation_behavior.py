@@ -134,6 +134,28 @@ def test_position_arrival_aligns_before_reporting_waypoint_reached():
     assert node.report.call_args.args[0] == 'settling'
 
 
+def test_one_transient_navigation_failure_replans_then_stops_on_repeat():
+    mission = SimpleNamespace(
+        retry_count=0, max_nav_retries=1, step_index=0,
+        step_names=['room_exit_outside'], abort_on_nav_failure=True,
+        report=Mock(), send_navigation_goal=Mock(), fail_mission=Mock())
+    MissionNode.navigation_failed(mission, 'Nav2 status=6')
+    mission.send_navigation_goal.assert_called_once_with('room_exit_outside')
+    mission.fail_mission.assert_not_called()
+    MissionNode.navigation_failed(mission, 'Nav2 status=6')
+    mission.fail_mission.assert_called_once_with('room_exit_outside: Nav2 status=6')
+
+
+def test_return_doorway_destination_is_on_passage_centreline():
+    from pathlib import Path
+    import yaml
+    config = yaml.safe_load((Path(__file__).resolve().parents[1] /
+                             'config/mission_params.yaml').read_text())
+    waypoint = config['mission_node']['ros__parameters']['waypoints.room_exit_outside']
+    assert abs(waypoint[0] - 1.50) <= .02
+    assert waypoint[1] > 2.10
+
+
 def test_unexpected_outbound_turn_stops_instead_of_circling():
     mission = SimpleNamespace(
         state='navigating', safety_blocked_since=None, step_names=['corridor_fire'],

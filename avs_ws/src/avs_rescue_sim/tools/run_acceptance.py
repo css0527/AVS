@@ -20,6 +20,7 @@ parser.add_argument('--output',type=Path,default=workspace/'acceptance'/time.str
 parser.add_argument('--gui',action='store_true')
 parser.add_argument('--presentation',action='store_true',help='Use a compact RViz layout for side-by-side recording')
 parser.add_argument('--images',action='store_true')
+parser.add_argument('--raw-images',action='store_true',help='Save unannotated camera frames with ROS header timestamps at about 5 Hz')
 parser.add_argument('--mapping-evidence',action='store_true',help='Record independent online SLAM without changing the navigation map or TF')
 args=parser.parse_args()
 out=args.output.resolve();out.mkdir(parents=True,exist_ok=False)
@@ -48,6 +49,8 @@ if args.mapping_evidence:
   '-r','map:=/evaluation/slam_map','-r','map_metadata:=/evaluation/slam_metadata'],
   stdout=slam_log,stderr=subprocess.STDOUT,start_new_session=True)
 rclpy.init(); node=Node('full_mission_audit');data={};events=[];poses=[];detections=[];obstacle_detections=[];markers={};last_img=0
+last_raw_img=0;raw_images=[]
+if args.raw_images:(out/'raw_images').mkdir()
 last_preview=0
 tf_buffer=Buffer();tf_listener=TransformListener(tf_buffer,node);marker_frames={}
 slam_map=None
@@ -68,6 +71,18 @@ def image(m):
  a=np.frombuffer(m.data,np.uint8).reshape(m.height,m.step)[:,:m.width*3].reshape(m.height,m.width,3)
  if m.encoding=='rgb8':a=cv2.cvtColor(a,cv2.COLOR_RGB2BGR)
  cv2.imwrite(str(out/f'image_{len(poses):04d}.png'),a)
+def raw_image(m):
+ global last_raw_img
+ now=time.monotonic()
+ if not args.raw_images or now-last_raw_img<.2:return
+ if m.encoding not in ('rgb8','bgr8') or m.step<m.width*3 or len(m.data)!=m.height*m.step:return
+ a=np.frombuffer(m.data,np.uint8).reshape(m.height,m.step)[:,:m.width*3].reshape(m.height,m.width,3)
+ if m.encoding=='rgb8':a=cv2.cvtColor(a,cv2.COLOR_RGB2BGR)
+ filename=f'raw_{len(raw_images):05d}.jpg'
+ if not cv2.imwrite(str(out/'raw_images'/filename),a,[cv2.IMWRITE_JPEG_QUALITY,92]):return
+ raw_images.append(dict(file=filename,stamp=dict(sec=int(m.header.stamp.sec),nanosec=int(m.header.stamp.nanosec)),
+  frame_id=m.header.frame_id,encoding=m.encoding,width=int(m.width),height=int(m.height),step=int(m.step)))
+ last_raw_img=now
 def camera_preview(m):
  # Show the vision node's processed camera frame, including classifications,
  # AprilTag poses and confirmation status. Never substitute a raw frame.
@@ -105,6 +120,8 @@ node.create_subscription(Odometry,'/odom',odom,qos_profile_sensor_data)
 node.create_subscription(ModelStates,'/evaluation/model_states',states,qos_profile_sensor_data)
 node.create_subscription(MarkerArray,'/hazards/core_markers',marker,10)
 node.create_subscription(Image,'/camera/annotated',image,qos_profile_sensor_data)
+if args.raw_images:
+ node.create_subscription(Image,'/camera/image_raw',raw_image,qos_profile_sensor_data)
 if args.presentation:
  node.create_subscription(Image,'/camera/annotated',camera_preview,qos_profile_sensor_data)
 node.create_subscription(OccupancyGrid,'/evaluation/slam_map',mapping,QoSProfile(depth=1,durability=DurabilityPolicy.TRANSIENT_LOCAL))
@@ -122,6 +139,8 @@ try:
   if p.poll() is not None:raise RuntimeError('launch exited')
   if t>100 and 'mission' not in data:raise RuntimeError('mission node never became ready')
 finally:
+ if args.raw_images:
+  (out/'raw_images'/'manifest.json').write_text(json.dumps(dict(topic='/camera/image_raw',sample_period_s=.2,frames=raw_images),indent=2))
  if slam_map is not None:
   info=slam_map.info;cells=np.asarray(slam_map.data).reshape(info.height,info.width)
   pixels=np.full(cells.shape,205,np.uint8);pixels[(cells>=0)&(cells<=25)]=254;pixels[cells>=65]=0

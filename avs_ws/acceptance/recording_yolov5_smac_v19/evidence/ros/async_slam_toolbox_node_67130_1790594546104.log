@@ -1,0 +1,7 @@
+[INFO] [1790594546.148541251] [slam_toolbox]: Using solver plugin solver_plugins::CeresSolver
+[INFO] [1790594546.149053111] [slam_toolbox]: CeresSolver: Using SCHUR_JACOBI preconditioner.
+[INFO] [1790594653.795902851] [slam_toolbox]: Message Filter dropping message: frame 'laser_frame' at time 87.370 for reason 'discarding message because the queue is full'
+[INFO] [1790594726.391696962] [slam_toolbox]: Message Filter dropping message: frame 'laser_frame' at time 149.018 for reason 'discarding message because the queue is full'
+[INFO] [1790594756.028654146] [slam_toolbox]: Message Filter dropping message: frame 'laser_frame' at time 174.536 for reason 'discarding message because the queue is full'
+[INFO] [1790594891.680065468] [slam_toolbox]: Message Filter dropping message: frame 'laser_frame' at time 290.438 for reason 'discarding message because the queue is full'
+[INFO] [1790594954.013320477] [rclcpp]: signal_handler(SIGINT/SIGTERM)

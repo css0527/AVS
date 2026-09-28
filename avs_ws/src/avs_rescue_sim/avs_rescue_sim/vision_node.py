@@ -7,6 +7,7 @@ from pathlib import Path
 from ament_index_python.packages import get_package_share_directory
 from avs_rescue_sim.hazard_classifier import HazardClassifier
 from avs_rescue_sim.barrier_detector import BarrierDetector
+from avs_rescue_sim.hazard_tracker import HazardTracker
 
 import cv2
 import numpy as np
@@ -64,19 +65,46 @@ class VisionNode(Node):
             'hazard_names', ['FIRE', 'CHEMICAL', 'RADIATION', 'ELECTRICAL', 'BIOHAZARD']))
         self.tag_labels = list(self._param(
             'tag_labels', ['COLLAPSE', 'TOXIC_LEAK', 'TRAPPED_PERSON', 'HIGH_TEMPERATURE']))
-
-        self.hazard_classifier = HazardClassifier(
-            Path(get_package_share_directory('avs_rescue_sim')) / 'models/rescue_course/materials/textures',
-            self.hazard_names, min_inliers=int(self._param('min_pattern_inliers', 7)),
-            min_area=self.min_hazard_area)
-        self.hazard_hits = {}
+        share = Path(get_package_share_directory('avs_rescue_sim'))
+        self.hazard_backend = str(self._param('hazard_backend', 'yolov5')).lower()
+        if self.hazard_backend == 'yolov5':
+            try:
+                from avs_rescue_sim.yolov5_detector import YoloV5Detector
+                from avs_rescue_sim.panel_geometry import PanelGeometryVerifier
+                configured_weights = str(self._param('yolov5_weights', '')).strip()
+                weights = (Path(configured_weights) if configured_weights else
+                           share / 'models/yolov5/hazard_yolov5.torchscript')
+                self.hazard_classifier = YoloV5Detector(
+                    weights, self.hazard_names,
+                    image_size=int(self._param('yolov5_image_size', 320)),
+                    confidence=float(self._param('yolov5_confidence', .45)),
+                    iou_threshold=float(self._param('yolov5_iou_threshold', .45)),
+                    min_area=float(self._param('yolov5_min_area', 80)),
+                    panel_verifier=PanelGeometryVerifier(
+                        share / 'models/rescue_course/materials/textures', self.hazard_names,
+                        symbol_score=float(self._param('panel_symbol_score', .34))))
+            except (ImportError, OSError, RuntimeError, ValueError) as exc:
+                if not bool(self._param('allow_sift_fallback', True)):
+                    raise
+                self.get_logger().warning(f'YOLOv5 unavailable ({exc}); using SIFT fallback')
+                self.hazard_backend = 'sift'
+        if self.hazard_backend == 'sift':
+            self.hazard_classifier = HazardClassifier(
+                share / 'models/rescue_course/materials/textures', self.hazard_names,
+                min_inliers=int(self._param('min_pattern_inliers', 7)),
+                min_area=self.min_hazard_area)
+        elif self.hazard_backend != 'yolov5':
+            raise ValueError(f'Unknown hazard_backend: {self.hazard_backend}')
+        self.hazard_tracker = HazardTracker(
+            smoothing_alpha=float(self._param('hazard_box_smoothing_alpha', .65)),
+            max_center_step=float(self._param('hazard_max_center_step', .18)))
+        self.hazard_display_frames = max(1, int(self._param('hazard_display_frames', 2)))
         self.barrier_detector = BarrierDetector(
             min_area=int(self._param('barrier_min_area', 700)),
             min_fill=float(self._param('barrier_min_fill', .82)),
             max_white_fraction=float(self._param('barrier_max_white_fraction', .08)))
         self.visible_hazard_polygons = []
         self.visible_barriers = []
-        self.hazard_last_frame = {}
         self.confirmation_frames = int(self._param('confirmation_frames', 3))
 
         self.detected_hazards = set()
@@ -107,7 +135,8 @@ class VisionNode(Node):
         self.create_timer(0.5, self.publish_markers)
         self.create_timer(0.04, self.process_pending_image)
         self.get_logger().info(
-            f'Vision ready: {self.image_topic}, five hazard classes, AprilTag 36h11 IDs 0-3')
+            f'Vision ready: {self.image_topic}, hazard backend={self.hazard_backend}, '
+            'five hazard classes, AprilTag 36h11 IDs 0-3')
 
     def _param(self, name, default):
         parameter = self.get_parameter(name)
@@ -167,27 +196,40 @@ class VisionNode(Node):
         self.publish_annotated(annotated, msg)
 
     def detect_hazards(self, frame, annotated):
-        visible = set()
         self.visible_hazard_polygons = []
-        for name, polygon, inliers, area in self.hazard_classifier.detect(frame):
-            visible.add(name)
+        tracks = self.hazard_tracker.update(self.hazard_classifier.detect(frame), frame.shape)
+        for track in tracks:
+            name, inliers, area = track.name, track.score, track.area
+            polygon = np.rint(track.polygon).astype(np.int32)
+            # Exclude validated panels from red-box detection even during the
+            # short display warm-up, otherwise a red sign can become a box.
             self.visible_hazard_polygons.append(polygon)
-            recent = self.frame_count - self.hazard_last_frame.get(name, -1000) <= 10 * self.process_every_n
-            self.hazard_hits[name] = self.hazard_hits.get(name, 0) + 1 if recent else 1
-            self.hazard_last_frame[name] = self.frame_count
+            if track.streak < self.hazard_display_frames:
+                continue
             cv2.polylines(annotated, [polygon], True, (80, 255, 80), 2)
             x, y = polygon.reshape(-1, 2).min(axis=0)
-            if name not in self.detected_hazards and self.hazard_hits[name] >= self.confirmation_frames:
+            if name not in self.detected_hazards and track.streak >= self.confirmation_frames:
                 self.detected_hazards.add(name)
                 payload = {'kind': 'corridor_hazard', 'label': name,
-                           'area_px': round(area, 1), 'pattern_inliers': inliers}
+                           'area_px': round(area, 1), 'detector': self.hazard_backend}
+                if self.hazard_backend == 'yolov5':
+                    payload['confidence'] = round(float(inliers), 4)
+                else:
+                    payload['pattern_inliers'] = int(inliers)
                 self.detection_pub.publish(String(data=json.dumps(payload)))
-                self.get_logger().info(f'[CORRIDOR {len(self.detected_hazards)}/5] confirmed {name} '
-                                       f'with artwork matching ({inliers} inliers)')
-            state = ('CONFIRMED' if name in self.detected_hazards else
-                     f'confirming {self.hazard_hits[name]}/{self.confirmation_frames}')
-            annotate_label(annotated, [f'{name} | {state}', f'pattern inliers: {inliers}'],
-                           (x, y), (80, 255, 80))
+                metric = (f'YOLOv5 confidence {inliers:.2f}' if self.hazard_backend == 'yolov5'
+                          else f'artwork matching ({inliers} inliers)')
+                self.get_logger().info(
+                    f'[CORRIDOR {len(self.detected_hazards)}/5] confirmed {name} with {metric}')
+            detail = (f'{name}  {inliers:.2f}' if self.hazard_backend == 'yolov5'
+                      else f'{name}  {int(inliers)} matches')
+            if name not in self.detected_hazards:
+                detail += f' [{track.streak}/{self.confirmation_frames}]'
+            # Put the caption below signs near the top edge, leaving the
+            # white pictogram visible in the first-person camera view.
+            caption_y = y if y >= 29 else polygon.reshape(-1, 2).max(axis=0)[1] + 29
+            annotate_label(annotated, [detail],
+                           (x, caption_y), (80, 255, 80))
 
     def detect_barrier(self, frame, annotated, header):
         self.visible_barriers = self.barrier_detector.detect(frame, self.visible_hazard_polygons)

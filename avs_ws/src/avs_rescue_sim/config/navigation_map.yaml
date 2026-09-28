@@ -3,3 +3,6 @@ navigation_map_node:
     use_sim_time: true
     # Saved SLAM scans contain the moved box here. Excludes structural walls.
     movable_region: [1.18, 0.70, 1.72, 1.70]
+    # Saved-map ghost cells inside the real 0.50 m doorway, clearable only
+    # after three independent lidar free rays. Excludes both wall segments.
+    doorway_free_region: [1.30, 2.00, 1.42, 2.11]

@@ -20,7 +20,10 @@ class NavigationMapNode(Node):
         super().__init__('navigation_map_node', automatically_declare_parameters_from_overrides=True)
         if not self.has_parameter('movable_region'):
             self.declare_parameter('movable_region', [1.18, .70, 1.72, 1.70])
+        if not self.has_parameter('doorway_free_region'):
+            self.declare_parameter('doorway_free_region', [1.30, 2.00, 1.42, 2.11])
         self.region = self.get_parameter('movable_region').value
+        self.doorway_free_region = self.get_parameter('doorway_free_region').value
         self.map = None
         self.scan = None
         self.last_scan = None
@@ -39,8 +42,13 @@ class NavigationMapNode(Node):
         rows,cols = np.indices(self.cells.shape)
         x = msg.info.origin.position.x+(cols+.5)*msg.info.resolution
         y = msg.info.origin.position.y+(rows+.5)*msg.info.resolution
-        a,b,c,d = self.region
-        self.mask = (x>a)&(x<c)&(y>b)&(y<d)
+        # A few saved SLAM pixels at x≈1.34, y≈2.02–2.08 are inside the
+        # physical doorway opening. They can mark the rover's centre as lethal
+        # on the return trip. The second window is confined to that opening;
+        # both windows still require three independent measured free rays.
+        self.mask = np.zeros_like(self.cells, dtype=bool)
+        for a,b,c,d in (self.region, self.doorway_free_region):
+            self.mask |= (x>a)&(x<c)&(y>b)&(y<d)
         self.pub.publish(msg)
 
     def update(self):
