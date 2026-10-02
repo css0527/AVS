@@ -16,7 +16,8 @@
 NumPy、PyYAML、PyTorch 和带 `aruco.ArucoDetector`、SIFT 的 OpenCV（4.7 或以上，
 本机为 PyTorch 2.13.0 CPU / OpenCV 5.0.0 / NumPy 2.2.6）。不使用 `cv_bridge`，
 避免 NumPy ABI 冲突。
-提交材料工具另需 `python3-pyqt5`、`python3-reportlab`、`fonts-arphic-ukai`、
+四窗口展示还需 `python3-pyqt5`、`x11-utils` 和可用的 X11/XWayland 桌面。
+提交材料工具另需 `python3-reportlab`、`fonts-arphic-ukai`、
 `ffmpeg`、`x11-utils`、`xserver-xephyr` 和可用的 X11/XWayland 桌面。
 
 ```bash
@@ -24,11 +25,30 @@ cd /home/c/AVS/avs_ws
 ./start.sh
 ```
 
+默认依次启动四个展示窗口：**Gazebo 场景 → RViz 地图 → 车载相机识别画面 →
+实时任务日志**。RViz 默认使用录屏时的精简地图布局，避免调试侧栏挤占画面；
+`demo:=false` 恢复原来的完整 RViz 布局，也可通过 `rviz_config:=路径` 指定配置。
+相机订阅 `/camera/annotated`，日志显示巡检识别、核心标签、
+任务进度和安全状态，并显示系统时间。窗口根据当前屏幕排列为上方场景/地图、
+下方相机/日志；仅调整本次启动的窗口，打开后可自行移动。桌面不支持自动排布时，
+可手动调整窗口位置。任务结束后窗口保留，方便查看结果；在启动终端按 `Ctrl-C`
+统一退出。普通启动不会开始录屏，也不依赖历史验收目录。
+
+仅打开原有 Gazebo 和 RViz：
+
+```bash
+./start.sh demo:=false
+```
+
 无 GUI 调试：
 
 ```bash
 ./start.sh gui:=false rviz:=false
 ```
+
+`demo` 默认跟随 `gui`；也可显式设置，例如
+`./start.sh gui:=false rviz:=true demo:=true` 保留地图、相机和日志。
+录屏及验收工具显式关闭额外展示窗口，继续使用原来的录屏布局。
 
 ## 先建图，再导航
 

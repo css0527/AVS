@@ -44,6 +44,7 @@ setup(
             'camera_scan_node = avs_rescue_sim.camera_scan_node:main',
             'safety_node = avs_rescue_sim.safety_node:main',
             'navigation_map_node = avs_rescue_sim.navigation_map_node:main',
+            'demo_viewer = avs_rescue_sim.demo_viewer:main',
         ],
     },
 )

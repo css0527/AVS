@@ -37,7 +37,7 @@ os.environ.update(AVS_ROS_DOMAIN_ID=domain,ROS_DOMAIN_ID=domain,AVS_GAZEBO_MASTE
 for key in ('QT_QPA_PLATFORM_PLUGIN_PATH','QT_QPA_FONTDIR'):
  if 'cv2' in os.environ.get(key,''):os.environ.pop(key)
 log=(out/'launch.log').open('w')
-launch_args=[str(workspace/'start.sh'),f'gui:={str(args.gui).lower()}',f'rviz:={str(args.gui).lower()}']
+launch_args=[str(workspace/'start.sh'),f'gui:={str(args.gui).lower()}',f'rviz:={str(args.gui).lower()}', 'demo:=false']
 if args.presentation:launch_args.append('rviz_config:='+str(workspace/'src/avs_rescue_sim/rviz/rescue_demo.rviz'))
 p=subprocess.Popen(launch_args,stdout=log,stderr=subprocess.STDOUT,start_new_session=True)
 slam_log=None;slam=None

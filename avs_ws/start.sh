@@ -43,4 +43,6 @@ if [[ "$(realpath "$AVS_PACKAGE_PREFIX")" != "$(realpath "$SCRIPT_DIR/install/av
     exit 1
 fi
 # Launch this checkout explicitly, even if the terminal sourced another workspace.
+# GUI runs open Gazebo, RViz, the annotated camera and mission events in order.
+# demo:=false keeps only Gazebo/RViz; gui:=false rviz:=false remains headless.
 exec ros2 launch "$SCRIPT_DIR/src/avs_rescue_sim/launch/sim_launch.py" "$@"

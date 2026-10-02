@@ -6,10 +6,10 @@ import yaml
 from ament_index_python.packages import get_package_share_directory
 from launch import LaunchDescription
 from launch.actions import (DeclareLaunchArgument, EmitEvent, ExecuteProcess,
-                            IncludeLaunchDescription, LogInfo, RegisterEventHandler,
+                            IncludeLaunchDescription, LogInfo, OpaqueFunction, RegisterEventHandler,
                             SetEnvironmentVariable, TimerAction)
 from launch.conditions import IfCondition
-from launch.event_handlers import OnProcessExit
+from launch.event_handlers import OnProcessExit, OnProcessStart
 from launch.events import Shutdown
 from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch.substitutions import EnvironmentVariable, LaunchConfiguration
@@ -55,6 +55,7 @@ def generate_launch_description():
     rviz = LaunchConfiguration('rviz')
     navigation = LaunchConfiguration('navigation')
     mission = LaunchConfiguration('mission')
+    demo = LaunchConfiguration('demo')
     # Gazebo 11 also uses Ignition's unscoped /scene_info service. Master URI
     # isolation alone does NOT prevent another gzserver answering that request.
     # This partition must be set before BOTH gzserver and gzclient start.
@@ -123,12 +124,55 @@ def generate_launch_description():
     stop_if_mission_exits = RegisterEventHandler(OnProcessExit(
         target_action=mission_process,
         on_exit=[EmitEvent(event=Shutdown(reason='Mission process exited'))]))
-    rviz_node = TimerAction(period=4.0, actions=[Node(
+    rviz_process = Node(
         package='rviz2', executable='rviz2', output='screen',
         condition=IfCondition(rviz),
         arguments=['-d', LaunchConfiguration('rviz_config')],
         parameters=[{'use_sim_time': True}],
-    )])
+    )
+
+    # Keep the recorder's original launch timing when demo:=false. Interactive
+    # runs open the native views first, then the camera and event windows.
+    # Only these process IDs are passed to the best-effort desktop arranger.
+    desktop_pids = {'gazebo_pid': 0, 'rviz_pid': 0}
+
+    def viewer():
+        return Node(
+            package='avs_rescue_sim', executable='demo_viewer',
+            name='demo_viewer', output='screen',
+            additional_env={'QT_QPA_PLATFORM': 'xcb'},
+            parameters=[{'use_sim_time': True, **desktop_pids}],
+        )
+
+    def after_gazebo_start(event, context):
+        desktop_pids['gazebo_pid'] = event.pid
+        if not IfCondition(demo).evaluate(context):
+            return []
+        following = rviz_process if IfCondition(rviz).evaluate(context) else viewer()
+        return [TimerAction(period=1.0, actions=[following])]
+
+    def after_rviz_start(event, context):
+        desktop_pids['rviz_pid'] = event.pid
+        if not IfCondition(demo).evaluate(context):
+            return []
+        return [TimerAction(period=1.0, actions=[viewer()])]
+
+    def start_desktop(context):
+        if not LaunchConfiguration('rviz_config').perform(context):
+            # The full debugging layout has docks that cannot shrink into a
+            # quarter-screen slot. Reuse the compact layout from the recorder.
+            filename = 'rescue_demo.rviz' if IfCondition(demo).evaluate(context) else 'rescue.rviz'
+            context.launch_configurations['rviz_config'] = os.path.join(pkg_share, 'rviz', filename)
+        if not IfCondition(demo).evaluate(context):
+            return [TimerAction(period=3.0, actions=[gazebo_client]),
+                    TimerAction(period=4.0, actions=[rviz_process])]
+        # A condition-skipped process never emits OnProcessStart. Begin with
+        # the first enabled view so gui:=false / rviz:=false cannot stall us.
+        first = (gazebo_client if IfCondition(gui).evaluate(context) else
+                 rviz_process if IfCondition(rviz).evaluate(context) else viewer())
+        return [LogInfo(msg='AVS live views: Gazebo -> RViz -> onboard camera -> mission events'),
+                TimerAction(period=3.0, actions=[first])]
+
 
     navigation_map = Node(
         package='avs_rescue_sim', executable='navigation_map_node', output='screen',
@@ -144,7 +188,10 @@ def generate_launch_description():
                               description='Start Gazebo GUI'),
         DeclareLaunchArgument('rviz', default_value='true',
                               description='Start RViz'),
-        DeclareLaunchArgument('rviz_config', default_value=os.path.join(pkg_share, 'rviz', 'rescue.rviz')),
+        DeclareLaunchArgument('demo', default_value=gui,
+                              description='Open camera and mission-event windows; defaults to gui'),
+        DeclareLaunchArgument('rviz_config', default_value='',
+                              description='RViz config override; empty selects compact demo or full debug layout'),
         DeclareLaunchArgument('navigation', default_value='true',
                               description='Start Nav2 localization/navigation'),
         DeclareLaunchArgument('mission', default_value='true',
@@ -165,13 +212,17 @@ def generate_launch_description():
         LogInfo(msg=['AVS Gazebo server/client master: ',
                      EnvironmentVariable('GAZEBO_MASTER_URI', default_value='http://localhost:11345')]),
         stop_if_gazebo_exits,
+        RegisterEventHandler(OnProcessStart(
+            target_action=gazebo_client, on_start=after_gazebo_start)),
+        RegisterEventHandler(OnProcessStart(
+            target_action=rviz_process, on_start=after_rviz_start)),
         RegisterEventHandler(OnProcessExit(
             target_action=verify_world,
             on_exit=after_success([spawn], 'AVS world verification failed'))),
         RegisterEventHandler(OnProcessExit(
             target_action=spawn,
-            on_exit=after_success([TimerAction(period=3.0, actions=[gazebo_client]),
-                                  nav2, vision, scanner, mission_node, rviz_node],
+            on_exit=after_success([OpaqueFunction(function=start_desktop),
+                                  nav2, vision, scanner, mission_node],
                                   'AVS rover spawn failed'))),
         gazebo_server,
         verify_world,
