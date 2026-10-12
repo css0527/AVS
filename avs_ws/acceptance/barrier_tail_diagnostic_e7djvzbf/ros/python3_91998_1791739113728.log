@@ -1,0 +1,24 @@
+[INFO] [1791739113.912699077] [mission_node]: [MISSION] startup: waiting at least 7.0s and for all Nav2 lifecycle nodes to activate
+[INFO] [1791739121.020598001] [mission_node]: [MISSION] navigating: corridor_entry approach -> (0.55, 0.70, yaw=1.57)
+[INFO] [1791739126.274591957] [mission_node]: [MISSION] navigating: corridor_entry align at current pose -> (0.55, 0.68, yaw=1.57)
+[INFO] [1791739126.364113729] [mission_node]: [MISSION] settling: corridor_entry reached; braking before next action
+[INFO] [1791739127.130756585] [mission_node]: [MISSION] navigating: corridor_fire approach -> (0.55, 0.85, yaw=1.57)
+[INFO] [1791739132.437609087] [mission_node]: [MISSION] navigating: corridor_fire align at current pose -> (0.55, 0.83, yaw=1.57)
+[INFO] [1791739132.509325379] [mission_node]: [MISSION] settling: corridor_fire reached; braking before next action
+[INFO] [1791739133.266106334] [mission_node]: [MISSION] observing: camera scanning left/right for FIRE; base stopped
+[INFO] [1791739134.258005363] [mission_node]: [MISSION] observation_complete: confirmed FIRE
+[INFO] [1791739134.258913805] [mission_node]: [MISSION] navigating: corridor_chemical approach -> (0.55, 1.42, yaw=1.57)
+[INFO] [1791739144.053476156] [mission_node]: [MISSION] navigating: corridor_chemical align at current pose -> (0.55, 1.39, yaw=1.57)
+[INFO] [1791739144.137389345] [mission_node]: [MISSION] settling: corridor_chemical reached; braking before next action
+[INFO] [1791739144.870570362] [mission_node]: [MISSION] observing: camera scanning left/right for CHEMICAL; base stopped
+[INFO] [1791739145.871268818] [mission_node]: [MISSION] observation_complete: confirmed CHEMICAL
+[INFO] [1791739145.872088441] [mission_node]: [MISSION] navigating: corridor_radiation approach -> (0.55, 2.30, yaw=1.57)
+[INFO] [1791739158.568065167] [mission_node]: [MISSION] navigating: corridor_radiation align at current pose -> (0.53, 2.28, yaw=1.57)
+[INFO] [1791739160.500202185] [mission_node]: [MISSION] settling: corridor_radiation reached; braking before next action
+[INFO] [1791739161.289903116] [mission_node]: [MISSION] observing: camera scanning left/right for RADIATION; base stopped
+[INFO] [1791739162.290823272] [mission_node]: [MISSION] observation_complete: confirmed RADIATION
+[INFO] [1791739162.291481690] [mission_node]: [MISSION] navigating: top_corner approach -> (0.55, 2.50, yaw=0.00)
+[INFO] [1791739167.828110956] [mission_node]: [MISSION] navigating: top_corner align at current pose -> (0.55, 2.47, yaw=0.00)
+[INFO] [1791739175.808068615] [mission_node]: [MISSION] settling: top_corner reached; braking before next action
+[INFO] [1791739176.608194663] [mission_node]: [MISSION] navigating: corridor_electrical approach -> (1.50, 2.55, yaw=0.00)
+[INFO] [1791739191.453112292] [mission_node]: [MISSION] navigating: corridor_electrical align at current pose -> (1.49, 2.54, yaw=0.00)

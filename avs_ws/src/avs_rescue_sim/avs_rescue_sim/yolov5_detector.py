@@ -9,7 +9,8 @@ import torch
 
 class YoloV5Detector:
     def __init__(self, weights, labels, image_size=320, confidence=.60,
-                 iou_threshold=.45, min_area=80, model=None, panel_verifier=None):
+                 iou_threshold=.45, min_area=80, model=None, panel_verifier=None,
+                 region_recovery=False):
         self.weights = Path(weights)
         self.labels = list(labels)
         self.image_size = int(image_size)
@@ -17,6 +18,7 @@ class YoloV5Detector:
         self.iou_threshold = float(iou_threshold)
         self.min_area = float(min_area)
         self.panel_verifier = panel_verifier
+        self.region_recovery = bool(region_recovery)
         if self.image_size < 160 or self.image_size % 32:
             raise ValueError('YOLOv5 image_size must be a multiple of 32 and at least 160')
         # This compact model is traced at a fixed input size. Its decode grid
@@ -53,7 +55,8 @@ class YoloV5Detector:
         tensor = torch.from_numpy(np.ascontiguousarray(rgb.transpose(2, 0, 1))).float().unsqueeze(0) / 255.
         return tensor, scale, left, top
 
-    def detect(self, frame):
+    def detect(self, frame, _recover=True, _confidence=None):
+        confidence = self.confidence if _confidence is None else _confidence
         tensor, scale, left, top = self.letterbox(frame)
         with torch.inference_mode():
             predictions = self.model(tensor)
@@ -70,7 +73,7 @@ class YoloV5Detector:
         for row in predictions:
             class_id = int(np.argmax(row[5:]))
             score = float(row[4] * row[5 + class_id])
-            if score < self.confidence:
+            if score < confidence:
                 continue
             cx, cy, width, height = row[:4] * self.image_size
             x1 = (cx - width / 2. - left) / scale
@@ -102,7 +105,7 @@ class YoloV5Detector:
             indices = [i for i, value in enumerate(class_ids) if value == class_id]
             kept = cv2.dnn.NMSBoxes([boxes[i] for i in indices],
                                     [scores[i] for i in indices],
-                                    self.confidence, self.iou_threshold)
+                                    confidence, self.iou_threshold)
             # The competition course contains one panel of each hazard class.
             # Verify/refit every proposal before selecting the class winner:
             # a high-confidence blue floor must not hide a real blue sign.
@@ -115,4 +118,48 @@ class YoloV5Detector:
             polygon = polygons[index]
             result.append((self.labels[class_ids[index]], polygon,
                            scores[index], abs(float(cv2.contourArea(polygon)))))
-        return result
+        if self.region_recovery and _recover and self.panel_verifier is not None:
+            # The fixed 320 input can miss a clearly visible sign. Artwork
+            # proposes a crop, but a fresh YOLO classification AND geometric
+            # verification must pass before it becomes a detection.
+            present = {item[0] for item in result}
+            h, w = frame.shape[:2]
+            full = np.float32([[0, 0], [w-1, 0], [w-1, h-1], [0, h-1]])
+            for label in self.labels:
+                if label in present:
+                    continue
+                panel = self.panel_verifier.refine(frame, label, full)
+                if panel is None:
+                    continue
+                # Core AprilTags have coloured bands but not a predominantly
+                # coloured pictogram interior. Do not magnify those bands
+                # into apparent corridor signs.
+                target = np.float32([[0, 0], [71, 0], [71, 71], [0, 71]])
+                warp = cv2.getPerspectiveTransform(panel.reshape(4, 2).astype(np.float32), target)
+                hsv = cv2.cvtColor(cv2.warpPerspective(frame, warp, (72, 72)), cv2.COLOR_BGR2HSV)
+                hue = self.panel_verifier.templates[label][0]
+                delta = np.abs(hsv[..., 0].astype(np.int16) - hue)
+                coloured = ((np.minimum(delta, 180-delta) <= 13) &
+                            (hsv[..., 1] > 95) & (hsv[..., 2] > 35))
+                if coloured[12:-12, 12:-12].mean() < .40:
+                    continue
+                points = panel.reshape(-1, 2)
+                lo, hi = points.min(axis=0), points.max(axis=0)
+                edges = np.linalg.norm(points - np.roll(points, 1, axis=0), axis=1)
+                # Recovery uses a lower YOLO threshold, so reject narrow
+                # strips more strictly than ordinary full-frame detection.
+                if edges.max() / max(1., edges.min()) > 2.:
+                    continue
+                padding = np.maximum((hi-lo)*.6, 12)
+                start = np.maximum(0, np.floor(lo-padding)).astype(int)
+                stop = np.minimum([w, h], np.ceil(hi+padding)).astype(int)
+                crop = frame[start[1]:stop[1], start[0]:stop[0]]
+                for name, polygon, score, area in self.detect(
+                        crop, _recover=False, _confidence=min(self.confidence, .25)):
+                    if name != label:
+                        continue
+                    polygon = polygon + start.reshape(1, 1, 2)
+                    result.append((name, polygon, score, area))
+                    present.add(name)
+                    break
+        return sorted(result, key=lambda item: item[2], reverse=True)

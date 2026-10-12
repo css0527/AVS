@@ -3,6 +3,8 @@ mission_node:
     use_sim_time: true
     map_frame: map
     navigation_behavior_tree: navigate_to_pose_no_recovery.xml
+    # Use the original navigation profile at the tight doorway and push setup.
+    precision_navigation_steps: [barrier_stage, room_exit_inside, room_exit_align, room_exit_outside, return_start]
     push_command_topic: /cmd_vel_nav
     startup_delay: 7.0
     startup_timeout: 90.0

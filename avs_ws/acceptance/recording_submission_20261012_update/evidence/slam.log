@@ -1,0 +1,11 @@
+[INFO] [1791745138.183686935] [slam_toolbox]: Using solver plugin solver_plugins::CeresSolver
+[INFO] [1791745138.183967414] [slam_toolbox]: CeresSolver: Using SCHUR_JACOBI preconditioner.
+Info: clipped range threshold to be within minimum and maximum range!
+Registering sensor: [Custom Described Lidar]
+[INFO] [1791745222.949254217] [slam_toolbox]: Message Filter dropping message: frame 'laser_frame' at time 63.322 for reason 'discarding message because the queue is full'
+[INFO] [1791745309.125755963] [slam_toolbox]: Message Filter dropping message: frame 'laser_frame' at time 132.400 for reason 'discarding message because the queue is full'
+[INFO] [1791745341.528431758] [slam_toolbox]: Message Filter dropping message: frame 'laser_frame' at time 158.156 for reason 'discarding message because the queue is full'
+[INFO] [1791745407.371712929] [slam_toolbox]: Message Filter dropping message: frame 'laser_frame' at time 211.072 for reason 'discarding message because the queue is full'
+[INFO] [1791745431.787049669] [slam_toolbox]: Message Filter dropping message: frame 'laser_frame' at time 230.414 for reason 'discarding message because the queue is full'
+[INFO] [1791745499.705953738] [slam_toolbox]: Message Filter dropping message: frame 'laser_frame' at time 284.106 for reason 'discarding message because the queue is full'
+[INFO] [1791745523.487182589] [rclcpp]: signal_handler(SIGINT/SIGTERM)

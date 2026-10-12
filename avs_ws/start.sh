@@ -33,7 +33,8 @@ fi
 export GAZEBO_IP=127.0.0.1
 echo "Gazebo master: $GAZEBO_MASTER_URI"
 
-colcon build --symlink-install --packages-up-to avs_rescue_sim
+# Discover source packages only; submission/ may contain an extracted copy.
+colcon build --base-paths src --symlink-install --packages-up-to avs_rescue_sim
 set +u
 source "$SCRIPT_DIR/install/local_setup.bash"
 set -u

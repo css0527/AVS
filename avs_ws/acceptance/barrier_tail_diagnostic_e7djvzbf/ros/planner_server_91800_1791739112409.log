@@ -1,0 +1,45 @@
+[INFO] [1791739112.504260147] [planner_server]: 
+	planner_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1791739112.506450468] [planner_server]: Creating
+[INFO] [1791739112.685351377] [global_costmap.global_costmap]: 
+	global_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1791739112.686032658] [global_costmap.global_costmap]: Creating Costmap
+[INFO] [1791739112.896825226] [planner_server]: Configuring
+[INFO] [1791739112.896887694] [global_costmap.global_costmap]: Configuring
+[INFO] [1791739112.906810212] [global_costmap.global_costmap]: Using plugin "static_layer"
+[INFO] [1791739112.910343509] [global_costmap.global_costmap]: Subscribing to the map topic (/navigation_map) with transient local durability
+[INFO] [1791739112.912677163] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[INFO] [1791739112.912729001] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[INFO] [1791739112.913288592] [global_costmap.global_costmap]: Subscribed to Topics: scan
+[INFO] [1791739112.919863464] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[INFO] [1791739112.919955629] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[INFO] [1791739112.920689730] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[INFO] [1791739112.935874402] [planner_server]: Created global planner plugin GridBased of type nav2_smac_planner/SmacPlanner2D
+[INFO] [1791739112.935959303] [planner_server]: Configuring GridBased of type SmacPlanner2D
+[INFO] [1791739112.938084110] [planner_server]: Configured plugin GridBased of type SmacPlanner2D with tolerance 0.10, maximum iterations 100000, max on approach iterations 1000, and not allowing unknown traversal.
+[INFO] [1791739112.938132242] [planner_server]: Planner Server has GridBased  planners available.
+[INFO] [1791739113.252884470] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 161 X 159 at 0.020000 m/pix
+[INFO] [1791739114.052599532] [planner_server]: Activating
+[INFO] [1791739114.052643395] [global_costmap.global_costmap]: Activating
+[INFO] [1791739114.052656921] [global_costmap.global_costmap]: Checking transform
+[INFO] [1791739114.052716163] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 5.420000 but the earliest data is at time 5.762000, when looking up transform from frame [base_link] to frame [map]
+[INFO] [1791739114.552822621] [global_costmap.global_costmap]: start
+[INFO] [1791739115.604061191] [planner_server]: Activating plugin GridBased of type SmacPlanner2D
+[INFO] [1791739115.605582424] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[INFO] [1791739128.846522791] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 19.926 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791739156.080378049] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 47.128 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791739193.855514065] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1791739193.855635054] [planner_server]: Running Nav2 LifecycleNode rcl preshutdown (planner_server)
+[INFO] [1791739193.855733030] [planner_server]: Deactivating
+[INFO] [1791739193.855789146] [global_costmap.global_costmap]: Deactivating
+[INFO] [1791739194.553015383] [planner_server]: Deactivating plugin GridBased of type SmacPlanner2D
+[INFO] [1791739194.553078172] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[INFO] [1791739194.563377693] [planner_server]: Cleaning up
+[INFO] [1791739194.565937845] [global_costmap.global_costmap]: Cleaning up
+[INFO] [1791739194.567424824] [planner_server]: Cleaning up plugin GridBased of type SmacPlanner2D
+[INFO] [1791739194.567574618] [planner_server]: Destroying plugin GridBased of type SmacPlanner2D
+[INFO] [1791739194.569056115] [planner_server]: Destroying bond (planner_server) to lifecycle manager.

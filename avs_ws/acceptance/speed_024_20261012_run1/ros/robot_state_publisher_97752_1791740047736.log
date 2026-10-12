@@ -1,0 +1,9 @@
+[INFO] [1791740047.757038942] [robot_state_publisher]: got segment base_link
+[INFO] [1791740047.757372565] [robot_state_publisher]: got segment camera_link
+[INFO] [1791740047.757382724] [robot_state_publisher]: got segment camera_optical_frame
+[INFO] [1791740047.757390729] [robot_state_publisher]: got segment laser_frame
+[INFO] [1791740047.757398613] [robot_state_publisher]: got segment left_wheel_link
+[INFO] [1791740047.757405586] [robot_state_publisher]: got segment pusher_link
+[INFO] [1791740047.757412819] [robot_state_publisher]: got segment rear_caster_link
+[INFO] [1791740047.757419982] [robot_state_publisher]: got segment right_wheel_link
+[INFO] [1791740277.717224079] [rclcpp]: signal_handler(SIGINT/SIGTERM)

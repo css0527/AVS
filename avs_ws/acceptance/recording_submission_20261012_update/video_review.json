@@ -1,0 +1,176 @@
+{
+  "review_status": "passed",
+  "video": "/home/c/AVS/avs_ws/acceptance/competition_demo.mp4",
+  "video_sha256": "e6feff0eb83d8941bcf737b473d710045b4a901433e5a1b3e266354ab62a8a08",
+  "metadata_check": {
+    "status": "complete",
+    "continuous": true,
+    "exit_reason": "acceptance_completed",
+    "errors": [],
+    "ffmpeg_exit_code": 0,
+    "acceptance_exit_code": 0,
+    "camera_frames_shown": 530,
+    "playback_speed": 2,
+    "raw_duration_s": 391.533333
+  },
+  "source_check": {
+    "files_recorded": 94,
+    "current_source_matches_recorded_files": true,
+    "changed_files": [],
+    "missing_files": [],
+    "source_manifest": "evidence/source_sha256.json"
+  },
+  "format_check": {
+    "duration_s": 195.934,
+    "size_bytes": 9503690,
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "avg_frame_rate": "15/1"
+      }
+    ],
+    "within_5_minutes": true,
+    "within_100_MB": true,
+    "duration_minus_raw_divided_by_speed_s": 0.167333,
+    "full_video_decode": "由主代理独立执行，本次目视审查未重复解码测试"
+  },
+  "acceptance_check": {
+    "passed": true,
+    "mission_complete": true,
+    "corridor_labels": [
+      "BIOHAZARD",
+      "CHEMICAL",
+      "ELECTRICAL",
+      "FIRE",
+      "RADIATION"
+    ],
+    "core_marker_count": 4,
+    "barrier_displacement_m": 1.00076801970125,
+    "return_error_m": 0.051773006280227775,
+    "core_marker_errors_m": {
+      "1": 0.08988951826837559,
+      "0": 0.08834478116224742,
+      "2": 0.08772309991261437,
+      "3": 0.09096538547181182
+    },
+    "barrier_detection_frames": 132,
+    "wall_overlap_samples": [],
+    "online_slam_recorded": true
+  },
+  "visual_check": {
+    "method": "按任务事件时间轴抽取 75 个成片时间点；目视查看 72 个候选相机裁剪及 18 个全屏候选拼图，并放大查看核心代表画面与 complete 画面。仅生成审查图片，未剪辑或修改视频。",
+    "system_time_readable": true,
+    "playback_2x_corner_label_readable": true,
+    "gazebo_rviz_camera_terminal_same_screen_during_mission": true,
+    "five_classes_have_real_green_detector_boxes": true,
+    "red_barrier_has_real_purple_PUSH_BARRIER_box": true,
+    "physical_barrier_motion_visible": true,
+    "four_tags_have_ID_and_map_coordinate_labels": true,
+    "four_matching_RViz_markers_T0_to_T3_visible": true,
+    "terminal_confirmation_and_complete_visible": true,
+    "return_to_blue_start_visible": true,
+    "representative_frames": [
+      {
+        "video_second": 0,
+        "image": "preview/frame_000.00s.png",
+        "observation": "启动全过程"
+      },
+      {
+        "video_second": 13,
+        "image": "preview/frame_013.00s.png",
+        "observation": "FIRE 真实识别框"
+      },
+      {
+        "video_second": 16,
+        "image": "preview/frame_016.00s.png",
+        "observation": "CHEMICAL 真实识别框"
+      },
+      {
+        "video_second": 28,
+        "image": "preview/frame_028.00s.png",
+        "observation": "RADIATION 真实识别框"
+      },
+      {
+        "video_second": 43,
+        "image": "preview/frame_043.00s.png",
+        "observation": "ELECTRICAL 真实识别框"
+      },
+      {
+        "video_second": 45,
+        "image": "preview/frame_045.00s.png",
+        "observation": "BIOHAZARD 真实识别框"
+      },
+      {
+        "video_second": 47,
+        "image": "preview/frame_047.00s.png",
+        "observation": "推障前 / 实体仍在入口"
+      },
+      {
+        "video_second": 56,
+        "image": "preview/frame_056.00s.png",
+        "observation": "闭环推障 / 实体接触"
+      },
+      {
+        "video_second": 66,
+        "image": "preview/frame_066.00s.png",
+        "observation": "推障后 / T0 坐标标注"
+      },
+      {
+        "video_second": 78,
+        "image": "preview/frame_078.00s.png",
+        "observation": "T1 / T2 与地图 Marker"
+      },
+      {
+        "video_second": 83,
+        "image": "preview/frame_083.00s.png",
+        "observation": "T2 / T3 与四个 Marker"
+      },
+      {
+        "video_second": 94,
+        "image": "preview/frame_094.00s.png",
+        "observation": "T2 近景与地图坐标"
+      },
+      {
+        "video_second": 130,
+        "image": "preview/frame_130.00s.png",
+        "observation": "退出核心区"
+      },
+      {
+        "video_second": 160,
+        "image": "preview/frame_160.00s.png",
+        "observation": "走廊返航"
+      },
+      {
+        "video_second": 183,
+        "image": "preview/frame_183.00s.png",
+        "observation": "返回蓝色起点"
+      },
+      {
+        "video_second": 186,
+        "image": "preview/frame_186.00s.png",
+        "observation": "complete / 5类 + 4标签"
+      },
+      {
+        "video_second": 188,
+        "image": "preview/frame_188.00s.png",
+        "observation": "正常关闭窗口 / 保留全程"
+      },
+      {
+        "video_second": 195,
+        "image": "preview/frame_195.00s.png",
+        "observation": "成片结束前 / complete 仍可见"
+      }
+    ]
+  },
+  "preview": "preview/video_contact_sheet.jpg",
+  "material_limits": [
+    "本审查为代表帧目视核对，不是全视频逐帧误报率或检测框 IoU 测量。",
+    "视频包含启动等待；约 188 秒起 Gazebo / RViz 在验收完成后正常退出，后续原始等待和退出画面保留，终端 complete 仍可读。",
+    "录屏帧率 15 FPS 不代表识别画面处理帧率；metadata 记录实际展示更新 530 次。",
+    "墙体轮廓重叠为离散采样结果，不能据此宣称连续碰撞测量或零误报。",
+    "新录视频为同次 GUI / 录屏 / 在线 SLAM 验收，不混用最终速度无界面 run2 的时长或 Marker 误差。",
+    "原成片没有音轨；配音稿是独立可录制文稿，尚未加入真人配音。"
+  ]
+}

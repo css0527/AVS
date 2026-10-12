@@ -63,3 +63,15 @@ def test_disappearing_or_unrelated_spatial_proposals_reset_confirmation():
     process([proposal(450)])
     process([proposal(100)])
     assert messages == []
+
+
+def test_barrier_exclusion_uses_current_panel_not_smoothed_display():
+    node, messages, process = harness()
+    process([proposal(100)])
+    polygon = np.int32([[100, 80], [155, 80], [155, 135], [100, 135]]).reshape(-1, 1, 2)
+    process([('RADIATION', polygon, .91, 3025.)])
+    # Small scale changes are smoothed for display, but exclusion must reach
+    # the measured red panel boundary in the current exposure.
+    assert not np.array_equal(np.rint(node.hazard_tracker.tracks['RADIATION'].polygon), polygon)
+    np.testing.assert_array_equal(node.visible_hazard_polygons[0], polygon)
+    assert not messages

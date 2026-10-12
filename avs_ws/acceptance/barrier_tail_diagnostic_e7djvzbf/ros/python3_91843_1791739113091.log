@@ -1,0 +1,6 @@
+[INFO] [1791739114.721235810] [vision_node]: Vision ready: /camera/image_raw, hazard backend=yolov5, five hazard classes, AprilTag 36h11 IDs 0-3
+[INFO] [1791739120.197623423] [vision_node]: [CORRIDOR 1/5] confirmed CHEMICAL with YOLOv5 confidence 0.99
+[INFO] [1791739120.582224451] [vision_node]: [CORRIDOR 2/5] confirmed ELECTRICAL with YOLOv5 confidence 1.00
+[INFO] [1791739122.095397497] [vision_node]: [CORRIDOR 3/5] confirmed RADIATION with YOLOv5 confidence 0.72
+[INFO] [1791739122.875444996] [vision_node]: [CORRIDOR 4/5] confirmed FIRE with YOLOv5 confidence 0.56
+[INFO] [1791739139.745246393] [vision_node]: [CORRIDOR 5/5] confirmed BIOHAZARD with YOLOv5 confidence 0.95

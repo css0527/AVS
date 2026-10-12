@@ -1,0 +1,10 @@
+[INFO] [1791741323.791134195] [vision_node]: Vision ready: /camera/image_raw, hazard backend=yolov5, five hazard classes, AprilTag 36h11 IDs 0-3
+[INFO] [1791741329.626737419] [vision_node]: [CORRIDOR 1/5] confirmed ELECTRICAL with YOLOv5 confidence 0.99
+[INFO] [1791741329.627493994] [vision_node]: [CORRIDOR 2/5] confirmed CHEMICAL with YOLOv5 confidence 0.93
+[INFO] [1791741331.994043802] [vision_node]: [CORRIDOR 3/5] confirmed FIRE with YOLOv5 confidence 0.84
+[INFO] [1791741336.729667336] [vision_node]: [CORRIDOR 4/5] confirmed RADIATION with YOLOv5 confidence 0.47
+[INFO] [1791741341.733694544] [vision_node]: [CORRIDOR 5/5] confirmed BIOHAZARD with YOLOv5 confidence 0.99
+[INFO] [1791741415.403091015] [vision_node]: [CORE] AprilTag 1 TOXIC_LEAK at map (2.91, 0.75)
+[INFO] [1791741416.000324302] [vision_node]: [CORE] AprilTag 0 COLLAPSE at map (2.90, 1.52)
+[INFO] [1791741426.313669886] [vision_node]: [CORE] AprilTag 2 TRAPPED_PERSON at map (2.37, 0.18)
+[INFO] [1791741434.618718230] [vision_node]: [CORE] AprilTag 3 HIGH_TEMPERATURE at map (1.59, 0.18)

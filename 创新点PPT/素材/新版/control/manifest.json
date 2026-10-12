@@ -1,0 +1,39 @@
+[
+  {
+    "file": "完整轮廓停车保护示意.png",
+    "kind": "源码参数示意",
+    "source": [
+      "avs_ws/src/avs_rescue_sim/config/nav_params.yaml",
+      "avs_ws/src/avs_rescue_sim/avs_rescue_sim/motion_safety.py"
+    ],
+    "meaning": "真实footprint，v=0.20；转弯w=0.40；反应0.20秒，制动参数0.5/0.8；示意未绘3.5cm外侧余量"
+  },
+  {
+    "file": "实际地图与允许清理区域.png",
+    "kind": "实际PGM叠加配置",
+    "source": [
+      "avs_ws/src/avs_rescue_sim/maps/rescue_map.pgm",
+      "avs_ws/src/avs_rescue_sim/maps/rescue_map.yaml",
+      "avs_ws/src/avs_rescue_sim/config/navigation_map.yaml"
+    ],
+    "meaning": "原地图像素未改；只叠加两个YAML区域；不代表动态地图清理前后实测"
+  },
+  {
+    "file": "完整任务耗时对照.png",
+    "kind": "实测统计图",
+    "source": [
+      "avs_ws/docs/speed_tuning_validation.json"
+    ],
+    "meaning": "1次基准、2次同源码最终配置平均，首次导航至完成310.8198→287.1957秒，节省7.6006%；非多场地成功率"
+  },
+  {
+    "file": "实测轨迹与速度档位.png",
+    "kind": "实测数据可视化",
+    "source": [
+      "avs_ws/acceptance/speed_mixed_020_20261012_run2/result.json",
+      "avs_ws/src/avs_rescue_sim/worlds/rescue_world.world",
+      "avs_ws/src/avs_rescue_sim/config/mission_params.yaml"
+    ],
+    "meaning": "world真值轨迹，仅验收使用；颜色是阶段目标速度上限，不是瞬时实测速率；普通档位也可能减速、停车、转向"
+  }
+]

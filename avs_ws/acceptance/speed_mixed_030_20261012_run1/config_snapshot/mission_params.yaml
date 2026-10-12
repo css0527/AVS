@@ -1,0 +1,77 @@
+mission_node:
+  ros__parameters:
+    use_sim_time: true
+    map_frame: map
+    navigation_behavior_tree: navigate_to_pose_no_recovery.xml
+    # Use the original navigation profile at the tight doorway and push setup.
+    precision_navigation_steps: [barrier_stage, room_exit_inside, room_exit_align, room_exit_outside]
+    push_command_topic: /cmd_vel_nav
+    startup_delay: 7.0
+    startup_timeout: 90.0
+    observation_timeout: 28.0 # Two full 12 s sweeps allow multi-frame tag confirmation.
+    navigation_timeout: 60.0
+    # A single fresh plan can recover from a transient costmap obstruction at
+    # the narrow room exit. A second failure still stops the mission.
+    max_nav_retries: 1
+    abort_on_nav_failure: true
+    max_outbound_rotation: 2.2 # Stop an unexpected U-turn; allow 90 degree corners.
+    max_rotation_travel: 3.6 # Allow small path corrections; reject repeated circling.
+    push_speed: 0.10
+    push_distance: 1.08
+    push_timeout: 24.0 # Includes low-speed final approach under contact friction.
+    push_settle_time: 1.0
+    release_timeout: 12.0
+    release_max_travel: 0.06
+    push_max_lateral_error: 0.04
+    push_max_heading_error: 0.12
+
+    # Travel north, then east to the doorway. The pan camera observes BOTH
+    # walls; there are no body-turn / turn-back pairs at observation points.
+    # BIOHAZARD is observed from the doorway approach, avoiding a trip to the
+    # dead-end at the east end of the top corridor and a premature U-turn.
+    step_names: [corridor_entry, corridor_fire, corridor_chemical,
+      corridor_radiation, top_corner, corridor_electrical, corridor_biohazard,
+      barrier_stage, clear_barrier, release_pusher, room_entry, core_tag_0, core_tag_1,
+      core_tag_2, core_tag_3, return_turn, room_return_east, room_exit_inside,
+      room_exit_align, room_exit_outside, return_corner, return_corridor, return_start]
+    step_types: [navigate, corridor, corridor, corridor, navigate, corridor,
+      observe, turn, push, release, navigate, core, core, observe_core, observe_core,
+      return, return, return, return_rotate, return, return, return, return]
+    step_expected: ['', FIRE, CHEMICAL, RADIATION, '', ELECTRICAL, BIOHAZARD,
+      '', '', '', '', '0', '1', '2', '3', '', '', '', '', '', '', '', '']
+
+    waypoints.corridor_entry: [0.55, 0.70, 1.5708]
+    waypoints.corridor_fire: [0.55, 0.85, 1.5708]
+    waypoints.corridor_chemical: [0.55, 1.42, 1.5708]
+    waypoints.corridor_radiation: [0.55, 2.30, 1.5708]
+    waypoints.top_corner: [0.55, 2.50, 0.0]
+    waypoints.corridor_electrical: [1.50, 2.55, 0.0]
+    waypoints.corridor_biohazard: [1.50, 2.55, 0.0]
+    waypoints.barrier_stage: [1.50, 2.55, -1.5708]
+    waypoints.clear_barrier: [1.50, 2.55, -1.5708]
+    waypoints.release_pusher: [1.50, 1.45, 0.0]
+    waypoints.room_entry: [2.10, 1.45, 0.0]
+    waypoints.core_tag_0: [2.40, 1.45, -1.5708]
+    waypoints.core_tag_1: [2.40, 0.70, -1.5708]
+    # The pan camera sees both south-wall tags from this safe stop. Do not
+    # approach the wall just to turn the whole chassis toward an observed tag.
+    waypoints.core_tag_2: [2.40, 0.70, -1.5708]
+    waypoints.core_tag_3: [2.40, 0.70, -1.5708]
+
+    # Only this return phase permits a U-turn. Return driving is still forward;
+    # reversing and automatic spin/back-up recovery remain disabled.
+    waypoints.return_turn: [2.40, 0.95, 1.5708]
+    waypoints.room_return_east: [2.20, 1.45, 3.14159]
+    # Reach the exit lane during the long westbound approach, then rotate at
+    # that stop. A short diagonal goal here made RPP swing toward the west
+    # wall while chasing its last centimetres. Cross on one continuous path;
+    # the slightly westward goal retains right-door clearance with map offset.
+    waypoints.room_exit_inside: [1.55, 1.56, 3.14159]
+    waypoints.room_exit_align: [1.55, 1.56, 1.75]
+    # Put the destination on the surveyed doorway centreline. A goal 10 cm
+    # to its west repeatedly caused the global planner to lose the narrow
+    # passage just as the rover crossed the threshold.
+    waypoints.room_exit_outside: [1.50, 2.40, 3.14159]
+    waypoints.return_corner: [0.55, 2.45, -1.5708]
+    waypoints.return_corridor: [0.55, 0.75, -1.5708]
+    waypoints.return_start: [0.55, 0.54, -1.5708]

@@ -1,0 +1,79 @@
+[INFO] [1791741735.778361213] [mission_node]: [MISSION] startup: waiting at least 7.0s and for all Nav2 lifecycle nodes to activate
+[INFO] [1791741742.887502457] [mission_node]: [MISSION] navigating: corridor_entry approach -> (0.55, 0.70, yaw=1.57)
+[INFO] [1791741744.480659808] [mission_node]: [MISSION] navigating: corridor_entry align at current pose -> (0.55, 0.62, yaw=1.57)
+[INFO] [1791741744.580818820] [mission_node]: [MISSION] settling: corridor_entry reached; braking before next action
+[INFO] [1791741745.292496417] [mission_node]: [MISSION] navigating: corridor_fire approach -> (0.55, 0.85, yaw=1.57)
+[INFO] [1791741747.184087027] [mission_node]: [MISSION] navigating: corridor_fire align at current pose -> (0.54, 0.81, yaw=1.57)
+[INFO] [1791741747.284267510] [mission_node]: [MISSION] settling: corridor_fire reached; braking before next action
+[INFO] [1791741748.003997798] [mission_node]: [MISSION] observing: camera scanning left/right for FIRE; base stopped
+[INFO] [1791741749.008524171] [mission_node]: [MISSION] observation_complete: confirmed FIRE
+[INFO] [1791741749.009662888] [mission_node]: [MISSION] navigating: corridor_chemical approach -> (0.55, 1.42, yaw=1.57)
+[INFO] [1791741755.321612779] [mission_node]: [MISSION] navigating: corridor_chemical align at current pose -> (0.56, 1.37, yaw=1.57)
+[INFO] [1791741757.115812607] [mission_node]: [MISSION] settling: corridor_chemical reached; braking before next action
+[INFO] [1791741757.817868843] [mission_node]: [MISSION] observing: camera scanning left/right for CHEMICAL; base stopped
+[INFO] [1791741758.819390434] [mission_node]: [MISSION] observation_complete: confirmed CHEMICAL
+[INFO] [1791741758.820396972] [mission_node]: [MISSION] navigating: corridor_radiation approach -> (0.55, 2.30, yaw=1.57)
+[INFO] [1791741768.677751016] [mission_node]: [MISSION] navigating: corridor_radiation align at current pose -> (0.57, 2.26, yaw=1.57)
+[INFO] [1791741770.874012418] [mission_node]: [MISSION] settling: corridor_radiation reached; braking before next action
+[INFO] [1791741771.632109644] [mission_node]: [MISSION] observing: camera scanning left/right for RADIATION; base stopped
+[INFO] [1791741772.632957862] [mission_node]: [MISSION] observation_complete: confirmed RADIATION
+[INFO] [1791741772.634116106] [mission_node]: [MISSION] navigating: top_corner approach -> (0.55, 2.50, yaw=0.00)
+[INFO] [1791741775.334727064] [mission_node]: [MISSION] navigating: top_corner align at current pose -> (0.56, 2.45, yaw=0.00)
+[INFO] [1791741784.537105875] [mission_node]: [MISSION] settling: top_corner reached; braking before next action
+[INFO] [1791741785.268924479] [mission_node]: [MISSION] navigating: corridor_electrical approach -> (1.50, 2.55, yaw=0.00)
+[INFO] [1791741798.789017754] [mission_node]: [MISSION] navigating: corridor_electrical align at current pose -> (1.47, 2.49, yaw=0.00)
+[INFO] [1791741803.984044352] [mission_node]: [MISSION] settling: corridor_electrical reached; braking before next action
+[INFO] [1791741804.694250665] [mission_node]: [MISSION] observing: camera scanning left/right for ELECTRICAL; base stopped
+[INFO] [1791741805.697184924] [mission_node]: [MISSION] observation_complete: confirmed ELECTRICAL
+[INFO] [1791741805.697983580] [mission_node]: [MISSION] settling: corridor_biohazard: observe at current stop
+[INFO] [1791741806.494773308] [mission_node]: [MISSION] observing: camera scanning left/right for BIOHAZARD; base stopped
+[INFO] [1791741807.498054727] [mission_node]: [MISSION] observation_complete: confirmed BIOHAZARD
+[INFO] [1791741807.499530269] [mission_node]: [MISSION] navigating: barrier_stage approach -> (1.50, 2.50, yaw=-1.57)
+[INFO] [1791741815.190397986] [mission_node]: [MISSION] settling: barrier_stage reached; braking before next action
+[INFO] [1791741815.908434270] [mission_node]: [MISSION] pushing: closed-loop push for 1.08m at 0.10m/s
+[INFO] [1791741832.433580684] [mission_node]: [MISSION] push_settling: barrier clearing completed after 1.08m
+[INFO] [1791741833.434723288] [mission_node]: [MISSION] navigating: release_pusher approach -> (1.46, 1.47, yaw=0.00)
+[INFO] [1791741841.176698330] [mission_node]: [MISSION] settling: release_pusher reached; braking before next action
+[INFO] [1791741841.942788907] [mission_node]: [MISSION] navigating: room_entry approach -> (2.10, 1.45, yaw=0.00)
+[INFO] [1791741851.685654302] [mission_node]: [MISSION] navigating: room_entry align at current pose -> (2.09, 1.50, yaw=0.00)
+[INFO] [1791741858.077554362] [mission_node]: [MISSION] settling: room_entry reached; braking before next action
+[INFO] [1791741858.865853662] [mission_node]: [MISSION] navigating: core_tag_0 approach -> (2.40, 1.45, yaw=-1.57)
+[INFO] [1791741862.310033237] [mission_node]: [MISSION] navigating: core_tag_0 align at current pose -> (2.36, 1.48, yaw=-1.57)
+[INFO] [1791741868.544938083] [mission_node]: [MISSION] settling: core_tag_0 reached; braking before next action
+[INFO] [1791741869.273368902] [mission_node]: [MISSION] observing: camera scanning left/right for 0; base stopped
+[INFO] [1791741870.274674709] [mission_node]: [MISSION] observation_complete: confirmed 0
+[INFO] [1791741870.275780745] [mission_node]: [MISSION] navigating: core_tag_1 approach -> (2.40, 0.70, yaw=-1.57)
+[INFO] [1791741879.023452337] [mission_node]: [MISSION] navigating: core_tag_1 align at current pose -> (2.38, 0.75, yaw=-1.57)
+[INFO] [1791741881.382849081] [mission_node]: [MISSION] settling: core_tag_1 reached; braking before next action
+[INFO] [1791741882.091002973] [mission_node]: [MISSION] observing: camera scanning left/right for 1; base stopped
+[INFO] [1791741883.094963161] [mission_node]: [MISSION] observation_complete: confirmed 1
+[INFO] [1791741883.095800260] [mission_node]: [MISSION] settling: core_tag_2: observe at current stop
+[INFO] [1791741883.895559738] [mission_node]: [MISSION] observing: camera scanning left/right for 2; base stopped
+[INFO] [1791741884.898999900] [mission_node]: [MISSION] observation_complete: confirmed 2
+[INFO] [1791741884.899803466] [mission_node]: [MISSION] settling: core_tag_3: observe at current stop
+[INFO] [1791741885.696701661] [mission_node]: [MISSION] observing: camera scanning left/right for 3; base stopped
+[INFO] [1791741886.704976607] [mission_node]: [MISSION] observation_complete: confirmed 3
+[INFO] [1791741886.706103643] [mission_node]: [MISSION] navigating: return_turn approach -> (2.40, 0.95, yaw=1.57)
+[INFO] [1791741902.551230379] [mission_node]: [MISSION] navigating: return_turn align at current pose -> (2.44, 0.92, yaw=1.57)
+[INFO] [1791741906.198232995] [mission_node]: [MISSION] settling: return_turn reached; braking before next action
+[INFO] [1791741906.920538764] [mission_node]: [MISSION] navigating: room_return_east approach -> (2.20, 1.45, yaw=3.14)
+[INFO] [1791741915.514201980] [mission_node]: [MISSION] navigating: room_return_east align at current pose -> (2.26, 1.44, yaw=3.14)
+[INFO] [1791741917.764499602] [mission_node]: [MISSION] settling: room_return_east reached; braking before next action
+[INFO] [1791741918.534606493] [mission_node]: [MISSION] navigating: room_exit_inside approach -> (1.55, 1.56, yaw=3.14)
+[INFO] [1791741930.375671484] [mission_node]: [MISSION] navigating: room_exit_inside align at current pose -> (1.56, 1.54, yaw=3.14)
+[INFO] [1791741934.587284552] [mission_node]: [MISSION] settling: room_exit_inside reached; braking before next action
+[INFO] [1791741935.354670632] [mission_node]: [MISSION] navigating: room_exit_align approach -> (1.55, 1.54, yaw=1.75)
+[INFO] [1791741943.019930153] [mission_node]: [MISSION] settling: room_exit_align reached; braking before next action
+[INFO] [1791741943.765501643] [mission_node]: [MISSION] navigating: room_exit_outside approach -> (1.50, 2.40, yaw=3.14)
+[INFO] [1791741957.462916567] [mission_node]: [MISSION] navigating: room_exit_outside align at current pose -> (1.50, 2.38, yaw=3.14)
+[INFO] [1791741966.057186246] [mission_node]: [MISSION] settling: room_exit_outside reached; braking before next action
+[INFO] [1791741966.799015157] [mission_node]: [MISSION] navigating: return_corner approach -> (0.55, 2.45, yaw=-1.57)
+[INFO] [1791741980.653101283] [mission_node]: [MISSION] navigating: return_corner align at current pose -> (0.56, 2.41, yaw=-1.57)
+[INFO] [1791741993.644203142] [mission_node]: [MISSION] settling: return_corner reached; braking before next action
+[INFO] [1791741994.362854828] [mission_node]: [MISSION] navigating: return_corridor approach -> (0.55, 0.75, yaw=-1.57)
+[INFO] [1791742015.109457729] [mission_node]: [MISSION] navigating: return_corridor align at current pose -> (0.60, 0.77, yaw=-1.57)
+[INFO] [1791742021.249847953] [mission_node]: [MISSION] settling: return_corridor reached; braking before next action
+[INFO] [1791742021.995368505] [mission_node]: [MISSION] navigating: return_start approach -> (0.55, 0.54, yaw=-1.57)
+[INFO] [1791742028.543848011] [mission_node]: [MISSION] navigating: return_start align at current pose -> (0.55, 0.56, yaw=-1.57)
+[INFO] [1791742030.440738230] [mission_node]: [MISSION] settling: return_start reached; braking before next action
+[INFO] [1791742031.205215035] [mission_node]: [MISSION] complete: finished and returned; corridor=5/5, core=4/4, missing=[]

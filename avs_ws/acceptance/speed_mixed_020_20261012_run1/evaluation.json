@@ -1,0 +1,52 @@
+{
+  "duration_wall_s": 306.06132363600045,
+  "mission_complete": true,
+  "corridor_labels": [
+    "BIOHAZARD",
+    "CHEMICAL",
+    "ELECTRICAL",
+    "FIRE",
+    "RADIATION"
+  ],
+  "core_marker_errors_m": {
+    "1": 0.09798821437874754,
+    "0": 0.12829996340486047,
+    "2": 0.1115436726031996,
+    "3": 0.07670713871796511
+  },
+  "raw_world_map_coordinate_difference_m": {
+    "1": 0.11154933849861691,
+    "0": 0.1400463226083862,
+    "2": 0.13652266014932618,
+    "3": 0.10862823231101953
+  },
+  "marker_map_from_odom": {
+    "1": [
+      0.0147793690592398,
+      0.04239112191114225,
+      -0.007227117372414585
+    ],
+    "0": [
+      0.0147793690592398,
+      0.04239112191114225,
+      -0.007227117372414585
+    ],
+    "2": [
+      0.0147793690592398,
+      0.04239112191114225,
+      -0.007227117372414585
+    ],
+    "3": [
+      0.0147793690592398,
+      0.04239112191114225,
+      -0.007227117372414585
+    ]
+  },
+  "barrier_displacement_m": 1.0034718417569064,
+  "return_error_m": 0.038518678897169215,
+  "wall_overlap_samples": [],
+  "note": "Marker errors compare both positions in map using recorded map<-odom TF. Raw world/map differences include localization offset. Wall overlap uses sampled conservative footprints, not a continuous contact sensor.",
+  "passed": true,
+  "barrier_detection_frames": 316,
+  "online_slam_recorded": false
+}

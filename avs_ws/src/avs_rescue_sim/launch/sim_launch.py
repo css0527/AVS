@@ -39,6 +39,7 @@ def generate_launch_description():
     nav_params = os.path.join(pkg_share, 'config', 'nav_params.yaml')
     config = yaml.safe_load(Path(nav_params).read_text())
     footprint = config['local_costmap']['local_costmap']['ros__parameters']['footprint']
+    velocity_limits = config['velocity_smoother']['ros__parameters']
     # Gazebo and AMCL must start at the SAME pose. Keep one source of truth.
     initial_pose = config['amcl']['ros__parameters']['initial_pose']
     # Humble activates BOTH navigators, even for single-pose goals. Leaving
@@ -111,7 +112,10 @@ def generate_launch_description():
         parameters=[{'use_sim_time': True}])
     safety = Node(
         package='avs_rescue_sim', executable='safety_node', output='screen',
-        parameters=[{'use_sim_time': True, 'footprint': footprint}])
+        parameters=[{'use_sim_time': True, 'footprint': footprint,
+                     'max_linear_velocity': velocity_limits['max_velocity'][0],
+                     'max_angular_velocity': min(velocity_limits['max_velocity'][2],
+                                                 -velocity_limits['min_velocity'][2])}])
     stop_if_guard_exits = RegisterEventHandler(OnProcessExit(
         target_action=safety,
         on_exit=[EmitEvent(event=Shutdown(reason='Laser command guard exited'))]))

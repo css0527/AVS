@@ -80,6 +80,7 @@ class VisionNode(Node):
                     confidence=float(self._param('yolov5_confidence', .45)),
                     iou_threshold=float(self._param('yolov5_iou_threshold', .45)),
                     min_area=float(self._param('yolov5_min_area', 80)),
+                    region_recovery=bool(self._param('yolov5_region_recovery', True)),
                     panel_verifier=PanelGeometryVerifier(
                         share / 'models/rescue_course/materials/textures', self.hazard_names,
                         symbol_score=float(self._param('panel_symbol_score', .34))))
@@ -98,7 +99,7 @@ class VisionNode(Node):
         self.hazard_tracker = HazardTracker(
             smoothing_alpha=float(self._param('hazard_box_smoothing_alpha', .65)),
             max_center_step=float(self._param('hazard_max_center_step', .18)))
-        self.hazard_display_frames = max(1, int(self._param('hazard_display_frames', 2)))
+        self.hazard_display_frames = max(1, int(self._param('hazard_display_frames', 1)))
         self.barrier_detector = BarrierDetector(
             min_area=int(self._param('barrier_min_area', 700)),
             min_fill=float(self._param('barrier_min_fill', .82)),
@@ -203,7 +204,10 @@ class VisionNode(Node):
             polygon = np.rint(track.polygon).astype(np.int32)
             # Exclude validated panels from red-box detection even during the
             # short display warm-up, otherwise a red sign can become a box.
-            self.visible_hazard_polygons.append(polygon)
+            # Exclusion follows the current measured panel, not its smoothed
+            # display outline, which can leave red slivers during camera pans.
+            self.visible_hazard_polygons.append(
+                np.rint(track.raw_polygon).astype(np.int32))
             if track.streak < self.hazard_display_frames:
                 continue
             cv2.polylines(annotated, [polygon], True, (80, 255, 80), 2)

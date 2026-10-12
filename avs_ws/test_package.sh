@@ -10,7 +10,7 @@ for file in src/avs_rescue_sim/package.xml src/avs_rescue_sim/urdf/rescue_rover.
   src/avs_rescue_sim/models/rescue_rover/model.sdf src/avs_rescue_sim/worlds/rescue_world.world; do
   xmllint --noout "$file"
 done
-colcon build --symlink-install --packages-select avs_rescue_sim
+colcon build --base-paths src --symlink-install --packages-up-to avs_rescue_sim
 set +u
 source install/setup.bash
 set -u

@@ -1,0 +1,25 @@
+[INFO] [1791741321.618783989] [map_server]: 
+	map_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1791741321.619037376] [map_server]: Creating
+[INFO] [1791741322.596950242] [map_server]: Configuring
+[INFO] [1791741322.597038088] [map_io]: Loading yaml file: /home/c/AVS/avs_ws/src/avs_rescue_sim/maps/rescue_map.yaml
+[INFO] [1791741322.597433592] [map_io]: resolution: 0.02
+[INFO] [1791741322.597448160] [map_io]: origin[0]: -0.104
+[INFO] [1791741322.597457507] [map_io]: origin[1]: -0.0121
+[INFO] [1791741322.597465783] [map_io]: origin[2]: 0
+[INFO] [1791741322.597473638] [map_io]: free_thresh: 0.25
+[INFO] [1791741322.597481322] [map_io]: occupied_thresh: 0.65
+[INFO] [1791741322.597490460] [map_io]: mode: trinary
+[INFO] [1791741322.597499507] [map_io]: negate: 0
+[INFO] [1791741322.597788311] [map_io]: Loading image_file: /home/c/AVS/avs_ws/src/avs_rescue_sim/maps/rescue_map.pgm
+[INFO] [1791741322.600314528] [map_io]: Read map /home/c/AVS/avs_ws/src/avs_rescue_sim/maps/rescue_map.pgm: 161 X 159 map @ 0.02 m/cell
+[INFO] [1791741322.641452865] [map_server]: Activating
+[INFO] [1791741322.641710700] [map_server]: Creating bond (map_server) to lifecycle manager.
+[INFO] [1791741619.291985347] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1791741619.292246610] [map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[INFO] [1791741619.292327773] [map_server]: Deactivating
+[INFO] [1791741619.292350015] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[INFO] [1791741619.307540441] [map_server]: Cleaning up
+[INFO] [1791741619.307656199] [map_server]: Destroying bond (map_server) to lifecycle manager.

@@ -1,0 +1,592 @@
+{
+  "version": "2026-10-12",
+  "innovations": 6,
+  "slides": [
+    {
+      "page": 1,
+      "title": "六项创新，贯通观察、清障、定位与返航",
+      "source": "图：v19 原始连续录屏 90 s；内容核对当前源码及 2026-10-12 验收。",
+      "notes": "六项贡献围绕实际救援流程组织。ROS 2、Gazebo、Nav2、YOLOv5、AprilTag和PnP属于采用的既有技术。场景图来自v19历史成功录像，符合当前world布局，不称最新提速截图。",
+      "pictures": [
+        {
+          "file": "创新点PPT/素材/新版/scene/scene_overview_actual.png",
+          "meaning": "灰走廊、蓝起点、黄核心区、红箱的真实Gazebo全景",
+          "kind": "真实 Gazebo 录屏裁剪",
+          "source": "avs_ws/acceptance/recording_yolov5_smac_v19/continuous_raw.mp4",
+          "sha256": "89742ea70dd81d9fd9bdc7a1177cf3555e1cef6b9af4354cd84b01dfa154889e",
+          "width": 545,
+          "height": 415,
+          "asset_metadata": {
+            "file": "scene_overview_actual.png",
+            "type": "真实 Gazebo 录屏裁剪",
+            "source": "avs_ws/acceptance/recording_yolov5_smac_v19/continuous_raw.mp4",
+            "seconds": 90,
+            "crop_xyxy": [
+              425,
+              160,
+              970,
+              575
+            ],
+            "meaning": "当前项目匹配的灰色走廊、蓝色起点、黄色核心区；历史 v19 运行"
+          }
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "title": "01  云台扫描与多帧确认协同",
+      "source": "图：最终 run2 / image_0380、0395；代码：camera_scan_node、hazard_tracker、mission_node。",
+      "notes": "12秒固定正弦扫描由真实物理关节驱动，未实现按置信度自动选视角。两图属于同一停车点不同扫视时刻，位置差约2.9mm、偏航差约1.6°，不能作为连续三个处理帧证据。危险标识空间关联后连续三个处理帧才发布确认；缺帧重置计数。停车先检查至少0.8秒且实际速度足够低，确认后观察至少1秒；28秒超时停车。",
+      "pictures": [
+        {
+          "file": "创新点PPT/素材/新版/vision/scan_stop_A.png",
+          "meaning": "同一停车点 · 扫视时刻 A",
+          "kind": "实际图片",
+          "source": [
+            "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0380.png"
+          ],
+          "sha256": "a718d1d372e5c9a2238a8907252ef75537040da671765548fac8327a85a36fca",
+          "width": 640,
+          "height": 480,
+          "asset_metadata": {
+            "file": "创新点PPT/素材/新版/vision/scan_stop_A.png",
+            "sources": [
+              "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0380.png"
+            ],
+            "meaning": "同一停车点视角 A：BIOHAZARD，停车稳定阶段。图案靠近图像边缘，有真实分类框。",
+            "transformation": "原图完整复制",
+            "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+            "source_sha256": "a718d1d372e5c9a2238a8907252ef75537040da671765548fac8327a85a36fca"
+          }
+        },
+        {
+          "file": "创新点PPT/素材/新版/vision/scan_stop_B.png",
+          "meaning": "同一停车点 · 扫视时刻 B",
+          "kind": "实际图片",
+          "source": [
+            "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0395.png"
+          ],
+          "sha256": "62103de2721e05d6e929ab0af2eaa4333da1a32a4b2daa3c11b1637ac818236e",
+          "width": 640,
+          "height": 480,
+          "asset_metadata": {
+            "file": "创新点PPT/素材/新版/vision/scan_stop_B.png",
+            "sources": [
+              "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0395.png"
+            ],
+            "meaning": "同一停车点视角 B：ELECTRICAL 与 BIOHAZARD，BIOHAZARD 停车观察阶段；非连续确认帧。",
+            "transformation": "原图完整复制",
+            "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+            "source_sha256": "62103de2721e05d6e929ab0af2eaa4333da1a32a4b2daa3c11b1637ac818236e"
+          }
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "title": "02  整车结构与闭环推进协同",
+      "source": "主图：当前 model.sdf 等比例渲染；小图：v19 原始录屏 175 s 的真实完整车辆。",
+      "notes": "主图按当前SDF实际几何、位置、配色渲染，明确是模型示意，不称Gazebo截图。真实整车小图原始98×65像素，仅作来源参照。横梁宽0.28m、轮缘最大宽0.285m、门宽0.50m。斜翼对小偏差提供引导趋势，不是任意偏移自定心或力控制。里程计闭环限制横偏4cm、航向0.12rad；超限中止。",
+      "pictures": [
+        {
+          "file": "创新点PPT/素材/新版/scene/vehicle_sdf_front.png",
+          "meaning": "完整车辆、驱动轮、V形推板、雷达和云台相机",
+          "kind": "按实际 SDF 渲染示意",
+          "source": "avs_ws/src/avs_rescue_sim/models/rescue_rover/model.sdf",
+          "sha256": "1aea38020575636efef3719dc514dac4e5dc7c139c8504ca5b544b0ef6851d71",
+          "width": 2000,
+          "height": 1400,
+          "asset_metadata": {
+            "file": "vehicle_sdf_front.png",
+            "type": "当前 SDF 等比例几何渲染示意",
+            "source": "avs_ws/src/avs_rescue_sim/models/rescue_rover/model.sdf",
+            "meaning": "整车前方视角：真实尺寸、位置与配色，逐像素深度遮挡；必须标注按 SDF 渲染，不可称为 Gazebo 截图"
+          }
+        },
+        {
+          "file": "创新点PPT/素材/新版/scene/vehicle_actual_crop.png",
+          "meaning": "真实完整整车裁剪，原始98×65像素",
+          "kind": "真实 Gazebo 整车裁剪",
+          "source": "avs_ws/acceptance/recording_yolov5_smac_v19/continuous_raw.mp4",
+          "sha256": "0f1059b0411d0ed2bd75b41b036b5a8da8bae601f11cd8c93eff19c03902d3e4",
+          "width": 98,
+          "height": 65,
+          "asset_metadata": {
+            "file": "vehicle_actual_crop.png",
+            "type": "真实 Gazebo 整车裁剪",
+            "source": "avs_ws/acceptance/recording_yolov5_smac_v19/continuous_raw.mp4",
+            "seconds": 175,
+            "crop_xyxy": [
+              740,
+              345,
+              838,
+              410
+            ],
+            "meaning": "完整车辆轮廓，原始 98×65 px；清晰度有限，适合小角标而非放大做机械细节主图"
+          }
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "title": "02  真实接触推障：对准、推进、脱离",
+      "source": "图：同一次 v19 原始连续录屏 128 / 135 / 160 s；参数读取当前 mission_params.yaml。",
+      "notes": "三图仅展示v19同一次历史成功运行机械动作，不与最新提速数据混为同次。1.08m是车辆沿初始航向的里程计推进目标，不是箱体实际位移。推箱上限0.10m/s、24秒超时，检查侧偏、航向及推进距离。推完执行有界转向脱离，红箱不被瞬移或删除。",
+      "pictures": [
+        {
+          "file": "创新点PPT/素材/新版/scene/push_sequence_actual.png",
+          "meaning": "同一次历史成功运行的推前、推中、推后真实场景",
+          "kind": "真实连续录屏三帧拼图",
+          "source": "avs_ws/acceptance/recording_yolov5_smac_v19/continuous_raw.mp4",
+          "sha256": "8c1ce3b612661a28d7571cb4f72f912ad57ceb98ba45d730469f36be38379afd",
+          "width": 1770,
+          "height": 590,
+          "asset_metadata": {
+            "file": "push_sequence_actual.png",
+            "type": "真实连续录屏三帧拼图",
+            "source": "avs_ws/acceptance/recording_yolov5_smac_v19/continuous_raw.mp4",
+            "seconds": [
+              128,
+              135,
+              160
+            ],
+            "crop_xyxy": [
+              425,
+              160,
+              970,
+              575
+            ],
+            "meaning": "同一次历史成功运行的推前、推中、推后场景；不可标作最新提速实测"
+          }
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "title": "02  有界接触与完整轮廓停车保护",
+      "source": "图：当前 footprint 与 motion_safety.py 参数绘制的原理示意；非实测扫掠轨迹。",
+      "notes": "真实凸多边形车体按反应时间和保守制动时长扫掠，图中未绘3.5cm外侧余量。安全检查位于速度平滑后、驱动前，指令与未裁剪实测速度分别检查。普通阶段完整保护；推障仅放行低速前方窄窗口；脱离例外固定在原箱体区域，最长12秒、平移6cm且近零线速。失效即停，不宣称连续安全证明或目标视觉身份验证。",
+      "pictures": [
+        {
+          "file": "创新点PPT/素材/新版/control/完整轮廓停车保护示意.png",
+          "meaning": "真实footprint直行与转弯扫掠原理",
+          "kind": "源码参数示意",
+          "source": [
+            "avs_ws/src/avs_rescue_sim/config/nav_params.yaml",
+            "avs_ws/src/avs_rescue_sim/avs_rescue_sim/motion_safety.py"
+          ],
+          "sha256": "97e4bd1f13733e7a989c1f68ea35b049e11c90df1fd866f5e6b29b2f940bc2f3",
+          "width": 2296,
+          "height": 967,
+          "asset_metadata": {
+            "file": "完整轮廓停车保护示意.png",
+            "kind": "源码参数示意",
+            "source": [
+              "avs_ws/src/avs_rescue_sim/config/nav_params.yaml",
+              "avs_ws/src/avs_rescue_sim/avs_rescue_sim/motion_safety.py"
+            ],
+            "meaning": "真实footprint，v=0.20；转弯w=0.40；反应0.20秒，制动参数0.5/0.8；示意未绘3.5cm外侧余量"
+          }
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "title": "03  激光自由证据驱动的地图残影处理",
+      "source": "图：实际 rescue_map.pgm + navigation_map.yaml 允许区域；右侧为处理原理。",
+      "notes": "左图为实际PGM依据YAML原点和分辨率显示，叠加两个配置区域。没有/map与/navigation_map真实同区域前后记录，因此仅解释原理，不称实测前后。限定区域内累计三次不同时间戳扫描的自由证据，射线停在量测障碍前8cm；原PGM不改，派生图用于导航，实时障碍层标记箱体新位置。这不是通用动态SLAM。",
+      "pictures": [
+        {
+          "file": "创新点PPT/素材/新版/control/实际地图与允许清理区域.png",
+          "meaning": "实际保存地图叠加允许清理区域",
+          "kind": "实际PGM叠加配置",
+          "source": [
+            "avs_ws/src/avs_rescue_sim/maps/rescue_map.pgm",
+            "avs_ws/src/avs_rescue_sim/maps/rescue_map.yaml",
+            "avs_ws/src/avs_rescue_sim/config/navigation_map.yaml"
+          ],
+          "sha256": "cf4bafac011d50a41e9c7aac92e4870c656ebd2267a8168f9e9d8c2e0327b161",
+          "width": 1204,
+          "height": 1230,
+          "asset_metadata": {
+            "file": "实际地图与允许清理区域.png",
+            "kind": "实际PGM叠加配置",
+            "source": [
+              "avs_ws/src/avs_rescue_sim/maps/rescue_map.pgm",
+              "avs_ws/src/avs_rescue_sim/maps/rescue_map.yaml",
+              "avs_ws/src/avs_rescue_sim/config/navigation_map.yaml"
+            ],
+            "meaning": "原地图像素未改；只叠加两个YAML区域；不代表动态地图清理前后实测"
+          }
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "title": "04  轻量 YOLOv5 与图案、几何、时序核验",
+      "source": "图：同帧 v19 / image_0462 算法回放；结果记录 vision_recovery_replay.json。",
+      "notes": "旧权重曾把黄色车身、蓝起点、红箱误报为辐射、电气、火灾。当前训练加入正确同色物体与空场景负例，候选核验白色图案、颜色和几何后拟合牌边，再空间关联与连续三帧确认。此图左半与v19 image_0462逐像素对应，右半为同输入回放；记录before=[]、after=[ELECTRICAL]。全图阈值0.45，已核验区域局部重检下限0.25。仍有截断/斜视瞬时漏框，不以此单例宣称全视频准确率。",
+      "pictures": [
+        {
+          "file": "创新点PPT/素材/新版/vision/recovery_same_frame_verified.png",
+          "meaning": "ELECTRICAL同一输入帧的区域恢复回放",
+          "kind": "同帧离线算法回放",
+          "source": [
+            "avs_ws/docs/vision_recovery_example.png",
+            "avs_ws/acceptance/recording_yolov5_smac_v19/evidence/image_0462.png",
+            "avs_ws/docs/vision_recovery_replay.json"
+          ],
+          "sha256": "bf08089eba641308255831047753cd79a63be261f579343618cd9a35fec9ac2f",
+          "width": 1360,
+          "height": 630,
+          "asset_metadata": {
+            "file": "创新点PPT/素材/新版/vision/recovery_same_frame_verified.png",
+            "sources": [
+              "avs_ws/docs/vision_recovery_example.png",
+              "avs_ws/acceptance/recording_yolov5_smac_v19/evidence/image_0462.png",
+              "avs_ws/docs/vision_recovery_replay.json"
+            ],
+            "meaning": "同一帧在有/无图案核验恢复链时的真实离线回放结果",
+            "transformation": "在既有对比图上下增加中文说明与来源；保持左右两帧与识别结果不变。",
+            "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+            "replay_record": {
+              "frame": "image_0462.png",
+              "before": [],
+              "after": [
+                "ELECTRICAL"
+              ],
+              "ms": 62.88148900057422
+            }
+          }
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "title": "04  实际识别画面：五类标识与真实红箱",
+      "source": "图：最终 run2 / image_0092、0077、0213、0335、0320、0775；完整原图拼排。",
+      "notes": "五类来自同一次最终成功运行且实际有绿色分类框。第六图0775紫框对应真实红箱，非YOLO FIRE分类。相机图像不重画框、不改坐标；仅展示样例，不证明逐帧零误报或连续确认。",
+      "pictures": [
+        {
+          "file": "创新点PPT/素材/新版/vision/fire.png",
+          "meaning": "FIRE · 火灾标识真实框原图",
+          "kind": "实际图片",
+          "source": [
+            "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0092.png"
+          ],
+          "sha256": "42b1b3a23739d62943bbeb4434e01ed887f8cf4498e32e0379bd1a958ec4c165",
+          "width": 640,
+          "height": 480,
+          "asset_metadata": {
+            "file": "创新点PPT/素材/新版/vision/fire.png",
+            "sources": [
+              "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0092.png"
+            ],
+            "meaning": "FIRE｜火灾类别，当前帧有真实绿色分类框；截图是单帧样例，并非准确率统计。",
+            "transformation": "原图完整复制",
+            "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+            "source_sha256": "42b1b3a23739d62943bbeb4434e01ed887f8cf4498e32e0379bd1a958ec4c165"
+          }
+        },
+        {
+          "file": "创新点PPT/素材/新版/vision/chemical.png",
+          "meaning": "CHEMICAL · 化学标识真实框原图",
+          "kind": "实际图片",
+          "source": [
+            "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0077.png"
+          ],
+          "sha256": "db9c361a249466d98b3bbd60a31d1bc9ddc875079971255039efe02a6e8f6eab",
+          "width": 640,
+          "height": 480,
+          "asset_metadata": {
+            "file": "创新点PPT/素材/新版/vision/chemical.png",
+            "sources": [
+              "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0077.png"
+            ],
+            "meaning": "CHEMICAL｜化学危险，当前帧有真实绿色分类框；截图是单帧样例，并非准确率统计。",
+            "transformation": "原图完整复制",
+            "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+            "source_sha256": "db9c361a249466d98b3bbd60a31d1bc9ddc875079971255039efe02a6e8f6eab"
+          }
+        },
+        {
+          "file": "创新点PPT/素材/新版/vision/radiation.png",
+          "meaning": "RADIATION · 辐射标识真实框原图",
+          "kind": "实际图片",
+          "source": [
+            "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0213.png"
+          ],
+          "sha256": "11b58285845391a9c6c876e959736e0c8e3534c96cb29cd00715d34649ed45ef",
+          "width": 640,
+          "height": 480,
+          "asset_metadata": {
+            "file": "创新点PPT/素材/新版/vision/radiation.png",
+            "sources": [
+              "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0213.png"
+            ],
+            "meaning": "RADIATION｜辐射危险，当前帧有真实绿色分类框；截图是单帧样例，并非准确率统计。",
+            "transformation": "原图完整复制",
+            "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+            "source_sha256": "11b58285845391a9c6c876e959736e0c8e3534c96cb29cd00715d34649ed45ef"
+          }
+        },
+        {
+          "file": "创新点PPT/素材/新版/vision/electrical.png",
+          "meaning": "ELECTRICAL · 电气标识真实框原图",
+          "kind": "实际图片",
+          "source": [
+            "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0335.png"
+          ],
+          "sha256": "22af2f0890fb8bb97fe6cc2c286e946c94abb07396d69bd993e1199e454b9e2c",
+          "width": 640,
+          "height": 480,
+          "asset_metadata": {
+            "file": "创新点PPT/素材/新版/vision/electrical.png",
+            "sources": [
+              "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0335.png"
+            ],
+            "meaning": "ELECTRICAL｜电气危险，当前帧有真实绿色分类框；截图是单帧样例，并非准确率统计。",
+            "transformation": "原图完整复制",
+            "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+            "source_sha256": "22af2f0890fb8bb97fe6cc2c286e946c94abb07396d69bd993e1199e454b9e2c"
+          }
+        },
+        {
+          "file": "创新点PPT/素材/新版/vision/biohazard.png",
+          "meaning": "BIOHAZARD · 生物危害真实框原图",
+          "kind": "实际图片",
+          "source": [
+            "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0320.png"
+          ],
+          "sha256": "b40ca6b8da12a08069b4c351dfdc645e56d79bebd0394a9e36d50ca0f3a6a179",
+          "width": 640,
+          "height": 480,
+          "asset_metadata": {
+            "file": "创新点PPT/素材/新版/vision/biohazard.png",
+            "sources": [
+              "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0320.png"
+            ],
+            "meaning": "BIOHAZARD｜生物危险，当前帧有真实绿色分类框；截图是单帧样例，并非准确率统计。",
+            "transformation": "原图完整复制",
+            "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+            "source_sha256": "b40ca6b8da12a08069b4c351dfdc645e56d79bebd0394a9e36d50ca0f3a6a179"
+          }
+        },
+        {
+          "file": "创新点PPT/素材/新版/vision/real_red_box.png",
+          "meaning": "真实红箱 · PUSH BARRIER真实框原图",
+          "kind": "实际图片",
+          "source": [
+            "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0775.png"
+          ],
+          "sha256": "defc05fd1fd5d6a47619c3b34f9377fddef4dc4fee3c8e0bb4854d611a5991e3",
+          "width": 640,
+          "height": 480,
+          "asset_metadata": {
+            "file": "创新点PPT/素材/新版/vision/real_red_box.png",
+            "sources": [
+              "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0775.png"
+            ],
+            "meaning": "真实红色推障箱被专用障碍检测器框为 PUSH BARRIER，紫框不是 FIRE 灾害类别；黄色背景为核心房间地面。",
+            "transformation": "原图完整复制",
+            "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+            "source_sha256": "defc05fd1fd5d6a47619c3b34f9377fddef4dc4fee3c8e0bb4854d611a5991e3"
+          }
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "title": "05  面向任务阶段的速度与精度协同",
+      "source": "图：最终 run2 实际位置采样 + 当前阶段配置；颜色是阶段速度上限，不是实测速率。",
+      "notes": "轨迹由run2独立验收车辆位置和当前world墙体绘制，控制不读真值。颜色表示阶段参数，实际会减速、停车和转向。普通0.20m/s、5cm到点容差、0.20m减速距离；精细0.12m/s、2.5cm、0.40m。推障0.10m/s。精细步骤包含推障对正、返航门洞接近/转向/穿门、最终起点。到位置后读当前TF坐标再对正，减少AMCL微调引发的追旧终点。按预设任务阶段切换，不称在线最优速度。",
+      "pictures": [
+        {
+          "file": "创新点PPT/素材/新版/control/实测轨迹与速度档位.png",
+          "meaning": "同一次成功运行的实际轨迹，按任务阶段染色",
+          "kind": "实测数据可视化",
+          "source": [
+            "avs_ws/acceptance/speed_mixed_020_20261012_run2/result.json",
+            "avs_ws/src/avs_rescue_sim/worlds/rescue_world.world",
+            "avs_ws/src/avs_rescue_sim/config/mission_params.yaml"
+          ],
+          "sha256": "a41d2b6ba4bdeadf39810c229c39b9052c3f3344d2ba46ec859e230525600369",
+          "width": 1251,
+          "height": 1291,
+          "asset_metadata": {
+            "file": "实测轨迹与速度档位.png",
+            "kind": "实测数据可视化",
+            "source": [
+              "avs_ws/acceptance/speed_mixed_020_20261012_run2/result.json",
+              "avs_ws/src/avs_rescue_sim/worlds/rescue_world.world",
+              "avs_ws/src/avs_rescue_sim/config/mission_params.yaml"
+            ],
+            "meaning": "world真值轨迹，仅验收使用；颜色是阶段目标速度上限，不是瞬时实测速率；普通档位也可能减速、停车、转向"
+          }
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "title": "05  完整任务提速 7.6%，保留识别确认条件",
+      "source": "数据：speed_tuning_validation.json；1 次原速基准，2 次相同最终配置完整成功运行。",
+      "notes": "首次导航至完成310.8198→287.1957秒，省23.6241秒即7.6006%；含启动317.3463→292.5701秒，不混采集总时长。两次均5类+4标签齐全，22视觉文件哈希与基准一致。图像视角不同，参数一致和任务成功不证明逐帧精确率/召回率完全不变。0.24分档候选296.84秒更慢，两个更高速度失败候选不计成绩。两次定位最高误差12.83和6.83cm，不宣称精度不变或全场景最优。",
+      "pictures": [
+        {
+          "file": "创新点PPT/素材/新版/control/完整任务耗时对照.png",
+          "meaning": "同口径310.82→287.20秒，减少7.6%",
+          "kind": "实测统计图",
+          "source": [
+            "avs_ws/docs/speed_tuning_validation.json"
+          ],
+          "sha256": "f5b18ed1b3118da76f29e2de17b046a81a531c28c64fee5535dcbe132b9e5b41",
+          "width": 1462,
+          "height": 891,
+          "asset_metadata": {
+            "file": "完整任务耗时对照.png",
+            "kind": "实测统计图",
+            "source": [
+              "avs_ws/docs/speed_tuning_validation.json"
+            ],
+            "meaning": "1次基准、2次同源码最终配置平均，首次导航至完成310.8198→287.1957秒，节省7.6006%；非多场地成功率"
+          }
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "title": "06  运动云台下的时间同步定位与地图标注",
+      "source": "图：最终 run2 / image_0639、0745、0761、0870 的局部裁剪；代码：vision_node.py。",
+      "notes": "图像非阻塞等待拍摄时间戳TF，过期丢弃，实际云台关节角经joint_states进TF。标签已知0.1875m边长及四角用IPPE Square PnP估计位置，重投影门限2.5px；同图时间戳转map。至少4次有效观测，最近20样本中值、离群拒绝及0.35指数平滑；缺帧不重置，不称连续四帧。标签灾情名由预设ID映射，不称独立识别真实毒气/人员险情。不读取标签模型真值。裁剪保留原算法ID、坐标和框，不重写。",
+      "pictures": [
+        {
+          "file": "创新点PPT/素材/新版/vision/tag_0_crop.png",
+          "meaning": "T0实际ID和地图坐标",
+          "kind": "原图局部裁剪",
+          "source": [
+            "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0639.png"
+          ],
+          "sha256": "9988b727976b782bf539c377ae5547bf432a411c3ea1fec66a23c14750266f54",
+          "width": 290,
+          "height": 240,
+          "asset_metadata": {
+            "file": "创新点PPT/素材/新版/vision/tag_0_crop.png",
+            "sources": [
+              "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0639.png"
+            ],
+            "meaning": "T0｜坍塌局部，保留完整标识、 ID 与地图坐标显示。",
+            "transformation": "仅裁去周边背景，裁剪坐标为 [left, top, right, bottom]。",
+            "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+            "crop": [
+              100,
+              140,
+              390,
+              380
+            ]
+          }
+        },
+        {
+          "file": "创新点PPT/素材/新版/vision/tag_1_crop.png",
+          "meaning": "T1实际ID和地图坐标",
+          "kind": "原图局部裁剪",
+          "source": [
+            "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0745.png"
+          ],
+          "sha256": "29bb307b2bf481e4987994fc3e2734a44b9434c8b8d8d792b141616d24c6d29d",
+          "width": 320,
+          "height": 305,
+          "asset_metadata": {
+            "file": "创新点PPT/素材/新版/vision/tag_1_crop.png",
+            "sources": [
+              "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0745.png"
+            ],
+            "meaning": "T1｜有毒泄漏局部，保留完整标识、 ID 与地图坐标显示。",
+            "transformation": "仅裁去周边背景，裁剪坐标为 [left, top, right, bottom]。",
+            "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+            "crop": [
+              245,
+              110,
+              565,
+              415
+            ]
+          }
+        },
+        {
+          "file": "创新点PPT/素材/新版/vision/tag_2_crop.png",
+          "meaning": "T2实际ID和地图坐标",
+          "kind": "原图局部裁剪",
+          "source": [
+            "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0761.png"
+          ],
+          "sha256": "faeeef4c1e1db4cb7493b1e11d607574644389a670f591b36012343ff8911f7b",
+          "width": 345,
+          "height": 375,
+          "asset_metadata": {
+            "file": "创新点PPT/素材/新版/vision/tag_2_crop.png",
+            "sources": [
+              "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0761.png"
+            ],
+            "meaning": "T2｜被困人员局部，保留完整标识、 ID 与地图坐标显示。",
+            "transformation": "仅裁去周边背景，裁剪坐标为 [left, top, right, bottom]。",
+            "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+            "crop": [
+              5,
+              100,
+              350,
+              475
+            ]
+          }
+        },
+        {
+          "file": "创新点PPT/素材/新版/vision/tag_3_crop.png",
+          "meaning": "T3实际ID和地图坐标",
+          "kind": "原图局部裁剪",
+          "source": [
+            "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0870.png"
+          ],
+          "sha256": "9eda52dc2b9e0c55249c4adb35593141ebc05fe940a14ea36ea1ce98e83eed27",
+          "width": 265,
+          "height": 185,
+          "asset_metadata": {
+            "file": "创新点PPT/素材/新版/vision/tag_3_crop.png",
+            "sources": [
+              "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0870.png"
+            ],
+            "meaning": "T3｜高温局部，保留完整标识、 ID 与地图坐标显示。",
+            "transformation": "仅裁去周边背景，裁剪坐标为 [left, top, right, bottom]。",
+            "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+            "crop": [
+              45,
+              150,
+              310,
+              335
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "page": 12,
+      "title": "工程特色：独立、可追溯的全流程验收",
+      "source": "图与主指标：最终 run2；重复结果：最终 run1；165 项回归测试见 speed_tuning_validation。",
+      "notes": "主图和主指标同属最终run2，蓝去程、绿回程、紫标签估计，非RViz截图。run2五类四标签全，箱体1.004902m、返航5.253cm、Marker4.409–6.826cm。run1相同配置通过，Marker7.671–12.830cm，诚实显示波动。两次93源文件哈希一致，22视觉文件与基准一致，165回归测试通过。车体与墙体离散采样无重叠不是连续无碰撞证明。当前只验证已知仿真场地和合成图案。",
+      "pictures": [
+        {
+          "file": "创新点PPT/素材/新版/scene/trajectory_latest.png",
+          "meaning": "最终run2实际轨迹、标签估计和箱体初终位置",
+          "kind": "最新成功运行记录重绘",
+          "source": "avs_ws/acceptance/speed_mixed_020_20261012_run2/result.json",
+          "sha256": "07774eb7ce86e6357d83869b9f39ad821a4f0a41a7cb3860b8732d35ccc85cde",
+          "width": 1600,
+          "height": 1740,
+          "asset_metadata": {
+            "file": "trajectory_latest.png",
+            "type": "最新成功运行记录重绘",
+            "source": "avs_ws/acceptance/speed_mixed_020_20261012_run2/result.json",
+            "meaning": "实际救援车位置采样，当前 world 墙体和记录 marker_frames 转换标签点；不是 RViz 地图或规划路线，误差解释须沿用验收说明"
+          }
+        }
+      ]
+    }
+  ]
+}

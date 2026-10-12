@@ -1,0 +1,396 @@
+[INFO] [1791741321.663118514] [controller_server]: 
+	controller_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1791741321.668371627] [controller_server]: Creating controller server
+[INFO] [1791741321.763370419] [local_costmap.local_costmap]: 
+	local_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1791741321.766123524] [local_costmap.local_costmap]: Creating Costmap
+[INFO] [1791741322.167537532] [controller_server]: Configuring controller interface
+[INFO] [1791741322.167709726] [controller_server]: getting goal checker plugins..
+[INFO] [1791741322.167731036] [controller_server]: Controller frequency set to 20.0000Hz
+[INFO] [1791741322.167762546] [local_costmap.local_costmap]: Configuring
+[INFO] [1791741322.181342421] [local_costmap.local_costmap]: Using plugin "voxel_layer"
+[INFO] [1791741322.184481022] [local_costmap.local_costmap]: Subscribed to Topics: scan
+[INFO] [1791741322.193277228] [local_costmap.local_costmap]: Initialized plugin "voxel_layer"
+[INFO] [1791741322.193326801] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[INFO] [1791741322.194088706] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[INFO] [1791741322.202997574] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[INFO] [1791741322.203553662] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1791741322.203758427] [controller_server]: Created goal checker : position_goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1791741322.204616764] [controller_server]: Created goal checker : fast_position_goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1791741322.205537578] [controller_server]: Created goal checker : turn_goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1791741322.205739298] [controller_server]: Controller Server has general_goal_checker position_goal_checker fast_position_goal_checker turn_goal_checker  goal checkers available.
+[INFO] [1791741322.206643311] [controller_server]: Created controller : FollowPath of type nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791741322.215578709] [controller_server]: Created controller : PrecisionPath of type nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791741322.222761396] [controller_server]: Created controller : ReleasePusher of type nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791741322.226333984] [controller_server]: Controller Server has FollowPath PrecisionPath ReleasePusher  controllers available.
+[INFO] [1791741322.581945513] [controller_server]: Activating
+[INFO] [1791741322.581990268] [local_costmap.local_costmap]: Activating
+[INFO] [1791741322.582003883] [local_costmap.local_costmap]: Checking transform
+[INFO] [1791741322.582125152] [local_costmap.local_costmap]: start
+[INFO] [1791741322.833644001] [controller_server]: Activating controller: ReleasePusher of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791741322.833749119] [controller_server]: Activating controller: PrecisionPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791741322.833764368] [controller_server]: Activating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791741322.833806187] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[INFO] [1791741330.098877866] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741331.149254235] [controller_server]: Passing new path to controller.
+[INFO] [1791741331.699303712] [controller_server]: Reached the goal!
+[INFO] [1791741331.813196766] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741331.813459421] [controller_server]: Reached the goal!
+[INFO] [1791741332.602856116] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741333.653002824] [controller_server]: Passing new path to controller.
+[INFO] [1791741334.403194350] [controller_server]: Reached the goal!
+[INFO] [1791741334.500321721] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741334.500535644] [controller_server]: Reached the goal!
+[INFO] [1791741336.298510283] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741337.348640209] [controller_server]: Passing new path to controller.
+[INFO] [1791741338.348675263] [controller_server]: Passing new path to controller.
+[INFO] [1791741339.398680431] [controller_server]: Passing new path to controller.
+[INFO] [1791741340.061747275] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 22.174 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741340.398660116] [controller_server]: Passing new path to controller.
+[INFO] [1791741341.448680209] [controller_server]: Passing new path to controller.
+[INFO] [1791741342.498690882] [controller_server]: Passing new path to controller.
+[INFO] [1791741343.498715336] [controller_server]: Passing new path to controller.
+[INFO] [1791741343.499350072] [controller_server]: Reached the goal!
+[INFO] [1791741343.590060513] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741344.090482580] [controller_server]: Reached the goal!
+[INFO] [1791741345.935652775] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741346.985805823] [controller_server]: Passing new path to controller.
+[INFO] [1791741348.035808656] [controller_server]: Passing new path to controller.
+[INFO] [1791741349.035814247] [controller_server]: Passing new path to controller.
+[INFO] [1791741350.085807579] [controller_server]: Passing new path to controller.
+[INFO] [1791741351.085800452] [controller_server]: Passing new path to controller.
+[INFO] [1791741352.135831651] [controller_server]: Passing new path to controller.
+[INFO] [1791741353.185799961] [controller_server]: Passing new path to controller.
+[INFO] [1791741354.185806132] [controller_server]: Passing new path to controller.
+[INFO] [1791741355.235803663] [controller_server]: Passing new path to controller.
+[ERROR] [1791741356.077843467] [controller_server]: Exception in transformPose: Lookup would require extrapolation into the future.  Requested time 38.204000 but the latest data is at time 38.202000, when looking up transform from frame [odom] to frame [map]
+[WARN] [1791741356.078021993] [controller_server]: Unable to transform robot pose into global plan's frame
+[WARN] [1791741356.078153341] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[WARN] [1791741356.241334285] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[INFO] [1791741356.241394158] [controller_server]: Passing new path to controller.
+[INFO] [1791741356.392819920] [controller_server]: Reached the goal!
+[INFO] [1791741356.482531840] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741357.532669343] [controller_server]: Passing new path to controller.
+[INFO] [1791741358.582704200] [controller_server]: Passing new path to controller.
+[INFO] [1791741359.432851958] [controller_server]: Reached the goal!
+[INFO] [1791741361.251701870] [controller_server]: Received a goal, begin computing control effort.
+[ERROR] [1791741361.683190280] [controller_server]: Exception in transformPose: Lookup would require extrapolation into the future.  Requested time 43.856000 but the latest data is at time 43.846000, when looking up transform from frame [odom] to frame [map]
+[WARN] [1791741361.683296450] [controller_server]: Unable to transform robot pose into global plan's frame
+[WARN] [1791741361.683404313] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[ERROR] [1791741361.886069046] [controller_server]: Exception in transformPose: Lookup would require extrapolation into the future.  Requested time 44.000000 but the latest data is at time 43.846000, when looking up transform from frame [odom] to frame [map]
+[WARN] [1791741361.886179554] [controller_server]: Unable to transform robot pose into global plan's frame
+[WARN] [1791741361.886305922] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[ERROR] [1791741362.088554682] [controller_server]: Exception in transformPose: Lookup would require extrapolation into the future.  Requested time 44.198000 but the latest data is at time 43.846000, when looking up transform from frame [odom] to frame [map]
+[WARN] [1791741362.088695317] [controller_server]: Unable to transform robot pose into global plan's frame
+[WARN] [1791741362.088834990] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[WARN] [1791741362.261083972] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[INFO] [1791741362.312011190] [controller_server]: Passing new path to controller.
+[INFO] [1791741363.322050909] [controller_server]: Passing new path to controller.
+[INFO] [1791741364.348540942] [controller_server]: Passing new path to controller.
+[INFO] [1791741364.600471989] [controller_server]: Reached the goal!
+[INFO] [1791741364.694420294] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741365.744629416] [controller_server]: Passing new path to controller.
+[INFO] [1791741366.794629021] [controller_server]: Passing new path to controller.
+[ERROR] [1791741367.796137413] [controller_server]: Exception in transformPose: Lookup would require extrapolation into the future.  Requested time 49.940000 but the latest data is at time 49.898000, when looking up transform from frame [odom] to frame [map]
+[WARN] [1791741367.796370462] [controller_server]: Unable to transform robot pose into global plan's frame
+[WARN] [1791741367.796614912] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[INFO] [1791741367.796637705] [controller_server]: Passing new path to controller.
+[ERROR] [1791741367.999189254] [controller_server]: Exception in transformPose: Lookup would require extrapolation into the future.  Requested time 50.102000 but the latest data is at time 49.898000, when looking up transform from frame [odom] to frame [map]
+[WARN] [1791741367.999315552] [controller_server]: Unable to transform robot pose into global plan's frame
+[WARN] [1791741367.999513174] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[ERROR] [1791741368.191821019] [controller_server]: Exception in transformPose: Lookup would require extrapolation into the future.  Requested time 50.300000 but the latest data is at time 49.898000, when looking up transform from frame [odom] to frame [map]
+[WARN] [1791741368.192082571] [controller_server]: Unable to transform robot pose into global plan's frame
+[WARN] [1791741368.192305872] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[INFO] [1791741368.842389054] [controller_server]: Passing new path to controller.
+[INFO] [1791741369.892403571] [controller_server]: Passing new path to controller.
+[INFO] [1791741370.892374690] [controller_server]: Passing new path to controller.
+[INFO] [1791741371.392617062] [controller_server]: Reached the goal!
+[INFO] [1791741372.252784183] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741373.302927489] [controller_server]: Passing new path to controller.
+[INFO] [1791741374.302942776] [controller_server]: Passing new path to controller.
+[INFO] [1791741375.352927779] [controller_server]: Passing new path to controller.
+[INFO] [1791741376.402927158] [controller_server]: Passing new path to controller.
+[INFO] [1791741377.402927329] [controller_server]: Passing new path to controller.
+[INFO] [1791741378.452914410] [controller_server]: Passing new path to controller.
+[INFO] [1791741379.452919535] [controller_server]: Passing new path to controller.
+[INFO] [1791741379.503973347] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 61.546 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741380.502928592] [controller_server]: Passing new path to controller.
+[INFO] [1791741381.552925374] [controller_server]: Passing new path to controller.
+[INFO] [1791741382.552928869] [controller_server]: Passing new path to controller.
+[INFO] [1791741383.602926949] [controller_server]: Passing new path to controller.
+[INFO] [1791741384.602913045] [controller_server]: Passing new path to controller.
+[INFO] [1791741385.652982836] [controller_server]: Passing new path to controller.
+[INFO] [1791741385.653373792] [controller_server]: Reached the goal!
+[INFO] [1791741385.762666277] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741386.812922878] [controller_server]: Passing new path to controller.
+[INFO] [1791741387.862891083] [controller_server]: Passing new path to controller.
+[INFO] [1791741388.862887559] [controller_server]: Passing new path to controller.
+[INFO] [1791741389.912941131] [controller_server]: Passing new path to controller.
+[INFO] [1791741390.912902025] [controller_server]: Passing new path to controller.
+[INFO] [1791741391.962916307] [controller_server]: Passing new path to controller.
+[INFO] [1791741392.013431239] [controller_server]: Reached the goal!
+[INFO] [1791741395.677566545] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741396.727765130] [controller_server]: Passing new path to controller.
+[INFO] [1791741397.777763926] [controller_server]: Passing new path to controller.
+[INFO] [1791741398.777749231] [controller_server]: Passing new path to controller.
+[INFO] [1791741399.828930099] [controller_server]: Passing new path to controller.
+[INFO] [1791741400.877782949] [controller_server]: Passing new path to controller.
+[INFO] [1791741401.877790145] [controller_server]: Passing new path to controller.
+[INFO] [1791741402.927745818] [controller_server]: Passing new path to controller.
+[INFO] [1791741403.328091506] [controller_server]: Reached the goal!
+[INFO] [1791741421.627033753] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741422.677239557] [controller_server]: Passing new path to controller.
+[INFO] [1791741423.727241333] [controller_server]: Passing new path to controller.
+[INFO] [1791741424.727236030] [controller_server]: Passing new path to controller.
+[INFO] [1791741425.777236327] [controller_server]: Passing new path to controller.
+[INFO] [1791741426.777225418] [controller_server]: Passing new path to controller.
+[INFO] [1791741427.827229416] [controller_server]: Passing new path to controller.
+[INFO] [1791741428.827217217] [controller_server]: Passing new path to controller.
+[INFO] [1791741429.377401904] [controller_server]: Reached the goal!
+[INFO] [1791741430.224049898] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741431.274234170] [controller_server]: Passing new path to controller.
+[INFO] [1791741432.324224374] [controller_server]: Passing new path to controller.
+[INFO] [1791741433.324228605] [controller_server]: Passing new path to controller.
+[INFO] [1791741434.374227629] [controller_server]: Passing new path to controller.
+[INFO] [1791741435.374229048] [controller_server]: Passing new path to controller.
+[INFO] [1791741436.424176589] [controller_server]: Passing new path to controller.
+[INFO] [1791741437.474246177] [controller_server]: Passing new path to controller.
+[INFO] [1791741437.574454534] [controller_server]: Reached the goal!
+[INFO] [1791741437.660771437] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741438.711238242] [controller_server]: Passing new path to controller.
+[INFO] [1791741439.761034650] [controller_server]: Passing new path to controller.
+[INFO] [1791741440.081844156] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 122.072 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741440.311275622] [controller_server]: Reached the goal!
+[INFO] [1791741441.142574896] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741442.192755445] [controller_server]: Passing new path to controller.
+[INFO] [1791741442.583505727] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 124.520 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741443.242775118] [controller_server]: Passing new path to controller.
+[INFO] [1791741444.242781843] [controller_server]: Passing new path to controller.
+[INFO] [1791741444.493557231] [controller_server]: Reached the goal!
+[INFO] [1791741444.587429184] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741445.637579017] [controller_server]: Passing new path to controller.
+[INFO] [1791741446.687594425] [controller_server]: Passing new path to controller.
+[INFO] [1791741447.687573129] [controller_server]: Passing new path to controller.
+[INFO] [1791741448.737574414] [controller_server]: Passing new path to controller.
+[INFO] [1791741449.737569653] [controller_server]: Passing new path to controller.
+[INFO] [1791741450.787577432] [controller_server]: Passing new path to controller.
+[INFO] [1791741451.487999990] [controller_server]: Reached the goal!
+[INFO] [1791741453.350706361] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741454.400867343] [controller_server]: Passing new path to controller.
+[INFO] [1791741455.451018223] [controller_server]: Passing new path to controller.
+[INFO] [1791741456.450884742] [controller_server]: Passing new path to controller.
+[INFO] [1791741457.500877627] [controller_server]: Passing new path to controller.
+[INFO] [1791741458.500864294] [controller_server]: Passing new path to controller.
+[INFO] [1791741459.551260313] [controller_server]: Passing new path to controller.
+[INFO] [1791741460.600872461] [controller_server]: Passing new path to controller.
+[INFO] [1791741461.600868315] [controller_server]: Passing new path to controller.
+[INFO] [1791741461.601191113] [controller_server]: Reached the goal!
+[INFO] [1791741461.726948066] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741462.777269996] [controller_server]: Passing new path to controller.
+[INFO] [1791741463.827150561] [controller_server]: Passing new path to controller.
+[INFO] [1791741464.627280624] [controller_server]: Reached the goal!
+[INFO] [1791741470.080071607] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741471.130270739] [controller_server]: Passing new path to controller.
+[INFO] [1791741472.180241397] [controller_server]: Passing new path to controller.
+[INFO] [1791741472.522979880] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 154.446 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741473.180251788] [controller_server]: Passing new path to controller.
+[INFO] [1791741474.230268806] [controller_server]: Passing new path to controller.
+[INFO] [1791741475.230238783] [controller_server]: Passing new path to controller.
+[INFO] [1791741476.280250313] [controller_server]: Passing new path to controller.
+[INFO] [1791741477.330280175] [controller_server]: Passing new path to controller.
+[INFO] [1791741478.330264207] [controller_server]: Passing new path to controller.
+[INFO] [1791741479.380281387] [controller_server]: Passing new path to controller.
+[INFO] [1791741480.380246175] [controller_server]: Passing new path to controller.
+[INFO] [1791741481.430246797] [controller_server]: Passing new path to controller.
+[INFO] [1791741482.480259759] [controller_server]: Passing new path to controller.
+[INFO] [1791741483.480264470] [controller_server]: Passing new path to controller.
+[INFO] [1791741484.530246907] [controller_server]: Passing new path to controller.
+[INFO] [1791741485.530242843] [controller_server]: Passing new path to controller.
+[INFO] [1791741485.530524715] [controller_server]: Reached the goal!
+[INFO] [1791741485.626022113] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741486.676621806] [controller_server]: Passing new path to controller.
+[ERROR] [1791741487.647563174] [controller_server]: Exception in transformPose: Lookup would require extrapolation into the future.  Requested time 169.676000 but the latest data is at time 169.658000, when looking up transform from frame [odom] to frame [map]
+[WARN] [1791741487.647685224] [controller_server]: Unable to transform robot pose into global plan's frame
+[WARN] [1791741487.647807975] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[ERROR] [1791741487.850440897] [controller_server]: Exception in transformPose: Lookup would require extrapolation into the future.  Requested time 169.802000 but the latest data is at time 169.658000, when looking up transform from frame [odom] to frame [map]
+[WARN] [1791741487.850540524] [controller_server]: Unable to transform robot pose into global plan's frame
+[WARN] [1791741487.850640883] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[INFO] [1791741487.850656723] [controller_server]: Passing new path to controller.
+[ERROR] [1791741488.055079277] [controller_server]: Exception in transformPose: Lookup would require extrapolation into the future.  Requested time 170.000000 but the latest data is at time 169.658000, when looking up transform from frame [odom] to frame [map]
+[WARN] [1791741488.055182652] [controller_server]: Unable to transform robot pose into global plan's frame
+[WARN] [1791741488.055830954] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[WARN] [1791741488.238005263] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[INFO] [1791741488.742264016] [controller_server]: Passing new path to controller.
+[INFO] [1791741489.499024760] [controller_server]: Reached the goal!
+[INFO] [1791741490.335844736] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741491.385998928] [controller_server]: Passing new path to controller.
+[INFO] [1791741492.435999458] [controller_server]: Passing new path to controller.
+[INFO] [1791741493.436001251] [controller_server]: Passing new path to controller.
+[INFO] [1791741494.486072947] [controller_server]: Passing new path to controller.
+[INFO] [1791741495.486002436] [controller_server]: Passing new path to controller.
+[INFO] [1791741496.536012808] [controller_server]: Passing new path to controller.
+[ERROR] [1791741497.091520734] [controller_server]: Exception in transformPose: Lookup would require extrapolation into the future.  Requested time 179.090000 but the latest data is at time 179.042000, when looking up transform from frame [odom] to frame [map]
+[WARN] [1791741497.091748903] [controller_server]: Unable to transform robot pose into global plan's frame
+[WARN] [1791741497.092103983] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[WARN] [1791741497.258968470] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[INFO] [1791741497.570078068] [controller_server]: Passing new path to controller.
+[INFO] [1791741498.593284671] [controller_server]: Passing new path to controller.
+[INFO] [1791741499.043790104] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 180.830 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741499.606920954] [controller_server]: Passing new path to controller.
+[INFO] [1791741500.259318490] [controller_server]: Reached the goal!
+[INFO] [1791741500.351162893] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741501.401313148] [controller_server]: Passing new path to controller.
+[INFO] [1791741502.051643785] [controller_server]: Reached the goal!
+[INFO] [1791741503.021957195] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741504.072176877] [controller_server]: Passing new path to controller.
+[INFO] [1791741505.122187962] [controller_server]: Passing new path to controller.
+[INFO] [1791741506.122183486] [controller_server]: Passing new path to controller.
+[INFO] [1791741507.172358341] [controller_server]: Passing new path to controller.
+[INFO] [1791741508.172255501] [controller_server]: Passing new path to controller.
+[INFO] [1791741509.222195115] [controller_server]: Passing new path to controller.
+[INFO] [1791741510.222213165] [controller_server]: Passing new path to controller.
+[INFO] [1791741511.272167799] [controller_server]: Passing new path to controller.
+[ERROR] [1791741512.093622251] [controller_server]: Exception in transformPose: Lookup would require extrapolation into the future.  Requested time 193.976000 but the latest data is at time 193.942000, when looking up transform from frame [odom] to frame [map]
+[WARN] [1791741512.093737418] [controller_server]: Unable to transform robot pose into global plan's frame
+[WARN] [1791741512.093862053] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[WARN] [1791741512.256100997] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[INFO] [1791741512.306706097] [controller_server]: Passing new path to controller.
+[ERROR] [1791741513.395266149] [controller_server]: Exception in transformPose: Lookup would require extrapolation into the future.  Requested time 195.254000 but the latest data is at time 195.234000, when looking up transform from frame [odom] to frame [map]
+[WARN] [1791741513.395463661] [controller_server]: Unable to transform robot pose into global plan's frame
+[WARN] [1791741513.395642658] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[INFO] [1791741513.395659109] [controller_server]: Passing new path to controller.
+[WARN] [1791741513.447013251] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[INFO] [1791741514.356193331] [controller_server]: Passing new path to controller.
+[INFO] [1791741514.457032883] [controller_server]: Reached the goal!
+[INFO] [1791741514.554522893] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741515.604665346] [controller_server]: Passing new path to controller.
+[INFO] [1791741516.654660929] [controller_server]: Passing new path to controller.
+[INFO] [1791741517.654677256] [controller_server]: Passing new path to controller.
+[INFO] [1791741517.804974569] [controller_server]: Reached the goal!
+[INFO] [1791741518.624136871] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741519.674328621] [controller_server]: Passing new path to controller.
+[INFO] [1791741520.674343873] [controller_server]: Passing new path to controller.
+[INFO] [1791741521.724350095] [controller_server]: Passing new path to controller.
+[INFO] [1791741522.774345352] [controller_server]: Passing new path to controller.
+[INFO] [1791741523.774352215] [controller_server]: Passing new path to controller.
+[INFO] [1791741524.824344759] [controller_server]: Passing new path to controller.
+[INFO] [1791741525.824354808] [controller_server]: Passing new path to controller.
+[INFO] [1791741526.124507796] [controller_server]: Reached the goal!
+[INFO] [1791741526.968488569] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741528.018624982] [controller_server]: Passing new path to controller.
+[INFO] [1791741529.068615396] [controller_server]: Passing new path to controller.
+[INFO] [1791741530.068615670] [controller_server]: Passing new path to controller.
+[INFO] [1791741531.118617788] [controller_server]: Passing new path to controller.
+[INFO] [1791741532.168617286] [controller_server]: Passing new path to controller.
+[INFO] [1791741533.168618589] [controller_server]: Passing new path to controller.
+[INFO] [1791741534.218626906] [controller_server]: Passing new path to controller.
+[INFO] [1791741535.218623500] [controller_server]: Passing new path to controller.
+[INFO] [1791741536.268615708] [controller_server]: Passing new path to controller.
+[INFO] [1791741537.268611883] [controller_server]: Passing new path to controller.
+[INFO] [1791741538.318616275] [controller_server]: Passing new path to controller.
+[INFO] [1791741539.368616695] [controller_server]: Passing new path to controller.
+[INFO] [1791741540.368620631] [controller_server]: Passing new path to controller.
+[INFO] [1791741540.418795097] [controller_server]: Reached the goal!
+[INFO] [1791741540.514526145] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741541.564679135] [controller_server]: Passing new path to controller.
+[INFO] [1791741542.614694862] [controller_server]: Passing new path to controller.
+[INFO] [1791741543.614673106] [controller_server]: Passing new path to controller.
+[INFO] [1791741544.664684696] [controller_server]: Passing new path to controller.
+[INFO] [1791741545.714682126] [controller_server]: Passing new path to controller.
+[INFO] [1791741546.714676377] [controller_server]: Passing new path to controller.
+[INFO] [1791741547.764674919] [controller_server]: Passing new path to controller.
+[INFO] [1791741548.764678398] [controller_server]: Passing new path to controller.
+[INFO] [1791741549.714847254] [controller_server]: Reached the goal!
+[INFO] [1791741550.591582587] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741551.641746363] [controller_server]: Passing new path to controller.
+[INFO] [1791741552.691751073] [controller_server]: Passing new path to controller.
+[INFO] [1791741553.691751962] [controller_server]: Passing new path to controller.
+[INFO] [1791741554.741766012] [controller_server]: Passing new path to controller.
+[INFO] [1791741555.741746202] [controller_server]: Passing new path to controller.
+[INFO] [1791741556.791749743] [controller_server]: Passing new path to controller.
+[INFO] [1791741557.841750604] [controller_server]: Passing new path to controller.
+[INFO] [1791741558.841736631] [controller_server]: Passing new path to controller.
+[INFO] [1791741559.891763453] [controller_server]: Passing new path to controller.
+[INFO] [1791741560.891743699] [controller_server]: Passing new path to controller.
+[INFO] [1791741561.941749582] [controller_server]: Passing new path to controller.
+[INFO] [1791741562.991740802] [controller_server]: Passing new path to controller.
+[INFO] [1791741563.391905747] [controller_server]: Reached the goal!
+[INFO] [1791741563.487529504] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741564.537692667] [controller_server]: Passing new path to controller.
+[INFO] [1791741565.587696494] [controller_server]: Passing new path to controller.
+[ERROR] [1791741566.159058648] [controller_server]: Exception in transformPose: Lookup would require extrapolation into the future.  Requested time 247.976000 but the latest data is at time 247.934000, when looking up transform from frame [odom] to frame [map]
+[WARN] [1791741566.159224130] [controller_server]: Unable to transform robot pose into global plan's frame
+[WARN] [1791741566.159367330] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[INFO] [1791741566.609468825] [controller_server]: Passing new path to controller.
+[INFO] [1791741567.609438986] [controller_server]: Passing new path to controller.
+[INFO] [1791741568.360106566] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 250.062 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741568.659619834] [controller_server]: Passing new path to controller.
+[INFO] [1791741569.709451258] [controller_server]: Passing new path to controller.
+[INFO] [1791741570.709439379] [controller_server]: Passing new path to controller.
+[INFO] [1791741571.759452556] [controller_server]: Passing new path to controller.
+[INFO] [1791741572.759412835] [controller_server]: Passing new path to controller.
+[INFO] [1791741573.809453545] [controller_server]: Passing new path to controller.
+[INFO] [1791741574.859436682] [controller_server]: Passing new path to controller.
+[INFO] [1791741575.859447430] [controller_server]: Passing new path to controller.
+[INFO] [1791741576.809662523] [controller_server]: Reached the goal!
+[INFO] [1791741577.619962219] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741578.670101169] [controller_server]: Passing new path to controller.
+[INFO] [1791741579.720104860] [controller_server]: Passing new path to controller.
+[INFO] [1791741580.720111084] [controller_server]: Passing new path to controller.
+[INFO] [1791741581.770112801] [controller_server]: Passing new path to controller.
+[INFO] [1791741582.770105890] [controller_server]: Passing new path to controller.
+[INFO] [1791741583.820104973] [controller_server]: Passing new path to controller.
+[INFO] [1791741584.820097079] [controller_server]: Passing new path to controller.
+[INFO] [1791741585.870105059] [controller_server]: Passing new path to controller.
+[INFO] [1791741586.920114287] [controller_server]: Passing new path to controller.
+[INFO] [1791741587.920118752] [controller_server]: Passing new path to controller.
+[INFO] [1791741588.970109806] [controller_server]: Passing new path to controller.
+[INFO] [1791741589.970099172] [controller_server]: Passing new path to controller.
+[INFO] [1791741591.020102389] [controller_server]: Passing new path to controller.
+[INFO] [1791741592.070110300] [controller_server]: Passing new path to controller.
+[INFO] [1791741593.070118366] [controller_server]: Passing new path to controller.
+[INFO] [1791741594.120166283] [controller_server]: Passing new path to controller.
+[INFO] [1791741595.171420369] [controller_server]: Passing new path to controller.
+[INFO] [1791741596.170101448] [controller_server]: Passing new path to controller.
+[INFO] [1791741597.220104676] [controller_server]: Passing new path to controller.
+[INFO] [1791741598.220110252] [controller_server]: Passing new path to controller.
+[INFO] [1791741598.470410395] [controller_server]: Reached the goal!
+[INFO] [1791741598.569783506] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741599.619922361] [controller_server]: Passing new path to controller.
+[INFO] [1791741600.669919414] [controller_server]: Passing new path to controller.
+[INFO] [1791741601.669935877] [controller_server]: Passing new path to controller.
+[INFO] [1791741602.719927550] [controller_server]: Passing new path to controller.
+[INFO] [1791741603.719918163] [controller_server]: Passing new path to controller.
+[INFO] [1791741604.006333712] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 285.626 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741604.769913113] [controller_server]: Passing new path to controller.
+[INFO] [1791741605.270078504] [controller_server]: Reached the goal!
+[INFO] [1791741606.171085789] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741607.221278242] [controller_server]: Passing new path to controller.
+[INFO] [1791741608.271268009] [controller_server]: Passing new path to controller.
+[INFO] [1791741609.271273636] [controller_server]: Passing new path to controller.
+[INFO] [1791741610.321279783] [controller_server]: Passing new path to controller.
+[INFO] [1791741611.321265582] [controller_server]: Passing new path to controller.
+[INFO] [1791741612.371266650] [controller_server]: Passing new path to controller.
+[INFO] [1791741612.471483237] [controller_server]: Reached the goal!
+[INFO] [1791741612.589735794] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791741613.639920514] [controller_server]: Passing new path to controller.
+[INFO] [1791741614.689910020] [controller_server]: Passing new path to controller.
+[INFO] [1791741615.290093980] [controller_server]: Reached the goal!
+[INFO] [1791741619.276227832] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1791741619.276302844] [controller_server]: Running Nav2 LifecycleNode rcl preshutdown (controller_server)
+[INFO] [1791741619.276365181] [controller_server]: Deactivating
+[INFO] [1791741619.276384989] [controller_server]: Deactivating controller: ReleasePusher of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791741619.276396500] [controller_server]: Deactivating controller: PrecisionPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791741619.276405267] [controller_server]: Deactivating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791741619.276425806] [local_costmap.local_costmap]: Deactivating
+[INFO] [1791741619.382404649] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[INFO] [1791741619.393028596] [controller_server]: Cleaning up
+[INFO] [1791741619.393154524] [controller_server]: Cleaning up controller: ReleasePusher of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791741619.393184851] [controller_server]: Cleaning up controller: PrecisionPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791741619.393200460] [controller_server]: Cleaning up controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791741619.393258029] [local_costmap.local_costmap]: Cleaning up
+[INFO] [1791741619.420838993] [controller_server]: Destroying bond (controller_server) to lifecycle manager.

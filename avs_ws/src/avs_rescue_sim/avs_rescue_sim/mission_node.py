@@ -57,9 +57,14 @@ class MissionNode(Node):
             raise ValueError('Push timeout must be in (0, 30] seconds')
         behavior_tree = self._param(
             'navigation_behavior_tree', 'navigate_to_pose_no_recovery.xml')
+        behavior_directory = Path(get_package_share_directory('avs_rescue_sim')) / 'behavior_trees'
         self.navigation_behavior_tree = str(
-            Path(get_package_share_directory('avs_rescue_sim'))
-            / 'behavior_trees' / behavior_tree)
+            behavior_directory / behavior_tree)
+        self.precision_navigation_steps = set(self._param('precision_navigation_steps', []))
+        self.precision_navigation_behavior_tree = str(behavior_directory / self._param(
+            'precision_navigation_behavior_tree', 'navigate_to_pose_precision.xml'))
+        self.precision_rotation_behavior_tree = str(behavior_directory / self._param(
+            'precision_rotation_behavior_tree', 'turn_at_current_pose_precision.xml'))
 
         if not (len(self.step_names) == len(self.step_types) == len(self.step_expected)):
             raise ValueError('step_names, step_types and step_expected must have equal lengths')
@@ -314,9 +319,14 @@ class MissionNode(Node):
         goal.pose.pose.position.y = y
         goal.pose.pose.orientation.z = math.sin(yaw / 2.0)
         goal.pose.pose.orientation.w = math.cos(yaw / 2.0)
-        goal.behavior_tree = str(Path(self.navigation_behavior_tree).with_name('approach_pose.xml'))
-        if align or self.step_types[self.step_index] in ('turn', 'return_rotate'):
-            goal.behavior_tree = str(Path(self.navigation_behavior_tree).with_name('turn_at_current_pose.xml'))
+        precision = name in self.precision_navigation_steps
+        rotating = align or self.step_types[self.step_index] in ('turn', 'return_rotate')
+        if rotating:
+            goal.behavior_tree = (self.precision_rotation_behavior_tree if precision else
+                                  str(Path(self.navigation_behavior_tree).with_name('turn_at_current_pose.xml')))
+        else:
+            goal.behavior_tree = (self.precision_navigation_behavior_tree if precision else
+                                  str(Path(self.navigation_behavior_tree).with_name('approach_pose.xml')))
         releasing = self.step_types[self.step_index] == 'release'
         if releasing:
             self.release_start_pose = self.odom_pose

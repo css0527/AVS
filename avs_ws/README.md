@@ -1,6 +1,6 @@
 # AVS 无人车仿真组参赛工程
 
-本工程按《B09-仿真技术赛道-无人车仿真组比赛规则及评审（裁判）标准》实现 ROS 2 Humble + Gazebo Classic 11 仿真闭环：
+我们按《B09-仿真技术赛道-无人车仿真组比赛规则及评审（裁判）标准》实现 ROS 2 Humble + Gazebo Classic 11 仿真闭环：
 
 - 3 m x 3 m 厂区、0.5 m 核心入口、30 cm 可推动障碍物；
 - V 形被动推板差速车，激光雷达、相机、里程计和完整 TF；
@@ -17,7 +17,7 @@ NumPy、PyYAML、PyTorch 和带 `aruco.ArucoDetector`、SIFT 的 OpenCV（4.7 �
 本机为 PyTorch 2.13.0 CPU / OpenCV 5.0.0 / NumPy 2.2.6）。不使用 `cv_bridge`，
 避免 NumPy ABI 冲突。
 四窗口展示还需 `python3-pyqt5`、`x11-utils` 和可用的 X11/XWayland 桌面。
-提交材料工具另需 `python3-reportlab`、`fonts-arphic-ukai`、
+提交材料工具另需 `python3-reportlab`、`fonts-arphic-uming`、
 `ffmpeg`、`x11-utils`、`xserver-xephyr` 和可用的 X11/XWayland 桌面。
 
 ```bash
@@ -95,7 +95,11 @@ Regulated Pure Pursuit 控制器沿路径向前行驶，在路径拐角调整车
 
 实体推板横梁宽 0.28 m、两翼中心横向间距 0.15 m，整车最大宽度由轮缘
 决定，约 0.285 m；Gazebo、URDF 和 Nav2 轮廓同步，给 0.50 m 门缝留出余量。
-前进限速 `0.12 m/s`，转向限速 `0.4 rad/s`，速度平滑器的线加速度为
+普通路段前进上限为 `0.20 m/s`，原地对正速度为 `0.40 rad/s`，
+速度平滑与末端激光节点共用 `0.50 rad/s` 的转向上限。门洞、推障对正和最终
+回到起点使用 `PrecisionPath`：`0.12 m/s`、原地对正 `0.35 rad/s`。
+普通路段在距终点 `0.20 m` 内减速，位置容差为 `0.05 m`；精细路段保留
+`0.40 m` 减速距离和 `0.025 m` 位置容差。速度平滑器的线加速度为
 `0.5 m/s²`，角加速度为 `0.8 rad/s²`。Gazebo 直接执行平滑后的轮速目标，
 避免驱动内部的第二层加速度积分影响停车。
 Gazebo 实际加载 `models/rescue_rover/model.sdf` 中的动力学参数；
@@ -124,6 +128,11 @@ Gazebo 实际加载 `models/rescue_rover/model.sdf` 中的动力学参数；
 不再把发现 action 服务误判成导航已经可用。
 自主任务把每个普通导航点分成“到位置”和“在当前位置对正朝向”两阶段，
 使用独立位置与转向检查器，避免 AMCL 小幅更新使控制器在末端反复纠偏。
+`precision_navigation_steps` 选定推障对正、返航门内接近/转向/穿门和最终起点，
+它们分别使用精细位置/转向行为树；脱离箱体继续使用独立 `ReleasePusher`。
+安全节点从速度平滑器配置读取上限，并保留推障 `0.10 m/s` 的独立限制；
+停车包络同时使用指令速度和未裁剪的实际里程计速度。
+本轮候选、完整运行耗时和识别证据见 [提速验证记录](docs/speed_tuning_validation.md)。
 手动 RViz 导航仍检查目标位置与朝向。观察最多等待 28 秒，涵盖两次完整
 云台扫描；确认后立即继续，不必等满预算。
 Humble 启动时会同时激活两个导航接口，因此必须同时配置它们的行为树；
@@ -212,9 +221,9 @@ Marker 误差先通过该次记录的 `map←odom` TF 将标识真值转换到�
 再与视觉结果比较。报告同时保留原始 world/map 坐标差，避免把保存地图的
 定位偏移当成纯视觉误差。墙体检查使用采样位姿上的完整车体轮廓。
 生成的 `submission/avs_rescue_source.zip` 和 `technical_report.pdf` 会如实使用
-指定记录的通过/失败状态。`submission/` 最终只保留规则要求的 MP4、PDF、ZIP；
-验收日志与原始录屏存放在 `acceptance/`，便于核对而不混入提交目录。
-提交前由队伍补全身份信息、核对第三方许可。
+指定记录的通过/失败状态。正式上传的三项为 `B09018834.mp4`、`B09018834.pdf`、
+`B09018834.zip`；本地 `submission/B09018834/` 为同步更新的源码解包副本。
+验收日志与原始录屏存放在 `acceptance/`，旧提交保存在 `submission_history/`。
 第三方说明见 [third_party.md](docs/third_party.md)，国赛展示提纲见
 [defense_outline.md](docs/defense_outline.md)。
 
@@ -228,21 +237,38 @@ AprilTag ID、灾情类别及估计的 `map` 坐标，与 RViz 实时 Marker 按
 真值，也不改变导航和推障控制。录制包含启动过程：
 
 ```bash
+source /opt/ros/humble/setup.bash
+source install/local_setup.bash
 python3 src/avs_rescue_sim/tools/record_submission.py \
-  --output submission/recording_current
+  --output acceptance/recording_新的唯一目录名
 ```
 
 工具默认使用 Xephyr 隔离展示桌面，自动启动独立验收、Gazebo、RViz 和在线
-SLAM。仅当该次验收通过时才生成 `submission/competition_demo.mp4`，全过程
-统一倍速并叠加倍速文字。当前工具按录制目录的父目录生成 `competition_demo.mp4`，
-因此录制时输出目录应在 `submission/` 下；完成后将原始录屏及日志迁至
-`acceptance/`，仅保留最终 MP4、PDF、ZIP 在 `submission/`。失败录屏应核查
-原因后清理，不能作为提交成片。
+SLAM。仅当该次验收通过时才生成录制目录父级的 `competition_demo.mp4`，全过程
+统一倍速并叠加倍速文字。原始录屏直接留在 `acceptance/`，正式成片随后复制为
+`submission/B09018834.mp4`。失败录像留档排查，不能作为成功提交成片。
+
+报告和配音稿修改后，使用以下命令根据同次录像重新生成提交文件：
+
+```bash
+python3 tools/refresh_submission.py acceptance/recording_新的唯一目录名
+```
+
+工具核对录像完整状态、同次验收、源码哈希、视频时长与大小，重建 ZIP/PDF，
+并在替换前备份原提交。源码 ZIP 包含两个 ROS 包、七份行为树、当前权重、
+配音稿和 [六项创新 PPT](docs/innovation/README.md)。技术报告单独重建命令：
+
+```bash
+python3 src/avs_rescue_sim/tools/build_technical_report.py \
+  --acceptance acceptance/对应录像/evidence --output /tmp/AVS技术报告.pdf
+```
 
 视频须完整连续、不超过 5 分钟和 100 MB；若全程等比例加速，必须叠加倍速文字。
 不能删除失败或等待片段后当作完整成功运行。
 
-回归检查（先通过 `./start.sh` 或 `colcon build --symlink-install --packages-up-to avs_rescue_sim` 完成编译）：
+构建脚本通过 `--base-paths src` 仅扫描当前源码；`submission/COLCON_IGNORE` 排除提交材料中的源码副本，避免解压提交包后出现重复包名。
+
+回归检查（先通过 `./start.sh` 或 `colcon build --base-paths src --symlink-install --packages-up-to avs_rescue_sim` 完成编译）：
 
 ```bash
 source /opt/ros/humble/setup.bash
@@ -272,7 +298,7 @@ python3 src/avs_rescue_sim/tools/train_yolov5_hazards.py \
   --output /tmp/avs_hazard_candidate.torchscript
 ```
 
-当前权重从先前在本项目从零训练的权重续训得到，固定种子生成 1000 张训练图和 160 张独立验证图。上述命令给出本次权重的主要训练参数；续训起始权重随源码归档于 `models/yolov5/hazard_yolov5_previous.torchscript`，其 SHA-256 记在当前权重 JSON 中。若只运行不带 `--initial-weights` 的默认命令，会从零初始化并使用 800 张训练图、batch 12，不能声称复现当前权重的数值。新版合成数据约
+当前权重从先前在本项目从零训练的权重续训得到，固定种子生成 1000 张训练图和 160 张独立验证图。上述命令给出本次权重的主要训练参数；续训起始权重随源码归档于 `models/yolov5/hazard_yolov5_previous.torchscript`，其 SHA-256 记在当前权重 JSON 中。若只运行不带 `--initial-weights` 的默认命令，会从零初始化并使用 800 张训练图、batch 12，训练设置与当前权重不同，结果也会有所差异。新版合成数据约
 35% 为无目标帧，加入真正按 BGR 绘制的红箱、蓝色起点、黄色车身、同色无图案
 面板和 AprilTag 负例；定位损失使用 CIoU，验证匹配要求 IoU ≥ 0.50。脚本扫描
 0.30～0.70 置信度，要求精确率不低于 0.80、召回率不低于 0.70，且无目标图像误报率不高于
@@ -283,10 +309,31 @@ python3 src/avs_rescue_sim/tools/train_yolov5_hazards.py \
 在线 SLAM 地图已记录，`evaluation.json` 为 `passed=true`。这证明该次任务完成；
 独立验收没有逐帧计算黄色车身、蓝色起点和红箱的误检率，也没有给出整段视频的
 标牌框 IoU。视觉质量应结合原始相机抽样、处理后画面和视频检查，不能用 5/5
-事件直接推断零误报。最终连续演示来自 `recording_yolov5_smac_v19` 的同次录屏与验收：
+事件直接推断零误报。历史连续演示来自 `recording_yolov5_smac_v19` 的同次录屏与验收：
 `recording.json` 为 `status=complete, continuous=true`，处理后第一视角显示更新
 929 帧；该次任务 5/5 + 4/4，箱体位移 0.9749 m、返航误差 0.0319 m、Marker
 平面误差 0.0459～0.0679 m、红箱正检测 225 帧，采样墙体重叠为空。
 `competition_demo.mp4` 全程统一 2 倍速，207.2 s、9,169,583 字节。
 录屏证据清理后放在 `acceptance/recording_yolov5_smac_v19/`；这些指标
 均来自该录屏，不能与上面的无界面验收数值拼接。
+
+## 2026-10-12 更新提交
+
+最新连续演示为 `acceptance/recording_submission_20261012_update/`，使用当前
+分阶段速度与识别配置重新完成完整 GUI 任务，并独立留档在线 SLAM。
+原始录像 391.53 s，成片统一 2 倍速、195.934 s（约 3 分 16 秒）、
+9,503,690 字节；画面为 1920×1080、15 FPS，含系统时间和倍速角标。
+录屏状态为 `complete / continuous=true`，同次独立验收通过。
+
+该次完成 5 类走廊标识与 4 个核心标签；箱体实际移动 1.0008 m，
+返航位置误差 5.18 cm，四标签同坐标系平面误差 8.77–9.10 cm，
+红箱正检测 132 帧，采样墙体重叠为空。视频没有音轨，新的
+[分段配音稿](docs/submission_voiceover.md) 和
+[纯文本稿](docs/submission_voiceover.txt) 可用于录音；时码对应本次成片。
+
+正式三项文件位于 `submission/B09018834.mp4 / .pdf / .zip`；
+`submission/B09018834/` 为相同 ZIP 的解包副本。
+源码包的 `docs/acceptance_evaluation.json` 和 `docs/acceptance/` 保存这次的
+验收表、轨迹、SLAM、录屏状态与源码哈希，`docs/submission_timeline.json`
+给出同次事件与成片时间的对应。此前 7.6% 提速对照属于无界面实验，
+与新录像的 GUI 实测分别报告；全目标确认不能代替逐帧准确率统计。

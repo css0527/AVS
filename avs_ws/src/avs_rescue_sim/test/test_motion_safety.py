@@ -21,6 +21,16 @@ def test_front_obstacle_stops_before_contact(footprint):
     assert not collision_ahead([[0.70, 0.0]], footprint, 0.12, 0.0)
 
 
+def test_higher_speed_requires_more_forward_clearance(footprint):
+    assert not collision_ahead([[.50, 0.]], footprint, .12, 0., margin=.035)
+    assert collision_ahead([[.50, 0.]], footprint, .24, 0., margin=.035)
+
+
+def test_faster_turn_checks_a_larger_pusher_sweep(footprint):
+    assert not collision_ahead([[.12, .21]], footprint, 0., .35, margin=.035)
+    assert collision_ahead([[.12, .21]], footprint, 0., .55, margin=.035)
+
+
 def test_clear_corridor_allows_forward_and_turning(footprint):
     x = np.linspace(-.8, .8, 100)
     walls = np.vstack([np.column_stack([x, np.full_like(x, y)]) for y in [-.5, .5]])

@@ -1,0 +1,17 @@
+[INFO] [1791740731.583318182] [mission_node]: [MISSION] startup: waiting at least 7.0s and for all Nav2 lifecycle nodes to activate
+[INFO] [1791740738.735784282] [mission_node]: [MISSION] navigating: corridor_entry approach -> (0.55, 0.70, yaw=1.57)
+[INFO] [1791740740.966673832] [mission_node]: [MISSION] navigating: corridor_entry align at current pose -> (0.55, 0.68, yaw=1.57)
+[INFO] [1791740741.077474682] [mission_node]: [MISSION] settling: corridor_entry reached; braking before next action
+[INFO] [1791740741.832612109] [mission_node]: [MISSION] navigating: corridor_fire approach -> (0.55, 0.85, yaw=1.57)
+[INFO] [1791740744.160847858] [mission_node]: [MISSION] navigating: corridor_fire align at current pose -> (0.54, 0.84, yaw=1.57)
+[INFO] [1791740744.656092307] [mission_node]: [MISSION] settling: corridor_fire reached; braking before next action
+[INFO] [1791740745.380720905] [mission_node]: [MISSION] observing: camera scanning left/right for FIRE; base stopped
+[INFO] [1791740746.369082770] [mission_node]: [MISSION] observation_complete: confirmed FIRE
+[INFO] [1791740746.370193412] [mission_node]: [MISSION] navigating: corridor_chemical approach -> (0.55, 1.42, yaw=1.57)
+[INFO] [1791740754.365681329] [mission_node]: [MISSION] navigating: corridor_chemical align at current pose -> (0.56, 1.40, yaw=1.57)
+[INFO] [1791740757.467904328] [mission_node]: [MISSION] settling: corridor_chemical reached; braking before next action
+[INFO] [1791740758.182013918] [mission_node]: [MISSION] observing: camera scanning left/right for CHEMICAL; base stopped
+[INFO] [1791740759.183142532] [mission_node]: [MISSION] observation_complete: confirmed CHEMICAL
+[INFO] [1791740759.184009197] [mission_node]: [MISSION] navigating: corridor_radiation approach -> (0.55, 2.30, yaw=1.57)
+[INFO] [1791740774.374827226] [mission_node]: [MISSION] navigating: corridor_radiation align at current pose -> (0.58, 2.31, yaw=1.57)
+[ERROR] [1791740782.504920716] [mission_node]: [MISSION] failed: corridor_radiation: unexpected turn; stop instead of circling; vehicle stopped

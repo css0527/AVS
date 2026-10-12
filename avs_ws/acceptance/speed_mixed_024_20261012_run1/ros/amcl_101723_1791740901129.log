@@ -1,0 +1,29 @@
+[INFO] [1791740901.319010745] [amcl]: 
+	amcl lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1791740901.324038428] [amcl]: Creating
+[INFO] [1791740901.452459441] [amcl]: Configuring
+[INFO] [1791740901.453136713] [amcl]: initTransforms
+[INFO] [1791740901.499284352] [amcl]: initPubSub
+[INFO] [1791740901.507778584] [amcl]: Subscribed to map topic.
+[INFO] [1791740901.525046445] [amcl]: Received a 161 X 159 map @ 0.020 m/pix
+[INFO] [1791740901.634852638] [amcl]: Activating
+[INFO] [1791740901.634893225] [amcl]: initialPoseReceived
+[INFO] [1791740901.634982883] [amcl]: Setting pose (0.000000): 0.550 0.540 1.571
+[INFO] [1791740901.635543245] [amcl]: Creating bond (amcl) to lifecycle manager.
+[INFO] [1791740902.019327239] [amcl]: createLaserObject
+[INFO] [1791740907.901339210] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 9.864 for reason 'discarding message because the queue is full'
+[INFO] [1791740974.776581955] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 76.648 for reason 'discarding message because the queue is full'
+[INFO] [1791741023.681137333] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 125.472 for reason 'discarding message because the queue is full'
+[INFO] [1791741046.899011401] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 148.662 for reason 'discarding message because the queue is full'
+[INFO] [1791741053.728292735] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 155.462 for reason 'discarding message because the queue is full'
+[INFO] [1791741088.397165977] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 190.074 for reason 'discarding message because the queue is full'
+[INFO] [1791741094.249366860] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 195.922 for reason 'discarding message because the queue is full'
+[INFO] [1791741148.800580864] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 250.394 for reason 'discarding message because the queue is full'
+[INFO] [1791741209.693611665] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1791741209.693758592] [amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[INFO] [1791741209.693855955] [amcl]: Deactivating
+[INFO] [1791741209.693884148] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[INFO] [1791741209.707574989] [amcl]: Cleaning up
+[INFO] [1791741209.757445871] [amcl]: Destroying bond (amcl) to lifecycle manager.

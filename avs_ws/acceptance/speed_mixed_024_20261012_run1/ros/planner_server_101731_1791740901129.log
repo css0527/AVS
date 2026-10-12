@@ -1,0 +1,59 @@
+[INFO] [1791740901.310657147] [planner_server]: 
+	planner_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1791740901.346008819] [planner_server]: Creating
+[INFO] [1791740901.488022371] [global_costmap.global_costmap]: 
+	global_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1791740901.488837782] [global_costmap.global_costmap]: Creating Costmap
+[INFO] [1791740901.717791744] [planner_server]: Configuring
+[INFO] [1791740901.717824405] [global_costmap.global_costmap]: Configuring
+[INFO] [1791740901.726159018] [global_costmap.global_costmap]: Using plugin "static_layer"
+[INFO] [1791740901.730193245] [global_costmap.global_costmap]: Subscribing to the map topic (/navigation_map) with transient local durability
+[INFO] [1791740901.733329555] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[INFO] [1791740901.733383136] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[INFO] [1791740901.734271484] [global_costmap.global_costmap]: Subscribed to Topics: scan
+[INFO] [1791740901.737714470] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[INFO] [1791740901.737802035] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[INFO] [1791740901.739130269] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[INFO] [1791740901.756371680] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 161 X 159 at 0.020000 m/pix
+[INFO] [1791740901.760873234] [planner_server]: Created global planner plugin GridBased of type nav2_smac_planner/SmacPlanner2D
+[INFO] [1791740901.760985405] [planner_server]: Configuring GridBased of type SmacPlanner2D
+[INFO] [1791740901.763464460] [planner_server]: Configured plugin GridBased of type SmacPlanner2D with tolerance 0.10, maximum iterations 100000, max on approach iterations 1000, and not allowing unknown traversal.
+[INFO] [1791740901.763510687] [planner_server]: Planner Server has GridBased  planners available.
+[INFO] [1791740902.821718410] [planner_server]: Activating
+[INFO] [1791740902.821818288] [global_costmap.global_costmap]: Activating
+[INFO] [1791740902.821844658] [global_costmap.global_costmap]: Checking transform
+[INFO] [1791740902.821980002] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 5.454000 but the earliest data is at time 5.696000, when looking up transform from frame [base_link] to frame [map]
+[INFO] [1791740903.322245611] [global_costmap.global_costmap]: start
+[INFO] [1791740904.374411637] [planner_server]: Activating plugin GridBased of type SmacPlanner2D
+[INFO] [1791740904.377604935] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[INFO] [1791740908.358323756] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 10.748 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791740921.178192463] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 23.540 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791740935.897080518] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 38.296 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791740940.002210870] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 42.376 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791740977.454202543] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 79.776 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741000.492887223] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 102.760 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741011.314111896] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 113.504 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741016.222401203] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 118.468 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741023.230439336] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 125.404 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741053.185473667] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 155.394 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741070.523444056] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 172.666 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741088.843119215] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 190.958 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741093.747002721] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 195.854 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741134.512418313] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 236.586 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741137.215712943] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 239.238 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741170.762453960] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 272.766 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791741209.678525238] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1791741209.678610208] [planner_server]: Running Nav2 LifecycleNode rcl preshutdown (planner_server)
+[INFO] [1791741209.678690650] [planner_server]: Deactivating
+[INFO] [1791741209.678726888] [global_costmap.global_costmap]: Deactivating
+[INFO] [1791741210.322531285] [planner_server]: Deactivating plugin GridBased of type SmacPlanner2D
+[INFO] [1791741210.322663754] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[INFO] [1791741210.332871939] [planner_server]: Cleaning up
+[INFO] [1791741210.335062503] [global_costmap.global_costmap]: Cleaning up
+[INFO] [1791741210.335998094] [planner_server]: Cleaning up plugin GridBased of type SmacPlanner2D
+[INFO] [1791741210.336315621] [planner_server]: Destroying plugin GridBased of type SmacPlanner2D
+[INFO] [1791741210.338010782] [planner_server]: Destroying bond (planner_server) to lifecycle manager.

@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-12",
+  "slides": 12,
+  "main_innovations": 6,
+  "picture_placements": 22,
+  "embedded_distinct_image_hashes": 22,
+  "pdf_pages": 12,
+  "speaker_notes_pages": 12,
+  "source_paths_exist": true,
+  "embedded_image_hashes_match": true,
+  "all_picture_metadata_present": true,
+  "pdf_words_checked": 545,
+  "pdf_text_within_page": true,
+  "final_previews": 12,
+  "visual_review": "12页逐页查看；最终版总览和第9页复核。",
+  "source_inventory_files": 8109,
+  "annotated_images_reviewed": 696,
+  "render_wrapper_reproduces_reviewed_assets": true,
+  "backup": "创新点PPT/历史版本/更新前_20261012",
+  "artifact_sha256": {
+    "AVS作品特色创新点.pptx": "14a0d59275160cef08de8e647e5c8846250d9e45fc2e9c09a8de0c10c8d3693e",
+    "AVS作品特色创新点.pdf": "62f6ac7772526bc9daea2659196e950af2b9a85b018b35e536724703f425e13a",
+    "PPT配图来源.json": "9975ae128ec346ae05d99e36fde0f6a069c4bc9206e378fc2a788eb4ebd013eb"
+  }
+}

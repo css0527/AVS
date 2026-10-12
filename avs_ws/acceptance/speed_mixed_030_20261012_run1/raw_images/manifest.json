@@ -1,0 +1,2850 @@
+{
+  "topic": "/camera/image_raw",
+  "sample_period_s": 0.2,
+  "frames": [
+    {
+      "file": "raw_00000.jpg",
+      "stamp": {
+        "sec": 0,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00001.jpg",
+      "stamp": {
+        "sec": 1,
+        "nanosec": 214000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00002.jpg",
+      "stamp": {
+        "sec": 1,
+        "nanosec": 414000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00003.jpg",
+      "stamp": {
+        "sec": 1,
+        "nanosec": 614000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00004.jpg",
+      "stamp": {
+        "sec": 1,
+        "nanosec": 882000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00005.jpg",
+      "stamp": {
+        "sec": 2,
+        "nanosec": 84000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00006.jpg",
+      "stamp": {
+        "sec": 2,
+        "nanosec": 348000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00007.jpg",
+      "stamp": {
+        "sec": 2,
+        "nanosec": 548000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00008.jpg",
+      "stamp": {
+        "sec": 2,
+        "nanosec": 748000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00009.jpg",
+      "stamp": {
+        "sec": 2,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00010.jpg",
+      "stamp": {
+        "sec": 3,
+        "nanosec": 216000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00011.jpg",
+      "stamp": {
+        "sec": 3,
+        "nanosec": 416000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00012.jpg",
+      "stamp": {
+        "sec": 3,
+        "nanosec": 682000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00013.jpg",
+      "stamp": {
+        "sec": 3,
+        "nanosec": 882000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00014.jpg",
+      "stamp": {
+        "sec": 4,
+        "nanosec": 148000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00015.jpg",
+      "stamp": {
+        "sec": 4,
+        "nanosec": 416000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00016.jpg",
+      "stamp": {
+        "sec": 4,
+        "nanosec": 682000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00017.jpg",
+      "stamp": {
+        "sec": 4,
+        "nanosec": 882000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00018.jpg",
+      "stamp": {
+        "sec": 5,
+        "nanosec": 148000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00019.jpg",
+      "stamp": {
+        "sec": 5,
+        "nanosec": 414000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00020.jpg",
+      "stamp": {
+        "sec": 5,
+        "nanosec": 682000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00021.jpg",
+      "stamp": {
+        "sec": 5,
+        "nanosec": 882000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00022.jpg",
+      "stamp": {
+        "sec": 6,
+        "nanosec": 82000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00023.jpg",
+      "stamp": {
+        "sec": 6,
+        "nanosec": 350000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00024.jpg",
+      "stamp": {
+        "sec": 6,
+        "nanosec": 682000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00025.jpg",
+      "stamp": {
+        "sec": 6,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00026.jpg",
+      "stamp": {
+        "sec": 7,
+        "nanosec": 148000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00027.jpg",
+      "stamp": {
+        "sec": 7,
+        "nanosec": 482000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00028.jpg",
+      "stamp": {
+        "sec": 7,
+        "nanosec": 748000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00029.jpg",
+      "stamp": {
+        "sec": 8,
+        "nanosec": 14000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00030.jpg",
+      "stamp": {
+        "sec": 8,
+        "nanosec": 216000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00031.jpg",
+      "stamp": {
+        "sec": 8,
+        "nanosec": 482000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00032.jpg",
+      "stamp": {
+        "sec": 8,
+        "nanosec": 748000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00033.jpg",
+      "stamp": {
+        "sec": 9,
+        "nanosec": 14000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00034.jpg",
+      "stamp": {
+        "sec": 9,
+        "nanosec": 282000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00035.jpg",
+      "stamp": {
+        "sec": 9,
+        "nanosec": 548000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00036.jpg",
+      "stamp": {
+        "sec": 9,
+        "nanosec": 816000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00037.jpg",
+      "stamp": {
+        "sec": 10,
+        "nanosec": 14000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00038.jpg",
+      "stamp": {
+        "sec": 10,
+        "nanosec": 282000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00039.jpg",
+      "stamp": {
+        "sec": 10,
+        "nanosec": 482000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00040.jpg",
+      "stamp": {
+        "sec": 10,
+        "nanosec": 682000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00041.jpg",
+      "stamp": {
+        "sec": 10,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00042.jpg",
+      "stamp": {
+        "sec": 11,
+        "nanosec": 414000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00043.jpg",
+      "stamp": {
+        "sec": 11,
+        "nanosec": 686000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00044.jpg",
+      "stamp": {
+        "sec": 11,
+        "nanosec": 882000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00045.jpg",
+      "stamp": {
+        "sec": 12,
+        "nanosec": 82000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00046.jpg",
+      "stamp": {
+        "sec": 12,
+        "nanosec": 282000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00047.jpg",
+      "stamp": {
+        "sec": 12,
+        "nanosec": 548000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00048.jpg",
+      "stamp": {
+        "sec": 12,
+        "nanosec": 814000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00049.jpg",
+      "stamp": {
+        "sec": 13,
+        "nanosec": 82000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00050.jpg",
+      "stamp": {
+        "sec": 13,
+        "nanosec": 282000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00051.jpg",
+      "stamp": {
+        "sec": 13,
+        "nanosec": 548000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00052.jpg",
+      "stamp": {
+        "sec": 13,
+        "nanosec": 814000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00053.jpg",
+      "stamp": {
+        "sec": 14,
+        "nanosec": 14000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00054.jpg",
+      "stamp": {
+        "sec": 14,
+        "nanosec": 282000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00055.jpg",
+      "stamp": {
+        "sec": 14,
+        "nanosec": 614000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00056.jpg",
+      "stamp": {
+        "sec": 14,
+        "nanosec": 882000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00057.jpg",
+      "stamp": {
+        "sec": 15,
+        "nanosec": 82000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00058.jpg",
+      "stamp": {
+        "sec": 15,
+        "nanosec": 348000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00059.jpg",
+      "stamp": {
+        "sec": 15,
+        "nanosec": 548000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00060.jpg",
+      "stamp": {
+        "sec": 15,
+        "nanosec": 748000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00061.jpg",
+      "stamp": {
+        "sec": 16,
+        "nanosec": 84000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00062.jpg",
+      "stamp": {
+        "sec": 16,
+        "nanosec": 348000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00063.jpg",
+      "stamp": {
+        "sec": 16,
+        "nanosec": 682000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00064.jpg",
+      "stamp": {
+        "sec": 16,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00065.jpg",
+      "stamp": {
+        "sec": 17,
+        "nanosec": 282000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00066.jpg",
+      "stamp": {
+        "sec": 17,
+        "nanosec": 550000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00067.jpg",
+      "stamp": {
+        "sec": 17,
+        "nanosec": 748000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00068.jpg",
+      "stamp": {
+        "sec": 18,
+        "nanosec": 14000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00069.jpg",
+      "stamp": {
+        "sec": 18,
+        "nanosec": 282000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00070.jpg",
+      "stamp": {
+        "sec": 18,
+        "nanosec": 484000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00071.jpg",
+      "stamp": {
+        "sec": 18,
+        "nanosec": 748000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00072.jpg",
+      "stamp": {
+        "sec": 18,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00073.jpg",
+      "stamp": {
+        "sec": 19,
+        "nanosec": 214000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00074.jpg",
+      "stamp": {
+        "sec": 19,
+        "nanosec": 482000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00075.jpg",
+      "stamp": {
+        "sec": 19,
+        "nanosec": 682000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00076.jpg",
+      "stamp": {
+        "sec": 19,
+        "nanosec": 884000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00077.jpg",
+      "stamp": {
+        "sec": 20,
+        "nanosec": 86000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00078.jpg",
+      "stamp": {
+        "sec": 20,
+        "nanosec": 348000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00079.jpg",
+      "stamp": {
+        "sec": 20,
+        "nanosec": 682000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00080.jpg",
+      "stamp": {
+        "sec": 20,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00081.jpg",
+      "stamp": {
+        "sec": 21,
+        "nanosec": 148000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00082.jpg",
+      "stamp": {
+        "sec": 21,
+        "nanosec": 348000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00083.jpg",
+      "stamp": {
+        "sec": 21,
+        "nanosec": 550000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00084.jpg",
+      "stamp": {
+        "sec": 21,
+        "nanosec": 814000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00085.jpg",
+      "stamp": {
+        "sec": 22,
+        "nanosec": 14000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00086.jpg",
+      "stamp": {
+        "sec": 22,
+        "nanosec": 216000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00087.jpg",
+      "stamp": {
+        "sec": 22,
+        "nanosec": 482000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00088.jpg",
+      "stamp": {
+        "sec": 22,
+        "nanosec": 682000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00089.jpg",
+      "stamp": {
+        "sec": 22,
+        "nanosec": 882000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00090.jpg",
+      "stamp": {
+        "sec": 23,
+        "nanosec": 82000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00091.jpg",
+      "stamp": {
+        "sec": 23,
+        "nanosec": 282000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00092.jpg",
+      "stamp": {
+        "sec": 23,
+        "nanosec": 548000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00093.jpg",
+      "stamp": {
+        "sec": 23,
+        "nanosec": 748000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00094.jpg",
+      "stamp": {
+        "sec": 23,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00095.jpg",
+      "stamp": {
+        "sec": 24,
+        "nanosec": 214000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00096.jpg",
+      "stamp": {
+        "sec": 24,
+        "nanosec": 414000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00097.jpg",
+      "stamp": {
+        "sec": 24,
+        "nanosec": 748000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00098.jpg",
+      "stamp": {
+        "sec": 25,
+        "nanosec": 84000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00099.jpg",
+      "stamp": {
+        "sec": 25,
+        "nanosec": 348000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00100.jpg",
+      "stamp": {
+        "sec": 25,
+        "nanosec": 614000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00101.jpg",
+      "stamp": {
+        "sec": 25,
+        "nanosec": 814000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00102.jpg",
+      "stamp": {
+        "sec": 26,
+        "nanosec": 84000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00103.jpg",
+      "stamp": {
+        "sec": 26,
+        "nanosec": 350000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00104.jpg",
+      "stamp": {
+        "sec": 26,
+        "nanosec": 614000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00105.jpg",
+      "stamp": {
+        "sec": 26,
+        "nanosec": 882000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00106.jpg",
+      "stamp": {
+        "sec": 27,
+        "nanosec": 82000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00107.jpg",
+      "stamp": {
+        "sec": 27,
+        "nanosec": 348000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00108.jpg",
+      "stamp": {
+        "sec": 27,
+        "nanosec": 548000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00109.jpg",
+      "stamp": {
+        "sec": 27,
+        "nanosec": 748000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00110.jpg",
+      "stamp": {
+        "sec": 27,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00111.jpg",
+      "stamp": {
+        "sec": 28,
+        "nanosec": 214000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00112.jpg",
+      "stamp": {
+        "sec": 28,
+        "nanosec": 482000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00113.jpg",
+      "stamp": {
+        "sec": 28,
+        "nanosec": 748000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00114.jpg",
+      "stamp": {
+        "sec": 28,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00115.jpg",
+      "stamp": {
+        "sec": 29,
+        "nanosec": 148000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00116.jpg",
+      "stamp": {
+        "sec": 29,
+        "nanosec": 414000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00117.jpg",
+      "stamp": {
+        "sec": 29,
+        "nanosec": 682000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00118.jpg",
+      "stamp": {
+        "sec": 29,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00119.jpg",
+      "stamp": {
+        "sec": 30,
+        "nanosec": 148000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00120.jpg",
+      "stamp": {
+        "sec": 30,
+        "nanosec": 414000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00121.jpg",
+      "stamp": {
+        "sec": 30,
+        "nanosec": 614000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00122.jpg",
+      "stamp": {
+        "sec": 30,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00123.jpg",
+      "stamp": {
+        "sec": 31,
+        "nanosec": 282000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00124.jpg",
+      "stamp": {
+        "sec": 31,
+        "nanosec": 548000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00125.jpg",
+      "stamp": {
+        "sec": 31,
+        "nanosec": 814000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00126.jpg",
+      "stamp": {
+        "sec": 32,
+        "nanosec": 14000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00127.jpg",
+      "stamp": {
+        "sec": 32,
+        "nanosec": 214000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00128.jpg",
+      "stamp": {
+        "sec": 32,
+        "nanosec": 484000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00129.jpg",
+      "stamp": {
+        "sec": 32,
+        "nanosec": 682000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00130.jpg",
+      "stamp": {
+        "sec": 32,
+        "nanosec": 882000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00131.jpg",
+      "stamp": {
+        "sec": 33,
+        "nanosec": 82000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00132.jpg",
+      "stamp": {
+        "sec": 33,
+        "nanosec": 348000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00133.jpg",
+      "stamp": {
+        "sec": 33,
+        "nanosec": 614000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00134.jpg",
+      "stamp": {
+        "sec": 33,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00135.jpg",
+      "stamp": {
+        "sec": 34,
+        "nanosec": 148000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00136.jpg",
+      "stamp": {
+        "sec": 34,
+        "nanosec": 414000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00137.jpg",
+      "stamp": {
+        "sec": 34,
+        "nanosec": 614000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00138.jpg",
+      "stamp": {
+        "sec": 34,
+        "nanosec": 814000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00139.jpg",
+      "stamp": {
+        "sec": 35,
+        "nanosec": 82000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00140.jpg",
+      "stamp": {
+        "sec": 35,
+        "nanosec": 350000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00141.jpg",
+      "stamp": {
+        "sec": 35,
+        "nanosec": 614000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00142.jpg",
+      "stamp": {
+        "sec": 35,
+        "nanosec": 882000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00143.jpg",
+      "stamp": {
+        "sec": 36,
+        "nanosec": 148000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00144.jpg",
+      "stamp": {
+        "sec": 36,
+        "nanosec": 348000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00145.jpg",
+      "stamp": {
+        "sec": 36,
+        "nanosec": 548000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00146.jpg",
+      "stamp": {
+        "sec": 36,
+        "nanosec": 748000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00147.jpg",
+      "stamp": {
+        "sec": 37,
+        "nanosec": 84000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00148.jpg",
+      "stamp": {
+        "sec": 37,
+        "nanosec": 484000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00149.jpg",
+      "stamp": {
+        "sec": 37,
+        "nanosec": 748000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00150.jpg",
+      "stamp": {
+        "sec": 37,
+        "nanosec": 950000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00151.jpg",
+      "stamp": {
+        "sec": 38,
+        "nanosec": 214000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00152.jpg",
+      "stamp": {
+        "sec": 38,
+        "nanosec": 482000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00153.jpg",
+      "stamp": {
+        "sec": 38,
+        "nanosec": 748000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00154.jpg",
+      "stamp": {
+        "sec": 38,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00155.jpg",
+      "stamp": {
+        "sec": 39,
+        "nanosec": 148000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00156.jpg",
+      "stamp": {
+        "sec": 39,
+        "nanosec": 414000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00157.jpg",
+      "stamp": {
+        "sec": 39,
+        "nanosec": 614000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00158.jpg",
+      "stamp": {
+        "sec": 39,
+        "nanosec": 882000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00159.jpg",
+      "stamp": {
+        "sec": 40,
+        "nanosec": 82000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00160.jpg",
+      "stamp": {
+        "sec": 40,
+        "nanosec": 348000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00161.jpg",
+      "stamp": {
+        "sec": 40,
+        "nanosec": 548000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00162.jpg",
+      "stamp": {
+        "sec": 40,
+        "nanosec": 814000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00163.jpg",
+      "stamp": {
+        "sec": 41,
+        "nanosec": 14000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00164.jpg",
+      "stamp": {
+        "sec": 41,
+        "nanosec": 282000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00165.jpg",
+      "stamp": {
+        "sec": 41,
+        "nanosec": 482000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00166.jpg",
+      "stamp": {
+        "sec": 41,
+        "nanosec": 748000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00167.jpg",
+      "stamp": {
+        "sec": 41,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00168.jpg",
+      "stamp": {
+        "sec": 42,
+        "nanosec": 214000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00169.jpg",
+      "stamp": {
+        "sec": 42,
+        "nanosec": 482000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00170.jpg",
+      "stamp": {
+        "sec": 42,
+        "nanosec": 748000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00171.jpg",
+      "stamp": {
+        "sec": 42,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00172.jpg",
+      "stamp": {
+        "sec": 43,
+        "nanosec": 284000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00173.jpg",
+      "stamp": {
+        "sec": 43,
+        "nanosec": 482000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00174.jpg",
+      "stamp": {
+        "sec": 43,
+        "nanosec": 682000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00175.jpg",
+      "stamp": {
+        "sec": 43,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00176.jpg",
+      "stamp": {
+        "sec": 44,
+        "nanosec": 214000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00177.jpg",
+      "stamp": {
+        "sec": 44,
+        "nanosec": 484000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00178.jpg",
+      "stamp": {
+        "sec": 44,
+        "nanosec": 748000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00179.jpg",
+      "stamp": {
+        "sec": 45,
+        "nanosec": 148000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00180.jpg",
+      "stamp": {
+        "sec": 45,
+        "nanosec": 348000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00181.jpg",
+      "stamp": {
+        "sec": 45,
+        "nanosec": 748000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00182.jpg",
+      "stamp": {
+        "sec": 46,
+        "nanosec": 14000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00183.jpg",
+      "stamp": {
+        "sec": 46,
+        "nanosec": 282000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00184.jpg",
+      "stamp": {
+        "sec": 46,
+        "nanosec": 548000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00185.jpg",
+      "stamp": {
+        "sec": 46,
+        "nanosec": 814000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00186.jpg",
+      "stamp": {
+        "sec": 47,
+        "nanosec": 82000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00187.jpg",
+      "stamp": {
+        "sec": 47,
+        "nanosec": 348000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00188.jpg",
+      "stamp": {
+        "sec": 47,
+        "nanosec": 614000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00189.jpg",
+      "stamp": {
+        "sec": 47,
+        "nanosec": 882000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00190.jpg",
+      "stamp": {
+        "sec": 48,
+        "nanosec": 150000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00191.jpg",
+      "stamp": {
+        "sec": 48,
+        "nanosec": 416000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00192.jpg",
+      "stamp": {
+        "sec": 48,
+        "nanosec": 614000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00193.jpg",
+      "stamp": {
+        "sec": 48,
+        "nanosec": 882000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00194.jpg",
+      "stamp": {
+        "sec": 49,
+        "nanosec": 82000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00195.jpg",
+      "stamp": {
+        "sec": 49,
+        "nanosec": 348000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00196.jpg",
+      "stamp": {
+        "sec": 49,
+        "nanosec": 614000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00197.jpg",
+      "stamp": {
+        "sec": 49,
+        "nanosec": 814000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00198.jpg",
+      "stamp": {
+        "sec": 50,
+        "nanosec": 14000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00199.jpg",
+      "stamp": {
+        "sec": 50,
+        "nanosec": 282000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00200.jpg",
+      "stamp": {
+        "sec": 50,
+        "nanosec": 482000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00201.jpg",
+      "stamp": {
+        "sec": 50,
+        "nanosec": 682000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00202.jpg",
+      "stamp": {
+        "sec": 50,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00203.jpg",
+      "stamp": {
+        "sec": 51,
+        "nanosec": 148000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00204.jpg",
+      "stamp": {
+        "sec": 51,
+        "nanosec": 414000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00205.jpg",
+      "stamp": {
+        "sec": 51,
+        "nanosec": 614000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00206.jpg",
+      "stamp": {
+        "sec": 51,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00207.jpg",
+      "stamp": {
+        "sec": 52,
+        "nanosec": 150000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00208.jpg",
+      "stamp": {
+        "sec": 52,
+        "nanosec": 414000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00209.jpg",
+      "stamp": {
+        "sec": 52,
+        "nanosec": 614000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00210.jpg",
+      "stamp": {
+        "sec": 52,
+        "nanosec": 814000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00211.jpg",
+      "stamp": {
+        "sec": 53,
+        "nanosec": 82000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00212.jpg",
+      "stamp": {
+        "sec": 53,
+        "nanosec": 348000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00213.jpg",
+      "stamp": {
+        "sec": 53,
+        "nanosec": 548000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00214.jpg",
+      "stamp": {
+        "sec": 53,
+        "nanosec": 750000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00215.jpg",
+      "stamp": {
+        "sec": 54,
+        "nanosec": 16000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00216.jpg",
+      "stamp": {
+        "sec": 54,
+        "nanosec": 282000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00217.jpg",
+      "stamp": {
+        "sec": 54,
+        "nanosec": 482000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00218.jpg",
+      "stamp": {
+        "sec": 54,
+        "nanosec": 748000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00219.jpg",
+      "stamp": {
+        "sec": 54,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00220.jpg",
+      "stamp": {
+        "sec": 55,
+        "nanosec": 214000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00221.jpg",
+      "stamp": {
+        "sec": 55,
+        "nanosec": 414000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00222.jpg",
+      "stamp": {
+        "sec": 55,
+        "nanosec": 682000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00223.jpg",
+      "stamp": {
+        "sec": 55,
+        "nanosec": 882000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00224.jpg",
+      "stamp": {
+        "sec": 56,
+        "nanosec": 84000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00225.jpg",
+      "stamp": {
+        "sec": 56,
+        "nanosec": 282000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00226.jpg",
+      "stamp": {
+        "sec": 56,
+        "nanosec": 482000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00227.jpg",
+      "stamp": {
+        "sec": 56,
+        "nanosec": 682000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00228.jpg",
+      "stamp": {
+        "sec": 56,
+        "nanosec": 948000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00229.jpg",
+      "stamp": {
+        "sec": 57,
+        "nanosec": 148000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00230.jpg",
+      "stamp": {
+        "sec": 57,
+        "nanosec": 416000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00231.jpg",
+      "stamp": {
+        "sec": 57,
+        "nanosec": 682000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00232.jpg",
+      "stamp": {
+        "sec": 57,
+        "nanosec": 882000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00233.jpg",
+      "stamp": {
+        "sec": 58,
+        "nanosec": 148000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00234.jpg",
+      "stamp": {
+        "sec": 58,
+        "nanosec": 414000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00235.jpg",
+      "stamp": {
+        "sec": 58,
+        "nanosec": 614000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    },
+    {
+      "file": "raw_00236.jpg",
+      "stamp": {
+        "sec": 58,
+        "nanosec": 882000000
+      },
+      "frame_id": "camera_optical_frame",
+      "encoding": "rgb8",
+      "width": 640,
+      "height": 480,
+      "step": 1920
+    }
+  ]
+}

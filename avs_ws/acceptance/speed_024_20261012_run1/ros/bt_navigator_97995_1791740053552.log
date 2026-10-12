@@ -1,0 +1,72 @@
+[INFO] [1791740053.639176862] [bt_navigator]: 
+	bt_navigator lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1791740053.639323271] [bt_navigator]: Creating
+[INFO] [1791740054.253489127] [bt_navigator]: Configuring
+[INFO] [1791740057.171593083] [bt_navigator]: Activating
+[INFO] [1791740057.198253564] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[INFO] [1791740062.193650865] [bt_navigator]: Begin navigating from current location (0.55, 0.53) to (0.55, 0.70)
+[INFO] [1791740064.154242529] [bt_navigator]: Goal succeeded
+[INFO] [1791740064.177800952] [bt_navigator]: Begin navigating from current location (0.55, 0.68) to (0.55, 0.68)
+[INFO] [1791740064.238038512] [bt_navigator]: Goal succeeded
+[INFO] [1791740065.005696166] [bt_navigator]: Begin navigating from current location (0.55, 0.68) to (0.55, 0.85)
+[INFO] [1791740067.126119623] [bt_navigator]: Goal succeeded
+[INFO] [1791740067.161090858] [bt_navigator]: Begin navigating from current location (0.54, 0.84) to (0.54, 0.84)
+[INFO] [1791740067.471339019] [bt_navigator]: Goal succeeded
+[INFO] [1791740069.205922955] [bt_navigator]: Begin navigating from current location (0.54, 0.84) to (0.55, 1.42)
+[INFO] [1791740076.606627829] [bt_navigator]: Goal succeeded
+[INFO] [1791740076.656279583] [bt_navigator]: Begin navigating from current location (0.55, 1.40) to (0.56, 1.40)
+[INFO] [1791740080.446628595] [bt_navigator]: Goal succeeded
+[INFO] [1791740082.260339458] [bt_navigator]: Begin navigating from current location (0.56, 1.41) to (0.55, 2.30)
+[INFO] [1791740094.070658164] [bt_navigator]: Goal succeeded
+[INFO] [1791740094.120141878] [bt_navigator]: Begin navigating from current location (0.56, 2.29) to (0.57, 2.29)
+[INFO] [1791740099.930357731] [bt_navigator]: Goal succeeded
+[INFO] [1791740101.717154367] [bt_navigator]: Begin navigating from current location (0.55, 2.31) to (0.55, 2.50)
+[INFO] [1791740104.177494751] [bt_navigator]: Goal succeeded
+[INFO] [1791740104.207296506] [bt_navigator]: Begin navigating from current location (0.55, 2.47) to (0.55, 2.47)
+[INFO] [1791740112.527551029] [bt_navigator]: Goal succeeded
+[INFO] [1791740113.331885334] [bt_navigator]: Begin navigating from current location (0.55, 2.47) to (1.50, 2.55)
+[INFO] [1791740127.292299869] [bt_navigator]: Goal succeeded
+[INFO] [1791740127.328308143] [bt_navigator]: Begin navigating from current location (1.50, 2.53) to (1.50, 2.53)
+[INFO] [1791740133.938653542] [bt_navigator]: Goal succeeded
+[INFO] [1791740137.523483439] [bt_navigator]: Begin navigating from current location (1.48, 2.52) to (1.48, 2.52)
+[INFO] [1791740145.283803579] [bt_navigator]: Goal succeeded
+[INFO] [1791740163.706775777] [bt_navigator]: Begin navigating from current location (1.43, 1.45) to (1.43, 1.45)
+[INFO] [1791740171.917122038] [bt_navigator]: Goal succeeded
+[INFO] [1791740172.718431041] [bt_navigator]: Begin navigating from current location (1.44, 1.50) to (2.10, 1.45)
+[INFO] [1791740179.928772170] [bt_navigator]: Goal succeeded
+[INFO] [1791740179.968528943] [bt_navigator]: Begin navigating from current location (2.08, 1.47) to (2.08, 1.47)
+[INFO] [1791740181.628803256] [bt_navigator]: Goal succeeded
+[INFO] [1791740182.436892289] [bt_navigator]: Begin navigating from current location (2.09, 1.47) to (2.40, 1.45)
+[INFO] [1791740186.997197499] [bt_navigator]: Goal succeeded
+[INFO] [1791740187.046427808] [bt_navigator]: Begin navigating from current location (2.39, 1.47) to (2.39, 1.47)
+[INFO] [1791740191.956771810] [bt_navigator]: Goal succeeded
+[INFO] [1791740193.745714233] [bt_navigator]: Begin navigating from current location (2.37, 1.47) to (2.40, 0.70)
+[INFO] [1791740204.155989415] [bt_navigator]: Goal succeeded
+[INFO] [1791740204.185197466] [bt_navigator]: Begin navigating from current location (2.39, 0.71) to (2.39, 0.71)
+[INFO] [1791740209.595505508] [bt_navigator]: Goal succeeded
+[INFO] [1791740214.977472181] [bt_navigator]: Begin navigating from current location (2.39, 0.72) to (2.40, 0.95)
+[INFO] [1791740230.938014978] [bt_navigator]: Goal succeeded
+[INFO] [1791740230.971804189] [bt_navigator]: Begin navigating from current location (2.41, 0.94) to (2.41, 0.94)
+[INFO] [1791740232.182157005] [bt_navigator]: Goal succeeded
+[INFO] [1791740233.031924641] [bt_navigator]: Begin navigating from current location (2.42, 0.93) to (2.20, 1.45)
+[INFO] [1791740242.442287168] [bt_navigator]: Goal succeeded
+[INFO] [1791740242.477936043] [bt_navigator]: Begin navigating from current location (2.23, 1.45) to (2.23, 1.45)
+[INFO] [1791740244.038221863] [bt_navigator]: Goal succeeded
+[INFO] [1791740244.814693024] [bt_navigator]: Begin navigating from current location (2.22, 1.46) to (1.55, 1.56)
+[INFO] [1791740254.925015668] [bt_navigator]: Goal succeeded
+[INFO] [1791740254.958571561] [bt_navigator]: Begin navigating from current location (1.56, 1.53) to (1.56, 1.53)
+[INFO] [1791740260.819016977] [bt_navigator]: Goal succeeded
+[INFO] [1791740261.622786416] [bt_navigator]: Begin navigating from current location (1.54, 1.50) to (1.54, 1.50)
+[INFO] [1791740268.533424591] [bt_navigator]: Goal succeeded
+[INFO] [1791740269.373859874] [bt_navigator]: Begin navigating from current location (1.52, 1.49) to (1.50, 2.40)
+[INFO] [1791740274.594933922] [bt_navigator]: [navigate_to_pose] [ActionServer] Client requested to cancel the goal. Cancelling.
+[INFO] [1791740274.595066097] [bt_navigator]: Goal canceled
+[INFO] [1791740277.672172264] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1791740277.672269465] [bt_navigator]: Running Nav2 LifecycleNode rcl preshutdown (bt_navigator)
+[INFO] [1791740277.672391090] [bt_navigator]: Deactivating
+[INFO] [1791740277.672427628] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[INFO] [1791740277.682811067] [bt_navigator]: Cleaning up
+[INFO] [1791740277.812151710] [bt_navigator]: Completed Cleaning up
+[INFO] [1791740277.812315224] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.

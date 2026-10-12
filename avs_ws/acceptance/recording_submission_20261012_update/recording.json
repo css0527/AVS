@@ -1,0 +1,29 @@
+{
+  "status": "complete",
+  "created_at": 1791745136.2343218,
+  "continuous": true,
+  "camera_topic": "/camera/annotated",
+  "camera_frames_shown": 530,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "exit_reason": "acceptance_completed",
+  "ffmpeg_exit_code": 0,
+  "acceptance_exit_code": 0,
+  "xephyr_exit_code": 0,
+  "errors": [],
+  "xephyr_pid": 128317,
+  "display": ":90",
+  "recording_started_at": 1791745137.4538317,
+  "ffmpeg_pid": 128330,
+  "acceptance_pid": 128331,
+  "ffmpeg_shutdown": "graceful",
+  "acceptance_shutdown": "already_exited",
+  "recording_ended_at": 1791745529.0724025,
+  "xephyr_shutdown_requested": true,
+  "xephyr_shutdown": "graceful",
+  "video": "/home/c/AVS/avs_ws/acceptance/competition_demo.mp4",
+  "raw_duration_s": 391.533333,
+  "playback_speed": 2
+}

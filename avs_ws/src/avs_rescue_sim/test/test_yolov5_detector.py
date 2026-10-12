@@ -13,6 +13,29 @@ from avs_rescue_sim.panel_geometry import PanelGeometryVerifier
 TEXTURES = Path(__file__).resolve().parents[1] / 'models/rescue_course/materials/textures'
 
 
+def test_region_recovery_recognizes_visible_missed_electrical_panel():
+    package = Path(__file__).resolve().parents[1]
+    evidence = package.parents[1] / 'acceptance/recording_yolov5_smac_v19/evidence'
+    frame = cv2.imread(str(evidence / 'image_0462.png'))
+    if frame is None:
+        pytest.skip('Archived acceptance frame unavailable')
+    verifier = PanelGeometryVerifier(TEXTURES)
+    detector = YoloV5Detector(package / 'models/yolov5/hazard_yolov5.torchscript',
+        verifier.labels, confidence=.45, panel_verifier=verifier, region_recovery=True)
+    assert not detector.detect(frame, _recover=False)
+    result = detector.detect(frame)
+    assert [item[0] for item in result] == ['ELECTRICAL']
+    points = result[0][1].reshape(-1, 2)
+    assert np.linalg.norm(points.mean(axis=0) - [315, 176]) < 10
+    for number in ('0656', '0719'):
+        tag_frame = cv2.imread(str(evidence / f'image_{number}.png'))
+        assert not detector.detect(tag_frame)
+    # Same-colour regions cannot recover a detection without a pictogram.
+    for colour in [(25, 25, 220), (0, 225, 235), (220, 80, 20)]:
+        plain = np.full((480, 640, 3), colour, dtype=np.uint8)
+        assert not detector.detect(plain)
+
+
 class FixedModel:
     def __init__(self, predictions):
         self.predictions = torch.tensor([predictions], dtype=torch.float32)

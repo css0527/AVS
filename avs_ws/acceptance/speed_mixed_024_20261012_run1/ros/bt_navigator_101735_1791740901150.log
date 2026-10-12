@@ -1,0 +1,85 @@
+[INFO] [1791740901.341439638] [bt_navigator]: 
+	bt_navigator lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1791740901.342455316] [bt_navigator]: Creating
+[INFO] [1791740901.788964461] [bt_navigator]: Configuring
+[INFO] [1791740904.589053491] [bt_navigator]: Activating
+[INFO] [1791740904.614055027] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[INFO] [1791740909.689436711] [bt_navigator]: Begin navigating from current location (0.55, 0.53) to (0.55, 0.70)
+[INFO] [1791740911.499906328] [bt_navigator]: Goal succeeded
+[INFO] [1791740911.530397167] [bt_navigator]: Begin navigating from current location (0.55, 0.65) to (0.55, 0.65)
+[INFO] [1791740911.590649757] [bt_navigator]: Goal succeeded
+[INFO] [1791740912.395818914] [bt_navigator]: Begin navigating from current location (0.55, 0.66) to (0.55, 0.85)
+[INFO] [1791740914.956173821] [bt_navigator]: Goal succeeded
+[INFO] [1791740914.988163057] [bt_navigator]: Begin navigating from current location (0.54, 0.85) to (0.54, 0.85)
+[INFO] [1791740915.048416802] [bt_navigator]: Goal succeeded
+[INFO] [1791740916.810922230] [bt_navigator]: Begin navigating from current location (0.55, 0.85) to (0.55, 1.42)
+[INFO] [1791740922.321223861] [bt_navigator]: Goal succeeded
+[INFO] [1791740922.360338065] [bt_navigator]: Begin navigating from current location (0.57, 1.39) to (0.57, 1.39)
+[INFO] [1791740922.420635300] [bt_navigator]: Goal succeeded
+[INFO] [1791740924.221619818] [bt_navigator]: Begin navigating from current location (0.57, 1.40) to (0.55, 2.30)
+[INFO] [1791740935.781859215] [bt_navigator]: Goal succeeded
+[INFO] [1791740935.812555664] [bt_navigator]: Begin navigating from current location (0.58, 2.26) to (0.58, 2.26)
+[INFO] [1791740940.273040683] [bt_navigator]: Goal succeeded
+[INFO] [1791740942.049603862] [bt_navigator]: Begin navigating from current location (0.58, 2.27) to (0.55, 2.50)
+[INFO] [1791740945.409883775] [bt_navigator]: Goal succeeded
+[INFO] [1791740945.448674847] [bt_navigator]: Begin navigating from current location (0.56, 2.46) to (0.56, 2.45)
+[INFO] [1791740954.559069714] [bt_navigator]: Goal succeeded
+[INFO] [1791740955.362339697] [bt_navigator]: Begin navigating from current location (0.55, 2.48) to (1.50, 2.55)
+[INFO] [1791740967.022627824] [bt_navigator]: Goal succeeded
+[INFO] [1791740967.054318777] [bt_navigator]: Begin navigating from current location (1.48, 2.52) to (1.48, 2.52)
+[INFO] [1791740971.664680098] [bt_navigator]: Goal succeeded
+[INFO] [1791740975.303990987] [bt_navigator]: Begin navigating from current location (1.49, 2.53) to (1.49, 2.53)
+[INFO] [1791740982.914326469] [bt_navigator]: Goal succeeded
+[INFO] [1791741001.334935910] [bt_navigator]: Begin navigating from current location (1.48, 1.43) to (1.48, 1.43)
+[INFO] [1791741008.695284212] [bt_navigator]: Goal succeeded
+[INFO] [1791741009.449790937] [bt_navigator]: Begin navigating from current location (1.45, 1.46) to (2.10, 1.45)
+[INFO] [1791741017.010191272] [bt_navigator]: Goal succeeded
+[INFO] [1791741017.044772463] [bt_navigator]: Begin navigating from current location (2.10, 1.46) to (2.10, 1.45)
+[INFO] [1791741018.905112556] [bt_navigator]: Goal succeeded
+[INFO] [1791741019.668887620] [bt_navigator]: Begin navigating from current location (2.10, 1.45) to (2.40, 1.45)
+[INFO] [1791741022.879185892] [bt_navigator]: Goal succeeded
+[INFO] [1791741022.906414934] [bt_navigator]: Begin navigating from current location (2.36, 1.44) to (2.36, 1.44)
+[INFO] [1791741031.776976074] [bt_navigator]: Goal succeeded
+[INFO] [1791741033.569834711] [bt_navigator]: Begin navigating from current location (2.40, 1.44) to (2.40, 0.70)
+[INFO] [1791741044.330376257] [bt_navigator]: Goal succeeded
+[INFO] [1791741044.368272305] [bt_navigator]: Begin navigating from current location (2.37, 0.72) to (2.37, 0.72)
+[INFO] [1791741049.978585038] [bt_navigator]: Goal succeeded
+[INFO] [1791741055.325743743] [bt_navigator]: Begin navigating from current location (2.36, 0.74) to (2.40, 0.95)
+[INFO] [1791741071.535989699] [bt_navigator]: Goal succeeded
+[INFO] [1791741071.569129847] [bt_navigator]: Begin navigating from current location (2.43, 0.91) to (2.43, 0.91)
+[INFO] [1791741074.179431676] [bt_navigator]: Goal succeeded
+[INFO] [1791741074.964804499] [bt_navigator]: Begin navigating from current location (2.42, 0.91) to (2.20, 1.45)
+[INFO] [1791741084.335062228] [bt_navigator]: Goal succeeded
+[INFO] [1791741084.379391095] [bt_navigator]: Begin navigating from current location (2.25, 1.45) to (2.25, 1.45)
+[INFO] [1791741086.139867341] [bt_navigator]: Goal succeeded
+[INFO] [1791741086.984378119] [bt_navigator]: Begin navigating from current location (2.24, 1.46) to (1.55, 1.56)
+[INFO] [1791741100.634617173] [bt_navigator]: Goal succeeded
+[INFO] [1791741100.670053682] [bt_navigator]: Begin navigating from current location (1.55, 1.53) to (1.55, 1.53)
+[INFO] [1791741106.530334770] [bt_navigator]: Goal succeeded
+[INFO] [1791741107.265513461] [bt_navigator]: Begin navigating from current location (1.56, 1.54) to (1.56, 1.54)
+[INFO] [1791741114.875822933] [bt_navigator]: Goal succeeded
+[INFO] [1791741115.737188851] [bt_navigator]: Begin navigating from current location (1.53, 1.54) to (1.50, 2.40)
+[INFO] [1791741129.397801062] [bt_navigator]: Goal succeeded
+[INFO] [1791741129.438745296] [bt_navigator]: Begin navigating from current location (1.50, 2.38) to (1.50, 2.38)
+[INFO] [1791741138.399023308] [bt_navigator]: Goal succeeded
+[INFO] [1791741139.163948606] [bt_navigator]: Begin navigating from current location (1.52, 2.37) to (0.55, 2.45)
+[INFO] [1791741154.574334869] [bt_navigator]: Goal succeeded
+[INFO] [1791741154.604790659] [bt_navigator]: Begin navigating from current location (0.57, 2.41) to (0.57, 2.41)
+[INFO] [1791741167.315248876] [bt_navigator]: Goal succeeded
+[INFO] [1791741168.088645042] [bt_navigator]: Begin navigating from current location (0.55, 2.39) to (0.55, 0.75)
+[INFO] [1791741189.298963276] [bt_navigator]: Goal succeeded
+[INFO] [1791741189.335664852] [bt_navigator]: Begin navigating from current location (0.50, 0.78) to (0.50, 0.78)
+[INFO] [1791741194.496130177] [bt_navigator]: Goal succeeded
+[INFO] [1791741195.319951054] [bt_navigator]: Begin navigating from current location (0.49, 0.78) to (0.55, 0.54)
+[INFO] [1791741201.980288542] [bt_navigator]: Goal succeeded
+[INFO] [1791741202.011842253] [bt_navigator]: Begin navigating from current location (0.53, 0.56) to (0.53, 0.56)
+[INFO] [1791741205.762345979] [bt_navigator]: Goal succeeded
+[INFO] [1791741209.671198237] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1791741209.671274901] [bt_navigator]: Running Nav2 LifecycleNode rcl preshutdown (bt_navigator)
+[INFO] [1791741209.671335285] [bt_navigator]: Deactivating
+[INFO] [1791741209.671361073] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[INFO] [1791741209.682055634] [bt_navigator]: Cleaning up
+[INFO] [1791741209.813571586] [bt_navigator]: Completed Cleaning up
+[INFO] [1791741209.813688536] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.

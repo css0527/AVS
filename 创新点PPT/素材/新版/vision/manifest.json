@@ -1,0 +1,495 @@
+{
+  "review_scope": {
+    "annotated_acceptance_images": 696,
+    "batches": 8,
+    "method": "全部 annotated image_*.png 分批缩略图检查；入选单图原分辨率核对；不重画或添加检测框。raw图片由主审另行全盘盘点。"
+  },
+  "assets": [
+    {
+      "file": "创新点PPT/素材/新版/vision/fire.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0092.png"
+      ],
+      "meaning": "FIRE｜火灾类别，当前帧有真实绿色分类框；截图是单帧样例，并非准确率统计。",
+      "transformation": "原图完整复制",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "source_sha256": "42b1b3a23739d62943bbeb4434e01ed887f8cf4498e32e0379bd1a958ec4c165"
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/chemical.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0077.png"
+      ],
+      "meaning": "CHEMICAL｜化学危险，当前帧有真实绿色分类框；截图是单帧样例，并非准确率统计。",
+      "transformation": "原图完整复制",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "source_sha256": "db9c361a249466d98b3bbd60a31d1bc9ddc875079971255039efe02a6e8f6eab"
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/radiation.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0213.png"
+      ],
+      "meaning": "RADIATION｜辐射危险，当前帧有真实绿色分类框；截图是单帧样例，并非准确率统计。",
+      "transformation": "原图完整复制",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "source_sha256": "11b58285845391a9c6c876e959736e0c8e3534c96cb29cd00715d34649ed45ef"
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/electrical.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0335.png"
+      ],
+      "meaning": "ELECTRICAL｜电气危险，当前帧有真实绿色分类框；截图是单帧样例，并非准确率统计。",
+      "transformation": "原图完整复制",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "source_sha256": "22af2f0890fb8bb97fe6cc2c286e946c94abb07396d69bd993e1199e454b9e2c"
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/biohazard.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0320.png"
+      ],
+      "meaning": "BIOHAZARD｜生物危险，当前帧有真实绿色分类框；截图是单帧样例，并非准确率统计。",
+      "transformation": "原图完整复制",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "source_sha256": "b40ca6b8da12a08069b4c351dfdc645e56d79bebd0394a9e36d50ca0f3a6a179"
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/hazards_five_verified.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0092.png",
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0077.png",
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0213.png",
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0335.png",
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0320.png"
+      ],
+      "meaning": "五类清晰分类框拼图",
+      "transformation": "五张完整原图等比例缩小拼接；新增中文类名与来源编号。",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。"
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/scan_stop_A.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0380.png"
+      ],
+      "meaning": "同一停车点视角 A：BIOHAZARD，停车稳定阶段。图案靠近图像边缘，有真实分类框。",
+      "transformation": "原图完整复制",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "source_sha256": "a718d1d372e5c9a2238a8907252ef75537040da671765548fac8327a85a36fca"
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/scan_stop_B.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0395.png"
+      ],
+      "meaning": "同一停车点视角 B：ELECTRICAL 与 BIOHAZARD，BIOHAZARD 停车观察阶段；非连续确认帧。",
+      "transformation": "原图完整复制",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "source_sha256": "62103de2721e05d6e929ab0af2eaa4333da1a32a4b2daa3c11b1637ac818236e"
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/scan_stop_pair.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0380.png",
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0395.png"
+      ],
+      "meaning": "同一走廊停车点，云台视角发生变化",
+      "transformation": "两张完整原图拼接；新增中文说明及来源。",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "pose_evidence": {
+        "record": "avs_ws/acceptance/speed_mixed_020_20261012_run2/result.json",
+        "image_filename_rule": "image_NNNN.png 由当前 poses 长度命名，最近记录为 poses[NNNN-1]。",
+        "pose_A": {
+          "t": 78.02102329699846,
+          "push_barrier": [
+            1.5,
+            1.9,
+            0.14899510541306688,
+            -4.374710560454895e-18,
+            1.6759808350480933e-18,
+            -1.722843495019343e-20,
+            1.0
+          ],
+          "safety": {
+            "blocked": false,
+            "reason": "",
+            "pushing": false
+          },
+          "odom": [
+            1.5341144881252364,
+            2.478091217229338,
+            0.0003778249936454218
+          ],
+          "rescue_rover": [
+            1.534167342944088,
+            2.4780914345707346,
+            7.297064625225169e-06,
+            9.147970738645738e-06,
+            -0.0021205888133193013,
+            0.004958850434127877,
+            0.9999854563051261
+          ],
+          "mission": {
+            "state": "settling",
+            "step": "corridor_electrical",
+            "detail": "corridor_electrical reached; braking before next action",
+            "corridor_detected": 5,
+            "core_detected": 0
+          }
+        },
+        "pose_B": {
+          "t": 81.084484953004,
+          "push_barrier": [
+            1.5,
+            1.9,
+            0.14899510541306688,
+            -4.374710560454895e-18,
+            1.6759808350480933e-18,
+            -1.722843495019343e-20,
+            1.0
+          ],
+          "safety": {
+            "blocked": false,
+            "reason": "",
+            "pushing": false
+          },
+          "odom": [
+            1.5312059300789491,
+            2.478233384049574,
+            -0.027731970395643117
+          ],
+          "rescue_rover": [
+            1.531207860601737,
+            2.4782333079305547,
+            7.207128241468186e-06,
+            -3.070829014256971e-05,
+            -0.0021107863202631714,
+            -0.013867351010619994,
+            0.9999016152672517
+          ],
+          "mission": {
+            "state": "observing",
+            "step": "corridor_biohazard",
+            "detail": "camera scanning left/right for BIOHAZARD; base stopped",
+            "corridor_detected": 5,
+            "core_detected": 0
+          }
+        },
+        "odom_translation_m": 0.002912030445135937,
+        "odom_yaw_change_rad": 0.02810979538928854,
+        "limitation": "时间为验收接收采样时间；有约 3 mm 自然漂移、约 1.6° 偏航变化。两张图展示不同图案，未声称同目标连续确认。"
+      }
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/scan_fire_raw_1.jpg",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/raw_images/raw_00006.jpg"
+      ],
+      "meaning": "启动点附近，同一 FIRE 标识在云台扫视中的原始相机画面；无识别框，不作为连续确认结果。",
+      "transformation": "原图完整复制",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "source_sha256": "8e44b6e2237f66d042abc98be95c00527b2f5d69d8e7fa9149f417ab4f98eace",
+      "header_stamp": {
+        "sec": 2,
+        "nanosec": 150000000
+      }
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/scan_fire_raw_2.jpg",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/raw_images/raw_00016.jpg"
+      ],
+      "meaning": "启动点附近，同一 FIRE 标识在云台扫视中的原始相机画面；无识别框，不作为连续确认结果。",
+      "transformation": "原图完整复制",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "source_sha256": "a3bb80081ef63e73944ed9fb65fd46f657a4af989a09cc0687b9f9a5bbaeb940",
+      "header_stamp": {
+        "sec": 4,
+        "nanosec": 484000000
+      }
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/scan_fire_raw_3.jpg",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/raw_images/raw_00018.jpg"
+      ],
+      "meaning": "启动点附近，同一 FIRE 标识在云台扫视中的原始相机画面；无识别框，不作为连续确认结果。",
+      "transformation": "原图完整复制",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "source_sha256": "8fceec6a55bd36037fd8566cb07e30ac6e85d47d46d819167a91ec2603bc7675",
+      "header_stamp": {
+        "sec": 4,
+        "nanosec": 950000000
+      }
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/scan_fire_raw_triptych.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/raw_images/raw_00006.jpg",
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/raw_images/raw_00016.jpg",
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/raw_images/raw_00018.jpg"
+      ],
+      "meaning": "同一红色标识的原始云台视角变化，启动位置附近",
+      "transformation": "三张完整原图等比例缩小拼接，标明原始帧与 ROS 时间；未添加识别结果。",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。"
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/tag_0_full.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0639.png"
+      ],
+      "meaning": "T0｜坍塌：有 ID、位姿轴及地图坐标标签；当前画面位置数据保留。",
+      "transformation": "原图完整复制",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "source_sha256": "65ba29ff8894e9368463ea14ad21b7c0d7861323eaa41fcd91e5b2f562b46cf3"
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/tag_0_crop.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0639.png"
+      ],
+      "meaning": "T0｜坍塌局部，保留完整标识、 ID 与地图坐标显示。",
+      "transformation": "仅裁去周边背景，裁剪坐标为 [left, top, right, bottom]。",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "crop": [
+        100,
+        140,
+        390,
+        380
+      ]
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/tag_1_full.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0745.png"
+      ],
+      "meaning": "T1｜有毒泄漏：有 ID、位姿轴及地图坐标标签；当前画面位置数据保留。",
+      "transformation": "原图完整复制",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "source_sha256": "46721ee2c5350e8596fce73f8ebb44d4c7111cba6209477e9d23562409ca6e11"
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/tag_1_crop.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0745.png"
+      ],
+      "meaning": "T1｜有毒泄漏局部，保留完整标识、 ID 与地图坐标显示。",
+      "transformation": "仅裁去周边背景，裁剪坐标为 [left, top, right, bottom]。",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "crop": [
+        245,
+        110,
+        565,
+        415
+      ]
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/tag_2_full.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0761.png"
+      ],
+      "meaning": "T2｜被困人员：有 ID、位姿轴及地图坐标标签；当前画面位置数据保留。",
+      "transformation": "原图完整复制",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "source_sha256": "6403089e983259a71e04f097fcf54219cb26f071ea8cae43dcebdacb59c09932"
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/tag_2_crop.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0761.png"
+      ],
+      "meaning": "T2｜被困人员局部，保留完整标识、 ID 与地图坐标显示。",
+      "transformation": "仅裁去周边背景，裁剪坐标为 [left, top, right, bottom]。",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "crop": [
+        5,
+        100,
+        350,
+        475
+      ]
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/tag_3_full.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0870.png"
+      ],
+      "meaning": "T3｜高温：有 ID、位姿轴及地图坐标标签；当前画面位置数据保留。",
+      "transformation": "原图完整复制",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "source_sha256": "eb5281a660278d759ce53f52afe02c382c7eb2e373d00868544e58df52b807e4"
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/tag_3_crop.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0870.png"
+      ],
+      "meaning": "T3｜高温局部，保留完整标识、 ID 与地图坐标显示。",
+      "transformation": "仅裁去周边背景，裁剪坐标为 [left, top, right, bottom]。",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "crop": [
+        45,
+        150,
+        310,
+        335
+      ]
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/core_tags_four_verified.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0639.png",
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0745.png",
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0761.png",
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0870.png"
+      ],
+      "meaning": "四类核心 AprilTag 与地图坐标拼图",
+      "transformation": "四张原图按 manifest 指定坐标裁剪背景后等比例拼接；原识别标签保留。",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。"
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/real_red_box.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0775.png"
+      ],
+      "meaning": "真实红色推障箱被专用障碍检测器框为 PUSH BARRIER，紫框不是 FIRE 灾害类别；黄色背景为核心房间地面。",
+      "transformation": "原图完整复制",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "source_sha256": "defc05fd1fd5d6a47619c3b34f9377fddef4dc4fee3c8e0bb4854d611a5991e3"
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/blue_start_and_hazards.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_1209.png"
+      ],
+      "meaning": "蓝色起点地面与 CHEMICAL、FIRE 同时可见；绿色类别框属于墙上标识。此帧不含红箱。",
+      "transformation": "原图完整复制",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "source_sha256": "1ffedf318b8a551db4780600ee4801ed43c51c461e64fd71874e4ecca6f56042"
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/recovery_comparison_original.png",
+      "sources": [
+        "avs_ws/docs/vision_recovery_example.png"
+      ],
+      "meaning": "同一 v19 image_0462 的算法离线回放：原链未框出，恢复链框出 ELECTRICAL 0.35；非两次现场运行，不代表总体召回率。",
+      "transformation": "原图完整复制",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "source_sha256": "cf17c3c528e9b806d4404edd6ce5cabf04fbc4c15471b7a399435b6f0b344194",
+      "replay_record": {
+        "frame": "image_0462.png",
+        "before": [],
+        "after": [
+          "ELECTRICAL"
+        ],
+        "ms": 62.88148900057422
+      }
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/recovery_before.png",
+      "sources": [
+        "avs_ws/docs/vision_recovery_example.png",
+        "avs_ws/acceptance/recording_yolov5_smac_v19/evidence/image_0462.png"
+      ],
+      "meaning": "同帧算法回放的原链无检测结果",
+      "transformation": "从既有真实算法回放对比图拆分左右半图，不改框。",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "replay_record": {
+        "frame": "image_0462.png",
+        "before": [],
+        "after": [
+          "ELECTRICAL"
+        ],
+        "ms": 62.88148900057422
+      }
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/recovery_after.png",
+      "sources": [
+        "avs_ws/docs/vision_recovery_example.png",
+        "avs_ws/acceptance/recording_yolov5_smac_v19/evidence/image_0462.png"
+      ],
+      "meaning": "同帧算法回放的恢复链 ELECTRICAL 0.35 检测结果",
+      "transformation": "从既有真实算法回放对比图拆分左右半图，不改框。",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "replay_record": {
+        "frame": "image_0462.png",
+        "before": [],
+        "after": [
+          "ELECTRICAL"
+        ],
+        "ms": 62.88148900057422
+      }
+    },
+    {
+      "file": "创新点PPT/素材/新版/vision/recovery_same_frame_verified.png",
+      "sources": [
+        "avs_ws/docs/vision_recovery_example.png",
+        "avs_ws/acceptance/recording_yolov5_smac_v19/evidence/image_0462.png",
+        "avs_ws/docs/vision_recovery_replay.json"
+      ],
+      "meaning": "同一帧在有/无图案核验恢复链时的真实离线回放结果",
+      "transformation": "在既有对比图上下增加中文说明与来源；保持左右两帧与识别结果不变。",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。",
+      "replay_record": {
+        "frame": "image_0462.png",
+        "before": [],
+        "after": [
+          "ELECTRICAL"
+        ],
+        "ms": 62.88148900057422
+      }
+    }
+  ],
+  "old_ppt_errors": [
+    {
+      "source": "recording_yolov5_smac_v19/evidence/image_0113.png",
+      "issue": "有 FIRE 图案，无绿色分类框，不可标作 FIRE 检测结果。"
+    },
+    {
+      "source": "recording_yolov5_smac_v19/evidence/image_0588.png",
+      "issue": "BIOHAZARD 被画面左边截断、无分类框，不可标作完整检测结果。"
+    },
+    {
+      "source": "recording_yolov5_smac_v19/evidence/image_0416.png",
+      "issue": "蓝色起点及墙面图案真实；FIRE 有 0.95 分类框。"
+    },
+    {
+      "source": "recording_yolov5_smac_v19/evidence/image_0573.png",
+      "issue": "黄色物体是核心房间地面，非黄色车身；红箱紫色 PUSH BARRIER 框属于专用障碍检测器。"
+    },
+    {
+      "source": "recording_yolov5_smac_v19/evidence/image_1607.png",
+      "issue": "画面有 CHEMICAL、FIRE、蓝色起点，无红箱。"
+    },
+    {
+      "source": "01 扫描页 image_0207 / image_0447 / image_0528",
+      "issue": "不是同一停车点连续观察，首图同时有 ELECTRICAL 和 BIOHAZARD；不能作为同目标多帧确认序列。"
+    }
+  ],
+  "review_sheets": [
+    "创新点PPT/素材/新版/vision/audit_latest_01.jpg",
+    "创新点PPT/素材/新版/vision/audit_latest_02.jpg",
+    "创新点PPT/素材/新版/vision/audit_latest_03.jpg",
+    "创新点PPT/素材/新版/vision/audit_old_used.jpg",
+    "创新点PPT/素材/新版/vision/audit_raw_initial.jpg",
+    "创新点PPT/素材/新版/vision/audit_raw_stop.jpg",
+    "创新点PPT/素材/新版/vision/audit_recording_yolov5_smac_v19_01.jpg",
+    "创新点PPT/素材/新版/vision/audit_recording_yolov5_smac_v19_02.jpg",
+    "创新点PPT/素材/新版/vision/audit_recording_yolov5_smac_v19_03.jpg",
+    "创新点PPT/素材/新版/vision/audit_speed_024_20261012_run1_01.jpg",
+    "创新点PPT/素材/新版/vision/audit_speed_024_20261012_run1_02.jpg",
+    "创新点PPT/素材/新版/vision/audit_speed_baseline_20261012_run1_01.jpg",
+    "创新点PPT/素材/新版/vision/audit_speed_baseline_20261012_run1_02.jpg",
+    "创新点PPT/素材/新版/vision/audit_speed_baseline_20261012_run1_03.jpg",
+    "创新点PPT/素材/新版/vision/audit_speed_mixed_020_20261012_run1_01.jpg",
+    "创新点PPT/素材/新版/vision/audit_speed_mixed_020_20261012_run1_02.jpg",
+    "创新点PPT/素材/新版/vision/audit_speed_mixed_020_20261012_run1_03.jpg",
+    "创新点PPT/素材/新版/vision/audit_speed_mixed_024_20261012_run1_01.jpg",
+    "创新点PPT/素材/新版/vision/audit_speed_mixed_024_20261012_run1_02.jpg",
+    "创新点PPT/素材/新版/vision/audit_speed_mixed_024_20261012_run1_03.jpg",
+    "创新点PPT/素材/新版/vision/audit_speed_mixed_030_20261012_run1_01.jpg",
+    "创新点PPT/素材/新版/vision/audit_yolov5_smac_v18_01.jpg",
+    "创新点PPT/素材/新版/vision/audit_yolov5_smac_v18_02.jpg",
+    "创新点PPT/素材/新版/vision/audit_yolov5_smac_v18_03.jpg"
+  ]
+}

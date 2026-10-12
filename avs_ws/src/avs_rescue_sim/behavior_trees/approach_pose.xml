@@ -10,7 +10,7 @@
       <RateController hz="1.0">
         <ComputePathToPose goal="{goal}" path="{path}" planner_id="GridBased"/>
       </RateController>
-      <FollowPath path="{path}" controller_id="FollowPath" goal_checker_id="position_goal_checker"/>
+      <FollowPath path="{path}" controller_id="FollowPath" goal_checker_id="fast_position_goal_checker"/>
     </PipelineSequence>
   </BehaviorTree>
 </root>

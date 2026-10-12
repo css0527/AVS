@@ -46,7 +46,7 @@ for arg in "$@"; do
     esac
 done
 
-colcon build --symlink-install --packages-up-to avs_rescue_sim
+colcon build --base-paths src --symlink-install --packages-up-to avs_rescue_sim
 set +u
 source "$SCRIPT_DIR/install/setup.bash"
 set -u

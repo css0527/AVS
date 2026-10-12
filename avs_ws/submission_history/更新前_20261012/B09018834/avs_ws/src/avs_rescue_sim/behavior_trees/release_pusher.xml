@@ -1,0 +1,11 @@
+<!-- Nav2 规划与跟踪行为树；关闭 Spin/BackUp 恢复动作，失败交由任务节点处理。 -->
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <PipelineSequence name="NavigateWithSafeReplanning">
+      <RateController hz="1.0">
+        <ComputePathToPose goal="{goal}" path="{path}" planner_id="GridBased"/>
+      </RateController>
+      <FollowPath path="{path}" controller_id="ReleasePusher" goal_checker_id="turn_goal_checker"/>
+    </PipelineSequence>
+  </BehaviorTree>
+</root>

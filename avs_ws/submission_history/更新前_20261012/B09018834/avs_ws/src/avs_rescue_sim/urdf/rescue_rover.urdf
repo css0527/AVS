@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<robot name="rescue_rover">
+  <material name="rescue_blue"><color rgba="0.08 0.30 0.65 1"/></material>
+  <material name="safety_yellow"><color rgba="0.95 0.65 0.05 1"/></material>
+  <material name="dark"><color rgba="0.06 0.07 0.08 1"/></material>
+
+  <!-- base_link is the 2-D navigation frame at ground level. -->
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0.12"/>
+      <geometry><box size="0.42 0.24 0.14"/></geometry>
+      <material name="rescue_blue"/>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0.12"/>
+      <geometry><box size="0.42 0.24 0.14"/></geometry>
+    </collision>
+  </link>
+
+  <link name="left_wheel_link">
+    <visual>
+      <origin rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.085" length="0.045"/></geometry>
+      <material name="dark"/>
+    </visual>
+    <collision>
+      <origin rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.085" length="0.045"/></geometry>
+    </collision>
+  </link>
+  <joint name="left_wheel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="left_wheel_link"/>
+    <origin xyz="0 0.12 0.085"/>
+  </joint>
+
+  <link name="right_wheel_link">
+    <visual>
+      <origin rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.085" length="0.045"/></geometry>
+      <material name="dark"/>
+    </visual>
+    <collision>
+      <origin rpy="1.5708 0 0"/>
+      <geometry><cylinder radius="0.085" length="0.045"/></geometry>
+    </collision>
+  </link>
+  <joint name="right_wheel_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="right_wheel_link"/>
+    <origin xyz="0 -0.12 0.085"/>
+  </joint>
+
+  <link name="rear_caster_link">
+    <visual>
+      <geometry><sphere radius="0.047"/></geometry>
+      <material name="dark"/>
+    </visual>
+    <collision><geometry><sphere radius="0.047"/></geometry></collision>
+  </link>
+  <joint name="rear_caster_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="rear_caster_link"/>
+    <origin xyz="-0.17 0 0.047"/>
+  </joint>
+
+  <!-- Passive V pusher; geometry and collision match the Gazebo SDF model. -->
+  <link name="pusher_link">
+    <visual>
+      <origin xyz="0.22 0 0.105"/>
+      <geometry><box size="0.14 0.28 0.10"/></geometry>
+      <material name="safety_yellow"/>
+    </visual>
+    <collision>
+      <origin xyz="0.22 0 0.105"/>
+      <geometry><box size="0.14 0.28 0.10"/></geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.26 0.075 0.105" rpy="0 0 -0.45"/>
+      <geometry><box size="0.18 0.055 0.10"/></geometry>
+      <material name="safety_yellow"/>
+    </visual>
+    <collision>
+      <origin xyz="0.26 0.075 0.105" rpy="0 0 -0.45"/>
+      <geometry><box size="0.18 0.055 0.10"/></geometry>
+    </collision>
+    <visual>
+      <origin xyz="0.26 -0.075 0.105" rpy="0 0 0.45"/>
+      <geometry><box size="0.18 0.055 0.10"/></geometry>
+      <material name="safety_yellow"/>
+    </visual>
+    <collision>
+      <origin xyz="0.26 -0.075 0.105" rpy="0 0 0.45"/>
+      <geometry><box size="0.18 0.055 0.10"/></geometry>
+    </collision>
+  </link>
+  <joint name="pusher_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="pusher_link"/>
+  </joint>
+
+  <link name="laser_frame">
+    <visual>
+      <origin xyz="0 0 0.03"/>
+      <geometry><cylinder radius="0.055" length="0.06"/></geometry>
+      <material name="dark"/>
+    </visual>
+  </link>
+  <joint name="laser_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="laser_frame"/>
+    <origin xyz="0.08 0 0.23"/>
+  </joint>
+
+  <link name="camera_link">
+    <visual>
+      <geometry><box size="0.06 0.09 0.06"/></geometry>
+      <material name="dark"/>
+    </visual>
+  </link>
+  <joint name="camera_joint" type="revolute">
+    <parent link="base_link"/>
+    <child link="camera_link"/>
+    <origin xyz="0.20 0 0.27"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-1.95" upper="1.95" effort="2" velocity="1.2"/>
+  </joint>
+
+  <link name="camera_optical_frame"/>
+  <joint name="camera_optical_joint" type="fixed">
+    <parent link="camera_link"/>
+    <child link="camera_optical_frame"/>
+    <origin rpy="-1.5708 0 -1.5708"/>
+  </joint>
+</robot>

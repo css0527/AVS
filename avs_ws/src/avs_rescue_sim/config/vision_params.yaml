@@ -19,12 +19,14 @@ vision_node:
     yolov5_confidence: 0.45
     yolov5_iou_threshold: 0.45
     yolov5_min_area: 80
+    # Verified artwork proposes a magnified crop; YOLO must classify it again.
+    yolov5_region_recovery: true
     # Colour proposes a panel; its registered white pictogram validates it.
     # Outline fitting uses the camera's panel edges rather than raw YOLO sizes.
     panel_symbol_score: 0.34
     hazard_box_smoothing_alpha: 0.65
     hazard_max_center_step: 0.18 # Fraction of image width allowed per processed frame.
-    hazard_display_frames: 2
+    hazard_display_frames: 1 # Show current verified detections; events still need 3 frames.
     allow_sift_fallback: true
     tag_labels: [COLLAPSE, TOXIC_LEAK, TRAPPED_PERSON, HIGH_TEMPERATURE]
     min_pattern_inliers: 7

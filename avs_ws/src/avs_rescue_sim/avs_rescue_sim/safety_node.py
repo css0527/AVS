@@ -25,6 +25,11 @@ class SafetyNode(Node):
             '[0.353,-0.116],[0.353,0.116],[0.29,0.16],[0.191,0.194],[-0.21,0.12]]')))
         self.margin = float(self.declare_if_missing('clearance', 0.035))
         self.timeout = float(self.declare_if_missing('sensor_timeout', 0.35))
+        self.max_linear_velocity = float(self.declare_if_missing('max_linear_velocity', 0.12))
+        self.max_angular_velocity = float(self.declare_if_missing('max_angular_velocity', 0.4))
+        if not all(math.isfinite(limit) and limit > 0. for limit in
+                   (self.max_linear_velocity, self.max_angular_velocity)):
+            raise ValueError('Speed limits must be finite and positive')
         self.tf = Buffer()
         self.listener = TransformListener(self.tf, self)
         self.scan = None
@@ -147,7 +152,13 @@ class SafetyNode(Node):
                 if not len(ranges) or not np.any(valid):
                     reason = 'invalid_scan'
                 else:
-                    v, w = min(max(v, 0.), 0.12), min(max(w, -0.4), 0.4)
+                    # Navigation follows the smoother's configured limits, while
+                    # the contact exception retains its original low push speed.
+                    linear_limit = min(self.max_linear_velocity, .10) if pushing else self.max_linear_velocity
+                    v = min(max(v, 0.), linear_limit)
+                    w = min(max(w, -self.max_angular_velocity), self.max_angular_velocity)
+                    # Do not clamp measured velocity: existing inertia can be
+                    # greater than the current requested or permitted speed.
                     candidates = [(v, w), self.velocity]
                     if any(collision_ahead(points, self.footprint, a, b,
                                            margin=self.margin, pushing=pushing)

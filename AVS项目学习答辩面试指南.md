@@ -25,7 +25,11 @@
 
 语言分工：Python 负责 ROS 节点、算法组合、启动和工具；C++17 负责仿真云台关节插件；Bash 负责一键启动、隔离、构建和保存地图；YAML 负责参数；XML/SDF/URDF 负责行为树、物理世界和机器人结构。当前是**差速车**，不要因为历史参考工程名称而称为阿克曼转向车。
 
-### 1.2 最新一次无界面全任务验收
+### 1.2 提交材料对应的无界面全任务验收
+
+2026-10-12 的当前速度调整另见 [提速验证记录](avs_ws/docs/speed_tuning_validation.md)。
+普通路段采用 0.20 m/s，门洞和最终起点保留 0.12 m/s 精细控制；下面的 v18/v19
+数据继续对应各自的历史验收和提交录像，不作为本轮提速后的运行成绩。
 
 可核对 [v18 独立验收](avs_ws/acceptance/yolov5_smac_v18/evaluation.json) 和 [权重元数据](avs_ws/src/avs_rescue_sim/models/yolov5/hazard_yolov5.json)。这是新权重、面板几何验证、跨帧关联和 Smac2D 配置下的同一次无界面运行。整段视频的结果必须引用对应录屏自己的验收记录，不得把两次运行最好的数值拼成一次。
 
@@ -74,7 +78,7 @@
 
 ### 2.2 一键启动时真实执行的顺序
 
-`start.sh` 切换到 `avs_ws` → source ROS → 设置独立 ROS Domain 和空闲 Gazebo master 端口 → `colcon build --symlink-install --packages-up-to avs_rescue_sim` → source 本工作空间 → 检查包路径 → 启动本项目 `sim_launch.py`。
+`start.sh` 切换到 `avs_ws` → source ROS → 设置独立 ROS Domain 和空闲 Gazebo master 端口 → `colcon build --base-paths src --symlink-install --packages-up-to avs_rescue_sim` → source 本工作空间 → 检查包路径 → 启动本项目 `sim_launch.py`。
 
 `sim_launch.py` 解析世界、地图与初始位姿 → 为 Gazebo server/client 设置同一个唯一场景分区 → 启动 Gazebo、TF、安全与导航地图节点 → `check_world.py` 校验世界模型集合 → 校验成功才生成机器人 → 生成成功后启动 Gazebo GUI、Nav2、视觉、云台、任务和 RViz。任一关键检查失败会结束启动，而不是让空世界中的车继续导航。
 
@@ -333,14 +337,15 @@ flowchart TD
 | `models/rescue_rover/model.sdf` | 真正参与动力学的底盘、车轮、后万向支撑、推板、雷达、相机和插件；定义惯量、摩擦、碰撞和驱动接口。 |
 | `urdf/rescue_rover.urdf` | 给 robot_state_publisher/RViz 提供一致的几何与 TF；URDF 的轮子为固定关节，物理驱动发生在 SDF 中，不能误讲成用此 URDF 驱动车轮。相机为可转动关节。 |
 | `models/rescue_course/model.sdf` | 材质资源包的静态占位模型，实际墙体由 world 定义；不能看见空 link 就认定整个 rescue_course 目录无用，纹理仍被 world 引用。 |
-| `config/nav_params.yaml` | AMCL、A* 规划器、RPP 控制器、代价地图、速度平滑器、三种目标检查器和脱离接触控制器的配置。 |
+| `config/nav_params.yaml` | AMCL、A* 规划器、RPP 控制器、代价地图、速度平滑器、四种目标检查器、精细行驶和脱离接触控制器的配置。 |
 | `config/mission_params.yaml` | 23 步状态序列、每步目标和所需识别结果、超时及推障限制。改场地时先审核这里，而不是直接改状态机。 |
 | `avs_rescue_sim/mission_node.py` | `navigation_ready()` 检查启动依赖；`advance_step()` 分派导航/观察/推障；`send_navigation_goal()` 发送 Nav2 Action；`navigation_result_callback()` 将位置与朝向分阶段；`update_push()` 做里程计反馈控制；`fail_mission()` 取消目标并急停。`publish_route()` 只发布任务点折线，实际规划路径仍由 Nav2 生成。 |
 | `avs_rescue_sim/navigation_map_node.py` | `on_map()` 建立箱体区域掩膜；`update()` 按激光拍摄时间取 TF，积累自由射线证据，仅更新派生地图 `/navigation_map`。 |
 | `config/navigation_map.yaml` | 可清理区域 `[1.18,0.70,1.72,1.70]`，特意避开结构墙；不是自动识别所有可移动障碍。 |
 | `avs_rescue_sim/motion_safety.py` | 与 ROS 解耦的几何算法：`push_progress()` 分解前进/横向/角度误差；`points_near_polygon()` 检查多边形内外距离；`collision_ahead()` 扫描运动包络。 |
 | `avs_rescue_sim/safety_node.py` | 对平滑后速度最后把关，检查新鲜度、数值合法性、禁止倒车、预测碰撞和有限接触例外，发布 `/cmd_vel_safe`。 |
-| `behavior_trees/approach_pose.xml` | 每秒重规划并跟踪，到达位置即通过，使用 `position_goal_checker`。 |
+| `behavior_trees/approach_pose.xml` | 每秒重规划并跟踪，普通路段使用 `fast_position_goal_checker`，到达位置即通过。 |
+| `behavior_trees/navigate_to_pose_precision.xml`、`turn_at_current_pose_precision.xml` | 精细步骤使用 `PrecisionPath`，保持原来的位置/转向检查和无恢复行为。 |
 | `behavior_trees/turn_at_current_pose.xml` | 使用 `turn_goal_checker`，在当前地图坐标对齐朝向。 |
 | `behavior_trees/release_pusher.xml` | 使用专用 `ReleasePusher` 控制器解除接触；独立激光安全节点仍在指令链末端工作。 |
 | `behavior_trees/navigate_to_pose_no_recovery.xml` | 普通单点导航，完整位置/朝向检查，无自动 Spin/BackUp。 |
@@ -352,7 +357,7 @@ flowchart TD
 
 1. **就绪**：至少等待 7 s 墙钟时间；最多等 90 s，确认 AMCL、planner_server、controller_server、bt_navigator、velocity_smoother 五个 lifecycle 节点均为 active，同时收到导航地图、新鲜里程计并发现导航 Action 服务。单看“服务器已发现”不足以证明可以接收任务。
 2. **走廊巡检**：从 `(0.55,0.54)` 朝北出发，依次通过 y=0.70、0.85、1.42、2.30，再到顶部 `(0.55,2.50)` 朝东前往 `(1.50,2.55)`。分别确认 FIRE、CHEMICAL、RADIATION、ELECTRICAL、BIOHAZARD；最后两类从同一停靠区域扫描，避免去东端死角再掉头。
-3. **位置与朝向分阶段**：位置阶段容差 0.025 m、朝向容差 3.15 rad；成功后读取当前 `map←base_link` 的 x/y 再发转向目标，转向容差 0.045 rad、位置容差 0.12 m。达到旧坐标附近后 AMCL 可能修正数厘米，重复追旧坐标会产生短路径回头；当前坐标旋转解决这个具体问题。
+3. **位置与朝向分阶段**：普通位置阶段容差 0.05 m，门洞、推障对正和最终起点保留 0.025 m，位置阶段朝向容差 3.15 rad；成功后读取当前 `map←base_link` 的 x/y 再发转向目标，转向容差 0.045 rad、位置容差 0.12 m。达到旧坐标附近后 AMCL 可能修正数厘米，重复追旧坐标会产生短路径回头；当前坐标旋转解决这个具体问题。
 4. **停车观察**：每步先输出零速度，至少稳定 0.8 s，并确认速度低于 0.015 m/s、0.04 rad/s；4 s 仍未停稳则失败。观察最多 28 s，覆盖约两轮相机扫描，收到规定识别结果且观察至少 1 s 后继续；观察函数不会驱动车体寻找标识。
 5. **入口推障**：在当前点对正南向，记录起始里程计姿态，推进行程 1.08 m，限速 0.10 m/s，最多 24 s。结束后停稳 1 s，再通过 Nav2 在当前位置转向东侧脱离箱体。
 6. **核心区**：经过 `(2.10,1.45)`、`(2.40,1.45)`、`(2.40,0.70)`，后两个目标主要服务于四个 AprilTag 的观察；最后两类在同一安全停靠点扫描，避免为了看墙面不断靠近墙体。
@@ -393,7 +398,7 @@ v = min(0.10, max(0.02, 0.6(1.08−s)))
 T = 0.20 + max(|v|/0.5, |ω|/0.8)
 ```
 
-计算反应时间加制动时长，在不超过 0.04 s 的间隔内以当前恒定速度沿直线/圆弧推进完整多边形，并检查激光点是否进入车体或边缘 0.035 m 内。代码没有数值积分真实减速曲线；维持当前速度扫完整制动时长，是保守的几何预测。同时检查指令速度与当前里程计速度，避免“刚发停下命令但车还在动”被漏掉。异常、过期指令/传感器、TF 缺失都输出零速度；普通速度上限为 0.12 m/s 和 0.4 rad/s。
+计算反应时间加制动时长，在不超过 0.04 s 的间隔内以当前恒定速度沿直线/圆弧推进完整多边形，并检查激光点是否进入车体或边缘 0.035 m 内。代码没有数值积分真实减速曲线；维持当前速度扫完整制动时长，是保守的几何预测。同时检查指令速度与未裁剪的当前里程计速度，避免“刚发停下命令但车还在动”被漏掉。异常、过期指令/传感器、TF 缺失都输出零速度；上限与速度平滑器共用配置，当前普通上限为 0.20 m/s 和 0.50 rad/s，推障授权期间另限制前进不超过 0.10 m/s。精细路段由控制器维持原来的低速。
 
 **推障接触例外**：普通避障必须禁止撞箱，但主动推箱必须允许接触，二者通过任务状态区分。推障时只排除车头 `nose−0.08≤x≤nose+0.15、|y|≤0.19` 的激光点，侧面和后方仍检测；授权超过 0.35 s 未续期自动失效。该窗口是几何假设，没有利用视觉标签认证“这一点必定属于红箱”，这是现有能力边界。
 
@@ -653,7 +658,7 @@ cd /home/c/AVS/avs_ws
 ```bash
 source /opt/ros/humble/setup.bash
 cd /home/c/AVS/avs_ws
-colcon build --symlink-install --packages-up-to avs_rescue_sim
+colcon build --base-paths src --symlink-install --packages-up-to avs_rescue_sim
 source install/local_setup.bash
 python3 -m pytest -q src/avs_rescue_sim/test
 ```

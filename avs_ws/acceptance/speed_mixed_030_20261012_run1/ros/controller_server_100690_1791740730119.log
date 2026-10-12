@@ -1,0 +1,106 @@
+[INFO] [1791740730.374494671] [controller_server]: 
+	controller_server lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1791740730.402569783] [controller_server]: Creating controller server
+[INFO] [1791740730.542145598] [local_costmap.local_costmap]: 
+	local_costmap lifecycle node launched. 
+	Waiting on external lifecycle transitions to activate
+	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[INFO] [1791740730.542928526] [local_costmap.local_costmap]: Creating Costmap
+[INFO] [1791740730.595340264] [controller_server]: Configuring controller interface
+[INFO] [1791740730.596782477] [controller_server]: getting goal checker plugins..
+[INFO] [1791740730.597088441] [controller_server]: Controller frequency set to 20.0000Hz
+[INFO] [1791740730.597145939] [local_costmap.local_costmap]: Configuring
+[INFO] [1791740730.607595996] [local_costmap.local_costmap]: Using plugin "voxel_layer"
+[INFO] [1791740730.611817869] [local_costmap.local_costmap]: Subscribed to Topics: scan
+[INFO] [1791740730.619324760] [local_costmap.local_costmap]: Initialized plugin "voxel_layer"
+[INFO] [1791740730.619366748] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[INFO] [1791740730.619975489] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[INFO] [1791740730.631194568] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[INFO] [1791740730.632147153] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1791740730.632502449] [controller_server]: Created goal checker : position_goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1791740730.632743942] [controller_server]: Created goal checker : turn_goal_checker of type nav2_controller::SimpleGoalChecker
+[INFO] [1791740730.632952052] [controller_server]: Controller Server has general_goal_checker position_goal_checker turn_goal_checker  goal checkers available.
+[INFO] [1791740730.633842090] [controller_server]: Created controller : FollowPath of type nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791740730.641174444] [controller_server]: Created controller : PrecisionPath of type nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791740730.650288767] [controller_server]: Created controller : ReleasePusher of type nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791740730.657097780] [controller_server]: Controller Server has FollowPath PrecisionPath ReleasePusher  controllers available.
+[INFO] [1791740731.246633396] [controller_server]: Activating
+[INFO] [1791740731.246721441] [local_costmap.local_costmap]: Activating
+[INFO] [1791740731.246750415] [local_costmap.local_costmap]: Checking transform
+[INFO] [1791740731.246947274] [local_costmap.local_costmap]: start
+[INFO] [1791740731.498513536] [controller_server]: Activating controller: ReleasePusher of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791740731.498585080] [controller_server]: Activating controller: PrecisionPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791740731.498600008] [controller_server]: Activating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791740731.498634302] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[INFO] [1791740738.821964683] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791740739.872116457] [controller_server]: Passing new path to controller.
+[INFO] [1791740740.527130289] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 13.808 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791740740.872107076] [controller_server]: Passing new path to controller.
+[INFO] [1791740740.925123391] [controller_server]: Reached the goal!
+[INFO] [1791740741.035840974] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791740741.036055616] [controller_server]: Reached the goal!
+[INFO] [1791740741.919654411] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791740742.969846993] [controller_server]: Passing new path to controller.
+[INFO] [1791740743.969833612] [controller_server]: Passing new path to controller.
+[INFO] [1791740744.120115376] [controller_server]: Reached the goal!
+[INFO] [1791740744.215046655] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791740744.615432362] [controller_server]: Reached the goal!
+[INFO] [1791740746.423561645] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791740747.473884048] [controller_server]: Passing new path to controller.
+[INFO] [1791740747.970517990] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 21.290 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791740748.523886720] [controller_server]: Passing new path to controller.
+[INFO] [1791740749.523882473] [controller_server]: Passing new path to controller.
+[INFO] [1791740750.573917017] [controller_server]: Passing new path to controller.
+[INFO] [1791740751.573885089] [controller_server]: Passing new path to controller.
+[INFO] [1791740752.623883057] [controller_server]: Passing new path to controller.
+[INFO] [1791740753.623883501] [controller_server]: Passing new path to controller.
+[INFO] [1791740754.324062706] [controller_server]: Reached the goal!
+[INFO] [1791740754.427640771] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791740755.477950938] [controller_server]: Passing new path to controller.
+[INFO] [1791740756.527885407] [controller_server]: Passing new path to controller.
+[INFO] [1791740757.428143395] [controller_server]: Reached the goal!
+[INFO] [1791740759.233248875] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791740760.283426967] [controller_server]: Passing new path to controller.
+[INFO] [1791740761.333429536] [controller_server]: Passing new path to controller.
+[INFO] [1791740762.333426032] [controller_server]: Passing new path to controller.
+[INFO] [1791740763.383418985] [controller_server]: Passing new path to controller.
+[INFO] [1791740764.383421272] [controller_server]: Passing new path to controller.
+[INFO] [1791740765.433429775] [controller_server]: Passing new path to controller.
+[INFO] [1791740765.488172480] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 38.766 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791740766.433416482] [controller_server]: Passing new path to controller.
+[INFO] [1791740767.483418865] [controller_server]: Passing new path to controller.
+[INFO] [1791740768.533382632] [controller_server]: Passing new path to controller.
+[INFO] [1791740769.533429104] [controller_server]: Passing new path to controller.
+[INFO] [1791740770.583421515] [controller_server]: Passing new path to controller.
+[INFO] [1791740771.583425126] [controller_server]: Passing new path to controller.
+[INFO] [1791740772.633439930] [controller_server]: Passing new path to controller.
+[INFO] [1791740773.683418412] [controller_server]: Passing new path to controller.
+[INFO] [1791740774.333726063] [controller_server]: Reached the goal!
+[INFO] [1791740774.417796312] [controller_server]: Received a goal, begin computing control effort.
+[INFO] [1791740775.467926452] [controller_server]: Passing new path to controller.
+[INFO] [1791740776.517930633] [controller_server]: Passing new path to controller.
+[INFO] [1791740777.517940504] [controller_server]: Passing new path to controller.
+[INFO] [1791740778.567918595] [controller_server]: Passing new path to controller.
+[INFO] [1791740779.567914398] [controller_server]: Passing new path to controller.
+[INFO] [1791740780.599810605] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 53.862 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791740780.617930961] [controller_server]: Passing new path to controller.
+[INFO] [1791740781.667915660] [controller_server]: Passing new path to controller.
+[INFO] [1791740782.517917984] [controller_server]: Goal was canceled. Stopping the robot.
+[INFO] [1791740782.517977205] [controller_server]: [follow_path] [ActionServer] Client requested to cancel the goal. Cancelling.
+[INFO] [1791740784.904678955] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 58.146 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[INFO] [1791740785.585026604] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[INFO] [1791740785.585086125] [controller_server]: Running Nav2 LifecycleNode rcl preshutdown (controller_server)
+[INFO] [1791740785.585139856] [controller_server]: Deactivating
+[INFO] [1791740785.585160645] [controller_server]: Deactivating controller: ReleasePusher of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791740785.585175072] [controller_server]: Deactivating controller: PrecisionPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791740785.585184690] [controller_server]: Deactivating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791740785.585206251] [local_costmap.local_costmap]: Deactivating
+[INFO] [1791740785.647842958] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[INFO] [1791740785.659956749] [controller_server]: Cleaning up
+[INFO] [1791740785.660146876] [controller_server]: Cleaning up controller: ReleasePusher of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791740785.660182864] [controller_server]: Cleaning up controller: PrecisionPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791740785.660199615] [controller_server]: Cleaning up controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[INFO] [1791740785.660247956] [local_costmap.local_costmap]: Cleaning up
+[INFO] [1791740785.715341143] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
