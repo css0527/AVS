@@ -1,0 +1,204 @@
+{
+  "source": "avs_ws\\src\\avs_rescue_sim\\models\\rescue_rover\\model.sdf",
+  "sdf_sha256": "5d5d313aef2fda47e55fc586b630c6cd5c68b901b106bbdb1ec360171d660133",
+  "type": "Current native SDF geometry render, not a Gazebo recording",
+  "scope": "Four installation visuals only. No change to dynamics, sensors or joints. Existing acceptance predates this visual change.",
+  "geometry_visual_components": [
+    {
+      "link": "base_link",
+      "visual": "chassis_visual",
+      "min_model_xyz_m": [
+        -0.21,
+        -0.12,
+        0.04999999999999999
+      ],
+      "max_model_xyz_m": [
+        0.21,
+        0.12,
+        0.19
+      ]
+    },
+    {
+      "link": "base_link",
+      "visual": "stripe_visual",
+      "min_model_xyz_m": [
+        -0.08499999999999999,
+        -0.1225,
+        0.189
+      ],
+      "max_model_xyz_m": [
+        0.165,
+        0.1225,
+        0.201
+      ]
+    },
+    {
+      "link": "base_link",
+      "visual": "camera_mount_plate_visual",
+      "min_model_xyz_m": [
+        0.17,
+        -0.025,
+        0.19
+      ],
+      "max_model_xyz_m": [
+        0.21,
+        0.025,
+        0.196
+      ]
+    },
+    {
+      "link": "base_link",
+      "visual": "camera_support_column_visual",
+      "min_model_xyz_m": [
+        0.19,
+        -0.01,
+        0.19599999999999998
+      ],
+      "max_model_xyz_m": [
+        0.21000000000000002,
+        0.01,
+        0.225
+      ]
+    },
+    {
+      "link": "base_link",
+      "visual": "camera_pan_base_visual",
+      "min_model_xyz_m": [
+        0.18000000000000002,
+        -0.02,
+        0.22499999999999998
+      ],
+      "max_model_xyz_m": [
+        0.22,
+        0.02,
+        0.237
+      ]
+    },
+    {
+      "link": "left_wheel",
+      "visual": "visual",
+      "min_model_xyz_m": [
+        -0.085,
+        0.097499687777718,
+        -8.26465413883426e-08
+      ],
+      "max_model_xyz_m": [
+        0.085,
+        0.142500312222282,
+        0.1700000826465414
+      ]
+    },
+    {
+      "link": "right_wheel",
+      "visual": "visual",
+      "min_model_xyz_m": [
+        -0.085,
+        -0.142500312222282,
+        -8.26465413883426e-08
+      ],
+      "max_model_xyz_m": [
+        0.085,
+        -0.097499687777718,
+        0.1700000826465414
+      ]
+    },
+    {
+      "link": "rear_caster",
+      "visual": "visual",
+      "min_model_xyz_m": [
+        -0.21700000000000003,
+        -0.047,
+        0.0
+      ],
+      "max_model_xyz_m": [
+        -0.12300000000000001,
+        0.047,
+        0.094
+      ]
+    },
+    {
+      "link": "pusher",
+      "visual": "crossbar_visual",
+      "min_model_xyz_m": [
+        0.15,
+        -0.14,
+        0.05499999999999999
+      ],
+      "max_model_xyz_m": [
+        0.29000000000000004,
+        0.14,
+        0.155
+      ]
+    },
+    {
+      "link": "pusher",
+      "visual": "left_wing_visual",
+      "min_model_xyz_m": [
+        0.16699820860020026,
+        0.01109080661529066,
+        0.05499999999999999
+      ],
+      "max_model_xyz_m": [
+        0.35300179139979976,
+        0.13890919338470933,
+        0.155
+      ]
+    },
+    {
+      "link": "pusher",
+      "visual": "right_wing_visual",
+      "min_model_xyz_m": [
+        0.16699820860020026,
+        -0.13890919338470933,
+        0.05499999999999999
+      ],
+      "max_model_xyz_m": [
+        0.35300179139979976,
+        -0.01109080661529066,
+        0.155
+      ]
+    },
+    {
+      "link": "laser_link",
+      "visual": "visual",
+      "min_model_xyz_m": [
+        0.025,
+        -0.055,
+        0.2
+      ],
+      "max_model_xyz_m": [
+        0.135,
+        0.055,
+        0.26
+      ]
+    },
+    {
+      "link": "camera_link",
+      "visual": "visual",
+      "min_model_xyz_m": [
+        0.17,
+        -0.045,
+        0.24000000000000002
+      ],
+      "max_model_xyz_m": [
+        0.23,
+        0.045,
+        0.30000000000000004
+      ]
+    },
+    {
+      "link": "camera_link",
+      "visual": "camera_pan_cap_visual",
+      "min_model_xyz_m": [
+        0.18200000000000002,
+        -0.018,
+        0.23700000000000002
+      ],
+      "max_model_xyz_m": [
+        0.218,
+        0.018,
+        0.24000000000000002
+      ]
+    }
+  ]
+}

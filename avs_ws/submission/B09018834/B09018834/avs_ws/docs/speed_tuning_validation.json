@@ -1,0 +1,377 @@
+{
+  "date": "2026-10-12",
+  "selected_profile": "mixed_020",
+  "selected_runs": [
+    "speed_mixed_020_20261012_run1",
+    "speed_mixed_020_20261012_run2"
+  ],
+  "timing_definition": "Primary comparison is wall time from first navigating event to complete, including all braking, observing, pushing and alignment. Build, startup and post-completion capture are excluded. Failed runs are not speed improvements.",
+  "baseline_navigation_to_complete_wall_s": 310.81981086730957,
+  "selected_mean_navigation_to_complete_wall_s": 287.1957393884659,
+  "saved_wall_s": 23.62407147884369,
+  "task_time_reduction_percent": 7.60056812753448,
+  "baseline_startup_to_complete_wall_s": 317.34629702568054,
+  "selected_mean_startup_to_complete_wall_s": 292.570086479187,
+  "same_source_in_selected_runs": true,
+  "current_source_matches_final_run": true,
+  "preserved_vision_sha256": {
+    "src/avs_rescue_sim/avs_rescue_sim/panel_geometry.py": true,
+    "src/avs_rescue_sim/avs_rescue_sim/vision_node.py": true,
+    "src/avs_rescue_sim/avs_rescue_sim/yolov5_detector.py": true,
+    "src/avs_rescue_sim/avs_rescue_sim/hazard_tracker.py": true,
+    "src/avs_rescue_sim/avs_rescue_sim/camera_scan_node.py": true,
+    "src/avs_rescue_sim/avs_rescue_sim/hazard_classifier.py": true,
+    "src/avs_rescue_sim/avs_rescue_sim/barrier_detector.py": true,
+    "src/avs_rescue_sim/config/vision_params.yaml": true,
+    "src/avs_rescue_sim/models/rescue_course/materials/textures/hazard_chemical.png": true,
+    "src/avs_rescue_sim/models/rescue_course/materials/textures/apriltag_1.png": true,
+    "src/avs_rescue_sim/models/rescue_course/materials/textures/apriltag_2.png": true,
+    "src/avs_rescue_sim/models/rescue_course/materials/textures/apriltag_3.png": true,
+    "src/avs_rescue_sim/models/rescue_course/materials/textures/hazard_electrical.png": true,
+    "src/avs_rescue_sim/models/rescue_course/materials/textures/hazard_biohazard.png": true,
+    "src/avs_rescue_sim/models/rescue_course/materials/textures/apriltag_0.png": true,
+    "src/avs_rescue_sim/models/rescue_course/materials/textures/hazard_fire.png": true,
+    "src/avs_rescue_sim/models/rescue_course/materials/textures/hazard_radiation.png": true,
+    "src/avs_rescue_sim/models/yolov5/hazard_yolov5.torchscript": true,
+    "src/avs_rescue_sim/models/yolov5/hazard_yolov5_previous.torchscript": true,
+    "src/avs_rescue_sim/models/yolov5/hazard_yolov5.json": true,
+    "src/avs_rescue_sim/models/rescue_rover/model.sdf": true,
+    "src/avs_rescue_plugins/src/camera_pan.cpp": true
+  },
+  "settings": {
+    "cruise_linear_m_s": 0.2,
+    "cruise_rotation_rad_s": 0.4,
+    "smoother_angular_limit_rad_s": 0.5,
+    "lookahead_m": 0.3,
+    "approach_scaling_m": 0.2,
+    "ordinary_xy_tolerance_m": 0.05,
+    "precision_linear_m_s": 0.12,
+    "precision_rotation_rad_s": 0.35,
+    "precision_approach_scaling_m": 0.4,
+    "precision_xy_tolerance_m": 0.025,
+    "push_linear_m_s": 0.1,
+    "scan_period_s": 12,
+    "hazard_confirmation_frames": 3,
+    "tag_confirmation_frames": 4,
+    "observation_timeout_s": 28,
+    "confirmed_observation_hold_s": 1
+  },
+  "regression_tests_passed": 165,
+  "records": [
+    {
+      "run": "speed_baseline_20261012_run1",
+      "passed": true,
+      "final_state": "complete",
+      "final_step": "",
+      "final_detail": "finished and returned; corridor=5/5, core=4/4, missing=[]",
+      "startup_to_terminal_wall_s": 317.34629702568054,
+      "navigation_to_terminal_wall_s": 310.81981086730957,
+      "collection_wall_s": 330.85279952199926,
+      "phase_wall_s": {
+        "startup": 6.526486158370972,
+        "travel_turn_release": 210.64238119125366,
+        "align": 56.66540718078613,
+        "settling": 16.985119342803955,
+        "observing": 8.997360944747925,
+        "observation_complete": 0.00915384292602539,
+        "pushing": 16.517945289611816,
+        "push_settling": 1.0024430751800537
+      },
+      "observation_holds_s": {
+        "corridor_fire": 1.0031898021697998,
+        "corridor_chemical": 0.9996576309204102,
+        "corridor_radiation": 0.9999728202819824,
+        "corridor_electrical": 1.0007219314575195,
+        "corridor_biohazard": 1.000549554824829,
+        "core_tag_0": 0.993154764175415,
+        "core_tag_1": 1.0019893646240234,
+        "core_tag_2": 0.9976716041564941,
+        "core_tag_3": 1.0004534721374512
+      },
+      "corridor_labels": [
+        "BIOHAZARD",
+        "CHEMICAL",
+        "ELECTRICAL",
+        "FIRE",
+        "RADIATION"
+      ],
+      "core_marker_errors_m": {
+        "1": 0.05449417537870808,
+        "0": 0.06857120888580027,
+        "2": 0.049268635654603245,
+        "3": 0.034686306396334715
+      },
+      "barrier_displacement_m": 0.9796251446955546,
+      "return_error_m": 0.039866523805335466,
+      "wall_overlap_samples": 0,
+      "barrier_detection_frames": 361,
+      "evaluation_path": "acceptance/speed_baseline_20261012_run1/evaluation.json",
+      "source_manifest_path": "acceptance/speed_baseline_20261012_run1/source_sha256.json"
+    },
+    {
+      "run": "speed_024_20261012_run1",
+      "passed": false,
+      "final_state": "failed",
+      "final_step": "room_exit_outside",
+      "final_detail": "laser command guard blocked motion; no spin/back-up recovery; vehicle stopped",
+      "startup_to_terminal_wall_s": 219.52533602714539,
+      "navigation_to_terminal_wall_s": 212.37602758407593,
+      "collection_wall_s": 232.48929950699676,
+      "phase_wall_s": {
+        "startup": 7.149308443069458,
+        "travel_turn_release": 125.9519464969635,
+        "align": 45.95258665084839,
+        "settling": 13.836973667144775,
+        "observing": 9.008477449417114,
+        "observation_complete": 0.007089853286743164,
+        "pushing": 16.616873025894165,
+        "push_settling": 1.0020804405212402
+      },
+      "observation_holds_s": {
+        "corridor_fire": 1.002351999282837,
+        "corridor_chemical": 1.0011639595031738,
+        "corridor_radiation": 1.000105857849121,
+        "corridor_electrical": 1.0030121803283691,
+        "corridor_biohazard": 1.0010356903076172,
+        "core_tag_0": 1.000152349472046,
+        "core_tag_1": 1.0003597736358643,
+        "core_tag_2": 1.0007131099700928,
+        "core_tag_3": 0.9995825290679932
+      },
+      "corridor_labels": [
+        "BIOHAZARD",
+        "CHEMICAL",
+        "ELECTRICAL",
+        "FIRE",
+        "RADIATION"
+      ],
+      "core_marker_errors_m": {
+        "1": 0.01602225453602982,
+        "0": 0.004778096573786851,
+        "2": 0.05402715779460821,
+        "3": 0.07617526112863073
+      },
+      "barrier_displacement_m": 1.011889247944033,
+      "return_error_m": 1.501214428505467,
+      "wall_overlap_samples": 0,
+      "barrier_detection_frames": 289,
+      "evaluation_path": "acceptance/speed_024_20261012_run1/evaluation.json",
+      "source_manifest_path": "acceptance/speed_024_20261012_run1/source_sha256.json"
+    },
+    {
+      "run": "speed_mixed_030_20261012_run1",
+      "passed": false,
+      "final_state": "failed",
+      "final_step": "corridor_radiation",
+      "final_detail": "corridor_radiation: unexpected turn; stop instead of circling; vehicle stopped",
+      "startup_to_terminal_wall_s": 50.948803186416626,
+      "navigation_to_terminal_wall_s": 43.76914143562317,
+      "collection_wall_s": 63.77084943700174,
+      "phase_wall_s": {
+        "startup": 7.179661750793457,
+        "travel_turn_release": 27.74342656135559,
+        "align": 11.836752653121948,
+        "settling": 2.1941158771514893,
+        "observing": 1.9917724132537842,
+        "observation_complete": 0.0030739307403564453
+      },
+      "observation_holds_s": {
+        "corridor_fire": 0.9904234409332275,
+        "corridor_chemical": 1.0013489723205566
+      },
+      "corridor_labels": [
+        "BIOHAZARD",
+        "CHEMICAL",
+        "ELECTRICAL",
+        "FIRE",
+        "RADIATION"
+      ],
+      "core_marker_errors_m": {},
+      "barrier_displacement_m": 0.0,
+      "return_error_m": 1.7271489743616835,
+      "wall_overlap_samples": 0,
+      "barrier_detection_frames": 9,
+      "evaluation_path": "acceptance/speed_mixed_030_20261012_run1/evaluation.json",
+      "source_manifest_path": "acceptance/speed_mixed_030_20261012_run1/source_sha256.json"
+    },
+    {
+      "run": "speed_mixed_024_20261012_run1",
+      "passed": true,
+      "final_state": "complete",
+      "final_step": "",
+      "final_detail": "finished and returned; corridor=5/5, core=4/4, missing=[]",
+      "startup_to_terminal_wall_s": 303.9354393482208,
+      "navigation_to_terminal_wall_s": 296.84267497062683,
+      "collection_wall_s": 316.8861601219978,
+      "phase_wall_s": {
+        "startup": 7.092764377593994,
+        "travel_turn_release": 177.44895100593567,
+        "align": 76.06427073478699,
+        "settling": 16.69298505783081,
+        "observing": 9.002062797546387,
+        "observation_complete": 0.008594036102294922,
+        "pushing": 16.618799209594727,
+        "push_settling": 1.007012128829956
+      },
+      "observation_holds_s": {
+        "corridor_fire": 0.9924890995025635,
+        "corridor_chemical": 0.9994423389434814,
+        "corridor_radiation": 1.000819444656372,
+        "corridor_electrical": 0.9998180866241455,
+        "corridor_biohazard": 1.008589744567871,
+        "core_tag_0": 0.9998204708099365,
+        "core_tag_1": 1.001075029373169,
+        "core_tag_2": 0.9990835189819336,
+        "core_tag_3": 1.000925064086914
+      },
+      "corridor_labels": [
+        "BIOHAZARD",
+        "CHEMICAL",
+        "ELECTRICAL",
+        "FIRE",
+        "RADIATION"
+      ],
+      "core_marker_errors_m": {
+        "1": 0.018786550270084877,
+        "0": 0.005467846218759222,
+        "2": 0.04405343587455349,
+        "3": 0.034599411962182615
+      },
+      "barrier_displacement_m": 1.0331366532860884,
+      "return_error_m": 0.04582622471722407,
+      "wall_overlap_samples": 0,
+      "barrier_detection_frames": 368,
+      "evaluation_path": "acceptance/speed_mixed_024_20261012_run1/evaluation.json",
+      "source_manifest_path": "acceptance/speed_mixed_024_20261012_run1/source_sha256.json"
+    },
+    {
+      "run": "speed_mixed_020_20261012_run1",
+      "passed": true,
+      "final_state": "complete",
+      "final_step": "",
+      "final_detail": "finished and returned; corridor=5/5, core=4/4, missing=[]",
+      "startup_to_terminal_wall_s": 290.6152892112732,
+      "navigation_to_terminal_wall_s": 286.07392621040344,
+      "collection_wall_s": 306.06132363600045,
+      "phase_wall_s": {
+        "startup": 4.541363000869751,
+        "travel_turn_release": 171.7870054244995,
+        "align": 71.16186857223511,
+        "settling": 16.669673681259155,
+        "observing": 9.006748914718628,
+        "observation_complete": 0.011710405349731445,
+        "pushing": 16.429312229156494,
+        "push_settling": 1.0076069831848145
+      },
+      "observation_holds_s": {
+        "corridor_fire": 0.9995641708374023,
+        "corridor_chemical": 1.0019190311431885,
+        "corridor_radiation": 1.0031862258911133,
+        "corridor_electrical": 1.0019097328186035,
+        "corridor_biohazard": 1.002673864364624,
+        "core_tag_0": 0.9991824626922607,
+        "core_tag_1": 0.999497652053833,
+        "core_tag_2": 0.998384952545166,
+        "core_tag_3": 1.0004308223724365
+      },
+      "corridor_labels": [
+        "BIOHAZARD",
+        "CHEMICAL",
+        "ELECTRICAL",
+        "FIRE",
+        "RADIATION"
+      ],
+      "core_marker_errors_m": {
+        "1": 0.09798821437874754,
+        "0": 0.12829996340486047,
+        "2": 0.1115436726031996,
+        "3": 0.07670713871796511
+      },
+      "barrier_displacement_m": 1.0034718417569064,
+      "return_error_m": 0.038518678897169215,
+      "wall_overlap_samples": 0,
+      "barrier_detection_frames": 316,
+      "evaluation_path": "acceptance/speed_mixed_020_20261012_run1/evaluation.json",
+      "source_manifest_path": "acceptance/speed_mixed_020_20261012_run1/source_sha256.json"
+    },
+    {
+      "run": "speed_mixed_020_20261012_run2",
+      "passed": true,
+      "final_state": "complete",
+      "final_step": "",
+      "final_detail": "finished and returned; corridor=5/5, core=4/4, missing=[]",
+      "startup_to_terminal_wall_s": 294.52488374710083,
+      "navigation_to_terminal_wall_s": 288.3175525665283,
+      "collection_wall_s": 308.1412370390026,
+      "phase_wall_s": {
+        "startup": 6.20733118057251,
+        "travel_turn_release": 172.03406643867493,
+        "align": 73.30288553237915,
+        "settling": 16.418869495391846,
+        "observing": 9.02687668800354,
+        "observation_complete": 0.008569955825805664,
+        "pushing": 16.52564764022827,
+        "push_settling": 1.0006368160247803
+      },
+      "observation_holds_s": {
+        "corridor_fire": 1.0032811164855957,
+        "corridor_chemical": 1.0013620853424072,
+        "corridor_radiation": 1.0016489028930664,
+        "corridor_electrical": 1.002133846282959,
+        "corridor_biohazard": 1.0032079219818115,
+        "core_tag_0": 1.000776767730713,
+        "core_tag_1": 1.0024549961090088,
+        "core_tag_2": 1.0036728382110596,
+        "core_tag_3": 1.008338212966919
+      },
+      "corridor_labels": [
+        "BIOHAZARD",
+        "CHEMICAL",
+        "ELECTRICAL",
+        "FIRE",
+        "RADIATION"
+      ],
+      "core_marker_errors_m": {
+        "1": 0.044086830841790804,
+        "0": 0.0510483136335502,
+        "2": 0.060046100442783336,
+        "3": 0.06825640097538772
+      },
+      "barrier_displacement_m": 1.0049021292483555,
+      "return_error_m": 0.052530497116562276,
+      "wall_overlap_samples": 0,
+      "barrier_detection_frames": 357,
+      "evaluation_path": "acceptance/speed_mixed_020_20261012_run2/evaluation.json",
+      "source_manifest_path": "acceptance/speed_mixed_020_20261012_run2/source_sha256.json"
+    }
+  ],
+  "limitations": [
+    "One baseline and two selected-profile runs do not establish a population success rate or a globally optimal speed.",
+    "All nine required targets were confirmed in both selected runs, with no extra stop-observation wait. This is task-level evidence, not a per-frame recall/precision comparison. Truncated/angled visible signs can still miss a displayed box in either profile.",
+    "Marker errors use each run's own recorded final map<-odom registration. The recorder overwrites registration on marker rebroadcast even after coordinates freeze; errors can include later map drift. Preserve these original metrics; do not substitute another run's TF.",
+    "Wall overlap checks use discrete samples, not a continuous contact sensor."
+  ],
+  "visual_checks": {
+    "mixed_020_run1": {
+      "annotated_frames": 94,
+      "purple_box_snapshots_reviewed": 17,
+      "all_reviewed_purple_boxes_on_real_barrier": true,
+      "initial_fire_purple_false_box_observed": false,
+      "observation_hold_range_s": [
+        0.998,
+        1.003
+      ]
+    },
+    "mixed_020_run2": {
+      "annotated_frames": 95,
+      "purple_box_snapshots_reviewed": 19,
+      "all_reviewed_purple_boxes_on_real_barrier": true,
+      "initial_fire_purple_false_box_observed": false,
+      "observation_hold_range_s": [
+        1.001,
+        1.008
+      ]
+    },
+    "per_frame_accuracy_measured": false
+  }
+}

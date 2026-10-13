@@ -1,0 +1,16 @@
+<!--
+  Replan and follow with Nav2, but do not execute Spin or BackUp recovery
+  actions.  In this course the rover's long front pusher can already be in
+  physical contact when progress checking fails; recovery motion would force
+  the model into a wall.  Failure is returned to mission_node, which stops.
+-->
+<root main_tree_to_execute="MainTree">
+  <BehaviorTree ID="MainTree">
+    <PipelineSequence name="NavigateWithSafeReplanning">
+      <RateController hz="1.0">
+        <ComputePathToPose goal="{goal}" path="{path}" planner_id="GridBased"/>
+      </RateController>
+      <FollowPath path="{path}" controller_id="FollowPath" goal_checker_id="fast_position_goal_checker"/>
+    </PipelineSequence>
+  </BehaviorTree>
+</root>

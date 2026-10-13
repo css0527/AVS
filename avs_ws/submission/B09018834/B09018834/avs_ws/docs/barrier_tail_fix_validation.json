@@ -1,0 +1,107 @@
+{
+  "scope": "Partial sweep diagnostic and archived-image regression; not full-task acceptance",
+  "source_sha256": {
+    "avs_ws/src/avs_rescue_sim/avs_rescue_sim/barrier_detector.py": "6740e4f8c74c2bbba619fe5716406aad03fbfb28b96e0a8a18fc5ff041c94213",
+    "avs_ws/src/avs_rescue_sim/avs_rescue_sim/vision_node.py": "c03e9b31646c4426124a4f6a107c7853af84b78512d5784196716c0fc002983f"
+  },
+  "live_diagnostic": {
+    "path": "avs_ws/acceptance/barrier_tail_diagnostic_e7djvzbf",
+    "wall_duration_s": 90,
+    "raw_frames": 1102,
+    "processed_frames": 489,
+    "positive_barrier_frames": 71,
+    "fire_observation_seen": true,
+    "corridor_confirmed": 5,
+    "first_positive_header": {
+      "sec": 43,
+      "nanosec": 554000000
+    },
+    "initial_red_sweep_raw_replay": {
+      "frames": 531,
+      "positive_frames": 0,
+      "scope": "raw_00000.png through raw_00530.png; before actual red box becomes visible"
+    },
+    "positive_frame_note": "71 positive processed frames occur after the initial FIRE sweep and show the real red push box; zero positive frames is not claimed for the full 90-second diagnostic."
+  },
+  "archive_replay": {
+    "frames": 220,
+    "positive_frames": 41,
+    "boxes": 43,
+    "changed_frames": []
+  },
+  "synthetic": [
+    {
+      "factor": 1.0,
+      "bg": 40,
+      "changes": [],
+      "newfalse": 0
+    },
+    {
+      "factor": 1.0,
+      "bg": 180,
+      "changes": [],
+      "newfalse": 0
+    },
+    {
+      "factor": 1.0,
+      "bg": 245,
+      "changes": [],
+      "newfalse": 0
+    },
+    {
+      "factor": 0.6,
+      "bg": 40,
+      "changes": [],
+      "newfalse": 0
+    },
+    {
+      "factor": 0.6,
+      "bg": 180,
+      "changes": [],
+      "newfalse": 0
+    },
+    {
+      "factor": 0.6,
+      "bg": 245,
+      "changes": [],
+      "newfalse": 0
+    }
+  ],
+  "recorded_video_replay": {
+    "archive_changes": [],
+    "counts": {
+      "frames": 1771,
+      "old_positive": 323,
+      "new_positive": 321,
+      "same": 1769,
+      "changed": 2
+    },
+    "video_changes": [
+      {
+        "frame": 5712,
+        "old": [
+          [
+            600,
+            157,
+            40,
+            76
+          ]
+        ],
+        "new": []
+      },
+      {
+        "frame": 5715,
+        "old": [
+          [
+            600,
+            157,
+            40,
+            76
+          ]
+        ],
+        "new": []
+      }
+    ]
+  },
+  "focused_tests_passed": 68
+}

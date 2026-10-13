@@ -1,0 +1,844 @@
+[
+  {
+    "frame": "image_0083.png",
+    "before": [],
+    "after": [],
+    "ms": 68.154004002281
+  },
+  {
+    "frame": "image_0098.png",
+    "before": [
+      "ELECTRICAL",
+      "CHEMICAL"
+    ],
+    "after": [
+      "ELECTRICAL",
+      "CHEMICAL"
+    ],
+    "ms": 40.06714400020428
+  },
+  {
+    "frame": "image_0113.png",
+    "before": [
+      "FIRE"
+    ],
+    "after": [
+      "FIRE"
+    ],
+    "ms": 28.646549999393756
+  },
+  {
+    "frame": "image_0130.png",
+    "before": [
+      "RADIATION"
+    ],
+    "after": [
+      "RADIATION"
+    ],
+    "ms": 32.00192700023763
+  },
+  {
+    "frame": "image_0147.png",
+    "before": [],
+    "after": [],
+    "ms": 23.92496900210972
+  },
+  {
+    "frame": "image_0161.png",
+    "before": [
+      "CHEMICAL"
+    ],
+    "after": [
+      "CHEMICAL"
+    ],
+    "ms": 38.69616000156384
+  },
+  {
+    "frame": "image_0176.png",
+    "before": [],
+    "after": [],
+    "ms": 26.506234000407858
+  },
+  {
+    "frame": "image_0192.png",
+    "before": [],
+    "after": [],
+    "ms": 27.594015999056865
+  },
+  {
+    "frame": "image_0207.png",
+    "before": [
+      "ELECTRICAL",
+      "BIOHAZARD"
+    ],
+    "after": [
+      "ELECTRICAL",
+      "BIOHAZARD"
+    ],
+    "ms": 44.75974999877508
+  },
+  {
+    "frame": "image_0222.png",
+    "before": [],
+    "after": [
+      "CHEMICAL"
+    ],
+    "ms": 58.69454100320581
+  },
+  {
+    "frame": "image_0240.png",
+    "before": [
+      "RADIATION"
+    ],
+    "after": [
+      "RADIATION"
+    ],
+    "ms": 34.490037000068696
+  },
+  {
+    "frame": "image_0255.png",
+    "before": [],
+    "after": [],
+    "ms": 24.275828000099864
+  },
+  {
+    "frame": "image_0276.png",
+    "before": [
+      "BIOHAZARD",
+      "ELECTRICAL"
+    ],
+    "after": [
+      "BIOHAZARD",
+      "ELECTRICAL"
+    ],
+    "ms": 47.51874799694633
+  },
+  {
+    "frame": "image_0292.png",
+    "before": [],
+    "after": [],
+    "ms": 25.387645000591874
+  },
+  {
+    "frame": "image_0307.png",
+    "before": [],
+    "after": [],
+    "ms": 23.72287099933601
+  },
+  {
+    "frame": "image_0322.png",
+    "before": [
+      "RADIATION"
+    ],
+    "after": [
+      "RADIATION"
+    ],
+    "ms": 28.156291002233047
+  },
+  {
+    "frame": "image_0340.png",
+    "before": [
+      "ELECTRICAL"
+    ],
+    "after": [
+      "ELECTRICAL"
+    ],
+    "ms": 28.49518699804321
+  },
+  {
+    "frame": "image_0355.png",
+    "before": [],
+    "after": [],
+    "ms": 25.588120999600505
+  },
+  {
+    "frame": "image_0370.png",
+    "before": [],
+    "after": [],
+    "ms": 25.792824999371078
+  },
+  {
+    "frame": "image_0385.png",
+    "before": [],
+    "after": [],
+    "ms": 29.149655001674546
+  },
+  {
+    "frame": "image_0400.png",
+    "before": [
+      "ELECTRICAL"
+    ],
+    "after": [
+      "ELECTRICAL"
+    ],
+    "ms": 30.718197998794494
+  },
+  {
+    "frame": "image_0416.png",
+    "before": [],
+    "after": [],
+    "ms": 32.86699100135593
+  },
+  {
+    "frame": "image_0432.png",
+    "before": [],
+    "after": [],
+    "ms": 34.235138999065384
+  },
+  {
+    "frame": "image_0447.png",
+    "before": [],
+    "after": [
+      "ELECTRICAL"
+    ],
+    "ms": 62.36402799913776
+  },
+  {
+    "frame": "image_0462.png",
+    "before": [],
+    "after": [
+      "ELECTRICAL"
+    ],
+    "ms": 62.88148900057422
+  },
+  {
+    "frame": "image_0477.png",
+    "before": [],
+    "after": [],
+    "ms": 24.159129003237467
+  },
+  {
+    "frame": "image_0493.png",
+    "before": [],
+    "after": [],
+    "ms": 34.44851899985224
+  },
+  {
+    "frame": "image_0513.png",
+    "before": [],
+    "after": [],
+    "ms": 26.886537998507265
+  },
+  {
+    "frame": "image_0528.png",
+    "before": [
+      "ELECTRICAL"
+    ],
+    "after": [
+      "ELECTRICAL"
+    ],
+    "ms": 35.422086002654396
+  },
+  {
+    "frame": "image_0544.png",
+    "before": [],
+    "after": [],
+    "ms": 24.400693000643514
+  },
+  {
+    "frame": "image_0558.png",
+    "before": [],
+    "after": [],
+    "ms": 26.99077400029637
+  },
+  {
+    "frame": "image_0573.png",
+    "before": [],
+    "after": [],
+    "ms": 27.566133001528215
+  },
+  {
+    "frame": "image_0588.png",
+    "before": [
+      "BIOHAZARD"
+    ],
+    "after": [
+      "BIOHAZARD"
+    ],
+    "ms": 42.22077599843033
+  },
+  {
+    "frame": "image_0603.png",
+    "before": [],
+    "after": [],
+    "ms": 22.55682299801265
+  },
+  {
+    "frame": "image_0625.png",
+    "before": [
+      "RADIATION"
+    ],
+    "after": [
+      "RADIATION"
+    ],
+    "ms": 29.144505999283865
+  },
+  {
+    "frame": "image_0641.png",
+    "before": [],
+    "after": [],
+    "ms": 23.76062199982698
+  },
+  {
+    "frame": "image_0656.png",
+    "before": [],
+    "after": [],
+    "ms": 32.84034099851851
+  },
+  {
+    "frame": "image_0671.png",
+    "before": [],
+    "after": [],
+    "ms": 27.532800999324536
+  },
+  {
+    "frame": "image_0688.png",
+    "before": [],
+    "after": [],
+    "ms": 24.838133998855483
+  },
+  {
+    "frame": "image_0704.png",
+    "before": [],
+    "after": [],
+    "ms": 23.084101998392725
+  },
+  {
+    "frame": "image_0719.png",
+    "before": [],
+    "after": [],
+    "ms": 41.78796400083229
+  },
+  {
+    "frame": "image_0734.png",
+    "before": [
+      "BIOHAZARD"
+    ],
+    "after": [
+      "BIOHAZARD"
+    ],
+    "ms": 43.08379600115586
+  },
+  {
+    "frame": "image_0750.png",
+    "before": [],
+    "after": [],
+    "ms": 55.99038700165693
+  },
+  {
+    "frame": "image_0765.png",
+    "before": [],
+    "after": [],
+    "ms": 31.127547001233324
+  },
+  {
+    "frame": "image_0779.png",
+    "before": [],
+    "after": [],
+    "ms": 31.359934000647627
+  },
+  {
+    "frame": "image_0794.png",
+    "before": [],
+    "after": [],
+    "ms": 25.12839900009567
+  },
+  {
+    "frame": "image_0812.png",
+    "before": [],
+    "after": [],
+    "ms": 25.900807999278186
+  },
+  {
+    "frame": "image_0827.png",
+    "before": [],
+    "after": [],
+    "ms": 31.38155399938114
+  },
+  {
+    "frame": "image_0843.png",
+    "before": [],
+    "after": [],
+    "ms": 28.552685002068756
+  },
+  {
+    "frame": "image_0858.png",
+    "before": [],
+    "after": [],
+    "ms": 28.543737997097196
+  },
+  {
+    "frame": "image_0876.png",
+    "before": [],
+    "after": [],
+    "ms": 27.14367099906667
+  },
+  {
+    "frame": "image_0893.png",
+    "before": [],
+    "after": [],
+    "ms": 26.98786899782135
+  },
+  {
+    "frame": "image_0908.png",
+    "before": [],
+    "after": [],
+    "ms": 32.1406989969546
+  },
+  {
+    "frame": "image_0927.png",
+    "before": [],
+    "after": [],
+    "ms": 26.62720200169133
+  },
+  {
+    "frame": "image_0941.png",
+    "before": [],
+    "after": [],
+    "ms": 25.603250000131084
+  },
+  {
+    "frame": "image_0959.png",
+    "before": [],
+    "after": [],
+    "ms": 31.53734599982272
+  },
+  {
+    "frame": "image_0978.png",
+    "before": [],
+    "after": [],
+    "ms": 25.153656999464147
+  },
+  {
+    "frame": "image_0994.png",
+    "before": [],
+    "after": [],
+    "ms": 24.750339001911925
+  },
+  {
+    "frame": "image_1010.png",
+    "before": [],
+    "after": [],
+    "ms": 23.595872000441886
+  },
+  {
+    "frame": "image_1025.png",
+    "before": [],
+    "after": [],
+    "ms": 27.042921999964165
+  },
+  {
+    "frame": "image_1040.png",
+    "before": [],
+    "after": [],
+    "ms": 28.658974999416387
+  },
+  {
+    "frame": "image_1055.png",
+    "before": [],
+    "after": [],
+    "ms": 24.390434002270922
+  },
+  {
+    "frame": "image_1070.png",
+    "before": [],
+    "after": [],
+    "ms": 26.11867700034054
+  },
+  {
+    "frame": "image_1086.png",
+    "before": [],
+    "after": [],
+    "ms": 51.26126300092437
+  },
+  {
+    "frame": "image_1101.png",
+    "before": [],
+    "after": [],
+    "ms": 25.051595002878457
+  },
+  {
+    "frame": "image_1116.png",
+    "before": [],
+    "after": [],
+    "ms": 56.10799900023267
+  },
+  {
+    "frame": "image_1134.png",
+    "before": [],
+    "after": [],
+    "ms": 27.168988999619614
+  },
+  {
+    "frame": "image_1149.png",
+    "before": [],
+    "after": [],
+    "ms": 31.201406000036513
+  },
+  {
+    "frame": "image_1164.png",
+    "before": [],
+    "after": [],
+    "ms": 51.69677000230877
+  },
+  {
+    "frame": "image_1179.png",
+    "before": [],
+    "after": [],
+    "ms": 52.143439002975356
+  },
+  {
+    "frame": "image_1194.png",
+    "before": [],
+    "after": [],
+    "ms": 25.832609997451073
+  },
+  {
+    "frame": "image_1209.png",
+    "before": [],
+    "after": [],
+    "ms": 27.59997799876146
+  },
+  {
+    "frame": "image_1225.png",
+    "before": [],
+    "after": [],
+    "ms": 24.656253001012374
+  },
+  {
+    "frame": "image_1243.png",
+    "before": [],
+    "after": [],
+    "ms": 23.766774000250734
+  },
+  {
+    "frame": "image_1259.png",
+    "before": [],
+    "after": [],
+    "ms": 28.65789299903554
+  },
+  {
+    "frame": "image_1275.png",
+    "before": [],
+    "after": [],
+    "ms": 26.153253002121346
+  },
+  {
+    "frame": "image_1291.png",
+    "before": [],
+    "after": [],
+    "ms": 26.268297999195056
+  },
+  {
+    "frame": "image_1308.png",
+    "before": [
+      "BIOHAZARD"
+    ],
+    "after": [
+      "BIOHAZARD"
+    ],
+    "ms": 29.760271001578076
+  },
+  {
+    "frame": "image_1322.png",
+    "before": [],
+    "after": [],
+    "ms": 22.671848000754835
+  },
+  {
+    "frame": "image_1338.png",
+    "before": [],
+    "after": [],
+    "ms": 26.09238800141611
+  },
+  {
+    "frame": "image_1353.png",
+    "before": [],
+    "after": [],
+    "ms": 24.19967599780648
+  },
+  {
+    "frame": "image_1370.png",
+    "before": [
+      "BIOHAZARD"
+    ],
+    "after": [
+      "ELECTRICAL",
+      "BIOHAZARD"
+    ],
+    "ms": 64.12532499962253
+  },
+  {
+    "frame": "image_1385.png",
+    "before": [],
+    "after": [
+      "BIOHAZARD",
+      "ELECTRICAL"
+    ],
+    "ms": 85.26340599928517
+  },
+  {
+    "frame": "image_1401.png",
+    "before": [],
+    "after": [],
+    "ms": 24.843986000632867
+  },
+  {
+    "frame": "image_1416.png",
+    "before": [],
+    "after": [],
+    "ms": 25.308616997790523
+  },
+  {
+    "frame": "image_1431.png",
+    "before": [
+      "BIOHAZARD"
+    ],
+    "after": [
+      "BIOHAZARD"
+    ],
+    "ms": 44.70298599699163
+  },
+  {
+    "frame": "image_1446.png",
+    "before": [],
+    "after": [],
+    "ms": 32.56832199986093
+  },
+  {
+    "frame": "image_1462.png",
+    "before": [
+      "ELECTRICAL"
+    ],
+    "after": [
+      "ELECTRICAL"
+    ],
+    "ms": 35.140870000759605
+  },
+  {
+    "frame": "image_1477.png",
+    "before": [
+      "RADIATION"
+    ],
+    "after": [
+      "RADIATION"
+    ],
+    "ms": 28.586599000846036
+  },
+  {
+    "frame": "image_1497.png",
+    "before": [],
+    "after": [],
+    "ms": 29.85947799970745
+  },
+  {
+    "frame": "image_1513.png",
+    "before": [],
+    "after": [],
+    "ms": 23.41739799885545
+  },
+  {
+    "frame": "image_1529.png",
+    "before": [],
+    "after": [],
+    "ms": 25.52289000232122
+  },
+  {
+    "frame": "image_1545.png",
+    "before": [],
+    "after": [
+      "FIRE"
+    ],
+    "ms": 55.031971001881175
+  },
+  {
+    "frame": "image_1560.png",
+    "before": [
+      "RADIATION"
+    ],
+    "after": [
+      "RADIATION"
+    ],
+    "ms": 33.90867699999944
+  },
+  {
+    "frame": "image_1575.png",
+    "before": [
+      "BIOHAZARD",
+      "ELECTRICAL"
+    ],
+    "after": [
+      "BIOHAZARD",
+      "ELECTRICAL"
+    ],
+    "ms": 49.796595001680544
+  },
+  {
+    "frame": "image_1591.png",
+    "before": [
+      "RADIATION"
+    ],
+    "after": [
+      "RADIATION"
+    ],
+    "ms": 31.049151002662256
+  },
+  {
+    "frame": "image_1607.png",
+    "before": [
+      "FIRE"
+    ],
+    "after": [
+      "FIRE"
+    ],
+    "ms": 30.158730001858203
+  },
+  {
+    "frame": "image_1624.png",
+    "before": [
+      "RADIATION"
+    ],
+    "after": [
+      "RADIATION"
+    ],
+    "ms": 44.11699600314023
+  },
+  {
+    "frame": "image_1643.png",
+    "before": [
+      "ELECTRICAL"
+    ],
+    "after": [
+      "ELECTRICAL"
+    ],
+    "ms": 33.49285700096516
+  },
+  {
+    "frame": "image_1657.png",
+    "before": [],
+    "after": [],
+    "ms": 23.29734299928532
+  },
+  {
+    "frame": "image_1672.png",
+    "before": [],
+    "after": [],
+    "ms": 26.73467500062543
+  },
+  {
+    "frame": "image_1688.png",
+    "before": [
+      "CHEMICAL"
+    ],
+    "after": [
+      "CHEMICAL"
+    ],
+    "ms": 37.28835099900607
+  },
+  {
+    "frame": "image_1702.png",
+    "before": [
+      "RADIATION"
+    ],
+    "after": [
+      "RADIATION"
+    ],
+    "ms": 37.27557700040052
+  },
+  {
+    "frame": "image_1721.png",
+    "before": [
+      "RADIATION"
+    ],
+    "after": [
+      "RADIATION"
+    ],
+    "ms": 32.43843900054344
+  },
+  {
+    "frame": "image_1736.png",
+    "before": [
+      "CHEMICAL"
+    ],
+    "after": [
+      "CHEMICAL"
+    ],
+    "ms": 38.71180200076196
+  },
+  {
+    "frame": "image_1751.png",
+    "before": [],
+    "after": [],
+    "ms": 60.78659099875949
+  },
+  {
+    "frame": "image_1772.png",
+    "before": [
+      "FIRE"
+    ],
+    "after": [
+      "FIRE"
+    ],
+    "ms": 29.4797969982028
+  },
+  {
+    "frame": "image_1787.png",
+    "before": [],
+    "after": [
+      "FIRE"
+    ],
+    "ms": 52.667183001176454
+  },
+  {
+    "frame": "image_1802.png",
+    "before": [],
+    "after": [],
+    "ms": 22.638195998297306
+  },
+  {
+    "frame": "image_1817.png",
+    "before": [],
+    "after": [],
+    "ms": 23.778226001013536
+  },
+  {
+    "frame": "image_1832.png",
+    "before": [],
+    "after": [],
+    "ms": 27.538523001567228
+  },
+  {
+    "frame": "image_1847.png",
+    "before": [
+      "FIRE"
+    ],
+    "after": [
+      "FIRE"
+    ],
+    "ms": 35.16528600084712
+  },
+  {
+    "frame": "image_1863.png",
+    "before": [],
+    "after": [],
+    "ms": 25.9854579999228
+  },
+  {
+    "frame": "image_1879.png",
+    "before": [],
+    "after": [],
+    "ms": 26.912697998341173
+  },
+  {
+    "frame": "image_1895.png",
+    "before": [],
+    "after": [],
+    "ms": 23.862223002652172
+  },
+  {
+    "frame": "image_1910.png",
+    "before": [],
+    "after": [],
+    "ms": 30.74338800070109
+  }
+]

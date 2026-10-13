@@ -3,6 +3,9 @@
   <material name="rescue_blue"><color rgba="0.08 0.30 0.65 1"/></material>
   <material name="safety_yellow"><color rgba="0.95 0.65 0.05 1"/></material>
   <material name="dark"><color rgba="0.06 0.07 0.08 1"/></material>
+  <material name="camera_mount_metal"><color rgba="0.45 0.50 0.56 1"/></material>
+  <material name="camera_pan_dark"><color rgba="0.30 0.34 0.40 1"/></material>
+  <material name="camera_pan_cap"><color rgba="0.55 0.60 0.66 1"/></material>
 
   <!-- base_link is the 2-D navigation frame at ground level. -->
   <link name="base_link">
@@ -10,6 +13,23 @@
       <origin xyz="0 0 0.12"/>
       <geometry><box size="0.42 0.24 0.14"/></geometry>
       <material name="rescue_blue"/>
+    </visual>
+    <!-- Match SDF installation geometry in the ground-level base_link frame.
+         Visual mounting hardware only; camera TF and motion joint stay unchanged. -->
+    <visual name="camera_mount_plate_visual">
+      <origin xyz="0.19 0 0.193"/>
+      <geometry><box size="0.04 0.05 0.006"/></geometry>
+      <material name="camera_mount_metal"/>
+    </visual>
+    <visual name="camera_support_column_visual">
+      <origin xyz="0.20 0 0.2105"/>
+      <geometry><cylinder radius="0.01" length="0.029"/></geometry>
+      <material name="camera_mount_metal"/>
+    </visual>
+    <visual name="camera_pan_base_visual">
+      <origin xyz="0.20 0 0.231"/>
+      <geometry><cylinder radius="0.02" length="0.012"/></geometry>
+      <material name="camera_pan_dark"/>
     </visual>
     <collision>
       <origin xyz="0 0 0.12"/>
@@ -116,6 +136,11 @@
     <visual>
       <geometry><box size="0.06 0.09 0.06"/></geometry>
       <material name="dark"/>
+    </visual>
+    <visual name="camera_pan_cap_visual">
+      <origin xyz="0 0 -0.0315"/>
+      <geometry><cylinder radius="0.018" length="0.003"/></geometry>
+      <material name="camera_pan_cap"/>
     </visual>
   </link>
   <joint name="camera_joint" type="revolute">
