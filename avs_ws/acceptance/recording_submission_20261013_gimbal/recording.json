@@ -1,0 +1,27 @@
+{
+  "status": "failed",
+  "created_at": 1791888742.6044314,
+  "continuous": false,
+  "camera_topic": "/camera/annotated",
+  "camera_frames_shown": 921,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "exit_reason": "acceptance_failed",
+  "ffmpeg_exit_code": 0,
+  "acceptance_exit_code": 1,
+  "xephyr_exit_code": 0,
+  "errors": [],
+  "xephyr_pid": 12245,
+  "display": ":90",
+  "recording_started_at": 1791888743.7915983,
+  "ffmpeg_pid": 12279,
+  "acceptance_pid": 12280,
+  "ffmpeg_shutdown": "graceful",
+  "acceptance_shutdown": "already_exited",
+  "recording_ended_at": 1791889123.679309,
+  "xephyr_shutdown_requested": true,
+  "xephyr_shutdown": "graceful",
+  "export_error": "Recording ended incompletely; see recording.json. Raw recording retained."
+}

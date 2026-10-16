@@ -1,0 +1,59 @@
+[
+  {
+    "file": "docs/report_assets/vehicle_model.png",
+    "copied_from": "创新点PPT/素材/新版/scene/vehicle_sdf_front.png",
+    "sha256": "bf731faddb6afd1fbed6684e31eccc80c558b73c3137a9b8dcdebe7643118eba",
+    "source_metadata": {
+      "file": "vehicle_sdf_front.png",
+      "type": "当前 SDF 等比例几何渲染示意",
+      "source": "avs_ws/src/avs_rescue_sim/models/rescue_rover/model.sdf",
+      "meaning": "整车前方视角：真实尺寸、位置与配色，逐像素深度遮挡；必须标注按 SDF 渲染，不可称为 Gazebo 截图"
+    }
+  },
+  {
+    "file": "docs/report_assets/hazards_verified.png",
+    "copied_from": "创新点PPT/素材/新版/vision/hazards_five_verified.png",
+    "sha256": "a871109d1fffdbca1a3a61ea75c0ad73496d53300f88a17916a03b3c56e434f2",
+    "source_metadata": {
+      "file": "创新点PPT/素材/新版/vision/hazards_five_verified.png",
+      "sources": [
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0092.png",
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0077.png",
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0213.png",
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0335.png",
+        "avs_ws/acceptance/speed_mixed_020_20261012_run2/image_0320.png"
+      ],
+      "meaning": "五类清晰分类框拼图",
+      "transformation": "五张完整原图等比例缩小拼接；新增中文类名与来源编号。",
+      "visual_review": "已原分辨率查看所含原图；保留原识别结果，无新画检测框。"
+    }
+  },
+  {
+    "file": "docs/report_assets/navigation_map_regions.png",
+    "copied_from": "创新点PPT/素材/新版/control/实际地图与允许清理区域.png",
+    "sha256": "a53648fd4d11174ae4ec3bb6c6da4e68fa0ef86feb22c8895d4d93f800d72d3d",
+    "source_metadata": {
+      "file": "实际地图与允许清理区域.png",
+      "kind": "实际PGM叠加配置",
+      "source": [
+        "avs_ws/src/avs_rescue_sim/maps/rescue_map.pgm",
+        "avs_ws/src/avs_rescue_sim/maps/rescue_map.yaml",
+        "avs_ws/src/avs_rescue_sim/config/navigation_map.yaml"
+      ],
+      "meaning": "原地图像素未改；只叠加两个YAML区域；不代表动态地图清理前后实测"
+    }
+  },
+  {
+    "file": "docs/report_assets/speed_task_comparison.png",
+    "copied_from": "创新点PPT/素材/新版/control/完整任务耗时对照.png",
+    "sha256": "f5b18ed1b3118da76f29e2de17b046a81a531c28c64fee5535dcbe132b9e5b41",
+    "source_metadata": {
+      "file": "完整任务耗时对照.png",
+      "kind": "实测统计图",
+      "source": [
+        "avs_ws/docs/speed_tuning_validation.json"
+      ],
+      "meaning": "1次基准、2次同源码最终配置平均，首次导航至完成310.8198→287.1957秒，节省7.6006%；非多场地成功率"
+    }
+  }
+]

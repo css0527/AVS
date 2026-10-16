@@ -1,0 +1,684 @@
+{
+  "recording": "recording_submission_20261013_gimbal_run2",
+  "main_slides": 17,
+  "backup_slides": 6,
+  "presentation_target_s": 455,
+  "slides": [
+    {
+      "page": 1,
+      "title": "救援无人车仿真系统",
+      "subtitle": "第十九届先进机器人及仿真技术大赛 · 无人车仿真组",
+      "source": "车辆结构：当前 SDF 几何渲染，与 URDF 可视结构对应。",
+      "backup": false,
+      "pictures": [
+        {
+          "file": "avs_ws/docs/report_assets/vehicle_model.png",
+          "meaning": "新版完整车辆结构，按当前 SDF 渲染",
+          "sha256": "bf731faddb6afd1fbed6684e31eccc80c558b73c3137a9b8dcdebe7643118eba",
+          "pixels": [
+            2000,
+            1400
+          ],
+          "crop": null,
+          "box_inches": [
+            5.05,
+            1.3549999999999998,
+            7.9,
+            5.53
+          ]
+        }
+      ],
+      "picture_slide_percent": 43.7,
+      "picture_content_percent": 60.3
+    },
+    {
+      "page": 2,
+      "title": "自建厂区：走廊巡检 → 清障入室 → 标定 → 返航",
+      "subtitle": "本队场地 3 × 3 m，入口宽 0.50 m；九块标识图案各不相同",
+      "source": "图：2026-10-13 同次 Gazebo 录屏及独立 slam_toolbox 留档；评分见本地 B09 规则。",
+      "backup": false,
+      "pictures": [
+        {
+          "file": "国赛答辩/素材/新版场景/scene.png",
+          "meaning": "新版 Gazebo 自建厂区布局",
+          "sha256": "4c8ee56ff0ecfcc32cf6cdb1441d712c8dae526f16cd85a56d921d97e2ad868a",
+          "pixels": [
+            835,
+            469
+          ],
+          "crop": null,
+          "box_inches": [
+            0.35,
+            1.800431137724551,
+            7.12,
+            3.999137724550898
+          ]
+        },
+        {
+          "file": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/slam_map.png",
+          "meaning": "同次运行独立在线 SLAM 占据栅格地图",
+          "sha256": "6584042ee7d7f0f912830f2e8f44a151fe551c16c1199baf98aceb2ea87bb758",
+          "pixels": [
+            155,
+            168
+          ],
+          "crop": null,
+          "box_inches": [
+            8.060357142857143,
+            1.34,
+            4.539285714285715,
+            4.92
+          ]
+        }
+      ],
+      "picture_slide_percent": 50.8,
+      "picture_content_percent": 70.1
+    },
+    {
+      "page": 3,
+      "title": "完整任务演示",
+      "subtitle": "点击画面播放 · 2 分 51 秒 · 全程 2 倍速 · 无配音",
+      "source": "同次录屏：recording_submission_20261013_gimbal_run2；旁路日志与验收记录保留。",
+      "backup": false,
+      "pictures": [],
+      "movie": {
+        "file": "国赛答辩/B09018834_完整演示.mp4",
+        "sha256": "5608bf40e2db8ad985d56834eab947004e000530ecc940537b257aec0e9e91ff",
+        "duration_s": 170.934,
+        "rectangle_inches": [
+          0,
+          0,
+          13.333333,
+          7.5
+        ]
+      },
+      "picture_slide_percent": 100.0,
+      "picture_content_percent": 100
+    },
+    {
+      "page": 4,
+      "title": "新版云台与被动 V 形推板",
+      "subtitle": "安装底板 → 支撑柱 → 旋转底座；几何引导与受约束控制协同",
+      "source": "图：当前 rescue_rover/model.sdf 等比例渲染；与 urdf/rescue_rover.urdf 对应。",
+      "backup": false,
+      "pictures": [
+        {
+          "file": "avs_ws/docs/report_assets/vehicle_model.png",
+          "meaning": "新版完整车辆与 V 形推板",
+          "sha256": "bf731faddb6afd1fbed6684e31eccc80c558b73c3137a9b8dcdebe7643118eba",
+          "pixels": [
+            2000,
+            1400
+          ],
+          "crop": null,
+          "box_inches": [
+            0.25714285714285606,
+            1.2,
+            8.085714285714287,
+            5.66
+          ]
+        },
+        {
+          "file": "国赛答辩/素材/版式裁剪/vehicle_model_1135_185_1665_735.png",
+          "meaning": "云台安装底板、支撑柱与旋转底座局部",
+          "sha256": "9b439d2fee5a2a36f4699f1051831dd82dd1265c82e8c987c1e9d8999cadc54d",
+          "pixels": [
+            530,
+            550
+          ],
+          "crop": [
+            1135,
+            185,
+            1665,
+            735
+          ],
+          "box_inches": [
+            9.044,
+            1.43,
+            3.3920000000000003,
+            3.52
+          ]
+        }
+      ],
+      "picture_slide_percent": 57.7,
+      "picture_content_percent": 79.6
+    },
+    {
+      "page": 5,
+      "title": "真实接触推障：对准、推进、脱离",
+      "subtitle": "2 kg 动态箱体；0.10 m/s 闭环推障；里程计推进目标 1.08 m",
+      "source": "三图：新版同次录屏 00:47 / 00:53 / 00:59，裁去界面背景；框、车辆与箱体原样保留。",
+      "backup": false,
+      "pictures": [
+        {
+          "file": "国赛答辩/素材/新版场景/push_before.png",
+          "meaning": "① 对准入口同次真实物理交互",
+          "sha256": "02d8f5cbf95278715fc78dbeb700b189ed9c737d9afa248b2e89fb844fdbe670",
+          "pixels": [
+            390,
+            468
+          ],
+          "crop": null,
+          "box_inches": [
+            0.3766666666666668,
+            1.9,
+            4.016666666666667,
+            4.82
+          ]
+        },
+        {
+          "file": "国赛答辩/素材/新版场景/push_during.png",
+          "meaning": "② 实体推进同次真实物理交互",
+          "sha256": "91557730d4a5efacbd60efca424601ffdd057a80eea8f0bcc0b9b462dbf103cf",
+          "pixels": [
+            390,
+            468
+          ],
+          "crop": null,
+          "box_inches": [
+            4.656666666666666,
+            1.9,
+            4.016666666666667,
+            4.82
+          ]
+        },
+        {
+          "file": "国赛答辩/素材/新版场景/push_after.png",
+          "meaning": "③ 转向脱离同次真实物理交互",
+          "sha256": "df53072276ad366e63f31e89873e62d640ab02aeed593af55d2eca5c2dd28924",
+          "pixels": [
+            390,
+            468
+          ],
+          "crop": null,
+          "box_inches": [
+            8.936666666666667,
+            1.9,
+            4.016666666666667,
+            4.82
+          ]
+        }
+      ],
+      "picture_slide_percent": 58.1,
+      "picture_content_percent": 80.1
+    },
+    {
+      "page": 6,
+      "title": "主动接触的安全边界：保护完整车体",
+      "subtitle": "推板也在停车扫掠范围内；检查指令速度与实际惯性速度",
+      "source": "图源：创新点 PPT 第 5 页；当前 footprint 与 motion_safety.py 绘制的保护原理。",
+      "backup": false,
+      "pictures": [
+        {
+          "file": "创新点PPT/素材/新版/control/完整轮廓停车保护示意.png",
+          "meaning": "完整轮廓在直行与转弯时的停车扫掠范围",
+          "sha256": "97e4bd1f13733e7a989c1f68ea35b049e11c90df1fd866f5e6b29b2f940bc2f3",
+          "pixels": [
+            2296,
+            967
+          ],
+          "crop": null,
+          "box_inches": [
+            0.3610910031023792,
+            1.25,
+            12.607817993795242,
+            5.31
+          ]
+        }
+      ],
+      "picture_slide_percent": 66.9,
+      "picture_content_percent": 92.3
+    },
+    {
+      "page": 7,
+      "title": "云台左右观察，任务等待多帧确认",
+      "subtitle": "到观察点 → 确认停车 → 扫描 → 连续 3 个关联处理帧 → 继续",
+      "source": "图：创新点 PPT 第 2 页，同一停车点两个扫视时刻；用于机制说明，与本次量化结果分开。",
+      "backup": false,
+      "pictures": [
+        {
+          "file": "创新点PPT/素材/新版/vision/scan_stop_A.png",
+          "meaning": "同一停车点不同扫视视角",
+          "sha256": "a718d1d372e5c9a2238a8907252ef75537040da671765548fac8327a85a36fca",
+          "pixels": [
+            640,
+            480
+          ],
+          "crop": null,
+          "box_inches": [
+            0.35,
+            1.3462500000000004,
+            6.21,
+            4.6575
+          ]
+        },
+        {
+          "file": "创新点PPT/素材/新版/vision/scan_stop_B.png",
+          "meaning": "同一停车点不同扫视视角",
+          "sha256": "62103de2721e05d6e929ab0af2eaa4333da1a32a4b2daa3c11b1637ac818236e",
+          "pixels": [
+            640,
+            480
+          ],
+          "crop": null,
+          "box_inches": [
+            6.77,
+            1.3462500000000004,
+            6.21,
+            4.6575
+          ]
+        }
+      ],
+      "picture_slide_percent": 57.8,
+      "picture_content_percent": 79.8
+    },
+    {
+      "page": 8,
+      "title": "走廊识别：火灾、化学、辐射",
+      "subtitle": "绿色框为当前图案分类；三帧确认事件与单帧显示框分别记录",
+      "source": "相机图：新版同次运行，保留原检测框与类别；原图与裁剪坐标见素材来源记录。",
+      "backup": false,
+      "pictures": [
+        {
+          "file": "国赛答辩/素材/新版大图/fire_large.png",
+          "meaning": "同次实际 fire 分类与检测框",
+          "sha256": "ddf2f0188252da6e3fbb451fd15910ed287d4eba6c7d2a9be13fc40857272321",
+          "pixels": [
+            305,
+            338
+          ],
+          "crop": null,
+          "box_inches": [
+            0.35,
+            2.0948196721311474,
+            4.07,
+            4.510360655737705
+          ]
+        },
+        {
+          "file": "国赛答辩/素材/新版大图/chemical_video_large.png",
+          "meaning": "同次实际 chemical_video 分类与检测框",
+          "sha256": "cbf57505afc1bb10d743b645ab61d1bbc245b8ffb2996b0b020d72f66846658a",
+          "pixels": [
+            240,
+            272
+          ],
+          "crop": null,
+          "box_inches": [
+            4.63,
+            2.0436666666666663,
+            4.07,
+            4.612666666666668
+          ]
+        },
+        {
+          "file": "国赛答辩/素材/新版大图/radiation_large.png",
+          "meaning": "同次实际 radiation 分类与检测框",
+          "sha256": "d10921d84c5e5b975b21614fdfdfb154d24008b3c16a56d574cd3e3fa253c575",
+          "pixels": [
+            161,
+            262
+          ],
+          "crop": null,
+          "box_inches": [
+            9.427175572519085,
+            1.88,
+            3.035648854961832,
+            4.94
+          ]
+        }
+      ],
+      "picture_slide_percent": 52.1,
+      "picture_content_percent": 71.9
+    },
+    {
+      "page": 9,
+      "title": "走廊识别：电气、生物危害与终端打印",
+      "subtitle": "规则要求：入室前识别五类标识，并在终端打印结果",
+      "source": "相机及终端：新版同次连续录屏；终端原字保留，按行裁剪换行排布，未重写检测结果。",
+      "backup": false,
+      "pictures": [
+        {
+          "file": "国赛答辩/素材/新版大图/electrical_large.png",
+          "meaning": "同次实际 electrical 分类与检测框",
+          "sha256": "80e3737a01ad739f5cea654eaf3f1bd7ee4614689989d6ecf94e5ae2f2e2389c",
+          "pixels": [
+            282,
+            333
+          ],
+          "crop": null,
+          "box_inches": [
+            0.3525675675675676,
+            1.9,
+            4.064864864864865,
+            4.8
+          ]
+        },
+        {
+          "file": "国赛答辩/素材/新版大图/biohazard_video_large.png",
+          "meaning": "同次实际 biohazard_video 分类与检测框",
+          "sha256": "8275f0e48540d5d56878f8e1ef153754320a31b6d6cbc6f8e18bb2c735f69cdb",
+          "pixels": [
+            225,
+            265
+          ],
+          "crop": null,
+          "box_inches": [
+            4.63,
+            1.903222222222222,
+            4.07,
+            4.793555555555556
+          ]
+        },
+        {
+          "file": "国赛答辩/素材/新版大图/corridor_terminal.png",
+          "meaning": "同次五类识别确认的真实终端打印",
+          "sha256": "ae30e0464cc2be31fad38c3ee6db24e2714b55160529f31e3ab454146f69baa9",
+          "pixels": [
+            340,
+            380
+          ],
+          "crop": null,
+          "box_inches": [
+            9.0,
+            2.1658823529411766,
+            3.9800000000000004,
+            4.448235294117647
+          ]
+        }
+      ],
+      "picture_slide_percent": 56.7,
+      "picture_content_percent": 78.2
+    },
+    {
+      "page": 10,
+      "title": "同帧局部放大重检，恢复部分小目标",
+      "subtitle": "同色负例训练 → 图案 / 牌边核验 → 局部重检 → 时序确认",
+      "source": "图源：创新点 PPT 第 7 页；v19 / image_0462 同输入离线回放，不是两次现场录像。",
+      "backup": false,
+      "pictures": [
+        {
+          "file": "创新点PPT/素材/新版/vision/recovery_same_frame_verified.png",
+          "meaning": "同一输入帧未检出与区域恢复 ELECTRICAL 的回放对照",
+          "sha256": "bf08089eba641308255831047753cd79a63be261f579343618cd9a35fec9ac2f",
+          "pixels": [
+            1360,
+            630
+          ],
+          "crop": null,
+          "box_inches": [
+            0.5234126984126982,
+            1.2899999999999996,
+            12.283174603174604,
+            5.690000000000001
+          ]
+        }
+      ],
+      "picture_slide_percent": 69.9,
+      "picture_content_percent": 96.4
+    },
+    {
+      "page": 11,
+      "title": "核心标识：坍塌与有毒泄漏",
+      "subtitle": "四种图案各不相同；核心标识附加 AprilTag，类别由 ID 与语义表关联",
+      "source": "相机图：新版同次运行，保留原 ID、类别与估计 map 坐标；仅裁背景。",
+      "backup": false,
+      "pictures": [
+        {
+          "file": "国赛答辩/素材/新版大图/tag_0_large.png",
+          "meaning": "同次核心标签 0 与估计地图坐标",
+          "sha256": "c3ecb01f4d2a486e9e329fd1a4b770174e38a7e9de5cab5a820089136d7accca",
+          "pixels": [
+            272,
+            242
+          ],
+          "crop": null,
+          "box_inches": [
+            0.7293801652892563,
+            1.94,
+            5.451239669421487,
+            4.85
+          ]
+        },
+        {
+          "file": "国赛答辩/素材/新版大图/tag_1_large.png",
+          "meaning": "同次核心标签 1 与估计地图坐标",
+          "sha256": "e2a09d1b470e79b89415af5a4f841defd4b3e26ccd4e8ec2ca036e30c29b3e3c",
+          "pixels": [
+            282,
+            279
+          ],
+          "crop": null,
+          "box_inches": [
+            7.423924731182796,
+            1.94,
+            4.902150537634408,
+            4.85
+          ]
+        }
+      ],
+      "picture_slide_percent": 50.2,
+      "picture_content_percent": 69.3
+    },
+    {
+      "page": 12,
+      "title": "核心标识：被困人员与高温",
+      "subtitle": "四种图案各不相同；核心标识附加 AprilTag，类别由 ID 与语义表关联",
+      "source": "相机图：新版同次运行，保留原 ID、类别与估计 map 坐标；仅裁背景。",
+      "backup": false,
+      "pictures": [
+        {
+          "file": "国赛答辩/素材/新版大图/tag_2_large.png",
+          "meaning": "同次核心标签 2 与估计地图坐标",
+          "sha256": "0981f4d68df345f221661a766de2f8d132e4dfd142aa0591a591b671866c881f",
+          "pixels": [
+            350,
+            361
+          ],
+          "crop": null,
+          "box_inches": [
+            1.103891966759003,
+            1.94,
+            4.702216066481994,
+            4.85
+          ]
+        },
+        {
+          "file": "国赛答辩/素材/新版大图/tag_3_large.png",
+          "meaning": "同次核心标签 3 与估计地图坐标",
+          "sha256": "5a81489fd2ad2dc9f38de762a18a1af8e6bfb017aefce908077428e842d695c7",
+          "pixels": [
+            242,
+            177
+          ],
+          "crop": null,
+          "box_inches": [
+            6.77,
+            2.0939876033057847,
+            6.21,
+            4.54202479338843
+          ]
+        }
+      ],
+      "picture_slide_percent": 51.0,
+      "picture_content_percent": 70.4
+    },
+    {
+      "page": 13,
+      "title": "拍摄时刻 TF，让视觉结果对应 RViz 地图",
+      "subtitle": "实际云台关节角 → 图像拍摄时刻坐标变换 → 多次有效观测融合",
+      "source": "地图：新版同次录屏 01:26 的 RViz；源码机制来自 vision_node.py，非纯 PnP 误差。",
+      "backup": false,
+      "pictures": [
+        {
+          "file": "国赛答辩/素材/新版场景/core_markers.png",
+          "meaning": "同次 RViz 四个核心 Marker 与地图布局",
+          "sha256": "0977e3b7b44970ff3b7bc1819df9b55a091b900c3f274831c09bc390b762fc43",
+          "pixels": [
+            708,
+            490
+          ],
+          "crop": null,
+          "box_inches": [
+            0.7692653061224485,
+            1.29,
+            8.221469387755103,
+            5.69
+          ]
+        }
+      ],
+      "picture_slide_percent": 46.8,
+      "picture_content_percent": 64.5
+    },
+    {
+      "page": 14,
+      "title": "门洞残留栅格清理区：让旧占用不再堵路",
+      "subtitle": "限定区域内，三次不同时间戳的激光自由证据才清理派生导航图",
+      "source": "图：实际 rescue_map.pgm + navigation_map.yaml；配置叠加原理图，未录制逐格清理前后对照。",
+      "backup": false,
+      "pictures": [
+        {
+          "file": "avs_ws/docs/report_assets/navigation_map_regions.png",
+          "meaning": "实际 PGM 上的可移动箱体区域与门洞残留栅格清理区",
+          "sha256": "a53648fd4d11174ae4ec3bb6c6da4e68fa0ef86feb22c8895d4d93f800d72d3d",
+          "pixels": [
+            1204,
+            1230
+          ],
+          "crop": null,
+          "box_inches": [
+            0.44524390243902434,
+            1.2600000000000005,
+            5.579512195121951,
+            5.699999999999999
+          ]
+        },
+        {
+          "file": "国赛答辩/素材/地图门洞放大.png",
+          "meaning": "门洞区域原始 PGM 的同区域放大，叠加配置允许范围",
+          "sha256": "7603f8914b2dbbd52a9e259dbf98e355263edb2a5baeb70212a9fa344262ab22",
+          "pixels": [
+            1632,
+            1071
+          ],
+          "crop": null,
+          "box_inches": [
+            6.37,
+            1.34109375,
+            6.61,
+            4.3378125
+          ]
+        }
+      ],
+      "picture_slide_percent": 60.5,
+      "picture_content_percent": 83.4
+    },
+    {
+      "page": 15,
+      "title": "按任务阶段选速度：完整任务平均缩短 7.6%",
+      "subtitle": "普通 0.20 m/s · 精细 0.12 m/s · 推障 0.10 m/s；到位置后单独对正朝向",
+      "source": "数据：2026-10-12 独立无界面速度实验；1 次基准、2 次最终配置，与本次 GUI 录屏分别统计。",
+      "backup": false,
+      "pictures": [],
+      "picture_slide_percent": 0.0,
+      "picture_content_percent": 0.0
+    },
+    {
+      "page": 16,
+      "title": "当前视频的同次验收结果",
+      "subtitle": "完整任务、相机画面、日志、轨迹和源码哈希对应同一运行",
+      "source": "同次 evidence/evaluation.json；墙体轮廓离散采样为空，不等于连续接触测量。",
+      "backup": false,
+      "pictures": [
+        {
+          "file": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/trajectory.png",
+          "meaning": "同次独立验收旁路绘制的真实位置轨迹",
+          "sha256": "4e81acd58749406de5deedf6c2c1f0cb4979a359e407a77578ad62c9d2969d13",
+          "pixels": [
+            760,
+            800
+          ],
+          "crop": null,
+          "box_inches": [
+            0.36075000000000024,
+            1.3,
+            5.3485,
+            5.63
+          ]
+        }
+      ],
+      "picture_slide_percent": 30.1,
+      "picture_content_percent": 41.5
+    },
+    {
+      "page": 17,
+      "title": "团队贡献：结构、感知与导航协同实现",
+      "subtitle": "面向本场地验证；下一步做随机初始条件、逐帧评估与接触力检测",
+      "source": "基础算法与框架明确第三方归属，团队贡献可追溯到机构设计、源码及实测。",
+      "backup": false,
+      "pictures": [],
+      "picture_slide_percent": 0.0,
+      "picture_content_percent": 0.0
+    },
+    {
+      "page": 18,
+      "title": "备份 A｜比赛评分与现场证据",
+      "subtitle": "国赛 8 分钟包含视频；展示结束后按需回答提问",
+      "source": "依据：本地 B09 比赛规则（2026 年 7 月）；项目验收门限不等同官方评分阈值。",
+      "backup": true,
+      "pictures": [],
+      "picture_slide_percent": 0.0,
+      "picture_content_percent": 0.0
+    },
+    {
+      "page": 19,
+      "title": "备份 B｜传感器、任务与执行闭环",
+      "subtitle": "YAML 给任务目标，Nav2 根据地图规划路径；23 步任务由事件推进",
+      "source": "来源：launch/sim_launch.py、mission_node.py、vision_node.py 与 safety_node.py。",
+      "backup": true,
+      "pictures": [],
+      "picture_slide_percent": 0.0,
+      "picture_content_percent": 0.0
+    },
+    {
+      "page": 20,
+      "title": "备份 C｜定位误差先统一坐标系",
+      "subtitle": "map←odom 变换统一真实位置与估计位置；误差含测距与定位漂移",
+      "source": "本次录屏同次 evaluation.json；raw world/map 差不可直接作为定位误差。",
+      "backup": true,
+      "pictures": [],
+      "picture_slide_percent": 0.0,
+      "picture_content_percent": 0.0
+    },
+    {
+      "page": 21,
+      "title": "备份 D｜更快的候选不一定更快完成任务",
+      "subtitle": "评价从首次导航到完整任务完成；保留失败候选与完整日志",
+      "source": "历史速度实验：speed_tuning_validation.json，1 次基准、2 次最终配置。",
+      "backup": true,
+      "pictures": [],
+      "picture_slide_percent": 0.0,
+      "picture_content_percent": 0.0
+    },
+    {
+      "page": 22,
+      "title": "备份 E｜视觉指标与工程确认条件",
+      "subtitle": "单帧显示框、历史确认列表、任务确认事件是不同信息",
+      "source": "模型合成集指标：yolov5/hazard_yolov5.json；时序规则见 tracker 与 vision_node。",
+      "backup": true,
+      "pictures": [],
+      "picture_slide_percent": 0.0,
+      "picture_content_percent": 0.0
+    },
+    {
+      "page": 23,
+      "title": "备份 F｜评委常见追问",
+      "subtitle": "用源码、原始日志和同次录屏说明机制与验证范围",
+      "source": "复现环境：Ubuntu 22.04、ROS 2 Humble、Gazebo Classic 11；一键 start.sh。",
+      "backup": true,
+      "pictures": [],
+      "picture_slide_percent": 0.0,
+      "picture_content_percent": 0.0
+    }
+  ]
+}

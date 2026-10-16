@@ -1,0 +1,17 @@
+[INFO] [1791889145.385058752] [safety_node]: Command guard: command_timeout
+[INFO] [1791889158.400615664] [safety_node]: Command guard: clear
+[INFO] [1791889161.371427253] [safety_node]: Command guard: obstacle_in_stopping_envelope
+[INFO] [1791889161.492073953] [safety_node]: Command guard: clear
+[INFO] [1791889208.996326295] [safety_node]: Command guard: obstacle_in_stopping_envelope
+[INFO] [1791889209.146226202] [safety_node]: Command guard: clear
+[INFO] [1791889240.260735897] [safety_node]: Command guard: obstacle_in_stopping_envelope
+[INFO] [1791889240.398450900] [safety_node]: Command guard: clear
+[INFO] [1791889256.247303766] [safety_node]: Command guard: obstacle_in_stopping_envelope
+[INFO] [1791889257.373453552] [safety_node]: Command guard: clear
+[INFO] [1791889333.493307869] [safety_node]: Command guard: obstacle_in_stopping_envelope
+[INFO] [1791889333.613219102] [safety_node]: Command guard: clear
+[INFO] [1791889403.793428242] [safety_node]: Command guard: obstacle_in_stopping_envelope
+[INFO] [1791889403.927787111] [safety_node]: Command guard: clear
+[INFO] [1791889407.320395065] [safety_node]: Command guard: obstacle_in_stopping_envelope
+[INFO] [1791889407.448015684] [safety_node]: Command guard: clear
+[INFO] [1791889463.700042535] [safety_node]: Command guard: mission_stopped

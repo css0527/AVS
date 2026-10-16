@@ -1,0 +1,1299 @@
+ROS domain: 121（已与其他仿真隔离）
+Gazebo master: http://127.0.0.1:53683
+Starting >>> avs_rescue_plugins
+Finished <<< avs_rescue_plugins [0.09s]
+Starting >>> avs_rescue_sim
+Finished <<< avs_rescue_sim [1.22s]
+
+Summary: 2 packages finished [1.58s]
+[INFO] [launch]: All log files can be found below /home/c/AVS/avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/ros/2026-10-13-18-59-04-295853-c-20517
+[INFO] [launch]: Default logging verbosity is set to INFO
+[INFO] [launch.user]: AVS Gazebo world: /home/c/AVS/avs_ws/src/avs_rescue_sim/worlds/rescue_world.world
+[INFO] [launch.user]: AVS navigation map: /home/c/AVS/avs_ws/src/avs_rescue_sim/maps/rescue_map.yaml
+[INFO] [launch.user]: AVS navigation image: /home/c/AVS/avs_ws/src/avs_rescue_sim/maps/rescue_map.pgm
+[INFO] [launch.user]: AVS scene transport partition: avs_rescue_9c2f6c78db144b9695dd88b261ef426b
+[INFO] [launch.user]: AVS spawn / AMCL initial pose: {'x': 0.55, 'y': 0.54, 'z': 0.0, 'yaw': 1.5708}
+[INFO] [launch.user]: AVS Gazebo server/client master: http://127.0.0.1:53683
+[INFO] [gzserver-1]: process started with pid [20654]
+[INFO] [python3-2]: process started with pid [20656]
+[INFO] [robot_state_publisher-3]: process started with pid [20658]
+[INFO] [navigation_map_node-4]: process started with pid [20660]
+[INFO] [safety_node-5]: process started with pid [20662]
+[robot_state_publisher-3] [INFO] [1791889144.411333913] [robot_state_publisher]: got segment base_link
+[robot_state_publisher-3] [INFO] [1791889144.411421715] [robot_state_publisher]: got segment camera_link
+[robot_state_publisher-3] [INFO] [1791889144.411428977] [robot_state_publisher]: got segment camera_optical_frame
+[robot_state_publisher-3] [INFO] [1791889144.411433565] [robot_state_publisher]: got segment laser_frame
+[robot_state_publisher-3] [INFO] [1791889144.411437472] [robot_state_publisher]: got segment left_wheel_link
+[robot_state_publisher-3] [INFO] [1791889144.411441179] [robot_state_publisher]: got segment pusher_link
+[robot_state_publisher-3] [INFO] [1791889144.411444634] [robot_state_publisher]: got segment rear_caster_link
+[robot_state_publisher-3] [INFO] [1791889144.411448321] [robot_state_publisher]: got segment right_wheel_link
+[gzserver-1] Gazebo multi-robot simulator, version 11.10.2
+[gzserver-1] Copyright (C) 2012 Open Source Robotics Foundation.
+[gzserver-1] Released under the Apache 2 License.
+[gzserver-1] http://gazebosim.org
+[gzserver-1] 
+[gzserver-1] [1;33m[Wrn] [gazebo_ros_init.cpp:178] [0m[1;33m
+[gzserver-1] #     # ####### ####### ###  #####  #######
+[gzserver-1] ##    # #     #    #     #  #     # #
+[gzserver-1] # #   # #     #    #     #  #       #
+[gzserver-1] #  #  # #     #    #     #  #       #####
+[gzserver-1] #   # # #     #    #     #  #       #
+[gzserver-1] #    ## #     #    #     #  #     # #
+[gzserver-1] #     # #######    #    ###  #####  #######
+[gzserver-1] 
+[gzserver-1] This version of Gazebo, now called Gazebo classic, reaches end-of-life
+[gzserver-1] in January 2025. Users are highly encouraged to migrate to the new Gazebo
+[gzserver-1] using our migration guides (https://gazebosim.org/docs/latest/gazebo_classic_migration?utm_source=gazebo_ros_pkgs&utm_medium=cli)
+[gzserver-1] 
+[gzserver-1] [0m[1;33m
+[python3-2] [AVS WORLD VERIFIED] rescue_world: all 20 course models match /home/c/AVS/avs_ws/src/avs_rescue_sim/worlds/rescue_world.world
+[gzserver-1] [0m[1;33m[0m[1;33m[0m[INFO] [1791889145.265826177] [evaluation.evaluation_state]: Publishing states of gazebo models at [/evaluation/model_states]
+[gzserver-1] [INFO] [1791889145.266556086] [evaluation.evaluation_state]: Publishing states of gazebo links at [/evaluation/link_states]
+[INFO] [python3-2]: process has finished cleanly [pid 20656]
+[INFO] [spawn_entity.py-6]: process started with pid [20853]
+[safety_node-5] [INFO] [1791889145.385058752] [safety_node]: Command guard: command_timeout
+[spawn_entity.py-6] [INFO] [1791889145.736194924] [spawn_entity]: Spawn Entity started
+[spawn_entity.py-6] [INFO] [1791889145.736507564] [spawn_entity]: Loading entity XML from file /home/c/AVS/avs_ws/src/avs_rescue_sim/models/rescue_rover/model.sdf
+[spawn_entity.py-6] [INFO] [1791889145.737150453] [spawn_entity]: Waiting for service /spawn_entity, timeout = 30
+[spawn_entity.py-6] [INFO] [1791889145.737402659] [spawn_entity]: Waiting for service /spawn_entity
+[spawn_entity.py-6] [INFO] [1791889145.740705578] [spawn_entity]: Calling service /spawn_entity
+[spawn_entity.py-6] [INFO] [1791889145.969904418] [spawn_entity]: Spawn status: SpawnEntity: Successfully spawned entity [rescue_rover]
+[INFO] [spawn_entity.py-6]: process has finished cleanly [pid 20853]
+[INFO] [camera_scan_node-7]: process started with pid [20897]
+[gzserver-1] [1;32m[Msg] [0m[1;32mWaiting for master.[0m[1;32m
+[gzserver-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mConnected to gazebo master @ [0m[1;32mhttp://127.0.0.1:53683[0m[1;32m
+[gzserver-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mPublicized address: [0m[1;32m127.0.0.1[0m[1;32m
+[gzserver-1] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mLoading world file [[0m[1;32m/home/c/AVS/avs_ws/src/avs_rescue_sim/worlds/rescue_world.world[0m[1;32m][0m[1;32m
+[gzserver-1] [1;33m[Wrn] [Event.cc:61] [0m[1;33mWarning: Deleting a connection right after creation. [0m[1;33mMake sure to save the ConnectionPtr from a Connect call
+[gzserver-1] [0m[INFO] [1791889146.358464877] [camera_ros]: Publishing camera info to [/camera/camera_info]
+[gzserver-1] [INFO] [1791889146.406911348] [camera_joint_states]: Going to publish joint [camera_joint]
+[gzserver-1] [INFO] [1791889146.425570996] [diff_drive]: Wheel pair 1 separation set to [0.240000m]
+[gzserver-1] [INFO] [1791889146.425616715] [diff_drive]: Wheel pair 1 diameter set to [0.170000m]
+[gzserver-1] [INFO] [1791889146.427121472] [diff_drive]: Subscribed to [/cmd_vel_safe]
+[gzserver-1] [INFO] [1791889146.429465167] [diff_drive]: Advertise odometry on [/odom]
+[gzserver-1] [INFO] [1791889146.431800438] [diff_drive]: Publishing odom transforms between [odom] and [base_link]
+[INFO] [gzclient-8]: process started with pid [20963]
+[INFO] [map_server-9]: process started with pid [21000]
+[INFO] [amcl-10]: process started with pid [21002]
+[INFO] [lifecycle_manager-11]: process started with pid [21004]
+[INFO] [controller_server-12]: process started with pid [21006]
+[INFO] [smoother_server-13]: process started with pid [21008]
+[INFO] [planner_server-14]: process started with pid [21010]
+[INFO] [behavior_server-15]: process started with pid [21012]
+[INFO] [bt_navigator-16]: process started with pid [21014]
+[INFO] [waypoint_follower-17]: process started with pid [21016]
+[INFO] [velocity_smoother-18]: process started with pid [21018]
+[INFO] [lifecycle_manager-19]: process started with pid [21025]
+[gzclient-8] Gazebo multi-robot simulator, version 11.10.2
+[gzclient-8] Copyright (C) 2012 Open Source Robotics Foundation.
+[gzclient-8] Released under the Apache 2 License.
+[gzclient-8] http://gazebosim.org
+[gzclient-8] 
+[INFO] [vision_node-20]: process started with pid [21069]
+[lifecycle_manager-11] [INFO] [1791889149.602928832] [lifecycle_manager_localization]: Creating
+[lifecycle_manager-11] [INFO] [1791889149.605344544] [lifecycle_manager_localization]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[waypoint_follower-17] [INFO] [1791889149.663695766] [waypoint_follower]: 
+[waypoint_follower-17] 	waypoint_follower lifecycle node launched. 
+[waypoint_follower-17] 	Waiting on external lifecycle transitions to activate
+[waypoint_follower-17] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[waypoint_follower-17] [INFO] [1791889149.671881673] [waypoint_follower]: Creating
+[lifecycle_manager-19] [INFO] [1791889149.688890597] [lifecycle_manager_navigation]: Creating
+[lifecycle_manager-19] [INFO] [1791889149.693018576] [lifecycle_manager_navigation]: [34m[1mCreating and initializing lifecycle service clients[0m[0m
+[smoother_server-13] [INFO] [1791889149.700887095] [smoother_server]: 
+[smoother_server-13] 	smoother_server lifecycle node launched. 
+[smoother_server-13] 	Waiting on external lifecycle transitions to activate
+[smoother_server-13] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[smoother_server-13] [INFO] [1791889149.702459781] [smoother_server]: Creating smoother server
+[amcl-10] [INFO] [1791889149.730749928] [amcl]: 
+[amcl-10] 	amcl lifecycle node launched. 
+[amcl-10] 	Waiting on external lifecycle transitions to activate
+[amcl-10] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[amcl-10] [INFO] [1791889149.731271729] [amcl]: Creating
+[controller_server-12] [INFO] [1791889149.731577156] [controller_server]: 
+[controller_server-12] 	controller_server lifecycle node launched. 
+[controller_server-12] 	Waiting on external lifecycle transitions to activate
+[controller_server-12] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-14] [INFO] [1791889149.735658926] [planner_server]: 
+[planner_server-14] 	planner_server lifecycle node launched. 
+[planner_server-14] 	Waiting on external lifecycle transitions to activate
+[planner_server-14] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-14] [INFO] [1791889149.746297488] [planner_server]: Creating
+[controller_server-12] [INFO] [1791889149.758105731] [controller_server]: Creating controller server
+[bt_navigator-16] [INFO] [1791889149.785684880] [bt_navigator]: 
+[bt_navigator-16] 	bt_navigator lifecycle node launched. 
+[bt_navigator-16] 	Waiting on external lifecycle transitions to activate
+[bt_navigator-16] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[bt_navigator-16] [INFO] [1791889149.785965775] [bt_navigator]: Creating
+[behavior_server-15] [INFO] [1791889149.835427115] [behavior_server]: 
+[behavior_server-15] 	behavior_server lifecycle node launched. 
+[behavior_server-15] 	Waiting on external lifecycle transitions to activate
+[behavior_server-15] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[velocity_smoother-18] [INFO] [1791889149.851490406] [velocity_smoother]: 
+[velocity_smoother-18] 	velocity_smoother lifecycle node launched. 
+[velocity_smoother-18] 	Waiting on external lifecycle transitions to activate
+[velocity_smoother-18] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-9] [INFO] [1791889149.856014970] [map_server]: 
+[map_server-9] 	map_server lifecycle node launched. 
+[map_server-9] 	Waiting on external lifecycle transitions to activate
+[map_server-9] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[map_server-9] [INFO] [1791889149.857428451] [map_server]: Creating
+[controller_server-12] [INFO] [1791889149.916295444] [local_costmap.local_costmap]: 
+[controller_server-12] 	local_costmap lifecycle node launched. 
+[controller_server-12] 	Waiting on external lifecycle transitions to activate
+[controller_server-12] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[controller_server-12] [INFO] [1791889149.917641378] [local_costmap.local_costmap]: Creating Costmap
+[planner_server-14] [INFO] [1791889149.927253428] [global_costmap.global_costmap]: 
+[planner_server-14] 	global_costmap lifecycle node launched. 
+[planner_server-14] 	Waiting on external lifecycle transitions to activate
+[planner_server-14] 	See https://design.ros2.org/articles/node_lifecycle.html for more information.
+[planner_server-14] [INFO] [1791889149.927945042] [global_costmap.global_costmap]: Creating Costmap
+[gzclient-8] [1;32m[Msg] [0m[1;32mWaiting for master.[0m[1;32m
+[gzclient-8] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mConnected to gazebo master @ [0m[1;32mhttp://127.0.0.1:53683[0m[1;32m
+[gzclient-8] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mPublicized address: [0m[1;32m127.0.0.1[0m[1;32m
+[gzclient-8] [0m[1;32m[0m[1;32m[0m[1;32m[Msg] [0m[1;32mWarning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.[0m[1;32m
+[gzclient-8] [1;31m[Err] [InsertModelWidget.cc:403] [0m[1;31mMissing [0m[1;31mmodel.config[0m[1;31m for model [0m[1;31m"/home/c/AVS/avs_ws/install/avs_rescue_sim/share/avs_rescue_sim/models/yolov5"[0m[1;31m
+[INFO] [rviz2-21]: process started with pid [21225]
+[INFO] [mission_node-22]: process started with pid [21227]
+[rviz2-21] Warning: Ignoring XDG_SESSION_TYPE=wayland on Gnome. Use QT_QPA_PLATFORM=wayland to run on Wayland anyway.
+[lifecycle_manager-11] [INFO] [1791889150.201053781] [lifecycle_manager_localization]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-11] [INFO] [1791889150.201107865] [lifecycle_manager_localization]: [34m[1mConfiguring map_server[0m[0m
+[map_server-9] [INFO] [1791889150.201382559] [map_server]: Configuring
+[map_server-9] [INFO] [1791889150.201442052] [map_io]: Loading yaml file: /home/c/AVS/avs_ws/src/avs_rescue_sim/maps/rescue_map.yaml
+[map_server-9] [INFO] [1791889150.201660299] [map_io]: resolution: 0.02
+[map_server-9] [INFO] [1791889150.201670146] [map_io]: origin[0]: -0.104
+[map_server-9] [INFO] [1791889150.201674474] [map_io]: origin[1]: -0.0121
+[map_server-9] [INFO] [1791889150.201678180] [map_io]: origin[2]: 0
+[map_server-9] [INFO] [1791889150.201681956] [map_io]: free_thresh: 0.25
+[map_server-9] [INFO] [1791889150.201685703] [map_io]: occupied_thresh: 0.65
+[map_server-9] [INFO] [1791889150.201690211] [map_io]: mode: trinary
+[map_server-9] [INFO] [1791889150.201694278] [map_io]: negate: 0
+[map_server-9] [INFO] [1791889150.201871834] [map_io]: Loading image_file: /home/c/AVS/avs_ws/src/avs_rescue_sim/maps/rescue_map.pgm
+[map_server-9] [INFO] [1791889150.204092180] [map_io]: Read map /home/c/AVS/avs_ws/src/avs_rescue_sim/maps/rescue_map.pgm: 161 X 159 map @ 0.02 m/cell
+[lifecycle_manager-11] [INFO] [1791889150.211743646] [lifecycle_manager_localization]: [34m[1mConfiguring amcl[0m[0m
+[amcl-10] [INFO] [1791889150.211988669] [amcl]: Configuring
+[amcl-10] [INFO] [1791889150.212089513] [amcl]: initTransforms
+[amcl-10] [INFO] [1791889150.224374634] [amcl]: initPubSub
+[amcl-10] [INFO] [1791889150.230358490] [amcl]: Subscribed to map topic.
+[lifecycle_manager-11] [INFO] [1791889150.234444477] [lifecycle_manager_localization]: [34m[1mActivating map_server[0m[0m
+[map_server-9] [INFO] [1791889150.234613169] [map_server]: Activating
+[map_server-9] [INFO] [1791889150.234821288] [map_server]: Creating bond (map_server) to lifecycle manager.
+[amcl-10] [INFO] [1791889150.234933031] [amcl]: Received a 161 X 159 map @ 0.020 m/pix
+[lifecycle_manager-11] [INFO] [1791889150.350646383] [lifecycle_manager_localization]: Server map_server connected with bond.
+[lifecycle_manager-11] [INFO] [1791889150.350800259] [lifecycle_manager_localization]: [34m[1mActivating amcl[0m[0m
+[amcl-10] [INFO] [1791889150.351434995] [amcl]: Activating
+[amcl-10] [INFO] [1791889150.351550655] [amcl]: initialPoseReceived
+[amcl-10] [INFO] [1791889150.351628670] [amcl]: Setting pose (4.200000): 0.550 0.540 1.571
+[amcl-10] [INFO] [1791889150.352347091] [amcl]: Creating bond (amcl) to lifecycle manager.
+[amcl-10] [INFO] [1791889150.435550719] [amcl]: createLaserObject
+[lifecycle_manager-11] [INFO] [1791889150.482235848] [lifecycle_manager_localization]: Server amcl connected with bond.
+[lifecycle_manager-11] [INFO] [1791889150.482311799] [lifecycle_manager_localization]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-11] [INFO] [1791889150.482334358] [lifecycle_manager_localization]: [34m[1mCreating bond timer...[0m[0m
+[lifecycle_manager-19] [INFO] [1791889150.582499574] [lifecycle_manager_navigation]: [34m[1mStarting managed nodes bringup...[0m[0m
+[lifecycle_manager-19] [INFO] [1791889150.582576046] [lifecycle_manager_navigation]: [34m[1mConfiguring controller_server[0m[0m
+[controller_server-12] [INFO] [1791889150.583519505] [controller_server]: Configuring controller interface
+[controller_server-12] [INFO] [1791889150.585218701] [controller_server]: getting goal checker plugins..
+[controller_server-12] [INFO] [1791889150.585368299] [controller_server]: Controller frequency set to 20.0000Hz
+[controller_server-12] [INFO] [1791889150.585474603] [local_costmap.local_costmap]: Configuring
+[controller_server-12] [INFO] [1791889150.617974830] [local_costmap.local_costmap]: Using plugin "voxel_layer"
+[controller_server-12] [INFO] [1791889150.637222617] [local_costmap.local_costmap]: Subscribed to Topics: scan
+[controller_server-12] [INFO] [1791889150.661417940] [local_costmap.local_costmap]: Initialized plugin "voxel_layer"
+[controller_server-12] [INFO] [1791889150.661472734] [local_costmap.local_costmap]: Using plugin "inflation_layer"
+[controller_server-12] [INFO] [1791889150.671506345] [local_costmap.local_costmap]: Initialized plugin "inflation_layer"
+[rviz2-21] [INFO] [1791889150.689568925] [rviz2]: Stereo is NOT SUPPORTED
+[rviz2-21] [INFO] [1791889150.689721659] [rviz2]: OpenGl version: 4.5 (GLSL 4.5)
+[controller_server-12] [INFO] [1791889150.735365109] [controller_server]: Created progress_checker : progress_checker of type nav2_controller::SimpleProgressChecker
+[controller_server-12] [INFO] [1791889150.739222061] [controller_server]: Created goal checker : general_goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-12] [INFO] [1791889150.741638946] [controller_server]: Created goal checker : position_goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-12] [INFO] [1791889150.743626358] [controller_server]: Created goal checker : fast_position_goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-12] [INFO] [1791889150.743895684] [controller_server]: Created goal checker : turn_goal_checker of type nav2_controller::SimpleGoalChecker
+[controller_server-12] [INFO] [1791889150.744053486] [controller_server]: Controller Server has general_goal_checker position_goal_checker fast_position_goal_checker turn_goal_checker  goal checkers available.
+[controller_server-12] [INFO] [1791889150.744726499] [controller_server]: Created controller : FollowPath of type nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-12] [INFO] [1791889150.773458267] [controller_server]: Created controller : PrecisionPath of type nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[rviz2-21] [INFO] [1791889150.781551947] [rviz2]: Stereo is NOT SUPPORTED
+[controller_server-12] [INFO] [1791889150.802552632] [controller_server]: Created controller : ReleasePusher of type nav2_regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-12] [INFO] [1791889150.834101657] [controller_server]: Controller Server has FollowPath PrecisionPath ReleasePusher  controllers available.
+[lifecycle_manager-19] [INFO] [1791889150.881509004] [lifecycle_manager_navigation]: [34m[1mConfiguring smoother_server[0m[0m
+[smoother_server-13] [INFO] [1791889150.883137957] [smoother_server]: Configuring smoother server
+[smoother_server-13] [INFO] [1791889150.909838437] [smoother_server]: Created smoother : simple_smoother of type nav2_smoother::SimpleSmoother
+[smoother_server-13] [INFO] [1791889150.917381266] [smoother_server]: Smoother Server has simple_smoother  smoothers available.
+[lifecycle_manager-19] [INFO] [1791889150.949458383] [lifecycle_manager_navigation]: [34m[1mConfiguring planner_server[0m[0m
+[planner_server-14] [INFO] [1791889150.951929181] [planner_server]: Configuring
+[planner_server-14] [INFO] [1791889150.952303367] [global_costmap.global_costmap]: Configuring
+[planner_server-14] [INFO] [1791889150.969057116] [global_costmap.global_costmap]: Using plugin "static_layer"
+[planner_server-14] [INFO] [1791889150.983642880] [global_costmap.global_costmap]: Subscribing to the map topic (/navigation_map) with transient local durability
+[planner_server-14] [INFO] [1791889150.987580912] [global_costmap.global_costmap]: Initialized plugin "static_layer"
+[planner_server-14] [INFO] [1791889150.987622123] [global_costmap.global_costmap]: Using plugin "obstacle_layer"
+[planner_server-14] [INFO] [1791889150.989971391] [global_costmap.global_costmap]: Subscribed to Topics: scan
+[planner_server-14] [INFO] [1791889151.008617912] [global_costmap.global_costmap]: Initialized plugin "obstacle_layer"
+[planner_server-14] [INFO] [1791889151.008686350] [global_costmap.global_costmap]: Using plugin "inflation_layer"
+[planner_server-14] [INFO] [1791889151.009950985] [global_costmap.global_costmap]: Initialized plugin "inflation_layer"
+[planner_server-14] [INFO] [1791889151.050722893] [global_costmap.global_costmap]: StaticLayer: Resizing costmap to 161 X 159 at 0.020000 m/pix
+[planner_server-14] [INFO] [1791889151.061129521] [planner_server]: Created global planner plugin GridBased of type nav2_smac_planner/SmacPlanner2D
+[planner_server-14] [INFO] [1791889151.061223814] [planner_server]: Configuring GridBased of type SmacPlanner2D
+[planner_server-14] [INFO] [1791889151.069359059] [planner_server]: Configured plugin GridBased of type SmacPlanner2D with tolerance 0.10, maximum iterations 100000, max on approach iterations 1000, and not allowing unknown traversal.
+[planner_server-14] [INFO] [1791889151.069460814] [planner_server]: Planner Server has GridBased  planners available.
+[lifecycle_manager-19] [INFO] [1791889151.140319741] [lifecycle_manager_navigation]: [34m[1mConfiguring behavior_server[0m[0m
+[behavior_server-15] [INFO] [1791889151.141023747] [behavior_server]: Configuring
+[behavior_server-15] [INFO] [1791889151.177580333] [behavior_server]: Creating behavior plugin wait of type nav2_behaviors/Wait
+[behavior_server-15] [INFO] [1791889151.178382218] [behavior_server]: Configuring wait
+[lifecycle_manager-19] [INFO] [1791889151.198057610] [lifecycle_manager_navigation]: [34m[1mConfiguring bt_navigator[0m[0m
+[bt_navigator-16] [INFO] [1791889151.198629628] [bt_navigator]: Configuring
+[mission_node-22] [INFO] [1791889151.200411887] [mission_node]: [MISSION] startup: waiting at least 7.0s and for all Nav2 lifecycle nodes to activate
+[rviz2-21] [INFO] [1791889151.291068667] [rviz2]: Trying to create a map of size 161 x 159 using 1 swatches
+[rviz2-21] [ERROR] [1791889151.321219957] [rviz2]: Vertex Program:rviz/glsl120/indexed_8bit_image.vert Fragment Program:rviz/glsl120/indexed_8bit_image.frag GLSL link result : 
+[rviz2-21] active samplers with a different type refer to the same texture image unit
+[lifecycle_manager-19] [INFO] [1791889151.432960351] [lifecycle_manager_navigation]: [34m[1mConfiguring waypoint_follower[0m[0m
+[waypoint_follower-17] [INFO] [1791889151.434116708] [waypoint_follower]: Configuring
+[waypoint_follower-17] [INFO] [1791889151.480514606] [waypoint_follower]: Created waypoint_task_executor : wait_at_waypoint of type nav2_waypoint_follower::WaitAtWaypoint
+[lifecycle_manager-19] [INFO] [1791889151.482385168] [lifecycle_manager_navigation]: [34m[1mConfiguring velocity_smoother[0m[0m
+[velocity_smoother-18] [INFO] [1791889151.482851173] [velocity_smoother]: Configuring velocity smoother
+[lifecycle_manager-19] [INFO] [1791889151.498942723] [lifecycle_manager_navigation]: [34m[1mActivating controller_server[0m[0m
+[controller_server-12] [INFO] [1791889151.499391318] [controller_server]: Activating
+[controller_server-12] [INFO] [1791889151.499545774] [local_costmap.local_costmap]: Activating
+[controller_server-12] [INFO] [1791889151.499575315] [local_costmap.local_costmap]: Checking transform
+[controller_server-12] [INFO] [1791889151.499919961] [local_costmap.local_costmap]: Timed out waiting for transform from base_link to odom to become available, tf error: Could not find a connection between 'odom' and 'base_link' because they are not part of the same tree.Tf has two or more unconnected trees.
+[controller_server-12] [INFO] [1791889152.004310042] [local_costmap.local_costmap]: start
+[rviz2-21] [INFO] [1791889152.129157178] [rviz]: Message Filter dropping message: frame 'laser_frame' at time 5.038 for reason 'discarding message because the queue is full'
+[controller_server-12] [INFO] [1791889152.257826669] [controller_server]: Activating controller: ReleasePusher of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-12] [INFO] [1791889152.257930057] [controller_server]: Activating controller: PrecisionPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-12] [INFO] [1791889152.257940545] [controller_server]: Activating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-12] [INFO] [1791889152.257976918] [controller_server]: Creating bond (controller_server) to lifecycle manager.
+[lifecycle_manager-19] [INFO] [1791889152.383367203] [lifecycle_manager_navigation]: Server controller_server connected with bond.
+[lifecycle_manager-19] [INFO] [1791889152.383417500] [lifecycle_manager_navigation]: [34m[1mActivating smoother_server[0m[0m
+[smoother_server-13] [INFO] [1791889152.383848364] [smoother_server]: Activating
+[smoother_server-13] [INFO] [1791889152.383903299] [smoother_server]: Creating bond (smoother_server) to lifecycle manager.
+[lifecycle_manager-19] [INFO] [1791889152.507430634] [lifecycle_manager_navigation]: Server smoother_server connected with bond.
+[lifecycle_manager-19] [INFO] [1791889152.507655613] [lifecycle_manager_navigation]: [34m[1mActivating planner_server[0m[0m
+[planner_server-14] [INFO] [1791889152.508470161] [planner_server]: Activating
+[planner_server-14] [INFO] [1791889152.508573670] [global_costmap.global_costmap]: Activating
+[planner_server-14] [INFO] [1791889152.508605655] [global_costmap.global_costmap]: Checking transform
+[planner_server-14] [INFO] [1791889152.508784113] [global_costmap.global_costmap]: Timed out waiting for transform from base_link to map to become available, tf error: Lookup would require extrapolation into the past.  Requested time 6.060000 but the earliest data is at time 6.242000, when looking up transform from frame [base_link] to frame [map]
+[vision_node-20] [INFO] [1791889152.932176361] [vision_node]: Vision ready: /camera/image_raw, hazard backend=yolov5, five hazard classes, AprilTag 36h11 IDs 0-3
+[planner_server-14] [INFO] [1791889153.008834623] [global_costmap.global_costmap]: start
+[planner_server-14] [INFO] [1791889153.512963503] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 6.744 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[planner_server-14] [INFO] [1791889154.060648566] [planner_server]: Activating plugin GridBased of type SmacPlanner2D
+[planner_server-14] [INFO] [1791889154.064150620] [planner_server]: Creating bond (planner_server) to lifecycle manager.
+[lifecycle_manager-19] [INFO] [1791889154.185977141] [lifecycle_manager_navigation]: Server planner_server connected with bond.
+[lifecycle_manager-19] [INFO] [1791889154.186097109] [lifecycle_manager_navigation]: [34m[1mActivating behavior_server[0m[0m
+[behavior_server-15] [INFO] [1791889154.196858120] [behavior_server]: Activating
+[behavior_server-15] [INFO] [1791889154.196947855] [behavior_server]: Activating wait
+[behavior_server-15] [INFO] [1791889154.196985410] [behavior_server]: Creating bond (behavior_server) to lifecycle manager.
+[lifecycle_manager-19] [INFO] [1791889154.326759509] [lifecycle_manager_navigation]: Server behavior_server connected with bond.
+[lifecycle_manager-19] [INFO] [1791889154.326851147] [lifecycle_manager_navigation]: [34m[1mActivating bt_navigator[0m[0m
+[bt_navigator-16] [INFO] [1791889154.327839225] [bt_navigator]: Activating
+[bt_navigator-16] [INFO] [1791889154.471517498] [bt_navigator]: Creating bond (bt_navigator) to lifecycle manager.
+[lifecycle_manager-19] [INFO] [1791889154.584790675] [lifecycle_manager_navigation]: Server bt_navigator connected with bond.
+[lifecycle_manager-19] [INFO] [1791889154.585005687] [lifecycle_manager_navigation]: [34m[1mActivating waypoint_follower[0m[0m
+[waypoint_follower-17] [INFO] [1791889154.585558722] [waypoint_follower]: Activating
+[waypoint_follower-17] [INFO] [1791889154.585638841] [waypoint_follower]: Creating bond (waypoint_follower) to lifecycle manager.
+[lifecycle_manager-19] [INFO] [1791889154.704025076] [lifecycle_manager_navigation]: Server waypoint_follower connected with bond.
+[lifecycle_manager-19] [INFO] [1791889154.704090589] [lifecycle_manager_navigation]: [34m[1mActivating velocity_smoother[0m[0m
+[velocity_smoother-18] [INFO] [1791889154.705375961] [velocity_smoother]: Activating
+[velocity_smoother-18] [INFO] [1791889154.705466067] [velocity_smoother]: Creating bond (velocity_smoother) to lifecycle manager.
+[rviz2-21] [INFO] [1791889154.816104820] [rviz]: Message Filter dropping message: frame 'laser_frame' at time 5.582 for reason 'discarding message because the queue is full'
+[lifecycle_manager-19] [INFO] [1791889154.817502225] [lifecycle_manager_navigation]: Server velocity_smoother connected with bond.
+[lifecycle_manager-19] [INFO] [1791889154.817547073] [lifecycle_manager_navigation]: [34m[1mManaged nodes are active[0m[0m
+[lifecycle_manager-19] [INFO] [1791889154.817584948] [lifecycle_manager_navigation]: [34m[1mCreating bond timer...[0m[0m
+[controller_server-12] [INFO] [1791889155.647665972] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 8.798 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[amcl-10] [INFO] [1791889156.274613860] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 8.868 for reason 'discarding message because the queue is full'
+[planner_server-14] [INFO] [1791889156.759744142] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 9.756 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[mission_node-22] [INFO] [1791889158.281135542] [mission_node]: [MISSION] navigating: corridor_entry approach -> (0.55, 0.70, yaw=1.57)
+[controller_server-12] [INFO] [1791889158.352340629] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 11.202 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[bt_navigator-16] [INFO] [1791889158.384671524] [bt_navigator]: Begin navigating from current location (0.55, 0.53) to (0.55, 0.70)
+[safety_node-5] [INFO] [1791889158.400615664] [safety_node]: Command guard: clear
+[controller_server-12] [INFO] [1791889158.405747030] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-16] [WARN] [1791889159.106569296] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[vision_node-20] [INFO] [1791889159.386989100] [vision_node]: [CORRIDOR 1/5] confirmed ELECTRICAL with YOLOv5 confidence 0.98
+[vision_node-20] [INFO] [1791889159.388201447] [vision_node]: [CORRIDOR 2/5] confirmed CHEMICAL with YOLOv5 confidence 0.96
+[controller_server-12] [INFO] [1791889159.455995015] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889159.627613095] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889159.959242054] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889159.995680184] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889159.998597011] [mission_node]: [MISSION] navigating: corridor_entry align at current pose -> (0.55, 0.65, yaw=1.57)
+[bt_navigator-16] [INFO] [1791889160.117371032] [bt_navigator]: Begin navigating from current location (0.55, 0.65) to (0.55, 0.65)
+[controller_server-12] [INFO] [1791889160.139619641] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-12] [INFO] [1791889160.140885180] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889160.177879695] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889160.179838845] [mission_node]: [MISSION] settling: corridor_entry reached; braking before next action
+[mission_node-22] [INFO] [1791889160.929097207] [mission_node]: [MISSION] navigating: corridor_fire approach -> (0.55, 0.85, yaw=1.57)
+[bt_navigator-16] [INFO] [1791889160.998483902] [bt_navigator]: Begin navigating from current location (0.55, 0.66) to (0.55, 0.85)
+[controller_server-12] [INFO] [1791889161.019485288] [controller_server]: Received a goal, begin computing control effort.
+[rviz2-21] [INFO] [1791889161.220030475] [rviz]: Message Filter dropping message: frame 'laser_frame' at time 13.458 for reason 'discarding message because the queue is full'
+[safety_node-5] [INFO] [1791889161.371427253] [safety_node]: Command guard: obstacle_in_stopping_envelope
+[safety_node-5] [INFO] [1791889161.492073953] [safety_node]: Command guard: clear
+[controller_server-12] [INFO] [1791889162.069763725] [controller_server]: Passing new path to controller.
+[vision_node-20] [INFO] [1791889162.090491885] [vision_node]: [CORRIDOR 3/5] confirmed FIRE with YOLOv5 confidence 0.74
+[bt_navigator-16] [WARN] [1791889162.459957881] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889163.119734703] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889163.120761321] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889163.173856894] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889163.182008486] [mission_node]: [MISSION] navigating: corridor_fire align at current pose -> (0.54, 0.81, yaw=1.57)
+[bt_navigator-16] [INFO] [1791889163.313889809] [bt_navigator]: Begin navigating from current location (0.54, 0.82) to (0.54, 0.81)
+[controller_server-12] [INFO] [1791889163.343771262] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-12] [INFO] [1791889163.344239734] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889163.365571645] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889163.369231191] [mission_node]: [MISSION] settling: corridor_fire reached; braking before next action
+[mission_node-22] [INFO] [1791889164.181598828] [mission_node]: [MISSION] observing: camera scanning left/right for FIRE; base stopped
+[mission_node-22] [INFO] [1791889165.280126487] [mission_node]: [MISSION] observation_complete: confirmed FIRE
+[mission_node-22] [INFO] [1791889165.282369852] [mission_node]: [MISSION] navigating: corridor_chemical approach -> (0.55, 1.42, yaw=1.57)
+[bt_navigator-16] [INFO] [1791889165.420185662] [bt_navigator]: Begin navigating from current location (0.54, 0.83) to (0.55, 1.42)
+[controller_server-12] [INFO] [1791889165.433236124] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-12] [INFO] [1791889165.731341216] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 18.096 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[planner_server-14] [INFO] [1791889165.731416326] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 18.096 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[vision_node-20] [INFO] [1791889166.115796109] [vision_node]: [CORRIDOR 4/5] confirmed RADIATION with YOLOv5 confidence 0.82
+[amcl-10] [INFO] [1791889166.242490757] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 18.096 for reason 'discarding message because the queue is full'
+[controller_server-12] [INFO] [1791889166.483513722] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889166.515072648] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889166.981178085] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889167.061611859] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889167.262029458] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889167.486058193] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889167.731251906] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889167.843812926] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889168.064020179] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889168.373011221] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889168.534638065] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889168.891665314] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889169.535037043] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889170.587137968] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889171.584760194] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889171.645710231] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889172.633752239] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889172.634272090] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889172.681800373] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889172.689890521] [mission_node]: [MISSION] navigating: corridor_chemical align at current pose -> (0.56, 1.37, yaw=1.57)
+[planner_server-14] [INFO] [1791889172.755550443] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 24.472 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[bt_navigator-16] [INFO] [1791889172.870441200] [bt_navigator]: Begin navigating from current location (0.56, 1.37) to (0.56, 1.37)
+[controller_server-12] [INFO] [1791889172.892732312] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-12] [INFO] [1791889172.893092527] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889172.931130574] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889172.934868114] [mission_node]: [MISSION] settling: corridor_chemical reached; braking before next action
+[mission_node-22] [INFO] [1791889173.748818870] [mission_node]: [MISSION] observing: camera scanning left/right for CHEMICAL; base stopped
+[mission_node-22] [INFO] [1791889174.806596524] [mission_node]: [MISSION] observation_complete: confirmed CHEMICAL
+[mission_node-22] [INFO] [1791889174.808062857] [mission_node]: [MISSION] navigating: corridor_radiation approach -> (0.55, 2.30, yaw=1.57)
+[controller_server-12] [INFO] [1791889174.872754369] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 26.456 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[bt_navigator-16] [INFO] [1791889174.937524757] [bt_navigator]: Begin navigating from current location (0.56, 1.37) to (0.55, 2.30)
+[controller_server-12] [INFO] [1791889174.958795322] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-12] [INFO] [1791889176.009083119] [controller_server]: Passing new path to controller.
+[rviz2-21] [INFO] [1791889176.449865091] [rviz]: Message Filter dropping message: frame 'laser_frame' at time 27.414 for reason 'discarding message because the queue is full'
+[controller_server-12] [INFO] [1791889177.060339042] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889177.729460565] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889177.968208318] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889178.059080378] [controller_server]: Passing new path to controller.
+[navigation_map_node-4] [INFO] [1791889178.984739959] [navigation_map_node]: Cleared 1 laser-confirmed movable-obstacle cells
+[bt_navigator-16] [WARN] [1791889179.080805968] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889179.112107618] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889180.109077288] [controller_server]: Passing new path to controller.
+[vision_node-20] [INFO] [1791889180.315642802] [vision_node]: [CORRIDOR 5/5] confirmed BIOHAZARD with YOLOv5 confidence 0.98
+[controller_server-12] [INFO] [1791889181.162752875] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889182.159081228] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889183.048990970] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889183.212855033] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889184.209298400] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889184.427968516] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889184.898058289] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889185.237898735] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889185.261412848] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889185.738070551] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889186.009637155] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889186.049119327] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889186.052829846] [mission_node]: [MISSION] navigating: corridor_radiation align at current pose -> (0.53, 2.25, yaw=1.57)
+[bt_navigator-16] [INFO] [1791889186.225066103] [bt_navigator]: Begin navigating from current location (0.53, 2.26) to (0.53, 2.25)
+[controller_server-12] [INFO] [1791889186.249150704] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-16] [WARN] [1791889187.292118781] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889187.299406991] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889188.349354158] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889188.507454437] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889188.750135662] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889188.785934783] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889188.789980888] [mission_node]: [MISSION] settling: corridor_radiation reached; braking before next action
+[mission_node-22] [INFO] [1791889189.584722905] [mission_node]: [MISSION] observing: camera scanning left/right for RADIATION; base stopped
+[mission_node-22] [INFO] [1791889190.700230019] [mission_node]: [MISSION] observation_complete: confirmed RADIATION
+[mission_node-22] [INFO] [1791889190.703489608] [mission_node]: [MISSION] navigating: top_corner approach -> (0.55, 2.50, yaw=0.00)
+[bt_navigator-16] [INFO] [1791889190.848009409] [bt_navigator]: Begin navigating from current location (0.53, 2.23) to (0.55, 2.50)
+[controller_server-12] [INFO] [1791889190.874382297] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-12] [INFO] [1791889191.924580498] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889192.924554925] [controller_server]: Passing new path to controller.
+[amcl-10] [INFO] [1791889193.250349327] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 42.756 for reason 'discarding message because the queue is full'
+[planner_server-14] [INFO] [1791889193.732018364] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 43.646 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[controller_server-12] [INFO] [1791889193.732439036] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 43.646 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[controller_server-12] [INFO] [1791889193.974566645] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889194.476661459] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889194.509738635] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889194.520547696] [mission_node]: [MISSION] navigating: top_corner align at current pose -> (0.52, 2.47, yaw=0.00)
+[bt_navigator-16] [INFO] [1791889194.674235107] [bt_navigator]: Begin navigating from current location (0.52, 2.47) to (0.52, 2.47)
+[controller_server-12] [INFO] [1791889194.695585965] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-16] [WARN] [1791889195.025893403] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889195.116336091] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889195.745855655] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889196.745858788] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889197.104998881] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889197.796737348] [controller_server]: Passing new path to controller.
+[planner_server-14] [INFO] [1791889198.745877392] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 48.226 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[controller_server-12] [INFO] [1791889198.746240855] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 48.226 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[controller_server-12] [INFO] [1791889198.797019225] [controller_server]: Passing new path to controller.
+[amcl-10] [INFO] [1791889199.269613116] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 48.294 for reason 'discarding message because the queue is full'
+[bt_navigator-16] [WARN] [1791889199.436011092] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889199.845864821] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889200.634941676] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889200.666264381] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889200.895838981] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889200.997174642] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889201.596494091] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889201.636286753] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889201.653324048] [mission_node]: [MISSION] settling: top_corner reached; braking before next action
+[mission_node-22] [INFO] [1791889202.411216750] [mission_node]: [MISSION] navigating: corridor_electrical approach -> (1.50, 2.55, yaw=0.00)
+[bt_navigator-16] [INFO] [1791889202.546936396] [bt_navigator]: Begin navigating from current location (0.53, 2.48) to (1.50, 2.55)
+[controller_server-12] [INFO] [1791889202.569218635] [controller_server]: Received a goal, begin computing control effort.
+[planner_server-14] [INFO] [1791889202.948550100] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 52.120 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[bt_navigator-16] [WARN] [1791889203.468856961] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889203.621588405] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889203.758238781] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889204.407230122] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889204.639464175] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889204.669409985] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889204.779833081] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889205.609893312] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889205.637464010] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889205.669406049] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889206.160205474] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889206.670718717] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889207.722602208] [controller_server]: Passing new path to controller.
+[navigation_map_node-4] [INFO] [1791889208.477585008] [navigation_map_node]: Cleared 1 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889208.693372901] [navigation_map_node]: Cleared 8 laser-confirmed movable-obstacle cells
+[controller_server-12] [INFO] [1791889208.719400721] [controller_server]: Passing new path to controller.
+[planner_server-14] [INFO] [1791889208.783471067] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 57.412 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[controller_server-12] [INFO] [1791889208.784367270] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 57.412 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[navigation_map_node-4] [INFO] [1791889208.915152215] [navigation_map_node]: Cleared 6 laser-confirmed movable-obstacle cells
+[safety_node-5] [INFO] [1791889208.996326295] [safety_node]: Command guard: obstacle_in_stopping_envelope
+[navigation_map_node-4] [INFO] [1791889209.124364734] [navigation_map_node]: Cleared 10 laser-confirmed movable-obstacle cells
+[safety_node-5] [INFO] [1791889209.146226202] [safety_node]: Command guard: clear
+[amcl-10] [INFO] [1791889209.196921452] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 57.412 for reason 'discarding message because the queue is full'
+[navigation_map_node-4] [INFO] [1791889209.325013115] [navigation_map_node]: Cleared 3 laser-confirmed movable-obstacle cells
+[bt_navigator-16] [WARN] [1791889209.507931906] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[navigation_map_node-4] [INFO] [1791889209.549885276] [navigation_map_node]: Cleared 7 laser-confirmed movable-obstacle cells
+[bt_navigator-16] [WARN] [1791889209.659413112] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889209.771832744] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889209.858639463] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[navigation_map_node-4] [INFO] [1791889210.031569767] [navigation_map_node]: Cleared 5 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889210.251364220] [navigation_map_node]: Cleared 5 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889210.445693181] [navigation_map_node]: Cleared 4 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889210.675839386] [navigation_map_node]: Cleared 11 laser-confirmed movable-obstacle cells
+[bt_navigator-16] [WARN] [1791889210.777350164] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889210.820714357] [controller_server]: Passing new path to controller.
+[navigation_map_node-4] [INFO] [1791889210.892724272] [navigation_map_node]: Cleared 2 laser-confirmed movable-obstacle cells
+[bt_navigator-16] [WARN] [1791889210.949763566] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[navigation_map_node-4] [INFO] [1791889211.103644820] [navigation_map_node]: Cleared 1 laser-confirmed movable-obstacle cells
+[bt_navigator-16] [WARN] [1791889211.218884655] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[navigation_map_node-4] [INFO] [1791889211.318340536] [navigation_map_node]: Cleared 3 laser-confirmed movable-obstacle cells
+[bt_navigator-16] [WARN] [1791889211.579021350] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889211.819428675] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889212.509959371] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889212.869404738] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889213.869407186] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889214.867387797] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889214.919407620] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889214.968874675] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889215.920632682] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889216.028225077] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889216.770033972] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889216.808467575] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889216.814395929] [mission_node]: [MISSION] navigating: corridor_electrical align at current pose -> (1.50, 2.51, yaw=0.00)
+[bt_navigator-16] [INFO] [1791889216.945221281] [bt_navigator]: Begin navigating from current location (1.50, 2.51) to (1.50, 2.51)
+[controller_server-12] [INFO] [1791889216.967395468] [controller_server]: Received a goal, begin computing control effort.
+[amcl-10] [INFO] [1791889217.649576492] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 64.808 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[bt_navigator-16] [WARN] [1791889217.677367485] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889218.017723443] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889218.297726532] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 66.176 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[planner_server-14] [INFO] [1791889218.298914317] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 66.176 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[bt_navigator-16] [WARN] [1791889218.417155946] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889219.067552264] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889219.898950300] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889220.068283842] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889220.863715019] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889220.865782182] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889220.995915627] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889221.118073436] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889221.519854728] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889222.169473991] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889223.167870955] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889224.167757981] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889224.522035751] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889224.558171910] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889224.563237047] [mission_node]: [MISSION] settling: corridor_electrical reached; braking before next action
+[mission_node-22] [INFO] [1791889225.405657505] [mission_node]: [MISSION] observing: camera scanning left/right for ELECTRICAL; base stopped
+[mission_node-22] [INFO] [1791889226.469043000] [mission_node]: [MISSION] observation_complete: confirmed ELECTRICAL
+[mission_node-22] [INFO] [1791889226.470235195] [mission_node]: [MISSION] settling: corridor_biohazard: observe at current stop
+[mission_node-22] [INFO] [1791889227.335680468] [mission_node]: [MISSION] observing: camera scanning left/right for BIOHAZARD; base stopped
+[mission_node-22] [INFO] [1791889228.403935231] [mission_node]: [MISSION] observation_complete: confirmed BIOHAZARD
+[mission_node-22] [INFO] [1791889228.406647016] [mission_node]: [MISSION] navigating: barrier_stage approach -> (1.52, 2.52, yaw=-1.57)
+[bt_navigator-16] [INFO] [1791889228.515372432] [bt_navigator]: Begin navigating from current location (1.52, 2.52) to (1.52, 2.52)
+[controller_server-12] [INFO] [1791889228.537584065] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-16] [WARN] [1791889229.567916633] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889229.587875370] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889230.588009651] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889230.757398960] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[navigation_map_node-4] [INFO] [1791889230.813556298] [navigation_map_node]: Cleared 1 laser-confirmed movable-obstacle cells
+[bt_navigator-16] [WARN] [1791889231.636165487] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889231.637870451] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889231.727093576] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889231.779830200] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889232.161984530] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889232.448464977] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889232.637865741] [controller_server]: Passing new path to controller.
+[navigation_map_node-4] [INFO] [1791889232.922894446] [navigation_map_node]: Cleared 1 laser-confirmed movable-obstacle cells
+[bt_navigator-16] [WARN] [1791889233.078488834] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889233.242996269] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889233.278404019] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889233.477752581] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889233.687891398] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889234.691408044] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889235.737898204] [controller_server]: Passing new path to controller.
+[amcl-10] [INFO] [1791889235.890622317] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 81.366 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[planner_server-14] [INFO] [1791889236.097337162] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 82.258 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[bt_navigator-16] [WARN] [1791889236.288616706] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889236.541207396] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889236.737869880] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889237.088208157] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889237.130933775] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889237.138548556] [mission_node]: [MISSION] settling: barrier_stage reached; braking before next action
+[mission_node-22] [INFO] [1791889237.951115627] [mission_node]: [MISSION] pushing: closed-loop push for 1.08m at 0.10m/s
+[safety_node-5] [INFO] [1791889240.260735897] [safety_node]: Command guard: obstacle_in_stopping_envelope
+[safety_node-5] [INFO] [1791889240.398450900] [safety_node]: Command guard: clear
+[navigation_map_node-4] [INFO] [1791889240.401129034] [navigation_map_node]: Cleared 1 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889249.288296412] [navigation_map_node]: Cleared 2 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889249.499056349] [navigation_map_node]: Cleared 3 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889249.715788900] [navigation_map_node]: Cleared 1 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889249.962141789] [navigation_map_node]: Cleared 2 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889250.151084973] [navigation_map_node]: Cleared 4 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889250.424083099] [navigation_map_node]: Cleared 3 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889250.637800252] [navigation_map_node]: Cleared 2 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889250.843059227] [navigation_map_node]: Cleared 3 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889251.098356505] [navigation_map_node]: Cleared 3 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889251.312392341] [navigation_map_node]: Cleared 3 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889251.743372701] [navigation_map_node]: Cleared 6 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889251.946455367] [navigation_map_node]: Cleared 2 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889252.160586732] [navigation_map_node]: Cleared 2 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889252.394955897] [navigation_map_node]: Cleared 2 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889252.668497445] [navigation_map_node]: Cleared 4 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889252.852540701] [navigation_map_node]: Cleared 1 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889253.088592462] [navigation_map_node]: Cleared 1 laser-confirmed movable-obstacle cells
+[controller_server-12] [INFO] [1791889253.146450301] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 97.614 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[navigation_map_node-4] [INFO] [1791889253.285751839] [navigation_map_node]: Cleared 3 laser-confirmed movable-obstacle cells
+[vision_node-20] [INFO] [1791889253.680842169] [vision_node]: [CORE] AprilTag 1 TOXIC_LEAK at map (2.94, 0.78)
+[navigation_map_node-4] [INFO] [1791889253.729283430] [navigation_map_node]: Cleared 1 laser-confirmed movable-obstacle cells
+[vision_node-20] [INFO] [1791889254.298874318] [vision_node]: [CORE] AprilTag 0 COLLAPSE at map (2.92, 1.54)
+[navigation_map_node-4] [INFO] [1791889254.840616781] [navigation_map_node]: Cleared 1 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889255.051499806] [navigation_map_node]: Cleared 1 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889255.273335561] [navigation_map_node]: Cleared 1 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889255.477091856] [navigation_map_node]: Cleared 1 laser-confirmed movable-obstacle cells
+[mission_node-22] [INFO] [1791889256.149405095] [mission_node]: [MISSION] push_settling: barrier clearing completed after 1.08m
+[navigation_map_node-4] [INFO] [1791889256.169120934] [navigation_map_node]: Cleared 1 laser-confirmed movable-obstacle cells
+[safety_node-5] [INFO] [1791889256.247303766] [safety_node]: Command guard: obstacle_in_stopping_envelope
+[navigation_map_node-4] [INFO] [1791889256.370669482] [navigation_map_node]: Cleared 1 laser-confirmed movable-obstacle cells
+[mission_node-22] [INFO] [1791889257.208638601] [mission_node]: [MISSION] navigating: release_pusher approach -> (1.48, 1.48, yaw=0.00)
+[bt_navigator-16] [INFO] [1791889257.350734410] [bt_navigator]: Begin navigating from current location (1.48, 1.48) to (1.48, 1.48)
+[controller_server-12] [INFO] [1791889257.372342390] [controller_server]: Received a goal, begin computing control effort.
+[safety_node-5] [INFO] [1791889257.373453552] [safety_node]: Command guard: clear
+[bt_navigator-16] [WARN] [1791889258.212567815] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889258.425745572] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889259.374215282] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889259.472535778] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889259.902766440] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889259.965649248] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889260.476100541] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889260.504555443] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889261.473712198] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889261.522650350] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889262.464124132] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889262.529510219] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889263.572725568] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889263.582921239] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889263.902285179] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889264.512631833] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889264.572533456] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889264.593409776] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[vision_node-20] [INFO] [1791889265.438633736] [vision_node]: [CORE] AprilTag 2 TRAPPED_PERSON at map (2.36, 0.18)
+[controller_server-12] [INFO] [1791889265.625798783] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889265.976776165] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889266.014048467] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889266.021674765] [mission_node]: [MISSION] settling: release_pusher reached; braking before next action
+[mission_node-22] [INFO] [1791889266.851110306] [mission_node]: [MISSION] navigating: room_entry approach -> (2.10, 1.45, yaw=0.00)
+[bt_navigator-16] [INFO] [1791889266.974676932] [bt_navigator]: Begin navigating from current location (1.46, 1.52) to (2.10, 1.45)
+[controller_server-12] [INFO] [1791889266.996747073] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-16] [WARN] [1791889267.976329417] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889268.006837983] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889268.047182747] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889268.837168778] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889269.050230361] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889269.777000306] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889270.099805250] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889271.149747895] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889272.147757851] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889272.506961652] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889272.857004843] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889273.196991392] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889273.907224393] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889274.197733719] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889274.913413075] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889275.247005440] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889275.248150337] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889275.300185563] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889275.306029208] [mission_node]: [MISSION] navigating: room_entry align at current pose -> (2.08, 1.49, yaw=0.00)
+[bt_navigator-16] [INFO] [1791889275.483099019] [bt_navigator]: Begin navigating from current location (2.07, 1.49) to (2.08, 1.49)
+[controller_server-12] [INFO] [1791889275.508219431] [controller_server]: Received a goal, begin computing control effort.
+[vision_node-20] [INFO] [1791889275.560360885] [vision_node]: [CORE] AprilTag 3 HIGH_TEMPERATURE at map (1.54, 0.17)
+[navigation_map_node-4] [INFO] [1791889275.725189853] [navigation_map_node]: Cleared 1 laser-confirmed movable-obstacle cells
+[navigation_map_node-4] [INFO] [1791889276.382574141] [navigation_map_node]: Cleared 1 laser-confirmed movable-obstacle cells
+[controller_server-12] [INFO] [1791889276.559781337] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889277.558666117] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889278.611099759] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889279.608652054] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889279.608978780] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889279.656307882] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889279.668715030] [mission_node]: [MISSION] settling: room_entry reached; braking before next action
+[mission_node-22] [INFO] [1791889280.459855018] [mission_node]: [MISSION] navigating: core_tag_0 approach -> (2.40, 1.45, yaw=-1.57)
+[amcl-10] [INFO] [1791889280.567409469] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 121.672 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[bt_navigator-16] [INFO] [1791889280.610537947] [bt_navigator]: Begin navigating from current location (2.06, 1.51) to (2.40, 1.45)
+[controller_server-12] [INFO] [1791889280.639738102] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-16] [WARN] [1791889280.841986733] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889280.973956173] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889281.372416401] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889281.652191696] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889281.689938416] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889282.231138757] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889282.742548382] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889283.032202200] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889283.740747265] [controller_server]: Passing new path to controller.
+[planner_server-14] [INFO] [1791889284.125282914] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 125.562 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[bt_navigator-16] [WARN] [1791889284.431075397] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889284.789954485] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889285.839942403] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889285.893117274] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889285.935513352] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889285.935525173] [mission_node]: [MISSION] navigating: core_tag_0 align at current pose -> (2.37, 1.49, yaw=-1.57)
+[bt_navigator-16] [INFO] [1791889286.099252947] [bt_navigator]: Begin navigating from current location (2.37, 1.49) to (2.37, 1.49)
+[controller_server-12] [INFO] [1791889286.121426888] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-16] [WARN] [1791889286.789807478] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889287.080062774] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889287.171747312] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889287.359448481] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889287.909682460] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889288.060028530] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889288.224945856] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889288.751932550] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889289.202153199] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889289.222666174] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889289.569441083] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889290.271792209] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889290.420411995] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889290.650266967] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889291.241601183] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889291.249663557] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889291.272733796] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889291.712140735] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889292.072445861] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889292.112576018] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889292.117231989] [mission_node]: [MISSION] settling: core_tag_0 reached; braking before next action
+[mission_node-22] [INFO] [1791889293.130751040] [mission_node]: [MISSION] observing: camera scanning left/right for 0; base stopped
+[mission_node-22] [INFO] [1791889294.238230430] [mission_node]: [MISSION] observation_complete: confirmed 0
+[mission_node-22] [INFO] [1791889294.239221941] [mission_node]: [MISSION] navigating: core_tag_1 approach -> (2.40, 0.70, yaw=-1.57)
+[bt_navigator-16] [INFO] [1791889294.383663607] [bt_navigator]: Begin navigating from current location (2.38, 1.50) to (2.40, 0.70)
+[controller_server-12] [INFO] [1791889294.407464382] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-16] [WARN] [1791889295.254124238] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889295.457765947] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889296.135252418] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889296.457975315] [controller_server]: Passing new path to controller.
+[planner_server-14] [INFO] [1791889297.505197040] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 137.404 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[controller_server-12] [INFO] [1791889297.508855664] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889298.509546530] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889299.512610802] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889300.557658415] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889301.608369951] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889302.095921553] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889302.611109567] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889302.907098356] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889303.453891592] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889303.608971078] [controller_server]: Reached the goal!
+[controller_server-12] [INFO] [1791889303.629937942] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-12] [INFO] [1791889303.632406007] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889303.668541893] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889303.681841580] [mission_node]: [MISSION] navigating: core_tag_1 align at current pose -> (2.39, 0.74, yaw=-1.57)
+[bt_navigator-16] [INFO] [1791889303.948871992] [bt_navigator]: Begin navigating from current location (2.39, 0.74) to (2.39, 0.74)
+[controller_server-12] [INFO] [1791889303.971732284] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-16] [WARN] [1791889304.039196014] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889304.140254783] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889304.305862794] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889304.311436561] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889305.021928283] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889305.031110073] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889305.525218057] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889305.559440366] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889305.569928005] [mission_node]: [MISSION] settling: core_tag_1 reached; braking before next action
+[mission_node-22] [INFO] [1791889306.410800561] [mission_node]: [MISSION] observing: camera scanning left/right for 1; base stopped
+[mission_node-22] [INFO] [1791889307.482255929] [mission_node]: [MISSION] observation_complete: confirmed 1
+[mission_node-22] [INFO] [1791889307.483200590] [mission_node]: [MISSION] settling: core_tag_2: observe at current stop
+[mission_node-22] [INFO] [1791889308.330844040] [mission_node]: [MISSION] observing: camera scanning left/right for 2; base stopped
+[mission_node-22] [INFO] [1791889309.450758079] [mission_node]: [MISSION] observation_complete: confirmed 2
+[mission_node-22] [INFO] [1791889309.456838569] [mission_node]: [MISSION] settling: core_tag_3: observe at current stop
+[mission_node-22] [INFO] [1791889310.319441415] [mission_node]: [MISSION] observing: camera scanning left/right for 3; base stopped
+[mission_node-22] [INFO] [1791889311.448790920] [mission_node]: [MISSION] observation_complete: confirmed 3
+[mission_node-22] [INFO] [1791889311.451103654] [mission_node]: [MISSION] navigating: return_turn approach -> (2.40, 0.95, yaw=1.57)
+[bt_navigator-16] [INFO] [1791889311.671600515] [bt_navigator]: Begin navigating from current location (2.39, 0.74) to (2.40, 0.95)
+[controller_server-12] [INFO] [1791889311.693675158] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-16] [WARN] [1791889311.782084497] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889312.106094326] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889312.127217209] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889312.274166631] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889312.746491668] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889313.775338068] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889313.794108882] [controller_server]: Passing new path to controller.
+[planner_server-14] [INFO] [1791889313.970574315] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 152.302 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[bt_navigator-16] [WARN] [1791889314.367112019] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[amcl-10] [INFO] [1791889314.468564544] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 152.370 for reason 'discarding message because the queue is full'
+[bt_navigator-16] [WARN] [1791889314.780014948] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889314.795286170] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889315.844121753] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889316.092951309] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 154.230 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[bt_navigator-16] [WARN] [1791889316.224271560] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889316.692016440] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889316.845118240] [controller_server]: Passing new path to controller.
+[vision_node-20] [ WARN:0@167.497] global drawing.cpp:2286 drawFrameAxes Some of projected axes endpoints are out of frame. The drawn axes may be not reliable.
+[controller_server-12] [INFO] [1791889317.894267750] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889317.903988159] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889318.897063574] [controller_server]: Passing new path to controller.
+[amcl-10] [INFO] [1791889319.046486376] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 156.440 for reason 'discarding message because the queue is full'
+[controller_server-12] [WARN] [1791889319.482298378] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[controller_server-12] [INFO] [1791889319.945820418] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889320.931667165] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889321.913810142] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889321.982378155] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889322.988165000] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889324.007020638] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889324.011911629] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889324.032379017] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889324.437902401] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889325.032378066] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889325.625523797] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889326.083472978] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889326.266000932] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889326.921854308] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889327.082730232] [controller_server]: Passing new path to controller.
+[planner_server-14] [INFO] [1791889327.266018124] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 164.376 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[controller_server-12] [INFO] [1791889327.269671925] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 164.376 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[amcl-10] [INFO] [1791889327.834740387] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 164.444 for reason 'discarding message because the queue is full'
+[rviz2-21] [INFO] [1791889327.841958089] [rviz]: Message Filter dropping message: frame 'laser_frame' at time 164.444 for reason 'discarding message because the queue is full'
+[controller_server-12] [INFO] [1791889328.132402794] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889329.133154898] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889329.133712477] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889329.183923003] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889329.192678325] [mission_node]: [MISSION] navigating: return_turn align at current pose -> (2.42, 0.91, yaw=1.57)
+[bt_navigator-16] [INFO] [1791889329.333291270] [bt_navigator]: Begin navigating from current location (2.43, 0.91) to (2.42, 0.91)
+[controller_server-12] [INFO] [1791889329.362563420] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-16] [WARN] [1791889329.364145176] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889329.765888950] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889329.823613666] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889329.925806672] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889329.950633365] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889330.418760167] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889331.166547197] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889331.201598315] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889331.204927923] [mission_node]: [MISSION] settling: return_turn reached; braking before next action
+[mission_node-22] [INFO] [1791889332.011183353] [mission_node]: [MISSION] navigating: room_return_east approach -> (2.20, 1.45, yaw=3.14)
+[bt_navigator-16] [INFO] [1791889332.147762140] [bt_navigator]: Begin navigating from current location (2.43, 0.91) to (2.20, 1.45)
+[controller_server-12] [INFO] [1791889332.170760726] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-16] [WARN] [1791889332.511231139] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889332.768052220] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889333.223744676] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889333.470135099] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[safety_node-5] [INFO] [1791889333.493307869] [safety_node]: Command guard: obstacle_in_stopping_envelope
+[bt_navigator-16] [WARN] [1791889333.529786806] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[safety_node-5] [INFO] [1791889333.613219102] [safety_node]: Command guard: clear
+[controller_server-12] [INFO] [1791889334.272277987] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889334.792300457] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889335.247759762] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889335.371508279] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889335.958248048] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889336.127926764] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889336.230910058] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889336.270954239] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889337.297994130] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889337.321301459] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889338.175922456] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889338.179745756] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889338.325463200] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889339.373868493] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889340.370955978] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889341.188914258] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889341.371742567] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889341.469815227] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889342.420953483] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889342.922678974] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889342.960688120] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889342.970618485] [mission_node]: [MISSION] navigating: room_return_east align at current pose -> (2.26, 1.46, yaw=3.14)
+[bt_navigator-16] [INFO] [1791889343.135942559] [bt_navigator]: Begin navigating from current location (2.25, 1.46) to (2.26, 1.46)
+[controller_server-12] [INFO] [1791889343.160127778] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-16] [WARN] [1791889343.768440758] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889344.011251610] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889344.047797172] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889344.059998096] [mission_node]: [MISSION] settling: room_return_east reached; braking before next action
+[mission_node-22] [INFO] [1791889344.892349643] [mission_node]: [MISSION] navigating: room_exit_inside approach -> (1.55, 1.56, yaw=3.14)
+[bt_navigator-16] [INFO] [1791889345.047842877] [bt_navigator]: Begin navigating from current location (2.25, 1.46) to (1.55, 1.56)
+[controller_server-12] [INFO] [1791889345.069382222] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-12] [INFO] [1791889346.119665581] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889346.178856164] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889346.847944610] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889347.134951890] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889347.169726516] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889347.908309919] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889348.172749064] [controller_server]: Passing new path to controller.
+[rviz2-21] [INFO] [1791889348.524219349] [rviz]: Message Filter dropping message: frame 'laser_frame' at time 182.990 for reason 'discarding message because the queue is full'
+[bt_navigator-16] [WARN] [1791889349.218275318] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889349.219752605] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889349.415126744] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 184.292 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[controller_server-12] [INFO] [1791889350.225427912] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889351.226772929] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889352.269698314] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889353.269731674] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889353.368886407] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889354.138667382] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889354.320376059] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889355.319729045] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889356.321453489] [controller_server]: Passing new path to controller.
+[planner_server-14] [INFO] [1791889356.490634144] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 190.620 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[bt_navigator-16] [WARN] [1791889356.500005994] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889357.292951468] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889357.369752453] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889357.521320863] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889357.558398481] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889357.563805135] [mission_node]: [MISSION] navigating: room_exit_inside align at current pose -> (1.57, 1.55, yaw=3.14)
+[rviz2-21] [INFO] [1791889357.580531839] [rviz]: Message Filter dropping message: frame 'laser_frame' at time 191.166 for reason 'discarding message because the queue is full'
+[bt_navigator-16] [INFO] [1791889357.672718250] [bt_navigator]: Begin navigating from current location (1.57, 1.55) to (1.57, 1.55)
+[controller_server-12] [INFO] [1791889357.694333204] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-16] [WARN] [1791889358.035054473] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889358.646680809] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889358.745820197] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889359.301866562] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889359.800570357] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889360.645484789] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889360.686004038] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889360.712216211] [mission_node]: [MISSION] settling: room_exit_inside reached; braking before next action
+[mission_node-22] [INFO] [1791889361.507022525] [mission_node]: [MISSION] navigating: room_exit_align approach -> (1.54, 1.54, yaw=1.75)
+[bt_navigator-16] [INFO] [1791889361.508759659] [bt_navigator]: Begin navigating from current location (1.54, 1.54) to (1.54, 1.54)
+[controller_server-12] [INFO] [1791889361.531584475] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-12] [INFO] [1791889362.581937279] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889363.041267974] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889363.580206404] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889363.638053523] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889364.181969416] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889364.521020761] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889364.631740561] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889364.665464558] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889364.966406494] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889365.567751733] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889365.682197773] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889366.681747641] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889367.731763184] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889368.731730000] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889369.066749258] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889369.532027188] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889369.568535172] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889369.576493116] [mission_node]: [MISSION] settling: room_exit_align reached; braking before next action
+[mission_node-22] [INFO] [1791889370.374422464] [mission_node]: [MISSION] navigating: room_exit_outside approach -> (1.50, 2.40, yaw=3.14)
+[bt_navigator-16] [INFO] [1791889370.463305912] [bt_navigator]: Begin navigating from current location (1.55, 1.53) to (1.50, 2.40)
+[controller_server-12] [INFO] [1791889370.489806883] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-16] [WARN] [1791889370.579039724] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889371.539988190] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889372.044801903] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889372.193643775] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889372.591779569] [controller_server]: Passing new path to controller.
+[rviz2-21] [INFO] [1791889373.133107206] [rviz]: Message Filter dropping message: frame 'laser_frame' at time 205.282 for reason 'discarding message because the queue is full'
+[controller_server-12] [INFO] [1791889373.589974342] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889374.640021612] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889374.913824975] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889375.639953333] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889375.891867027] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889376.691746716] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889377.151613987] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 209.382 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[controller_server-12] [INFO] [1791889377.691858326] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889378.746443038] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889379.741830856] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889379.985089196] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889380.648031053] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889380.792174527] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889381.187125929] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889381.790754645] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889381.916759193] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889382.148389353] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889382.435873891] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889382.840561431] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889383.393720183] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889383.523854483] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889383.574762315] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889383.839989005] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889383.915107919] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889384.225403962] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889384.890091359] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889385.138148844] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889385.379158966] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889385.591875827] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889385.625355760] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889385.627833714] [mission_node]: [MISSION] navigating: room_exit_outside align at current pose -> (1.50, 2.38, yaw=3.14)
+[bt_navigator-16] [INFO] [1791889385.767843989] [bt_navigator]: Begin navigating from current location (1.50, 2.38) to (1.50, 2.38)
+[controller_server-12] [INFO] [1791889385.792276817] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-12] [INFO] [1791889386.433517433] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 217.790 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[controller_server-12] [INFO] [1791889386.843802205] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889387.138892568] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889387.300609086] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889387.429438055] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[amcl-10] [INFO] [1791889387.465434445] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 218.268 for reason 'discarding message because the queue is full'
+[rviz2-21] [INFO] [1791889387.469875066] [rviz]: Message Filter dropping message: frame 'laser_frame' at time 218.268 for reason 'discarding message because the queue is full'
+[planner_server-14] [INFO] [1791889387.944327062] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 219.154 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[controller_server-12] [ERROR] [1791889387.950456038] [controller_server]: Exception in transformPose: Lookup would require extrapolation into the future.  Requested time 219.216000 but the latest data is at time 219.200000, when looking up transform from frame [odom] to frame [map]
+[controller_server-12] [WARN] [1791889387.950617737] [controller_server]: Unable to transform robot pose into global plan's frame
+[controller_server-12] [WARN] [1791889387.955218654] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[controller_server-12] [INFO] [1791889387.955524030] [controller_server]: Passing new path to controller.
+[controller_server-12] [ERROR] [1791889388.177875426] [controller_server]: Exception in transformPose: Lookup would require extrapolation into the future.  Requested time 219.396000 but the latest data is at time 219.200000, when looking up transform from frame [odom] to frame [map]
+[controller_server-12] [WARN] [1791889388.178066146] [controller_server]: Unable to transform robot pose into global plan's frame
+[controller_server-12] [WARN] [1791889388.178331350] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[controller_server-12] [ERROR] [1791889388.378153002] [controller_server]: Exception in transformPose: Lookup would require extrapolation into the future.  Requested time 219.594000 but the latest data is at time 219.200000, when looking up transform from frame [odom] to frame [map]
+[controller_server-12] [WARN] [1791889388.378335689] [controller_server]: Unable to transform robot pose into global plan's frame
+[controller_server-12] [WARN] [1791889388.378513636] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[controller_server-12] [WARN] [1791889388.519826780] [controller_server]: Control loop missed its desired rate of 20.0000Hz
+[controller_server-12] [INFO] [1791889388.880529920] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889389.929330411] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889390.069988686] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889390.979747483] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889391.099668983] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889391.959246904] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889392.028606931] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889392.382580674] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889393.029340274] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889393.778138014] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889394.081625222] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889395.029578344] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889395.078597629] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889395.280866896] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889396.080801037] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889397.128675606] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889397.431184663] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889397.468892101] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889397.475173763] [mission_node]: [MISSION] settling: room_exit_outside reached; braking before next action
+[mission_node-22] [INFO] [1791889398.345531894] [mission_node]: [MISSION] navigating: return_corner approach -> (0.55, 2.45, yaw=-1.57)
+[bt_navigator-16] [INFO] [1791889398.495622355] [bt_navigator]: Begin navigating from current location (1.51, 2.36) to (0.55, 2.45)
+[controller_server-12] [INFO] [1791889398.516527486] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-12] [INFO] [1791889399.567573008] [controller_server]: Passing new path to controller.
+[rviz2-21] [INFO] [1791889399.756825832] [rviz]: Message Filter dropping message: frame 'laser_frame' at time 229.480 for reason 'discarding message because the queue is full'
+[controller_server-12] [INFO] [1791889400.569734410] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889401.618052543] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889401.946617537] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889402.036951253] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889402.620474180] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889403.620250254] [controller_server]: Passing new path to controller.
+[safety_node-5] [INFO] [1791889403.793428242] [safety_node]: Command guard: obstacle_in_stopping_envelope
+[safety_node-5] [INFO] [1791889403.927787111] [safety_node]: Command guard: clear
+[bt_navigator-16] [WARN] [1791889404.596369568] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889404.667568572] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889405.658555393] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889405.667890658] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889406.717543788] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889406.792919734] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[safety_node-5] [INFO] [1791889407.320395065] [safety_node]: Command guard: obstacle_in_stopping_envelope
+[safety_node-5] [INFO] [1791889407.448015684] [safety_node]: Command guard: clear
+[bt_navigator-16] [WARN] [1791889407.575970621] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889407.774794813] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889408.767568470] [controller_server]: Passing new path to controller.
+[planner_server-14] [INFO] [1791889409.318845995] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 238.508 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[controller_server-12] [INFO] [1791889409.817554053] [controller_server]: Passing new path to controller.
+[amcl-10] [INFO] [1791889410.398848332] [amcl]: Message Filter dropping message: frame 'laser_frame' at time 239.120 for reason 'discarding message because the queue is full'
+[controller_server-12] [INFO] [1791889410.817547145] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889411.826740998] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889412.518956628] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889412.868319943] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889413.245981350] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889413.436921954] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 242.340 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[controller_server-12] [INFO] [1791889413.567797846] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889413.610058933] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889413.621145679] [mission_node]: [MISSION] navigating: return_corner align at current pose -> (0.56, 2.42, yaw=-1.57)
+[bt_navigator-16] [INFO] [1791889413.751549906] [bt_navigator]: Begin navigating from current location (0.56, 2.42) to (0.56, 2.42)
+[controller_server-12] [INFO] [1791889413.779977738] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-12] [INFO] [1791889414.830219948] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889414.832002741] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889414.856868328] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889415.812183942] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889415.880285784] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889416.880519590] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889417.935770022] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889417.964735729] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889418.259215962] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889418.645416892] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889418.930154013] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889419.980156166] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889420.373034551] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889420.980776816] [controller_server]: Passing new path to controller.
+[planner_server-14] [INFO] [1791889421.447663677] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 249.658 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[controller_server-12] [INFO] [1791889421.770812784] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 249.998 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[controller_server-12] [INFO] [1791889422.030665594] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889423.032773565] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889423.054634647] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889423.092618413] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889423.781982530] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889424.082994983] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889424.102233287] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889425.087080744] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889425.194758455] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889426.130158822] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889427.130158966] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889427.164800195] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889427.392767425] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889427.515078300] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889428.181806450] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889428.330619092] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889428.363099291] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889428.370247042] [mission_node]: [MISSION] settling: return_corner reached; braking before next action
+[mission_node-22] [INFO] [1791889429.217652056] [mission_node]: [MISSION] navigating: return_corridor approach -> (0.55, 0.75, yaw=-1.57)
+[bt_navigator-16] [INFO] [1791889429.369368884] [bt_navigator]: Begin navigating from current location (0.52, 2.40) to (0.55, 0.75)
+[controller_server-12] [INFO] [1791889429.391201369] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-16] [WARN] [1791889429.920342925] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889430.441726864] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889430.691804203] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889431.120461182] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889431.492167484] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889431.582132692] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889432.492013484] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889433.152245880] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889433.373030986] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889433.491518671] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889434.541510586] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889434.834375937] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889434.932443835] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889434.972787061] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889435.594763781] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889436.494196628] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889436.591517189] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889437.155689306] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889437.583963430] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889437.591527039] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889437.600428149] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889437.632284800] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889437.914803021] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889438.372292210] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889438.641785544] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889439.635963914] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889439.705813569] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889439.706610590] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889439.724490806] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889439.993429743] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889440.435117500] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889440.694429045] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889440.703656936] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889440.829213653] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889441.741533378] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889442.178776713] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889442.445289744] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889442.746030463] [controller_server]: Passing new path to controller.
+[gzserver-1] [1;33m[Wrn] [Publisher.cc:135] [0m[1;33mQueue limit reached for topic [0m[1;33m/gazebo/rescue_world/pose/local/info[0m[1;33m, deleting message. [0m[1;33mThis warning is printed only once.[0m[1;33m
+[bt_navigator-16] [WARN] [1791889443.636518736] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889443.804335081] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889444.434751177] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889444.841480461] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889445.841520451] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889446.036947959] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889446.060038920] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889446.475290690] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889446.536697259] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889446.891512382] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889447.035131391] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889447.891764168] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889448.493548440] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889448.525212086] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889448.531063131] [mission_node]: [MISSION] navigating: return_corridor align at current pose -> (0.52, 0.80, yaw=-1.57)
+[bt_navigator-16] [INFO] [1791889448.715774496] [bt_navigator]: Begin navigating from current location (0.52, 0.79) to (0.52, 0.80)
+[controller_server-12] [INFO] [1791889448.728596950] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-16] [WARN] [1791889448.768447870] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889449.018122180] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889449.175972767] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889449.635222432] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889449.782603552] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889450.061741790] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889450.070859389] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889450.829012598] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889450.866496467] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889451.146101416] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[planner_server-14] [INFO] [1791889451.304048111] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 276.528 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[controller_server-12] [INFO] [1791889451.305806792] [local_costmap.local_costmap]: Message Filter dropping message: frame 'laser_frame' at time 276.528 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[bt_navigator-16] [WARN] [1791889451.386010576] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889451.828815928] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889452.234213230] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889452.268351717] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889452.282277534] [mission_node]: [MISSION] settling: return_corridor reached; braking before next action
+[mission_node-22] [INFO] [1791889453.053269696] [mission_node]: [MISSION] navigating: return_start approach -> (0.55, 0.54, yaw=-1.57)
+[bt_navigator-16] [INFO] [1791889453.275793238] [bt_navigator]: Begin navigating from current location (0.52, 0.79) to (0.55, 0.54)
+[controller_server-12] [INFO] [1791889453.308032506] [controller_server]: Received a goal, begin computing control effort.
+[bt_navigator-16] [WARN] [1791889453.735932659] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[planner_server-14] [INFO] [1791889454.057908112] [global_costmap.global_costmap]: Message Filter dropping message: frame 'laser_frame' at time 279.000 for reason 'the timestamp on the message is earlier than all the data in the transform cache'
+[bt_navigator-16] [WARN] [1791889454.285989296] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889454.362722511] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889454.570379688] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889454.773317107] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889454.956961814] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[planner_server-14] [WARN] [1791889455.338543906] [planner_server]: Planner loop missed its desired rate of 20.0000 Hz. Current loop rate is 10.0000 Hz
+[controller_server-12] [INFO] [1791889455.408739006] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889455.806696245] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889456.396019556] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889456.409738941] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889456.967910306] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889457.414024788] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889457.458761468] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889458.038263603] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[bt_navigator-16] [WARN] [1791889458.436187846] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889458.458277463] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889459.509227251] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889460.508643233] [controller_server]: Passing new path to controller.
+[controller_server-12] [INFO] [1791889460.560717738] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889460.598789650] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889460.607361222] [mission_node]: [MISSION] navigating: return_start align at current pose -> (0.54, 0.56, yaw=-1.57)
+[bt_navigator-16] [INFO] [1791889460.790303652] [bt_navigator]: Begin navigating from current location (0.54, 0.56) to (0.54, 0.56)
+[controller_server-12] [INFO] [1791889460.815888095] [controller_server]: Received a goal, begin computing control effort.
+[controller_server-12] [INFO] [1791889461.869313754] [controller_server]: Passing new path to controller.
+[bt_navigator-16] [WARN] [1791889462.552817039] [BehaviorTreeEngine]: Behavior Tree tick rate 100.00 was exceeded!
+[controller_server-12] [INFO] [1791889462.666624927] [controller_server]: Reached the goal!
+[bt_navigator-16] [INFO] [1791889462.700832807] [bt_navigator]: Goal succeeded
+[mission_node-22] [INFO] [1791889462.708103972] [mission_node]: [MISSION] settling: return_start reached; braking before next action
+[mission_node-22] [INFO] [1791889463.571483039] [mission_node]: [MISSION] complete: finished and returned; corridor=5/5, core=4/4, missing=[]
+[safety_node-5] [INFO] [1791889463.700042535] [safety_node]: Command guard: mission_stopped
+[WARNING] [launch]: user interrupted with ctrl-c (SIGINT)
+[INFO] [mission_node-22]: sending signal 'SIGINT' to process[mission_node-22]
+[INFO] [rviz2-21]: sending signal 'SIGINT' to process[rviz2-21]
+[INFO] [vision_node-20]: sending signal 'SIGINT' to process[vision_node-20]
+[INFO] [lifecycle_manager-19]: sending signal 'SIGINT' to process[lifecycle_manager-19]
+[INFO] [velocity_smoother-18]: sending signal 'SIGINT' to process[velocity_smoother-18]
+[INFO] [waypoint_follower-17]: sending signal 'SIGINT' to process[waypoint_follower-17]
+[INFO] [bt_navigator-16]: sending signal 'SIGINT' to process[bt_navigator-16]
+[INFO] [behavior_server-15]: sending signal 'SIGINT' to process[behavior_server-15]
+[INFO] [planner_server-14]: sending signal 'SIGINT' to process[planner_server-14]
+[INFO] [smoother_server-13]: sending signal 'SIGINT' to process[smoother_server-13]
+[INFO] [controller_server-12]: sending signal 'SIGINT' to process[controller_server-12]
+[INFO] [lifecycle_manager-11]: sending signal 'SIGINT' to process[lifecycle_manager-11]
+[INFO] [amcl-10]: sending signal 'SIGINT' to process[amcl-10]
+[INFO] [map_server-9]: sending signal 'SIGINT' to process[map_server-9]
+[INFO] [gzclient-8]: sending signal 'SIGINT' to process[gzclient-8]
+[INFO] [camera_scan_node-7]: sending signal 'SIGINT' to process[camera_scan_node-7]
+[INFO] [safety_node-5]: sending signal 'SIGINT' to process[safety_node-5]
+[INFO] [navigation_map_node-4]: sending signal 'SIGINT' to process[navigation_map_node-4]
+[INFO] [robot_state_publisher-3]: sending signal 'SIGINT' to process[robot_state_publisher-3]
+[INFO] [gzserver-1]: sending signal 'SIGINT' to process[gzserver-1]
+[rviz2-21] [INFO] [1791889466.741256127] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[lifecycle_manager-19] [INFO] [1791889466.756855059] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[lifecycle_manager-19] [INFO] [1791889466.757181667] [lifecycle_manager_navigation]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_manager_navigation)
+[lifecycle_manager-19] [INFO] [1791889466.757901873] [lifecycle_manager_navigation]: [34m[1mTerminating bond timer...[0m[0m
+[velocity_smoother-18] [INFO] [1791889466.766136989] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[velocity_smoother-18] [INFO] [1791889466.766306694] [velocity_smoother]: Running Nav2 LifecycleNode rcl preshutdown (velocity_smoother)
+[velocity_smoother-18] [INFO] [1791889466.766397528] [velocity_smoother]: Deactivating
+[velocity_smoother-18] [INFO] [1791889466.766422403] [velocity_smoother]: Destroying bond (velocity_smoother) to lifecycle manager.
+[waypoint_follower-17] [INFO] [1791889466.776187412] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[waypoint_follower-17] [INFO] [1791889466.776432243] [waypoint_follower]: Running Nav2 LifecycleNode rcl preshutdown (waypoint_follower)
+[waypoint_follower-17] [INFO] [1791889466.776520261] [waypoint_follower]: Deactivating
+[waypoint_follower-17] [INFO] [1791889466.776539777] [waypoint_follower]: Destroying bond (waypoint_follower) to lifecycle manager.
+[velocity_smoother-18] [INFO] [1791889466.777242882] [velocity_smoother]: Cleaning up
+[velocity_smoother-18] [INFO] [1791889466.777297200] [velocity_smoother]: Destroying bond (velocity_smoother) to lifecycle manager.
+[bt_navigator-16] [INFO] [1791889466.784919983] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[bt_navigator-16] [INFO] [1791889466.785019172] [bt_navigator]: Running Nav2 LifecycleNode rcl preshutdown (bt_navigator)
+[bt_navigator-16] [INFO] [1791889466.785106268] [bt_navigator]: Deactivating
+[bt_navigator-16] [INFO] [1791889466.785364513] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[velocity_smoother-18] [INFO] [1791889466.787099036] [velocity_smoother]: Destroying
+[waypoint_follower-17] [INFO] [1791889466.787246582] [waypoint_follower]: Cleaning up
+[behavior_server-15] [INFO] [1791889466.791351962] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[behavior_server-15] [INFO] [1791889466.791477829] [behavior_server]: Running Nav2 LifecycleNode rcl preshutdown (behavior_server)
+[behavior_server-15] [INFO] [1791889466.791574683] [behavior_server]: Deactivating
+[behavior_server-15] [INFO] [1791889466.791598196] [behavior_server]: Destroying bond (behavior_server) to lifecycle manager.
+[bt_navigator-16] [INFO] [1791889466.796613905] [bt_navigator]: Cleaning up
+[planner_server-14] [INFO] [1791889466.798627510] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[planner_server-14] [INFO] [1791889466.798739873] [planner_server]: Running Nav2 LifecycleNode rcl preshutdown (planner_server)
+[planner_server-14] [INFO] [1791889466.798810630] [planner_server]: Deactivating
+[planner_server-14] [INFO] [1791889466.798846014] [global_costmap.global_costmap]: Deactivating
+[smoother_server-13] [INFO] [1791889466.802628373] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[smoother_server-13] [INFO] [1791889466.802780066] [smoother_server]: Running Nav2 LifecycleNode rcl preshutdown (smoother_server)
+[smoother_server-13] [INFO] [1791889466.802865009] [smoother_server]: Deactivating
+[smoother_server-13] [INFO] [1791889466.802888111] [smoother_server]: Destroying bond (smoother_server) to lifecycle manager.
+[controller_server-12] [INFO] [1791889466.804442268] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[controller_server-12] [INFO] [1791889466.804531178] [controller_server]: Running Nav2 LifecycleNode rcl preshutdown (controller_server)
+[controller_server-12] [INFO] [1791889466.804620940] [controller_server]: Deactivating
+[controller_server-12] [INFO] [1791889466.804645564] [controller_server]: Deactivating controller: ReleasePusher of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-12] [INFO] [1791889466.804660101] [controller_server]: Deactivating controller: PrecisionPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-12] [INFO] [1791889466.804671511] [controller_server]: Deactivating controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-12] [INFO] [1791889466.804695174] [local_costmap.local_costmap]: Deactivating
+[behavior_server-15] [INFO] [1791889466.806773335] [behavior_server]: Cleaning up
+[controller_server-12] [INFO] [1791889466.807875419] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[smoother_server-13] [INFO] [1791889466.813148973] [smoother_server]: Cleaning up
+[lifecycle_manager-11] [INFO] [1791889466.818155736] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[lifecycle_manager-11] [INFO] [1791889466.818297421] [lifecycle_manager_localization]: Running Nav2 LifecycleManager rcl preshutdown (lifecycle_manager_localization)
+[lifecycle_manager-11] [INFO] [1791889466.818343374] [lifecycle_manager_localization]: [34m[1mTerminating bond timer...[0m[0m
+[amcl-10] [INFO] [1791889466.824190671] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[amcl-10] [INFO] [1791889466.824288377] [amcl]: Running Nav2 LifecycleNode rcl preshutdown (amcl)
+[amcl-10] [INFO] [1791889466.824357070] [amcl]: Deactivating
+[amcl-10] [INFO] [1791889466.824378960] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[map_server-9] [INFO] [1791889466.828468742] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[map_server-9] [INFO] [1791889466.828628891] [map_server]: Running Nav2 LifecycleNode rcl preshutdown (map_server)
+[map_server-9] [INFO] [1791889466.828709866] [map_server]: Deactivating
+[map_server-9] [INFO] [1791889466.828735352] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[amcl-10] [INFO] [1791889466.834830776] [amcl]: Cleaning up
+[gzclient-8] [0m[1;33m[Wrn] [Event.cc:61] [0m[1;33mWarning: Deleting a connection right after creation. [0m[1;33mMake sure to save the ConnectionPtr from a Connect call
+[controller_server-12] [INFO] [1791889466.838344521] [controller_server]: Cleaning up
+[controller_server-12] [INFO] [1791889466.838745323] [controller_server]: Cleaning up controller: ReleasePusher of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-12] [INFO] [1791889466.838780095] [controller_server]: Cleaning up controller: PrecisionPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-12] [INFO] [1791889466.838795173] [controller_server]: Cleaning up controller: FollowPath of type regulated_pure_pursuit_controller::RegulatedPurePursuitController
+[controller_server-12] [INFO] [1791889466.839988651] [local_costmap.local_costmap]: Cleaning up
+[map_server-9] [INFO] [1791889466.840239783] [map_server]: Cleaning up
+[map_server-9] [INFO] [1791889466.840299671] [map_server]: Destroying bond (map_server) to lifecycle manager.
+[smoother_server-13] [INFO] [1791889466.853359242] [smoother_server]: Destroying bond (smoother_server) to lifecycle manager.
+[robot_state_publisher-3] [INFO] [1791889466.861769753] [rclcpp]: signal_handler(SIGINT/SIGTERM)
+[waypoint_follower-17] [INFO] [1791889466.877424496] [waypoint_follower]: Destroying bond (waypoint_follower) to lifecycle manager.
+[waypoint_follower-17] [INFO] [1791889466.880920429] [waypoint_follower]: Destroying
+[smoother_server-13] [INFO] [1791889466.892636251] [smoother_server]: Destroying
+[behavior_server-15] [INFO] [1791889466.898563792] [behavior_server]: Destroying bond (behavior_server) to lifecycle manager.
+[map_server-9] [INFO] [1791889466.904170836] [map_server]: Destroying
+[behavior_server-15] [INFO] [1791889466.909070417] [behavior_server]: Destroying
+[lifecycle_manager-11] [INFO] [1791889466.913597376] [lifecycle_manager_localization]: Destroying lifecycle_manager_localization
+[amcl-10] [INFO] [1791889466.917790615] [amcl]: Destroying bond (amcl) to lifecycle manager.
+[amcl-10] [INFO] [1791889466.934047422] [amcl]: Destroying
+[controller_server-12] [INFO] [1791889466.980404647] [controller_server]: Destroying bond (controller_server) to lifecycle manager.
+[controller_server-12] [INFO] [1791889466.985491595] [local_costmap.local_costmap]: Destroying
+[lifecycle_manager-19] [INFO] [1791889466.994361273] [lifecycle_manager_navigation]: Destroying lifecycle_manager_navigation
+[bt_navigator-16] [INFO] [1791889466.995978274] [bt_navigator]: Completed Cleaning up
+[bt_navigator-16] [INFO] [1791889466.996063998] [bt_navigator]: Destroying bond (bt_navigator) to lifecycle manager.
+[controller_server-12] [INFO] [1791889466.996605242] [controller_server]: Destroying
+[bt_navigator-16] [INFO] [1791889467.008309404] [bt_navigator]: Destroying
+[planner_server-14] [INFO] [1791889467.009711899] [planner_server]: Deactivating plugin GridBased of type SmacPlanner2D
+[planner_server-14] [INFO] [1791889467.009787345] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[INFO] [velocity_smoother-18]: process has finished cleanly [pid 21018]
+[planner_server-14] [INFO] [1791889467.021123555] [planner_server]: Cleaning up
+[planner_server-14] [INFO] [1791889467.031684249] [global_costmap.global_costmap]: Cleaning up
+[planner_server-14] [INFO] [1791889467.034376706] [planner_server]: Cleaning up plugin GridBased of type SmacPlanner2D
+[planner_server-14] [INFO] [1791889467.034912591] [planner_server]: Destroying plugin GridBased of type SmacPlanner2D
+[planner_server-14] [INFO] [1791889467.039826589] [planner_server]: Destroying bond (planner_server) to lifecycle manager.
+[planner_server-14] [INFO] [1791889467.042181008] [global_costmap.global_costmap]: Destroying
+[planner_server-14] [INFO] [1791889467.046022834] [planner_server]: Destroying
+[INFO] [map_server-9]: process has finished cleanly [pid 21000]
+[INFO] [waypoint_follower-17]: process has finished cleanly [pid 21016]
+[INFO] [robot_state_publisher-3]: process has finished cleanly [pid 20658]
+[INFO] [smoother_server-13]: process has finished cleanly [pid 21008]
+[INFO] [behavior_server-15]: process has finished cleanly [pid 21012]
+[INFO] [rviz2-21]: process has finished cleanly [pid 21225]
+[INFO] [lifecycle_manager-11]: process has finished cleanly [pid 21004]
+[INFO] [amcl-10]: process has finished cleanly [pid 21002]
+[INFO] [gzclient-8]: process has finished cleanly [pid 20963]
+[gzclient-8] [0m[1;32m[0m[1;32m[0m[1;36m[0m[1;32m[0m
+[gzclient-8] [0m[1;33m[0m[1;31m[0m
+[INFO] [lifecycle_manager-19]: process has finished cleanly [pid 21025]
+[INFO] [controller_server-12]: process has finished cleanly [pid 21006]
+[INFO] [bt_navigator-16]: process has finished cleanly [pid 21014]
+[INFO] [camera_scan_node-7]: process has finished cleanly [pid 20897]
+[INFO] [planner_server-14]: process has finished cleanly [pid 21010]
+[INFO] [navigation_map_node-4]: process has finished cleanly [pid 20660]
+[INFO] [mission_node-22]: process has finished cleanly [pid 21227]
+[INFO] [safety_node-5]: process has finished cleanly [pid 20662]
+[INFO] [gzserver-1]: process has finished cleanly [pid 20654]
+[gzserver-1] [0m[1;32m[0m[1;32m[0m[1;36m[0m[1;32m[0m
+[gzserver-1] [0m[1;33m[0m[1;33m[0m[1;33m[0m[1;31m[0m
+[INFO] [vision_node-20]: process has finished cleanly [pid 21069]

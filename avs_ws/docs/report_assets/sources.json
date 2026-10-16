@@ -2,7 +2,7 @@
   {
     "file": "docs/report_assets/vehicle_model.png",
     "copied_from": "创新点PPT/素材/新版/scene/vehicle_sdf_front.png",
-    "sha256": "1aea38020575636efef3719dc514dac4e5dc7c139c8504ca5b544b0ef6851d71",
+    "sha256": "bf731faddb6afd1fbed6684e31eccc80c558b73c3137a9b8dcdebe7643118eba",
     "source_metadata": {
       "file": "vehicle_sdf_front.png",
       "type": "当前 SDF 等比例几何渲染示意",
@@ -31,7 +31,7 @@
   {
     "file": "docs/report_assets/navigation_map_regions.png",
     "copied_from": "创新点PPT/素材/新版/control/实际地图与允许清理区域.png",
-    "sha256": "cf4bafac011d50a41e9c7aac92e4870c656ebd2267a8168f9e9d8c2e0327b161",
+    "sha256": "a53648fd4d11174ae4ec3bb6c6da4e68fa0ef86feb22c8895d4d93f800d72d3d",
     "source_metadata": {
       "file": "实际地图与允许清理区域.png",
       "kind": "实际PGM叠加配置",

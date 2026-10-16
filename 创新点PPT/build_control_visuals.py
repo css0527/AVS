@@ -81,7 +81,7 @@ def main():
         ax.add_patch(Rectangle((a,b),c-a,d-b,fill=False,edgecolor=color,lw=2.4))
     ax.annotate('可移动箱体区域', (1.72,1.12), (1.83,.95), color=GOLD,
                 arrowprops={'arrowstyle':'->','color':GOLD}, bbox={'facecolor':BG,'edgecolor':'none','pad':3}, fontsize=13)
-    ax.annotate('门洞内部小窗口', (1.35,2.06), (.24,2.51), color=RED,
+    ax.annotate('门洞残留栅格清理区', (1.35,2.06), (.24,2.51), color=RED,
                 arrowprops={'arrowstyle':'->','color':RED}, bbox={'facecolor':BG,'edgecolor':'none','pad':3}, fontsize=13)
     ax.set(xlabel='地图 x / m', ylabel='地图 y / m', title='实际保存地图 + 配置允许更新区域')
     save(fig, '实际地图与允许清理区域.png')

@@ -1,0 +1,14 @@
+{
+  "recording_directory": "recording_submission_20261013_gimbal_run2",
+  "continuous": true,
+  "acceptance_passed": true,
+  "playback_speed": 2,
+  "video_duration_s": 170.934,
+  "video_size_bytes": 9936779,
+  "source_files": 88,
+  "source_hashes_match": true,
+  "recorded_manifest_entries": 88,
+  "excluded_recorded_cache_entries": [],
+  "video_sha256": "5608bf40e2db8ad985d56834eab947004e000530ecc940537b257aec0e9e91ff",
+  "report_sha256": "3bfb2c8dceca151c01c9f5f07520831e62c64201248a82bc7b5766c192e5b82b"
+}

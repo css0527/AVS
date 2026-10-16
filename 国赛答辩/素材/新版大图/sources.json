@@ -1,0 +1,931 @@
+{
+  "version": "2026-10-13",
+  "source_run": "recording_submission_20261013_gimbal_run2",
+  "assets": [
+    {
+      "file": "国赛答辩/素材/新版大图/fire_full.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0100.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "3a77f9219f54de9cfdb6d01e3012a22df74761389456487908981d069444f5db",
+      "crop_xyxy": null,
+      "type": "同次相机完整原图",
+      "dimensions": [
+        640,
+        480
+      ],
+      "meaning": "FIRE 火灾：当前绿色检测框、标签及图案",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/fire_large.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0100.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "3a77f9219f54de9cfdb6d01e3012a22df74761389456487908981d069444f5db",
+      "crop_xyxy": [
+        230,
+        12,
+        535,
+        350
+      ],
+      "type": "同次相机原图仅裁背景",
+      "dimensions": [
+        305,
+        338
+      ],
+      "meaning": "FIRE 火灾：当前绿色检测框、标签及图案",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/chemical_full.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0084.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "a069ed8a8391fba2aad1aea5b2c7ae0aa11bc341a6d795a0c1d02aece79a4230",
+      "crop_xyxy": null,
+      "type": "同次相机完整原图",
+      "dimensions": [
+        640,
+        480
+      ],
+      "meaning": "CHEMICAL 化学：当前绿色框及类别；原帧有电气类别标签重叠，不修改",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/chemical_large.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0084.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "a069ed8a8391fba2aad1aea5b2c7ae0aa11bc341a6d795a0c1d02aece79a4230",
+      "crop_xyxy": [
+        300,
+        74,
+        444,
+        307
+      ],
+      "type": "同次相机原图仅裁背景",
+      "dimensions": [
+        144,
+        233
+      ],
+      "meaning": "CHEMICAL 化学：当前绿色框及类别；原帧有电气类别标签重叠，不修改",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/radiation_full.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0175.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "64b49c886dd275c97a9f7660d21e947991d2383a41940b8d835d1572ead56b7d",
+      "crop_xyxy": null,
+      "type": "同次相机完整原图",
+      "dimensions": [
+        640,
+        480
+      ],
+      "meaning": "RADIATION 辐射：当前绿色检测框与图案",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/radiation_large.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0175.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "64b49c886dd275c97a9f7660d21e947991d2383a41940b8d835d1572ead56b7d",
+      "crop_xyxy": [
+        277,
+        48,
+        438,
+        310
+      ],
+      "type": "同次相机原图仅裁背景",
+      "dimensions": [
+        161,
+        262
+      ],
+      "meaning": "RADIATION 辐射：当前绿色检测框与图案",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/electrical_full.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0347.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "acb1cce2a1f3aba76dfa307b4ac1ef9293f6fccd305b59f5a7bd0dd72224c90c",
+      "crop_xyxy": null,
+      "type": "同次相机完整原图",
+      "dimensions": [
+        640,
+        480
+      ],
+      "meaning": "ELECTRICAL 电气：当前绿色检测框、标签及图案",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/electrical_large.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0347.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "acb1cce2a1f3aba76dfa307b4ac1ef9293f6fccd305b59f5a7bd0dd72224c90c",
+      "crop_xyxy": [
+        37,
+        18,
+        319,
+        351
+      ],
+      "type": "同次相机原图仅裁背景",
+      "dimensions": [
+        282,
+        333
+      ],
+      "meaning": "ELECTRICAL 电气：当前绿色检测框、标签及图案",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/biohazard_full.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0407.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "d885b42f65996c20c8968f79c1919f436910e89724dbdb0167f974259d38c28c",
+      "crop_xyxy": null,
+      "type": "同次相机完整原图",
+      "dimensions": [
+        640,
+        480
+      ],
+      "meaning": "BIOHAZARD 生物危害：当前绿色框和类别；原帧牌面上边缘触及画面边界",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/biohazard_large.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0407.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "d885b42f65996c20c8968f79c1919f436910e89724dbdb0167f974259d38c28c",
+      "crop_xyxy": [
+        0,
+        0,
+        278,
+        360
+      ],
+      "type": "同次相机原图仅裁背景",
+      "dimensions": [
+        278,
+        360
+      ],
+      "meaning": "BIOHAZARD 生物危害：当前绿色框和类别；原帧牌面上边缘触及画面边界",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/tag_0_full.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0746.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "366cae4f8e04287955c74388b33fc41164d7f46445302ed415334453c0818ffd",
+      "crop_xyxy": null,
+      "type": "同次相机完整原图",
+      "dimensions": [
+        640,
+        480
+      ],
+      "meaning": "T0 COLLAPSE：实际 ID 与地图坐标 (2.92,1.58) m",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/tag_0_large.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0746.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "366cae4f8e04287955c74388b33fc41164d7f46445302ed415334453c0818ffd",
+      "crop_xyxy": [
+        12,
+        142,
+        284,
+        384
+      ],
+      "type": "同次相机原图仅裁背景",
+      "dimensions": [
+        272,
+        242
+      ],
+      "meaning": "T0 COLLAPSE：实际 ID 与地图坐标 (2.92,1.58) m",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/tag_1_full.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0902.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "bbf75b7f535440a063c2f93e87dce3ceff5d34286e6305d140a0cdf82b430115",
+      "crop_xyxy": null,
+      "type": "同次相机完整原图",
+      "dimensions": [
+        640,
+        480
+      ],
+      "meaning": "T1 TOXIC_LEAK：实际 ID 与地图坐标 (2.94,0.84) m",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/tag_1_large.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0902.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "bbf75b7f535440a063c2f93e87dce3ceff5d34286e6305d140a0cdf82b430115",
+      "crop_xyxy": [
+        202,
+        138,
+        484,
+        417
+      ],
+      "type": "同次相机原图仅裁背景",
+      "dimensions": [
+        282,
+        279
+      ],
+      "meaning": "T1 TOXIC_LEAK：实际 ID 与地图坐标 (2.94,0.84) m",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/tag_2_full.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0824.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "753a279f41200ec3ea95004524c2f48619b35f95564a764b5932e1730f2af3b6",
+      "crop_xyxy": null,
+      "type": "同次相机完整原图",
+      "dimensions": [
+        640,
+        480
+      ],
+      "meaning": "T2 TRAPPED_PERSON：实际 ID 与地图坐标 (2.35,0.19) m",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/tag_2_large.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0824.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "753a279f41200ec3ea95004524c2f48619b35f95564a764b5932e1730f2af3b6",
+      "crop_xyxy": [
+        106,
+        119,
+        456,
+        480
+      ],
+      "type": "同次相机原图仅裁背景",
+      "dimensions": [
+        350,
+        361
+      ],
+      "meaning": "T2 TRAPPED_PERSON：实际 ID 与地图坐标 (2.35,0.19) m",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/tag_3_full.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0761.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "0d84a37745449257d5701ad84e3c2097dcf6c264ee30c591d5c7c305d0029e80",
+      "crop_xyxy": null,
+      "type": "同次相机完整原图",
+      "dimensions": [
+        640,
+        480
+      ],
+      "meaning": "T3 HIGH_TEMPERATURE：实际 ID 与地图坐标 (1.54,0.19) m",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/tag_3_large.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0761.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "0d84a37745449257d5701ad84e3c2097dcf6c264ee30c591d5c7c305d0029e80",
+      "crop_xyxy": [
+        398,
+        159,
+        640,
+        336
+      ],
+      "type": "同次相机原图仅裁背景",
+      "dimensions": [
+        242,
+        177
+      ],
+      "meaning": "T3 HIGH_TEMPERATURE：实际 ID 与地图坐标 (1.54,0.19) m",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/scan_stop_A.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/continuous_raw.mp4",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "video_raw_seconds": 85.2,
+      "playback_seconds_at_2x": 42.6,
+      "crop_xyxy": [
+        24,
+        700,
+        518,
+        1070
+      ],
+      "type": "同次连续原始录屏的车载相机窗格裁剪",
+      "dimensions": [
+        494,
+        370
+      ],
+      "meaning": "同一停车点扫视时刻 A；非连续三帧确认的证据",
+      "transformation": "仅裁车载相机窗格；保留原显示框和文字"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/scan_stop_B.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/continuous_raw.mp4",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "video_raw_seconds": 86.0,
+      "playback_seconds_at_2x": 43.0,
+      "crop_xyxy": [
+        24,
+        700,
+        518,
+        1070
+      ],
+      "type": "同次连续原始录屏的车载相机窗格裁剪",
+      "dimensions": [
+        494,
+        370
+      ],
+      "meaning": "同一停车点扫视时刻 B；非连续三帧确认的证据",
+      "transformation": "仅裁车载相机窗格；保留原显示框和文字"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/biohazard_video_large.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/continuous_raw.mp4",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "video_raw_seconds": 86.0,
+      "playback_seconds_at_2x": 43.0,
+      "crop_xyxy": [
+        285,
+        710,
+        510,
+        975
+      ],
+      "type": "同次录屏生物危害图案及绿色类别框裁剪",
+      "dimensions": [
+        225,
+        265
+      ],
+      "meaning": "完整BIOHAZARD图案、实际分类框及BIOHAZARD 0.85",
+      "transformation": "只裁背景，不修改识别结果"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/chemical_video_large.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/continuous_raw.mp4",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "video_raw_seconds": 30.0,
+      "playback_seconds_at_2x": 15.0,
+      "crop_xyxy": [
+        135,
+        707,
+        375,
+        979
+      ],
+      "type": "同次连续录屏化学图案及绿色类别框裁剪",
+      "dimensions": [
+        240,
+        272
+      ],
+      "meaning": "完整CHEMICAL图案、实际分类框及CHEMICAL 0.87",
+      "transformation": "只裁背景，不修改识别结果"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/rviz_four_markers.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/continuous_raw.mp4",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "video_raw_seconds": 305.0,
+      "playback_seconds_at_2x": 152.5,
+      "crop_xyxy": [
+        1175,
+        135,
+        1885,
+        628
+      ],
+      "type": "同次连续录屏窗格裁剪",
+      "dimensions": [
+        710,
+        493
+      ],
+      "meaning": "四个ID在实际RViz地图上显示；同次录屏返航接近起点画面",
+      "transformation": "仅裁窗格，不修改文本和Marker"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/rviz_core_markers.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/continuous_raw.mp4",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "video_raw_seconds": 169.0,
+      "playback_seconds_at_2x": 84.5,
+      "crop_xyxy": [
+        1175,
+        135,
+        1885,
+        628
+      ],
+      "type": "同次连续录屏窗格裁剪",
+      "dimensions": [
+        710,
+        493
+      ],
+      "meaning": "四个ID在实际RViz地图上显示；核心区画面",
+      "transformation": "仅裁窗格，不修改文本和Marker"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/terminal_core_confirmations.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/continuous_raw.mp4",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "video_raw_seconds": 176.0,
+      "playback_seconds_at_2x": 88.0,
+      "crop_xyxy": [
+        540,
+        675,
+        1910,
+        1005
+      ],
+      "type": "同次连续录屏窗格裁剪",
+      "dimensions": [
+        1370,
+        330
+      ],
+      "meaning": "终端四个AprilTag确认和四观察点确认原文，时间戳保留",
+      "transformation": "仅裁窗格，不修改文本和Marker"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/terminal_five_confirmations_full.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/continuous_raw.mp4",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "video_raw_seconds": 41.0,
+      "playback_seconds_at_2x": 20.5,
+      "crop_xyxy": [
+        540,
+        675,
+        1910,
+        992
+      ],
+      "type": "同次连续录屏终端窗格裁剪",
+      "dimensions": [
+        1370,
+        317
+      ],
+      "meaning": "同一画面同时显示五类 CORRIDOR 1/5 到 5/5 原始打印",
+      "transformation": "仅裁背景，全部保留日志原文"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/terminal_five_confirmations_large.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/continuous_raw.mp4",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "video_raw_seconds": 41.0,
+      "playback_seconds_at_2x": 20.5,
+      "crop_xyxy": [
+        [
+          1067,
+          680,
+          1830,
+          697
+        ],
+        [
+          1067,
+          697,
+          1830,
+          714
+        ],
+        [
+          1067,
+          765,
+          1830,
+          782
+        ],
+        [
+          1067,
+          867,
+          1830,
+          884
+        ],
+        [
+          1067,
+          969,
+          1830,
+          986
+        ]
+      ],
+      "type": "同一录屏帧中五条原始确认日志的逐行裁剪拼排",
+      "dimensions": [
+        763,
+        170
+      ],
+      "meaning": "同一画面 CORRIDOR 1/5 至 5/5：ELECTRICAL、CHEMICAL、FIRE、RADIATION、BIOHAZARD",
+      "transformation": "仅分别裁出同一帧中的五条原始确认日志并增加行间空白；未重写文字、未拼接不同时刻"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/fire.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0100.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "3a77f9219f54de9cfdb6d01e3012a22df74761389456487908981d069444f5db",
+      "crop_xyxy": [
+        230,
+        12,
+        535,
+        350
+      ],
+      "type": "同次相机原图仅裁背景",
+      "dimensions": [
+        305,
+        338
+      ],
+      "meaning": "FIRE 火灾：当前绿色检测框、标签及图案",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大",
+      "alias_of": "国赛答辩/素材/新版大图/fire_large.png"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/chemical.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/continuous_raw.mp4",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "video_raw_seconds": 30.0,
+      "playback_seconds_at_2x": 15.0,
+      "crop_xyxy": [
+        135,
+        707,
+        375,
+        979
+      ],
+      "type": "同次连续录屏化学图案及绿色类别框裁剪",
+      "dimensions": [
+        240,
+        272
+      ],
+      "meaning": "完整CHEMICAL图案、实际分类框及CHEMICAL 0.87",
+      "transformation": "只裁背景，不修改识别结果",
+      "alias_of": "国赛答辩/素材/新版大图/chemical_video_large.png"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/radiation.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0175.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "64b49c886dd275c97a9f7660d21e947991d2383a41940b8d835d1572ead56b7d",
+      "crop_xyxy": [
+        277,
+        48,
+        438,
+        310
+      ],
+      "type": "同次相机原图仅裁背景",
+      "dimensions": [
+        161,
+        262
+      ],
+      "meaning": "RADIATION 辐射：当前绿色检测框与图案",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大",
+      "alias_of": "国赛答辩/素材/新版大图/radiation_large.png"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/electrical.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0347.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "acb1cce2a1f3aba76dfa307b4ac1ef9293f6fccd305b59f5a7bd0dd72224c90c",
+      "crop_xyxy": [
+        37,
+        18,
+        319,
+        351
+      ],
+      "type": "同次相机原图仅裁背景",
+      "dimensions": [
+        282,
+        333
+      ],
+      "meaning": "ELECTRICAL 电气：当前绿色检测框、标签及图案",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大",
+      "alias_of": "国赛答辩/素材/新版大图/electrical_large.png"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/biohazard.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/continuous_raw.mp4",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "video_raw_seconds": 86.0,
+      "playback_seconds_at_2x": 43.0,
+      "crop_xyxy": [
+        285,
+        710,
+        510,
+        975
+      ],
+      "type": "同次录屏生物危害图案及绿色类别框裁剪",
+      "dimensions": [
+        225,
+        265
+      ],
+      "meaning": "完整BIOHAZARD图案、实际分类框及BIOHAZARD 0.85",
+      "transformation": "只裁背景，不修改识别结果",
+      "alias_of": "国赛答辩/素材/新版大图/biohazard_video_large.png"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/tag_0.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0746.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "366cae4f8e04287955c74388b33fc41164d7f46445302ed415334453c0818ffd",
+      "crop_xyxy": [
+        12,
+        142,
+        284,
+        384
+      ],
+      "type": "同次相机原图仅裁背景",
+      "dimensions": [
+        272,
+        242
+      ],
+      "meaning": "T0 COLLAPSE：实际 ID 与地图坐标 (2.92,1.58) m",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大",
+      "alias_of": "国赛答辩/素材/新版大图/tag_0_large.png"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/tag_1.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0902.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "bbf75b7f535440a063c2f93e87dce3ceff5d34286e6305d140a0cdf82b430115",
+      "crop_xyxy": [
+        202,
+        138,
+        484,
+        417
+      ],
+      "type": "同次相机原图仅裁背景",
+      "dimensions": [
+        282,
+        279
+      ],
+      "meaning": "T1 TOXIC_LEAK：实际 ID 与地图坐标 (2.94,0.84) m",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大",
+      "alias_of": "国赛答辩/素材/新版大图/tag_1_large.png"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/tag_2.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0824.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "753a279f41200ec3ea95004524c2f48619b35f95564a764b5932e1730f2af3b6",
+      "crop_xyxy": [
+        106,
+        119,
+        456,
+        480
+      ],
+      "type": "同次相机原图仅裁背景",
+      "dimensions": [
+        350,
+        361
+      ],
+      "meaning": "T2 TRAPPED_PERSON：实际 ID 与地图坐标 (2.35,0.19) m",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大",
+      "alias_of": "国赛答辩/素材/新版大图/tag_2_large.png"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/tag_3.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0761.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "source_sha256": "0d84a37745449257d5701ad84e3c2097dcf6c264ee30c591d5c7c305d0029e80",
+      "crop_xyxy": [
+        398,
+        159,
+        640,
+        336
+      ],
+      "type": "同次相机原图仅裁背景",
+      "dimensions": [
+        242,
+        177
+      ],
+      "meaning": "T3 HIGH_TEMPERATURE：实际 ID 与地图坐标 (1.54,0.19) m",
+      "transformation": "未补画检测框、未更改识别标签/坐标、未做AI增强或插值放大",
+      "alias_of": "国赛答辩/素材/新版大图/tag_3_large.png"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/corridor_terminal.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/continuous_raw.mp4",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "video_raw_seconds": 41.0,
+      "playback_seconds_at_2x": 20.5,
+      "crop_xyxy": [
+        {
+          "original_row_xyxy": [
+            1067,
+            680,
+            1830,
+            697
+          ],
+          "line_1_xyxy": [
+            1067,
+            680,
+            1366,
+            697
+          ],
+          "line_2_xyxy": [
+            1366,
+            680,
+            1650,
+            697
+          ],
+          "destination_rows_y": [
+            4,
+            30
+          ]
+        },
+        {
+          "original_row_xyxy": [
+            1067,
+            697,
+            1830,
+            714
+          ],
+          "line_1_xyxy": [
+            1067,
+            697,
+            1349,
+            714
+          ],
+          "line_2_xyxy": [
+            1349,
+            697,
+            1650,
+            714
+          ],
+          "destination_rows_y": [
+            80,
+            106
+          ]
+        },
+        {
+          "original_row_xyxy": [
+            1067,
+            765,
+            1830,
+            782
+          ],
+          "line_1_xyxy": [
+            1067,
+            765,
+            1315,
+            782
+          ],
+          "line_2_xyxy": [
+            1315,
+            765,
+            1650,
+            782
+          ],
+          "destination_rows_y": [
+            156,
+            182
+          ]
+        },
+        {
+          "original_row_xyxy": [
+            1067,
+            867,
+            1830,
+            884
+          ],
+          "line_1_xyxy": [
+            1067,
+            867,
+            1358,
+            884
+          ],
+          "line_2_xyxy": [
+            1358,
+            867,
+            1650,
+            884
+          ],
+          "destination_rows_y": [
+            232,
+            258
+          ]
+        },
+        {
+          "original_row_xyxy": [
+            1067,
+            969,
+            1830,
+            986
+          ],
+          "line_1_xyxy": [
+            1067,
+            969,
+            1358,
+            986
+          ],
+          "line_2_xyxy": [
+            1358,
+            969,
+            1650,
+            986
+          ],
+          "destination_rows_y": [
+            308,
+            334
+          ]
+        }
+      ],
+      "type": "同一帧五条确认日志原始像素分段裁剪并纵向排布",
+      "dimensions": [
+        340,
+        380
+      ],
+      "meaning": "五类确认原文；仅把原图过长单行分段拼排为两行以便投影阅读",
+      "transformation": "仅裁源图原文像素并排列，没有重写文字或更改内容；所有日志来自同一原始41.0秒截图"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/tag_0_wide.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0746.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "crop_xyxy": {
+        "tag_body": [
+          19,
+          206,
+          200,
+          383
+        ],
+        "original_label": [
+          35,
+          154,
+          273,
+          205
+        ]
+      },
+      "type": "同一相机原图中的标签主体与原显示文字并排裁剪",
+      "dimensions": [
+        443,
+        177
+      ],
+      "meaning": "T0 主体与实际ID/地图坐标，适配答辩宽图布局",
+      "transformation": "仅裁出同一原图中的主体与完整文字；原始像素不缩放，旁边并排便于投影，无任何重写"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/tag_1_wide.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0902.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "crop_xyxy": {
+        "tag_body": [
+          210,
+          199,
+          419,
+          412
+        ],
+        "original_label": [
+          239,
+          147,
+          475,
+          198
+        ]
+      },
+      "type": "同一相机原图中的标签主体与原显示文字并排裁剪",
+      "dimensions": [
+        469,
+        213
+      ],
+      "meaning": "T1 主体与实际ID/地图坐标，适配答辩宽图布局",
+      "transformation": "仅裁出同一原图中的主体与完整文字；原始像素不缩放，旁边并排便于投影，无任何重写"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/tag_2_wide.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0824.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "crop_xyxy": {
+        "tag_body": [
+          114,
+          180,
+          450,
+          453
+        ],
+        "original_label": [
+          151,
+          126,
+          392,
+          178
+        ]
+      },
+      "type": "同一相机原图中的标签主体与原显示文字并排裁剪",
+      "dimensions": [
+        601,
+        273
+      ],
+      "meaning": "T2 主体与实际ID/地图坐标，适配答辩宽图布局",
+      "transformation": "仅裁出同一原图中的主体与完整文字；原始像素不缩放，旁边并排便于投影，无任何重写"
+    },
+    {
+      "file": "国赛答辩/素材/新版大图/tag_3_wide.png",
+      "source": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/image_0761.png",
+      "source_run": "recording_submission_20261013_gimbal_run2",
+      "crop_xyxy": {
+        "tag_body": [
+          471,
+          223,
+          574,
+          330
+        ],
+        "original_label": [
+          403,
+          168,
+          640,
+          220
+        ]
+      },
+      "type": "同一相机原图中的标签主体与原显示文字并排裁剪",
+      "dimensions": [
+        364,
+        107
+      ],
+      "meaning": "T3 主体与实际ID/地图坐标，适配答辩宽图布局",
+      "transformation": "仅裁出同一原图中的主体与完整文字；原始像素不缩放，旁边并排便于投影，无任何重写"
+    }
+  ]
+}

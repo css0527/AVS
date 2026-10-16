@@ -1,0 +1,713 @@
+[
+  {
+    "video_s": 5.015216827392578,
+    "wall": 1791889151.5440035,
+    "state": "startup",
+    "step": "",
+    "detail": "waiting at least 7.0s and for all Nav2 lifecycle nodes to activate",
+    "corridor_detected": 0,
+    "core_detected": 0
+  },
+  {
+    "video_s": 8.383679747581482,
+    "wall": 1791889158.2809293,
+    "state": "navigating",
+    "step": "corridor_entry",
+    "detail": "corridor_entry approach -> (0.55, 0.70, yaw=1.57)",
+    "corridor_detected": 0,
+    "core_detected": 0
+  },
+  {
+    "video_s": 9.244301438331604,
+    "wall": 1791889160.0021727,
+    "state": "navigating",
+    "step": "corridor_entry",
+    "detail": "corridor_entry align at current pose -> (0.55, 0.65, yaw=1.57)",
+    "corridor_detected": 2,
+    "core_detected": 0
+  },
+  {
+    "video_s": 9.332939624786377,
+    "wall": 1791889160.179449,
+    "state": "settling",
+    "step": "corridor_entry",
+    "detail": "corridor_entry reached; braking before next action",
+    "corridor_detected": 2,
+    "core_detected": 0
+  },
+  {
+    "video_s": 9.70753788948059,
+    "wall": 1791889160.9286456,
+    "state": "navigating",
+    "step": "corridor_fire",
+    "detail": "corridor_fire approach -> (0.55, 0.85, yaw=1.57)",
+    "corridor_detected": 2,
+    "core_detected": 0
+  },
+  {
+    "video_s": 10.833752036094666,
+    "wall": 1791889163.181074,
+    "state": "navigating",
+    "step": "corridor_fire",
+    "detail": "corridor_fire align at current pose -> (0.54, 0.81, yaw=1.57)",
+    "corridor_detected": 3,
+    "core_detected": 0
+  },
+  {
+    "video_s": 10.927678227424622,
+    "wall": 1791889163.3689263,
+    "state": "settling",
+    "step": "corridor_fire",
+    "detail": "corridor_fire reached; braking before next action",
+    "corridor_detected": 3,
+    "core_detected": 0
+  },
+  {
+    "video_s": 11.334311366081238,
+    "wall": 1791889164.1821926,
+    "state": "observing",
+    "step": "corridor_fire",
+    "detail": "camera scanning left/right for FIRE; base stopped",
+    "corridor_detected": 3,
+    "core_detected": 0
+  },
+  {
+    "video_s": 11.883405089378357,
+    "wall": 1791889165.28038,
+    "state": "observation_complete",
+    "step": "corridor_fire",
+    "detail": "confirmed FIRE",
+    "corridor_detected": 3,
+    "core_detected": 0
+  },
+  {
+    "video_s": 11.88420844078064,
+    "wall": 1791889165.2819867,
+    "state": "navigating",
+    "step": "corridor_chemical",
+    "detail": "corridor_chemical approach -> (0.55, 1.42, yaw=1.57)",
+    "corridor_detected": 3,
+    "core_detected": 0
+  },
+  {
+    "video_s": 15.586469531059265,
+    "wall": 1791889172.686509,
+    "state": "navigating",
+    "step": "corridor_chemical",
+    "detail": "corridor_chemical align at current pose -> (0.56, 1.37, yaw=1.57)",
+    "corridor_detected": 4,
+    "core_detected": 0
+  },
+  {
+    "video_s": 15.710574865341187,
+    "wall": 1791889172.9347196,
+    "state": "settling",
+    "step": "corridor_chemical",
+    "detail": "corridor_chemical reached; braking before next action",
+    "corridor_detected": 4,
+    "core_detected": 0
+  },
+  {
+    "video_s": 16.11684501171112,
+    "wall": 1791889173.7472599,
+    "state": "observing",
+    "step": "corridor_chemical",
+    "detail": "camera scanning left/right for CHEMICAL; base stopped",
+    "corridor_detected": 4,
+    "core_detected": 0
+  },
+  {
+    "video_s": 16.646378755569458,
+    "wall": 1791889174.8063273,
+    "state": "observation_complete",
+    "step": "corridor_chemical",
+    "detail": "confirmed CHEMICAL",
+    "corridor_detected": 4,
+    "core_detected": 0
+  },
+  {
+    "video_s": 16.647037506103516,
+    "wall": 1791889174.8076448,
+    "state": "navigating",
+    "step": "corridor_radiation",
+    "detail": "corridor_radiation approach -> (0.55, 2.30, yaw=1.57)",
+    "corridor_detected": 4,
+    "core_detected": 0
+  },
+  {
+    "video_s": 22.270670533180237,
+    "wall": 1791889186.054911,
+    "state": "navigating",
+    "step": "corridor_radiation",
+    "detail": "corridor_radiation align at current pose -> (0.53, 2.25, yaw=1.57)",
+    "corridor_detected": 5,
+    "core_detected": 0
+  },
+  {
+    "video_s": 23.63855230808258,
+    "wall": 1791889188.7906744,
+    "state": "settling",
+    "step": "corridor_radiation",
+    "detail": "corridor_radiation reached; braking before next action",
+    "corridor_detected": 5,
+    "core_detected": 0
+  },
+  {
+    "video_s": 24.035346746444702,
+    "wall": 1791889189.5842633,
+    "state": "observing",
+    "step": "corridor_radiation",
+    "detail": "camera scanning left/right for RADIATION; base stopped",
+    "corridor_detected": 5,
+    "core_detected": 0
+  },
+  {
+    "video_s": 24.5930153131485,
+    "wall": 1791889190.6996005,
+    "state": "observation_complete",
+    "step": "corridor_radiation",
+    "detail": "confirmed RADIATION",
+    "corridor_detected": 5,
+    "core_detected": 0
+  },
+  {
+    "video_s": 24.594281673431396,
+    "wall": 1791889190.7021332,
+    "state": "navigating",
+    "step": "top_corner",
+    "detail": "top_corner approach -> (0.55, 2.50, yaw=0.00)",
+    "corridor_detected": 5,
+    "core_detected": 0
+  },
+  {
+    "video_s": 26.503171801567078,
+    "wall": 1791889194.5199134,
+    "state": "navigating",
+    "step": "top_corner",
+    "detail": "top_corner align at current pose -> (0.52, 2.47, yaw=0.00)",
+    "corridor_detected": 5,
+    "core_detected": 0
+  },
+  {
+    "video_s": 30.068025708198547,
+    "wall": 1791889201.6496212,
+    "state": "settling",
+    "step": "top_corner",
+    "detail": "top_corner reached; braking before next action",
+    "corridor_detected": 5,
+    "core_detected": 0
+  },
+  {
+    "video_s": 30.44993829727173,
+    "wall": 1791889202.4134464,
+    "state": "navigating",
+    "step": "corridor_electrical",
+    "detail": "corridor_electrical approach -> (1.50, 2.55, yaw=0.00)",
+    "corridor_detected": 5,
+    "core_detected": 0
+  },
+  {
+    "video_s": 37.65047776699066,
+    "wall": 1791889216.8145254,
+    "state": "navigating",
+    "step": "corridor_electrical",
+    "detail": "corridor_electrical align at current pose -> (1.50, 2.51, yaw=0.00)",
+    "corridor_detected": 5,
+    "core_detected": 0
+  },
+  {
+    "video_s": 41.52458918094635,
+    "wall": 1791889224.5627482,
+    "state": "settling",
+    "step": "corridor_electrical",
+    "detail": "corridor_electrical reached; braking before next action",
+    "corridor_detected": 5,
+    "core_detected": 0
+  },
+  {
+    "video_s": 41.94545388221741,
+    "wall": 1791889225.4044776,
+    "state": "observing",
+    "step": "corridor_electrical",
+    "detail": "camera scanning left/right for ELECTRICAL; base stopped",
+    "corridor_detected": 5,
+    "core_detected": 0
+  },
+  {
+    "video_s": 42.477800726890564,
+    "wall": 1791889226.4691713,
+    "state": "observation_complete",
+    "step": "corridor_electrical",
+    "detail": "confirmed ELECTRICAL",
+    "corridor_detected": 5,
+    "core_detected": 0
+  },
+  {
+    "video_s": 42.485175371170044,
+    "wall": 1791889226.4839206,
+    "state": "settling",
+    "step": "corridor_biohazard",
+    "detail": "corridor_biohazard: observe at current stop",
+    "corridor_detected": 5,
+    "core_detected": 0
+  },
+  {
+    "video_s": 42.9120888710022,
+    "wall": 1791889227.3377476,
+    "state": "observing",
+    "step": "corridor_biohazard",
+    "detail": "camera scanning left/right for BIOHAZARD; base stopped",
+    "corridor_detected": 5,
+    "core_detected": 0
+  },
+  {
+    "video_s": 43.44519567489624,
+    "wall": 1791889228.4039612,
+    "state": "observation_complete",
+    "step": "corridor_biohazard",
+    "detail": "confirmed BIOHAZARD",
+    "corridor_detected": 5,
+    "core_detected": 0
+  },
+  {
+    "video_s": 43.446372628211975,
+    "wall": 1791889228.406315,
+    "state": "navigating",
+    "step": "barrier_stage",
+    "detail": "barrier_stage approach -> (1.52, 2.52, yaw=-1.57)",
+    "corridor_detected": 5,
+    "core_detected": 0
+  },
+  {
+    "video_s": 47.812185287475586,
+    "wall": 1791889237.1379404,
+    "state": "settling",
+    "step": "barrier_stage",
+    "detail": "barrier_stage reached; braking before next action",
+    "corridor_detected": 5,
+    "core_detected": 0
+  },
+  {
+    "video_s": 48.21914565563202,
+    "wall": 1791889237.9518611,
+    "state": "pushing",
+    "step": "clear_barrier",
+    "detail": "closed-loop push for 1.08m at 0.10m/s",
+    "corridor_detected": 5,
+    "core_detected": 0
+  },
+  {
+    "video_s": 57.31898045539856,
+    "wall": 1791889256.1515307,
+    "state": "push_settling",
+    "step": "clear_barrier",
+    "detail": "barrier clearing completed after 1.08m",
+    "corridor_detected": 5,
+    "core_detected": 2
+  },
+  {
+    "video_s": 57.84877896308899,
+    "wall": 1791889257.2111278,
+    "state": "navigating",
+    "step": "release_pusher",
+    "detail": "release_pusher approach -> (1.48, 1.48, yaw=0.00)",
+    "corridor_detected": 5,
+    "core_detected": 2
+  },
+  {
+    "video_s": 62.253989458084106,
+    "wall": 1791889266.0215487,
+    "state": "settling",
+    "step": "release_pusher",
+    "detail": "release_pusher reached; braking before next action",
+    "corridor_detected": 5,
+    "core_detected": 3
+  },
+  {
+    "video_s": 62.66885471343994,
+    "wall": 1791889266.8512793,
+    "state": "navigating",
+    "step": "room_entry",
+    "detail": "room_entry approach -> (2.10, 1.45, yaw=0.00)",
+    "corridor_detected": 5,
+    "core_detected": 3
+  },
+  {
+    "video_s": 66.89607310295105,
+    "wall": 1791889275.305716,
+    "state": "navigating",
+    "step": "room_entry",
+    "detail": "room_entry align at current pose -> (2.08, 1.49, yaw=0.00)",
+    "corridor_detected": 5,
+    "core_detected": 3
+  },
+  {
+    "video_s": 69.07745730876923,
+    "wall": 1791889279.6684844,
+    "state": "settling",
+    "step": "room_entry",
+    "detail": "room_entry reached; braking before next action",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 69.47292947769165,
+    "wall": 1791889280.4594288,
+    "state": "navigating",
+    "step": "core_tag_0",
+    "detail": "core_tag_0 approach -> (2.40, 1.45, yaw=-1.57)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 72.21061480045319,
+    "wall": 1791889285.9347994,
+    "state": "navigating",
+    "step": "core_tag_0",
+    "detail": "core_tag_0 align at current pose -> (2.37, 1.49, yaw=-1.57)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 75.30163526535034,
+    "wall": 1791889292.1168404,
+    "state": "settling",
+    "step": "core_tag_0",
+    "detail": "core_tag_0 reached; braking before next action",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 75.80829358100891,
+    "wall": 1791889293.130157,
+    "state": "observing",
+    "step": "core_tag_0",
+    "detail": "camera scanning left/right for 0; base stopped",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 76.36225986480713,
+    "wall": 1791889294.2380896,
+    "state": "observation_complete",
+    "step": "core_tag_0",
+    "detail": "confirmed 0",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 76.3627655506134,
+    "wall": 1791889294.239101,
+    "state": "navigating",
+    "step": "core_tag_1",
+    "detail": "core_tag_1 approach -> (2.40, 0.70, yaw=-1.57)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 81.08395850658417,
+    "wall": 1791889303.6814868,
+    "state": "navigating",
+    "step": "core_tag_1",
+    "detail": "core_tag_1 align at current pose -> (2.39, 0.74, yaw=-1.57)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 82.0296220779419,
+    "wall": 1791889305.572814,
+    "state": "settling",
+    "step": "core_tag_1",
+    "detail": "core_tag_1 reached; braking before next action",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 82.44851469993591,
+    "wall": 1791889306.4105992,
+    "state": "observing",
+    "step": "core_tag_1",
+    "detail": "camera scanning left/right for 1; base stopped",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 82.98421204090118,
+    "wall": 1791889307.481994,
+    "state": "observation_complete",
+    "step": "core_tag_1",
+    "detail": "confirmed 1",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 82.9846396446228,
+    "wall": 1791889307.4828491,
+    "state": "settling",
+    "step": "core_tag_2",
+    "detail": "core_tag_2: observe at current stop",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 83.40882003307343,
+    "wall": 1791889308.33121,
+    "state": "observing",
+    "step": "core_tag_2",
+    "detail": "camera scanning left/right for 2; base stopped",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 83.96891629695892,
+    "wall": 1791889309.4514024,
+    "state": "observation_complete",
+    "step": "core_tag_2",
+    "detail": "confirmed 2",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 83.97113919258118,
+    "wall": 1791889309.4558482,
+    "state": "settling",
+    "step": "core_tag_3",
+    "detail": "core_tag_3: observe at current stop",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 84.40301871299744,
+    "wall": 1791889310.3196073,
+    "state": "observing",
+    "step": "core_tag_3",
+    "detail": "camera scanning left/right for 3; base stopped",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 84.96718382835388,
+    "wall": 1791889311.4479375,
+    "state": "observation_complete",
+    "step": "core_tag_3",
+    "detail": "confirmed 3",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 84.96851968765259,
+    "wall": 1791889311.4506092,
+    "state": "navigating",
+    "step": "return_turn",
+    "detail": "return_turn approach -> (2.40, 0.95, yaw=1.57)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 93.83925771713257,
+    "wall": 1791889329.1920853,
+    "state": "navigating",
+    "step": "return_turn",
+    "detail": "return_turn align at current pose -> (2.42, 0.91, yaw=1.57)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 94.8457350730896,
+    "wall": 1791889331.20504,
+    "state": "settling",
+    "step": "return_turn",
+    "detail": "return_turn reached; braking before next action",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 95.24924278259277,
+    "wall": 1791889332.0120554,
+    "state": "navigating",
+    "step": "room_return_east",
+    "detail": "room_return_east approach -> (2.20, 1.45, yaw=3.14)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 100.7284049987793,
+    "wall": 1791889342.9703798,
+    "state": "navigating",
+    "step": "room_return_east",
+    "detail": "room_return_east align at current pose -> (2.26, 1.46, yaw=3.14)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 101.27235960960388,
+    "wall": 1791889344.058289,
+    "state": "settling",
+    "step": "room_return_east",
+    "detail": "room_return_east reached; braking before next action",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 101.68870079517365,
+    "wall": 1791889344.8909714,
+    "state": "navigating",
+    "step": "room_exit_inside",
+    "detail": "room_exit_inside approach -> (1.55, 1.56, yaw=3.14)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 108.02612173557281,
+    "wall": 1791889357.5658133,
+    "state": "navigating",
+    "step": "room_exit_inside",
+    "detail": "room_exit_inside align at current pose -> (1.57, 1.55, yaw=3.14)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 109.59595024585724,
+    "wall": 1791889360.7054703,
+    "state": "settling",
+    "step": "room_exit_inside",
+    "detail": "room_exit_inside reached; braking before next action",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 109.99583804607391,
+    "wall": 1791889361.505246,
+    "state": "navigating",
+    "step": "room_exit_align",
+    "detail": "room_exit_align approach -> (1.54, 1.54, yaw=1.75)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 114.03220891952515,
+    "wall": 1791889369.5779877,
+    "state": "settling",
+    "step": "room_exit_align",
+    "detail": "room_exit_align reached; braking before next action",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 114.4306116104126,
+    "wall": 1791889370.374793,
+    "state": "navigating",
+    "step": "room_exit_outside",
+    "detail": "room_exit_outside approach -> (1.50, 2.40, yaw=3.14)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 122.05706894397736,
+    "wall": 1791889385.6277077,
+    "state": "navigating",
+    "step": "room_exit_outside",
+    "detail": "room_exit_outside align at current pose -> (1.50, 2.38, yaw=3.14)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 127.9804277420044,
+    "wall": 1791889397.4744253,
+    "state": "settling",
+    "step": "room_exit_outside",
+    "detail": "room_exit_outside reached; braking before next action",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 128.41572189331055,
+    "wall": 1791889398.3450136,
+    "state": "navigating",
+    "step": "return_corner",
+    "detail": "return_corner approach -> (0.55, 2.45, yaw=-1.57)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 136.05218160152435,
+    "wall": 1791889413.617933,
+    "state": "navigating",
+    "step": "return_corner",
+    "detail": "return_corner align at current pose -> (0.56, 2.42, yaw=-1.57)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 143.42817616462708,
+    "wall": 1791889428.3699222,
+    "state": "settling",
+    "step": "return_corner",
+    "detail": "return_corner reached; braking before next action",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 143.85189247131348,
+    "wall": 1791889429.2173548,
+    "state": "navigating",
+    "step": "return_corridor",
+    "detail": "return_corridor approach -> (0.55, 0.75, yaw=-1.57)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 153.50858616828918,
+    "wall": 1791889448.5307422,
+    "state": "navigating",
+    "step": "return_corridor",
+    "detail": "return_corridor align at current pose -> (0.52, 0.80, yaw=-1.57)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 155.38252353668213,
+    "wall": 1791889452.278617,
+    "state": "settling",
+    "step": "return_corridor",
+    "detail": "return_corridor reached; braking before next action",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 155.76981675624847,
+    "wall": 1791889453.0532033,
+    "state": "navigating",
+    "step": "return_start",
+    "detail": "return_start approach -> (0.55, 0.54, yaw=-1.57)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 159.54664087295532,
+    "wall": 1791889460.6068516,
+    "state": "navigating",
+    "step": "return_start",
+    "detail": "return_start align at current pose -> (0.54, 0.56, yaw=-1.57)",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 160.5972626209259,
+    "wall": 1791889462.708095,
+    "state": "settling",
+    "step": "return_start",
+    "detail": "return_start reached; braking before next action",
+    "corridor_detected": 5,
+    "core_detected": 4
+  },
+  {
+    "video_s": 161.02921164035797,
+    "wall": 1791889463.571993,
+    "state": "complete",
+    "step": "",
+    "detail": "finished and returned; corridor=5/5, core=4/4, missing=[]",
+    "corridor_detected": 5,
+    "core_detected": 4
+  }
+]

@@ -1,0 +1,123 @@
+[
+  {
+    "file": "scene_full.png",
+    "source": "avs_ws/submission/B09018834.mp4",
+    "video_s": 28,
+    "crop": null,
+    "type": "同次完整录屏截图"
+  },
+  {
+    "file": "scene.png",
+    "source": "scene_full.png",
+    "video_s": 28,
+    "crop": [
+      285,
+      137,
+      1120,
+      606
+    ],
+    "type": "同次录屏背景裁剪"
+  },
+  {
+    "file": "push_before_full.png",
+    "source": "avs_ws/submission/B09018834.mp4",
+    "video_s": 47,
+    "crop": null,
+    "type": "同次完整录屏截图"
+  },
+  {
+    "file": "push_before.png",
+    "source": "push_before_full.png",
+    "video_s": 47,
+    "crop": [
+      580,
+      140,
+      970,
+      608
+    ],
+    "type": "同次录屏背景裁剪"
+  },
+  {
+    "file": "push_during_full.png",
+    "source": "avs_ws/submission/B09018834.mp4",
+    "video_s": 53,
+    "crop": null,
+    "type": "同次完整录屏截图"
+  },
+  {
+    "file": "push_during.png",
+    "source": "push_during_full.png",
+    "video_s": 53,
+    "crop": [
+      580,
+      140,
+      970,
+      608
+    ],
+    "type": "同次录屏背景裁剪"
+  },
+  {
+    "file": "push_after_full.png",
+    "source": "avs_ws/submission/B09018834.mp4",
+    "video_s": 59,
+    "crop": null,
+    "type": "同次完整录屏截图"
+  },
+  {
+    "file": "push_after.png",
+    "source": "push_after_full.png",
+    "video_s": 59,
+    "crop": [
+      580,
+      140,
+      970,
+      608
+    ],
+    "type": "同次录屏背景裁剪"
+  },
+  {
+    "file": "core_markers_full.png",
+    "source": "avs_ws/submission/B09018834.mp4",
+    "video_s": 86,
+    "crop": null,
+    "type": "同次完整录屏截图"
+  },
+  {
+    "file": "core_markers.png",
+    "source": "core_markers_full.png",
+    "video_s": 86,
+    "crop": [
+      1180,
+      136,
+      1888,
+      626
+    ],
+    "type": "同次录屏背景裁剪"
+  },
+  {
+    "file": "return_complete_full.png",
+    "source": "avs_ws/submission/B09018834.mp4",
+    "video_s": 161.5,
+    "crop": null,
+    "type": "同次完整录屏截图"
+  },
+  {
+    "file": "return_complete.png",
+    "source": "return_complete_full.png",
+    "video_s": 161.5,
+    "crop": [
+      540,
+      710,
+      1905,
+      1060
+    ],
+    "type": "同次录屏背景裁剪"
+  },
+  {
+    "file": "poster_full.png",
+    "source": "avs_ws/submission/B09018834.mp4",
+    "video_s": 80,
+    "crop": null,
+    "type": "同次完整录屏截图"
+  }
+]

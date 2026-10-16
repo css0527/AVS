@@ -1,9 +1,0 @@
-<?xml version="1.0"?>
-<package format="3">
-  <name>avs_rescue_plugins</name><version>1.0.0</version>
-  <description>Physical camera pan motor for the rescue rover.</description>
-  <maintainer email="contest@example.com">AVS Team</maintainer><license>Apache-2.0</license>
-  <buildtool_depend>ament_cmake</buildtool_depend>
-  <depend>gazebo_dev</depend><depend>gazebo_ros</depend><depend>rclcpp</depend><depend>std_msgs</depend>
-  <export><build_type>ament_cmake</build_type></export>
-</package>

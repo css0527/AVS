@@ -24,10 +24,14 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('recording', type=Path)
     parser.add_argument('--id', default='B09018834')
+    parser.add_argument('--voiceover', type=Path, help='Narration to start with the video; preserve every video frame.')
     args = parser.parse_args()
     if not args.id or any(c not in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_-' for c in args.id):
         raise ValueError('Submission ID must be a simple filename')
     recording = args.recording.resolve()
+    voiceover = args.voiceover.resolve() if args.voiceover else None
+    if voiceover and not voiceover.is_file():
+        raise ValueError(f'Missing voiceover: {voiceover}')
     metadata = json.loads((recording / 'recording.json').read_text())
     evidence = recording / 'evidence'
     evaluation = json.loads((evidence / 'evaluation.json').read_text())
@@ -66,6 +70,26 @@ def main():
         'exec "$SCRIPT_DIR/avs_ws/start.sh" "$@"\n')
     with tempfile.TemporaryDirectory(prefix='avs_submission_') as temp:
         stage = Path(temp)
+        if voiceover:
+            voiceover_duration = float(subprocess.check_output(['ffprobe', '-v', 'error',
+                '-show_entries', 'format=duration', '-of',
+                'default=noprint_wrappers=1:nokey=1', str(voiceover)], text=True))
+            hold = max(0, voiceover_duration - duration)
+            duration = max(duration, voiceover_duration)
+            if duration > 300:
+                raise ValueError('Narrated video exceeds duration limit')
+            narrated = stage / 'narrated.mp4'
+            video_options = ['-c:v', 'copy'] if not hold else [
+                '-vf', f'tpad=stop_mode=clone:stop_duration={hold}',
+                '-c:v', 'libx264', '-threads', '2', '-preset', 'fast', '-crf', '26']
+            subprocess.run(['ffmpeg', '-y', '-hide_banner', '-loglevel', 'error',
+                '-i', str(video), '-i', str(voiceover), '-map', '0:v:0',
+                '-map', '1:a:0', *video_options, '-c:a', 'aac', '-b:a', '160k',
+                '-af', 'apad', '-t', str(duration), '-movflags', '+faststart',
+                str(narrated)], check=True)
+            video = narrated
+            if video.stat().st_size > 100_000_000:
+                raise ValueError('Narrated video exceeds size limit')
         generated = stage / 'generated'
         subprocess.run([sys.executable,
             str(WORKSPACE / 'src/avs_rescue_sim/tools/build_submission.py'),
@@ -99,6 +123,9 @@ def main():
         recorded = dict(metadata)
         recorded['video'] = args.id + '.mp4'
         recorded['original_recording_directory'] = recording.name
+        if voiceover:
+            recorded['voiceover'] = voiceover.name
+            shutil.copy2(voiceover, docs / voiceover.name)
         (docs / 'acceptance/recording.json').write_text(
             json.dumps(recorded, ensure_ascii=False, indent=2))
         result = json.loads((evidence / 'result.json').read_text())
@@ -106,6 +133,18 @@ def main():
             / metadata['playback_speed'], **event) for event in result['events']]
         (docs / 'submission_timeline.json').write_text(
             json.dumps(events, ensure_ascii=False, indent=2))
+        # Source documentation links to the development recording; the package
+        # carries equivalent evidence under docs instead.
+        voiceover_script = docs / 'submission_voiceover.md'
+        script = voiceover_script.read_text()
+        evidence_links = {
+            f'../acceptance/{recording.name}/evidence/evaluation.json': 'acceptance_evaluation.json',
+            f'../acceptance/{recording.name}/recording.json': 'acceptance/recording.json',
+            f'../acceptance/{recording.name}/evidence/result.json': 'submission_timeline.json',
+        }
+        for source, destination in evidence_links.items():
+            script = script.replace(f']({source})', f']({destination})')
+        voiceover_script.write_text(script)
         for name, expected in source_hashes.items():
             if digest(packaged_ws / name) != expected:
                 raise ValueError(f'Packaged source differs from recorded source: {name}')
@@ -123,6 +162,9 @@ def main():
             recorded_manifest_entries=len(recorded_hashes),
             excluded_recorded_cache_entries=sorted(set(recorded_hashes) - set(source_hashes)),
             video_sha256=digest(video), report_sha256=digest(generated / 'technical_report.pdf'))
+        if voiceover:
+            manifest.update(voiceover=voiceover.name, voiceover_sha256=digest(voiceover),
+                            voiceover_duration_s=voiceover_duration, final_frame_hold_s=hold)
         (docs / 'submission_manifest.json').write_text(
             json.dumps(manifest, ensure_ascii=False, indent=2))
         archive_path = stage / (args.id + '.zip')
@@ -144,6 +186,8 @@ def main():
             temporary = target / (args.id + suffix + '.tmp')
             shutil.copy2(src, temporary)
             os.replace(temporary, target / (args.id + suffix))
+        if voiceover:
+            shutil.copy2(voiceover, target / voiceover.name)
         print(json.dumps(dict(target=str(target), backup=str(backup), **manifest),
                          ensure_ascii=False, indent=2))
 
