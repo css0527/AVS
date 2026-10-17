@@ -32,6 +32,9 @@ PPT.core_properties.title = '救援无人车仿真系统｜问题 · 方案 · �
 PPT.core_properties.author = 'Simulator · B09018834'
 MANIFEST = []
 ACTIVE = None
+MOTION_SHAPES = []
+MOTION_DIR = HERE/'素材/动态版'
+MOTION_DATA = json.loads((MOTION_DIR/'manifest.json').read_text()) if (MOTION_DIR/'manifest.json').exists() else {}
 
 def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
@@ -95,29 +98,48 @@ def header(page, dark=False):
     if not dark:
         box(s,.48,.32,.36,.055,RED)
         tx(s,page.get('kicker','AVS · 工程创新'),.98,.23,10.9,.28,11,RED,True)
-        title_size = 30 if len(page['title'])<24 else 27
-        tx(s,page['title'],.5,.77,12.4,.70,title_size,INK,True)
-        tx(s,page.get('subtitle',''),.52,1.53,12.2,.55,15,MUTED)
+        tx(s,page['title'],.52,.82,12.2,.72,33,INK,True)
         ln(s,.5,6.98,12.84,6.98)
         tx(s,'SIMULATOR  /  B09018834',.52,7.13,3.25,.18,8.5,MUTED)
         tx(s,f"{page['page']:02d}" + ('  备用' if page.get('backup') else ''),11.8,7.08,1.0,.28,11,RED,True,PP_ALIGN.RIGHT)
     return s
 
 def source(slide, value):
-    tx(slide, value, .52, 6.73, 12.1, .21, 8.5, MUTED)
+    # Full provenance belongs in speaker notes and the audit manifest.
+    ACTIVE.setdefault('sources',[]).append(value)
 
 def innovation(slide, value):
-    box(slide,.5,6.10,12.34,.47,REDPALE)
-    tx(slide,'创新点',.67,6.19,.76,.30,14,RED,True)
-    tx(slide,value,1.60,6.18,10.98,.32,16,INK,True)
+    box(slide,.53,6.21,12.26,.61,REDPALE)
+    tx(slide,'创新',.74,6.39,.64,.24,13,RED,True)
+    tx(slide,value,1.60,6.35,10.92,.39,23,INK,True)
 
 def issue(slide, page):
-    tx(slide,'遇到的问题',.53,2.15,3.35,.32,12,RED,True)
-    tx(slide,page.get('display_problem',page['problem']),.53,2.63,3.42,1.12,20,INK,True)
-    ln(slide,.53,3.92,3.88,3.92)
-    tx(slide,'对应方案',.53,4.12,3.35,.30,12,BLUE,True)
-    tx(slide,page.get('display_solution',page['solution']),.53,4.60,3.45,1.20,17,INK)
+    tx(slide,'问题',.58,2.11,3.0,.31,14,RED,True)
+    tx(slide,page['display_problem'],.58,2.66,3.05,1.05,24,INK,True)
+    ln(slide,.58,3.92,3.57,3.92)
+    tx(slide,'方案 · 已实施',.58,4.18,3.0,.31,14,BLUE,True)
+    tx(slide,page['display_solution'],.58,4.75,3.10,1.13,21,INK,True)
     innovation(slide,page.get('display_innovation',page['innovation']))
+
+def motion(slide, page, x, y, w, h):
+    path=MOTION_DIR/f"page{page['page']:02d}.gif"
+    asset=next((a for a in MOTION_DATA.get('assets',[]) if a['page']==page['page']),{})
+    if not path.exists():raise FileNotFoundError(path)
+    with Image.open(path) as im:
+        iw,ih=im.size; frames=im.n_frames
+        duration_ms=sum(f.info.get('duration',0) for f in __import__('PIL.ImageSequence',fromlist=['Iterator']).Iterator(im))
+    scale=min(w/iw,h/ih); nw,nh=iw*scale,ih*scale
+    actual=[x+(w-nw)/2,y+(h-nh)/2,nw,nh]
+    q=slide.shapes.add_picture(str(path),*(Inches(v) for v in actual))
+    poster=path.with_name(path.stem+'_poster.png')
+    if not poster.exists():
+        poster=path.with_suffix('.png')
+    if not poster.exists():raise FileNotFoundError(f'Static poster for {path}')
+    MOTION_SHAPES.append((slide,q,poster))
+    provenance=asset.get('sources',[])
+    ACTIVE['images'].append(dict(file=str(path.relative_to(ROOT)),source=provenance[0]['file'] if provenance else page.get('motion_asset',''),sources=provenance,kind=asset.get('kind'),clip_start_seconds=asset.get('clip_start_seconds'),sha256=sha(path),meaning=page.get('visual',''),box_inches=actual,animated=True,frames=frames,duration_ms=duration_ms,poster=str(poster.relative_to(ROOT))))
+    assert frames>1,f'Animation has only one frame: {path}'
+    return q
 
 def step(slide, label, x, y, w, subtitle='', fill=PALE, main_color=BLUE):
     box(slide,x,y,w,.70,fill)
@@ -142,189 +164,100 @@ video=HERE/'B09018834.mp4'
 if not video.exists():video=ROOT/'avs_ws/submission/B09018834.mp4'
 probe=json.loads(subprocess.check_output(['ffprobe','-v','error','-show_format','-show_streams','-of','json',str(video)]))
 duration=float(probe['format']['duration'])
+audio_check=HERE/'配音制作/音画核对.json'
+audio_data=json.loads(audio_check.read_text()) if audio_check.exists() else {}
+ai_audio_done=audio_data.get('status')=='complete' and audio_data.get('video_sha256')==sha(video)
+audio_delivery=('已替换为按画面分段对齐的普通话 AI 女声，移除原有人声，不添加字幕。'
+                if ai_audio_done else '新配音制作状态以配音制作/音画核对.json 为准。')
 
 for p in PAGES:
-    n=p['page']
-    layout=p.get('layout',n)
+    n=p['page']; layout=p['layout']
     s=header(p,dark=layout in ('cover','closing'))
     if layout=='cover':
-        # A competition pitch cover: one proposition, one real model, strong type.
-        box(s,.55,.60,.5,.055,RED)
-        tx(s,'第十九届先进机器人及仿真技术大赛 · 无人车仿真组',1.2,.51,11.2,.4,14,'B9CADC')
-        tx(s,'救援无人车\n仿真系统',.55,1.53,6.2,2.18,49,WHITE,True)
-        tx(s,'把观察、接触与导航\n组织成可验证的自主任务',.59,4.02,5.8,1.03,24,'DEE8F3')
-        box(s,.58,5.55,.055,.91,RED)
-        tx(s,'Simulator  /  B09018834',.85,5.52,5.4,.38,20,WHITE,True)
-        tx(s,'队长 陈莎莎  ｜  队员 梁辰瑜、赖丽燕、初冉\n指导教师 蒋玉莲、王俊',.85,6.08,7.8,.75,12,'B9CADC')
-        picture(s,CAR,6.20,1.68,6.88,4.85,'依据当前 SDF 几何渲染；仅移除单色背景')
-        tx(s,'问题驱动  /  结构与算法协同  /  证据验证',7.08,6.28,5.4,.48,14,'B9CADC',False,PP_ALIGN.CENTER)
-        tx(s,'模型来源：rescue_rover/model.sdf；结构渲染，非实拍',7.00,7.10,5.8,.18,8,'9FB4CD',False,PP_ALIGN.RIGHT)
+        tx(s,'第十九届先进机器人及仿真技术大赛',.62,.52,11.8,.35,14,'B9CADC')
+        tx(s,'救援无人车\n仿真系统',.60,1.67,5.15,1.95,45,WHITE,True)
+        tx(s,'已完成自主任务闭环',.64,4.04,5.10,.55,24,'DEE8F3',True)
+        motion(s,p,5.83,1.57,6.95,4.30)
+        tx(s,'Simulator  /  B09018834',.64,5.45,5.25,.45,20,WHITE,True)
+        tx(s,'队长 陈莎莎  ·  队员 梁辰瑜、赖丽燕、初冉\n指导教师 蒋玉莲、王俊',.64,6.26,11.9,.62,13,'B9CADC')
     elif layout=='completion':
-        box(s,.55,2.02,4.25,3.92,NAVY)
-        picture(s,SCENE/'scene.png',.58,2.05,4.19,3.86,'真实 Gazebo 场景截图，用于说明已完成任务的场地')
-        tx(s,'任务交付',.70,6.18,3.85,.36,19,INK,True,PP_ALIGN.CENTER)
-        cards=[('01','走廊巡检','五类标识识别'),('02','入口清障','物理推开箱体'),('03','核心标定','四个标记定位'),('04','自主返航','返回起点停车')]
-        for i,(a,b,c) in enumerate(cards):
-            col=i%2; row=i//2; x=5.25+col*3.72; y=2.06+row*1.88
-            box(s,x,y,3.42,1.45,PAPER)
-            tx(s,a,x+.18,y+.16,.54,.36,24,RED,True)
-            tx(s,b,x+.86,y+.13,2.35,.38,19,INK,True)
-            tx(s,c,x+.86,y+.72,2.35,.33,14,MUTED)
-        box(s,5.25,5.98,7.14,.50,REDPALE)
-        tx(s,'完成的是一条闭环任务，不在此页重复精确验收数字',5.42,6.11,6.82,.28,15,RED,True,PP_ALIGN.CENTER)
-        source(s,'任务范围：本地 B09 规则与 TECHNICAL_REPORT；精确位移、误差和返航结果由视频配音说明。')
+        motion(s,p,4.57,1.82,8.22,4.45)
+        for i,label in enumerate(p['display_items']):
+            y=2.05+i*1.02
+            tx(s,'✓',.62,y,.48,.47,28,TEAL,True)
+            tx(s,label,1.25,y+.03,3.05,.45,25,INK,True)
+        box(s,.60,6.36,12.10,.43,PALE)
+        tx(s,'已完成 · 已验收 · 可复现',.81,6.42,11.7,.32,21,BLUE,True,PP_ALIGN.CENTER)
     elif layout=='video':
-        # Full-frame video is embedded. Current source is left byte-for-byte intact.
-        for existing in list(s.shapes):s.shapes._spTree.remove(existing._element)
+        for q in list(s.shapes):s.shapes._spTree.remove(q._element)
+        ACTIVE['texts']=[]
         poster=GENERATED/'video_poster.jpg'
         subprocess.run(['ffmpeg','-y','-v','error','-ss','22','-i',str(video),'-frames:v','1',str(poster)],check=True)
-        movie=s.shapes.add_movie(str(video),0,0,PPT.slide_width,PPT.slide_height,poster_frame_image=str(poster),mime_type='video/mp4')
+        s.shapes.add_movie(str(video),0,0,PPT.slide_width,PPT.slide_height,poster_frame_image=str(poster),mime_type='video/mp4')
         ACTIVE['video']=dict(file=str(video.relative_to(ROOT)),sha256=sha(video),duration_s=duration,has_audio=any(x['codec_type']=='audio' for x in probe['streams']))
     elif layout=='scene':
-        box(s,.5,2.15,6.27,3.73,NAVY)
-        picture(s,SCENE/'scene.png',.53,2.18,6.21,3.67,'真实 Gazebo 场景截图，用于说明狭窄布局')
-        tx(s,'封闭厂区事故后的初步勘探',.65,6.18,5.9,.38,20,INK,True)
-        items=[('01','看见了，未必可靠','侧墙视角短暂，同色物体干扰'),('02','要接触，也要避障','清障动作与普通避碰逻辑冲突'),('03','识别到，还要标得对','扫描相机的姿态必须与图像匹配'),('04','障碍挪走，地图仍占用','场景变化会破坏原有规划条件')]
-        for i,(a,b,c) in enumerate(items):
-            y=2.18+i*1.03
-            tx(s,a,7.08,y,.64,.45,26,RED,True)
-            tx(s,b,7.91,y+.02,4.89,.42,21,INK,True)
-            tx(s,c,7.93,y+.56,4.88,.38,14,MUTED)
-            if i<3:ln(s,7.92,y+.91,12.75,y+.91)
-        source(s,'任务背景：本地 B09 规则；问题依据：TECHNICAL_REPORT 第 3–8 节与 debug_history.json。')
+        motion(s,p,4.39,1.79,8.42,4.82)
+        labels=[('观察','短时可见 → 可靠确认'),('接触','正面推箱 → 整车保护'),('标注','相机运动 → 姿态配准'),('通行','场景变化 → 地图一致')]
+        for i,(a,b) in enumerate(labels):
+            y=2.07+i*1.08
+            tx(s,a,.60,y,3.4,.33,14,RED,True)
+            tx(s,b,.60,y+.42,3.65,.42,21,INK,True)
     elif layout=='mapping':
-        # Rows map a concrete failure to the mechanism and a useful innovation.
-        tx(s,'工程问题',.65,2.15,3.1,.37,15,RED,True)
-        tx(s,'对应方案',4.55,2.15,4.3,.37,15,BLUE,True)
-        tx(s,'形成的创新',9.15,2.15,3.4,.37,15,TEAL,True)
-        rows=[('短时观察 / 同色误检','扫描与停车协同 + 多级视觉核验','观察动作与确认事件闭环'),('主动推箱 / 全车避碰','被动 V 形推板 + 有界接触授权','机构、闭环控制与安全协同'),('相机在动 / 地图要准','拍摄时刻 TF + 质量筛选与融合','观测时间与实际姿态对应'),('旧图堵门 / 末端纠偏','自由证据更新 + 分阶段导航','地图与任务控制协同')]
-        for i,(a,b,c) in enumerate(rows):
-            y=2.86+i*.74
-            if i%2==0:box(s,.5,y-.12,12.34,.67,PAPER)
-            tx(s,a,.65,y,3.4,.42,18,INK,True);arrow(s,4.02,y+.055,.28,.18)
-            tx(s,b,4.55,y,4.5,.42,17,INK);arrow(s,8.69,y+.055,.28,.18)
-            tx(s,c,9.15,y,3.5,.42,16,TEAL,True)
-        innovation(s,'六项工程改进，分别回应可定位的失效原因')
-        source(s,'实现依据：camera_scan_node / hazard_tracker / mission_node / safety_node / vision_node / navigation_map_node。')
-    elif layout=='innov1':
+        motion(s,p,.80,1.66,11.75,4.84)
+    elif layout in ('innov1','innov2','innov3','innov4','innov5','innov6'):
         issue(s,p)
-        for i,(name,caption) in enumerate([('scan_stop_A.png','同一停车点 · 扫视时刻 A'),('scan_stop_B.png','同一停车点 · 扫视时刻 B')]):
-            x=4.45+i*4.23
-            picture(s,INNOV/'vision'/name,x,2.16,4.06,2.65,'历史同一停车点不同视角；不作为连续三帧证据')
-            tx(s,caption,x,4.92,4.06,.3,12,MUTED,False,PP_ALIGN.CENTER)
-        for i,(label,sub) in enumerate([('到点停稳','位置与速度检查'),('核对确认','确认可先于停车产生'),('继续任务','满足最低等待时间')]):
-            x=4.54+i*2.75;step(s,label,x,5.35,2.34,fill=PALE)
-            if i<2:arrow(s,x+2.45,5.59,.22,.17)
-        source(s,'源码：camera_scan_node.py / hazard_tracker.py / mission_node.py；图：历史停车点 A/B 视角，非连续三帧证据。')
-    elif layout=='innov2':
-        issue(s,p)
-        picture(s,INNOV/'vision/recovery_same_frame_verified.png',4.37,2.10,8.43,3.91,'v19/image_0462 同输入离线回放；左未检出，右局部重检恢复')
-        source(s,'证据：vision_recovery_replay.json，v19 / image_0462；同帧回放仅说明该例恢复，不推导全量准确率提升。')
-    elif layout=='innov3':
-        issue(s,p)
-        picture(s,CAR,4.30,2.08,3.57,2.53,'当前 SDF 渲染的被动推板与完整车体')
-        tx(s,'几何引导 + 里程计反馈',4.40,4.67,3.47,.4,15,INK,True,PP_ALIGN.CENTER)
-        picture(s,INNOV/'control/完整轮廓停车保护示意.png',7.98,2.12,4.88,2.50,'依据当前 footprint 与 motion_safety.py 的停车扫掠原理示意')
-        tx(s,'完整车体停车扫掠检查',8.02,4.67,4.78,.4,15,INK,True,PP_ALIGN.CENTER)
-        box(s,4.42,5.30,8.36,.50,PALE)
-        tx(s,'阶段授权  →  前方窄窗口接触  →  限时限位脱离',4.54,5.42,8.10,.3,15,BLUE,True,PP_ALIGN.CENTER)
-        source(s,'源码：model.sdf / mission_node.py / motion_safety.py / safety_node.py；右图为原理示意，当前无接触力反馈。')
-    elif layout=='innov4':
-        issue(s,p)
-        # An editable time diagram: the two instants are deliberately distinct.
-        tx(s,'图像与姿态必须属于同一个时刻',4.55,2.16,8.1,.43,23,INK,True)
-        ln(s,4.87,3.32,12.47,3.32,MUTED,2)
-        for x,a,b in [(5.50,'t₀  拍摄','图像 + 实际云台角'),(11.24,'t₁  处理','处理完成时姿态')]:
-            box(s,x,3.25,.14,.14,RED,MSO_SHAPE.OVAL)
-            tx(s,a,x-.68,2.88,2.35,.35,16,RED,True,PP_ALIGN.CENTER)
-            tx(s,b,x-1.25,3.68,3.05,.44,14,MUTED,False,PP_ALIGN.CENTER)
-        box(s,5.06,4.33,7.65,.64,PALE)
-        tx(s,'等待图像时刻 TF；图像超过时限则丢弃',5.19,4.49,7.39,.35,17,BLUE,True,PP_ALIGN.CENTER)
-        tx(s,'相机坐标 → 云台 → 底盘 → odom → map',4.53,5.38,8.22,.38,18,INK,True,PP_ALIGN.CENTER)
-        source(s,'源码：vision_node.py；定位链为机制示意。TF、质量筛选及融合均已实现，尚无逐项消融对照。')
-    elif layout=='innov5':
-        issue(s,p)
-        picture(s,ROOT/'avs_ws/docs/report_assets/navigation_map_regions.png',4.34,2.08,3.69,3.29,'原始 PGM 叠加配置允许清理区，非实测前后对照')
-        picture(s,HERE/'素材/地图门洞放大.png',8.11,2.08,4.69,3.29,'同一原始地图门洞区域放大与清理矩形')
-        tx(s,'实际 PGM + 区域配置',4.39,5.40,3.6,.32,13,MUTED,False,PP_ALIGN.CENTER)
-        tx(s,'仅清理有重复自由证据的栅格',8.10,5.40,4.71,.32,13,MUTED,False,PP_ALIGN.CENTER)
-        source(s,'源码：navigation_map_node.py / navigation_map.yaml；原图及允许区示意，尚未保存派生地图逐格更新前后对照。')
-    elif layout=='innov6':
-        issue(s,p)
-        # Native editable bars; values come from the archived historical run data.
-        tx(s,'首次导航 → 完整任务完成',4.55,2.13,8.1,.43,20,INK,True)
-        vals=[('原速基准',310.82,'9AACBF'),('最终配置',287.20,BLUE)]
-        for i,(label,v,col) in enumerate(vals):
-            y=2.96+i*.91;tx(s,label,4.58,y+.10,1.55,.40,16,INK)
-            bar=v/340*4.61;box(s,6.12,y,bar,.57,col)
-            tx(s,f'{v:.2f} s',6.12+bar+.15,y+.07,1.8,.45,20,col,True)
-        tx(s,'7.6%',4.56,5.02,2.65,.77,42,RED,True)
-        tx(s,'平均耗时缩短\n1 次基准 / 2 次最终配置',7.47,5.03,5.2,.74,16,INK)
-        source(s,'2026-10-12 无界面历史实验：speed_tuning_validation.md/json；样本有限，与当前 GUI 录屏分开统计。')
+        motion(s,p,4.03,1.85,8.76,4.20)
     elif layout=='evidence':
-        levels=[('01','机制是否成立','源码与配置核对\n相同输入图像回放','复核方案实现及单例效果'),('02','改动是否有效','同口径历史速度实验\n保留失败候选','评价完整任务，不只看最高速度'),('03','结果是否可信','事件 · 图像 · 轨迹 · TF\n源码哈希与旁路真值','同次证据对应，真值不进入控制')]
-        for i,(a,b,c,d) in enumerate(levels):
-            x=.52+i*4.18;box(s,x,2.27,3.96,3.34,PAPER)
-            tx(s,a,x+.20,2.45,3.5,.65,36,RED,True)
-            tx(s,b,x+.20,3.25,3.5,.50,23,INK,True)
-            tx(s,c,x+.20,4.01,3.52,.88,17,MUTED)
-            tx(s,d,x+.20,5.08,3.52,.44,12,BLUE,True)
-        innovation(s,'独立、可追溯的工程验收，支撑每项结论的证据口径')
-        source(s,'证据：vision_recovery_replay.json / speed_tuning_validation.json / run_acceptance.py / evaluate_run.py。')
+        motion(s,p,.80,1.71,11.75,4.60)
+        tx(s,'已知场地仿真闭环  ·  真值仅用于旁路验收',.64,6.40,12.0,.38,21,BLUE,True,PP_ALIGN.CENTER)
     elif layout=='team':
-        tx(s,'团队实现',.56,2.13,2.4,.4,17,RED,True)
-        tx(s,'结构与接触',.56,2.80,2.32,.43,23,INK,True)
-        tx(s,'云台、推板\n任务与安全协同',.56,3.55,2.9,.9,17,MUTED)
-        ln(s,3.58,2.77,3.58,4.71)
-        tx(s,'感知与标定',3.98,2.80,3.55,.43,23,INK,True)
-        tx(s,'场景负例、核验与重检\n图像时刻配准、位置融合',3.98,3.55,3.72,.9,17,MUTED)
-        ln(s,8.07,2.77,8.07,4.71)
-        tx(s,'导航与验收',8.49,2.80,3.9,.43,23,INK,True)
-        tx(s,'地图更新、阶段控制\n独立验收、连续录屏工具',8.49,3.55,3.9,.9,17,MUTED)
-        box(s,.53,5.08,12.25,.65,PALE)
-        tx(s,'下一步：随机初始条件重复验证  /  实际视频逐帧评估  /  接触力检测',.7,5.26,11.9,.35,17,BLUE,True,PP_ALIGN.CENTER)
-        tx(s,'基础组件：ROS 2 · Gazebo · Nav2 · slam_toolbox · YOLOv5 架构思想 · OpenCV · AprilTag',.54,6.11,12.25,.44,13,MUTED,False,PP_ALIGN.CENTER)
-        source(s,'团队信息：TECHNICAL_REPORT；组件归属：docs/third_party.md。个人具体分工未由材料充分证明，未编造分配。')
+        motion(s,p,.80,1.65,11.75,4.60)
+        tx(s,'已交付：场景机构 · 感知控制 · 独立验收',.66,6.30,12.0,.40,22,INK,True,PP_ALIGN.CENTER)
+        tx(s,'基础组件：ROS 2 / Gazebo / Nav2 / OpenCV / AprilTag；具体归属见讲者备注',.66,6.78,12.0,.21,10,MUTED,False,PP_ALIGN.CENTER)
     elif layout=='closing':
-        tx(s,'让每一个自主动作\n都有条件、有反馈、有证据',.75,1.90,11.85,2.10,41,WHITE,True,PP_ALIGN.CENTER)
-        box(s,5.93,4.56,1.46,.055,RED)
-        tx(s,'面向救援勘探的机构、感知与导航协同',.75,5.08,11.85,.57,22,'CCD9E7',False,PP_ALIGN.CENTER)
-        tx(s,'Simulator  /  B09018834',.75,6.29,11.85,.44,17,'CCD9E7',False,PP_ALIGN.CENTER)
-        tx(s,'谢谢各位老师',.75,6.89,11.85,.33,14,'CCD9E7',False,PP_ALIGN.CENTER)
+        tx(s,'自主动作\n有条件 · 有反馈 · 有证据',.80,2.01,11.73,1.76,40,WHITE,True,PP_ALIGN.CENTER)
+        box(s,5.93,4.45,1.46,.055,RED)
+        tx(s,'救援无人车仿真系统',.80,5.08,11.73,.48,24,'DEE8F3',True,PP_ALIGN.CENTER)
+        tx(s,'Simulator  /  B09018834',.80,6.13,11.73,.42,18,'B9CADC',False,PP_ALIGN.CENTER)
+        tx(s,'谢谢各位老师',.80,6.84,11.73,.30,16,'B9CADC',False,PP_ALIGN.CENTER)
     elif layout=='backup_rules':
-        rows=[('环境与建图','15 分','自建场景、激光建图与在线留档'),('走廊识别','20 分','入室前分类与终端输出'),('入口清障','20 分','物理推箱、流畅操作及入室'),('核心标定','20 分','AprilTag 与 RViz Marker 布局对应'),('返回起点','5 分','完整返航与最终停车'),('创新答辩','20 分','机构、视觉、导航的团队改进')]
-        for i,(a,b,c) in enumerate(rows):
-            y=2.22+i*.57
-            if i%2==0:box(s,.53,y-.04,12.26,.53,PAPER)
-            tx(s,a,.70,y,2.7,.39,18,INK,True);tx(s,b,3.51,y,1.7,.39,18,RED,True);tx(s,c,5.34,y,7.2,.39,18,INK)
-        tx(s,'8 分钟包含视频与讲解；项目自定厘米级门限不属于官方评分阈值。',.62,6.12,12.03,.39,16,BLUE,True)
-        source(s,'依据：本地 B09 比赛规则及评审标准（2026 年 7 月），完整评分表与国赛条款。')
+        rows=[('环境与建图','15','场景与地图'),('走廊识别','20','分类与终端输出'),('入口清障','20','物理推箱与入室'),('核心标定','20','识别与地图 Marker'),('返回起点','5','返航与停车'),('创新答辩','20','问题、方案与创新')]
+        for i,(label,score,evidence) in enumerate(rows):
+            x=.62+(i%2)*6.24;y=2.00+(i//2)*1.44
+            box(s,x,y,5.86,1.14,PAPER)
+            tx(s,score,x+.20,y+.21,1.0,.56,33,RED,True)
+            tx(s,label,x+1.47,y+.18,4.1,.39,23,INK,True)
+            tx(s,evidence,x+1.47,y+.69,4.1,.32,17,MUTED)
+        tx(s,'国赛 8 分钟：视频＋方案讲解',.67,6.62,12,.32,19,BLUE,True,PP_ALIGN.CENTER)
     elif layout=='backup_params':
-        rows=[('扫描与危险标识','±1.90 rad / 12 s；同目标连续 3 个关联处理帧'),('核心位置融合','至少 4 次有效观测；重投影 ≤2.5 px；不要求连续'),('接触控制','里程计推进；横偏 >0.04 m / 航向 >0.12 rad 中止'),('安全失效','激光、里程计、指令或必要 TF 失效即停车'),('地图处理','限定区内累计 3 个不同时间戳扫描的自由证据')]
+        rows=[('云台扫描','±1.90 rad / 12 s'),('危险确认','连续 3 个关联处理帧'),('标记融合','≥4 次；重投影 ≤2.5 px'),('推进中止','横偏 >0.04 m / 航向 >0.12 rad'),('地图自由证据','3 个不同时间戳扫描')]
         for i,(a,b) in enumerate(rows):
-            y=2.25+i*.68
-            tx(s,a,.67,y,3.0,.42,18,RED,True);tx(s,b,3.72,y,8.8,.54,18,INK)
-            ln(s,.66,y+.58,12.62,y+.58)
-        source(s,'条件来自当前 YAML、mission_node / vision_node / safety_node / navigation_map_node；均非官方规则阈值。')
+            y=2.03+i*.84
+            tx(s,a,.72,y,3.35,.42,22,RED,True)
+            tx(s,b,4.19,y,8.2,.48,25,INK,True)
+            if i<4:ln(s,.72,y+.62,12.5,y+.62)
+        tx(s,'当前场地配置；传感器或必要 TF 失效即停车',.72,6.58,11.9,.37,19,BLUE,True,PP_ALIGN.CENTER)
     elif layout=='backup_metrics':
-        tx(s,'历史速度试验（无界面）',.60,2.21,6.6,.46,21,INK,True)
-        for i,(a,b) in enumerate([('原速基准（1 次）','310.82 s'),('最终配置（2 次）','286.07 / 288.32 s'),('分档 0.24 m/s','296.84 s'),('统一 0.24 / 分档 0.30','失败候选，不计提速成绩')]):
-            y=2.99+i*.61;tx(s,a,.65,y,3.8,.40,17,MUTED);tx(s,b,4.47,y,3.9,.42,18,BLUE,True)
-        ln(s,8.82,2.26,8.82,5.57)
-        tx(s,'模型合成验证',9.19,2.23,3.38,.43,21,INK,True)
-        tx(s,'160 张',9.19,3.04,3.40,.62,34,RED,True)
-        tx(s,'P 85.62%\nR 70.81%\n无目标图 2 / 59 误报',9.19,3.92,3.50,1.49,18,MUTED)
-        tx(s,'历史对照与合成集指标，各有适用口径；不能替代当前视频逐帧评价。',.63,6.12,12.0,.44,16,BLUE,True)
-        source(s,'来源：speed_tuning_validation.md/json、models/yolov5/hazard_yolov5.json；历史测试记录不称本次重跑。')
+        for x,label in [(.64,'历史无界面任务'),(7.07,'模型合成验证')]:
+            box(s,x,2.08,5.61,3.97,PAPER)
+            tx(s,label,x+.24,2.35,5.1,.42,24,INK,True)
+        tx(s,'310.82 → 287.20 s',.90,3.17,5.05,.68,29,BLUE,True)
+        tx(s,'平均耗时 ↓7.6%',.90,4.10,5.0,.59,29,RED,True)
+        tx(s,'基准 1 次 / 最终 2 次',.90,5.21,5.0,.35,19,MUTED)
+        tx(s,'160 张',7.34,3.12,4.95,.68,35,RED,True)
+        tx(s,'P 85.62% / R 70.81%',7.34,4.13,4.95,.50,24,BLUE,True)
+        tx(s,'无目标图：2 / 59 误报',7.34,5.21,4.95,.35,19,MUTED)
+        tx(s,'各自口径独立，不替代当前视频的逐帧评价',.67,6.55,12.0,.37,20,BLUE,True,PP_ALIGN.CENTER)
     elif layout=='backup_qa':
-        for i,qa in enumerate(p['qa']):
-            a,b=qa['q'],qa['a']
-            y=2.18+i*.72
-            tx(s,a,.65,y,3.98,.43,19,RED,True);tx(s,b,4.75,y,7.95,.52,17,INK)
-            if i<4:ln(s,.65,y+.61,12.65,y+.61)
-        source(s,'依据：launch、mission_node、vision_node、navigation_map_node、run_acceptance 与 evaluate_run。')
+        rows=[('导航','目标点与条件＋Nav2 规划'),('接触','阶段＋已知位置＋几何窗口'),('地图','限定区配置；派生导航图'),('误差','同次 map←odom 统一坐标'),('验证','已知场地仿真；旁路真值验收')]
+        for i,(a,b) in enumerate(rows):
+            y=2.06+i*.87
+            tx(s,a,.74,y,2.4,.45,24,RED,True)
+            tx(s,b,3.45,y,9.05,.51,25,INK,True)
+            if i<4:ln(s,.74,y+.65,12.5,y+.65)
     else:
-        raise ValueError(n)
+        raise ValueError(layout)
+
 
 def fmt(seconds):
     seconds=round(seconds); return f'{seconds//60:02d}:{seconds%60:02d}'
@@ -332,7 +265,7 @@ def fmt(seconds):
 # Produce the script from exactly the material used for notes, once.
 md=['# AVS 国赛答辩逐页讲稿\n', '更新日期：2026-10-17。正文 14 页，隐藏问答页 4 页。\n',
     '配音负责画面过程、分类名称和本次实测结果；PPT 主讲负责实际问题、对应方案、创新贡献与验证依据。本次实测数字不在 PPT 中再次汇报。视频播放时由配音讲解，现场主讲保持安静。\n',
-    f'当前嵌入视频为 {duration:.3f} 秒，约 {fmt(duration)}，按实际文件统计。视频文件未改动；本轮交付的是新讲稿，现有音轨尚未按新稿重新录制。\n',
+    f'当前嵌入视频为 {duration:.3f} 秒，约 {fmt(duration)}，按实际文件统计。{audio_delivery}\n',
     '只朗读“现场讲述”。“讲者备注”和隐藏页用于排练及问答，不计入正文口播。时间为排练安排，正式上台需实测。\n']
 clock=0
 for p,sl in zip(PAGES,PPT.slides):
@@ -377,15 +310,29 @@ PPT.save(HERE/'AVS_国赛答辩.pptx')
 
 # Export an independent static render input: no embedded movie in the PDF.
 # Hidden pages are made visible only in this temporary rendering document.
+# PDF uses a deliberate representative frame; the delivered PPT keeps GIF bytes.
+for slide,shape,poster in MOTION_SHAPES:
+    parent=slide.shapes._spTree
+    index=list(parent).index(shape._element)
+    coords=(shape.left,shape.top,shape.width,shape.height)
+    old_rid=shape._element.blipFill.blip.rEmbed
+    parent.remove(shape._element)
+    slide.part.drop_rel(old_rid)
+    replacement=slide.shapes.add_picture(str(poster),*coords)
+    parent.remove(replacement._element)
+    parent.insert(index,replacement._element)
 for slide in PPT.slides:
     slide._element.attrib.pop('show',None)
 static_video_slide=PPT.slides[2]
 for q in list(static_video_slide.shapes):static_video_slide.shapes._spTree.remove(q._element)
+for rid,relation in list(static_video_slide.part.rels.items()):
+    if relation.reltype.rsplit('/',1)[-1] in ('video','media','image'):
+        static_video_slide.part.drop_rel(rid)
 static_video_slide.shapes.add_picture(str(GENERATED/'video_poster.jpg'),0,0,PPT.slide_width,PPT.slide_height)
 PPT.save('/tmp/avs_roadshow_static.pptx')
 
 manifest=dict(date='2026-10-17', main_slides=14, hidden_slides=4, total_target_seconds=clock, video_duration_s=duration,
-              spoken_cjk_chars=len(re.findall(r'[\u4e00-\u9fff]',main_words)), source_data='国赛答辩/roadshow_content.json', slides=MANIFEST)
+              spoken_cjk_chars=len(re.findall(r'[\u4e00-\u9fff]',main_words)), animated_pages=[x['page'] for x in MANIFEST if any(i.get('animated') for i in x['images'])], source_data='国赛答辩/roadshow_content.json', slides=MANIFEST)
 (HERE/'PPT配图与版式核对.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
 print(json.dumps({k:v for k,v in manifest.items() if k!='slides'},ensure_ascii=False,indent=2))
 print(HERE/'AVS_国赛答辩.pptx')

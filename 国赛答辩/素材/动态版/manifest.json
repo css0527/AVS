@@ -1,0 +1,643 @@
+{
+  "version": "2026-10-17_compact_motion",
+  "generator": "国赛答辩/build_motion_assets.py",
+  "rules": [
+    "原视频只裁剪采样，不生成检测框或重做运动",
+    "示意图标注用途，不冒充实测对照",
+    "GIF无音频；PPT完整视频保留正式配音",
+    "静态PDF使用完整poster；演示模式播放无限循环GIF"
+  ],
+  "assets": [
+    {
+      "page": 1,
+      "gif": "国赛答辩/素材/动态版/page01.gif",
+      "poster": "国赛答辩/素材/动态版/page01_poster.png",
+      "dimensions": [
+        960,
+        560
+      ],
+      "fps": 8,
+      "frames": 48,
+      "sampled_frames": 48,
+      "duration_seconds": 6.0,
+      "frame_duration_ms": "alternating 120 / 130",
+      "loop": "infinite",
+      "kind": "recorded_video",
+      "description": "原连续录屏裁剪与8 fps采样；保持画面原有运动速度、检测框及目标，不添加检测结果。",
+      "sources": [
+        {
+          "file": "国赛答辩/B09018834.mp4",
+          "sha256": "18969dffc484baaff4374eb0278e0a9ebc0d0ec85d653a648e18e0f8146aec5d"
+        }
+      ],
+      "bytes": 3666490,
+      "sha256": "fbecf7f7caef4090b726d60e25b23b68de937b68f9cba39d0cd144374c6316c1",
+      "poster_sha256": "423c0f89887ba0471c29a522455fb05de394f07f62cb5dc2736b40d2cbd05f56",
+      "clip_start_seconds": 25,
+      "clip_duration_seconds": 6,
+      "crop_xyxy": [
+        280,
+        136,
+        1120,
+        606
+      ],
+      "source_playback": "原成片已标2倍播放；此处没有追加倍速",
+      "file": "国赛答辩/素材/动态版/page01.gif",
+      "source": [
+        "国赛答辩/B09018834.mp4"
+      ],
+      "texts": [
+        "当前系统实录",
+        "场景与车辆均来自连续运行录屏",
+        "原成片 2×"
+      ],
+      "source_time": {
+        "start_seconds": 25,
+        "duration_seconds": 6
+      }
+    },
+    {
+      "page": 2,
+      "gif": "国赛答辩/素材/动态版/page02.gif",
+      "poster": "国赛答辩/素材/动态版/page02_poster.png",
+      "dimensions": [
+        960,
+        560
+      ],
+      "fps": 8,
+      "frames": 48,
+      "sampled_frames": 48,
+      "duration_seconds": 6.0,
+      "frame_duration_ms": "alternating 120 / 130",
+      "loop": "infinite",
+      "kind": "recorded_video",
+      "description": "返航末段的场景与RViz同帧并列；不绘制额外完成标志。",
+      "sources": [
+        {
+          "file": "国赛答辩/B09018834.mp4",
+          "sha256": "18969dffc484baaff4374eb0278e0a9ebc0d0ec85d653a648e18e0f8146aec5d"
+        }
+      ],
+      "bytes": 3732926,
+      "sha256": "a747a6e746d10bd519d943ac32a0f99ed3b2d0740479a88bf1a99c81df590edd",
+      "poster_sha256": "e2af894459d1b364fc65b9af51563cea5f059a3c86ebea08cdb04b5c6aaa1653",
+      "clip_start_seconds": 155.5,
+      "clip_duration_seconds": 6,
+      "crops_xyxy": [
+        [
+          280,
+          136,
+          1120,
+          606
+        ],
+        [
+          1174,
+          136,
+          1884,
+          628
+        ]
+      ],
+      "source_playback": "原成片2倍播放，未追加倍速",
+      "file": "国赛答辩/素材/动态版/page02.gif",
+      "source": [
+        "国赛答辩/B09018834.mp4"
+      ],
+      "texts": [
+        "闭环任务已完成",
+        "当前任务实录",
+        "原成片 2×",
+        "场景与地图同帧"
+      ],
+      "source_time": {
+        "start_seconds": 155.5,
+        "duration_seconds": 6
+      }
+    },
+    {
+      "page": 4,
+      "gif": "国赛答辩/素材/动态版/page04.gif",
+      "poster": "国赛答辩/素材/动态版/page04_poster.png",
+      "dimensions": [
+        960,
+        560
+      ],
+      "fps": 8,
+      "frames": 48,
+      "sampled_frames": 48,
+      "duration_seconds": 6.0,
+      "frame_duration_ms": "alternating 120 / 130",
+      "loop": "infinite",
+      "kind": "recorded_video",
+      "description": "原连续录屏裁剪与8 fps采样；保持画面原有运动速度、检测框及目标，不添加检测结果。",
+      "sources": [
+        {
+          "file": "国赛答辩/B09018834.mp4",
+          "sha256": "18969dffc484baaff4374eb0278e0a9ebc0d0ec85d653a648e18e0f8146aec5d"
+        }
+      ],
+      "bytes": 3508004,
+      "sha256": "66596d8049931406f36cd5ab9ddaaa1a7c2633c5715d6a2e8b7a1af1c22375bc",
+      "poster_sha256": "ce73060961db5064381f7c30bf8ef7777e8d5acbe038dd162b0a482340d867d2",
+      "clip_start_seconds": 44,
+      "clip_duration_seconds": 6,
+      "crop_xyxy": [
+        280,
+        136,
+        1120,
+        606
+      ],
+      "source_playback": "原成片已标2倍播放；此处没有追加倍速",
+      "file": "国赛答辩/素材/动态版/page04.gif",
+      "source": [
+        "国赛答辩/B09018834.mp4"
+      ],
+      "texts": [
+        "真实场景中的工程问题",
+        "当前任务实录",
+        "侧墙、入口与核心区",
+        "原成片 2×"
+      ],
+      "source_time": {
+        "start_seconds": 44,
+        "duration_seconds": 6
+      }
+    },
+    {
+      "page": 5,
+      "gif": "国赛答辩/素材/动态版/page05.gif",
+      "poster": "国赛答辩/素材/动态版/page05_poster.png",
+      "dimensions": [
+        960,
+        560
+      ],
+      "fps": 8,
+      "frames": 48,
+      "sampled_frames": 48,
+      "duration_seconds": 6.0,
+      "frame_duration_ms": "alternating 120 / 130",
+      "loop": "infinite",
+      "kind": "labelled_mechanism",
+      "description": "六项已实现工程机制的关系示意；逐项强调不代表新增试验或性能测量。",
+      "sources": [
+        {
+          "file": "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+          "sha256": "1429255a4737e6b4b5791c7cb8a7c4b9c3a83e285fb5d5252ec00b7e1f17dea2"
+        }
+      ],
+      "bytes": 1200880,
+      "sha256": "b01f368cc91c71632b43fecbfb6b926fa079419e8f836a7a7616d9aa7be2ba19",
+      "poster_sha256": "1d0a2e6aa824e5dd211223f67b4bd096dbfdc53da123bba931c44a8694139679",
+      "file": "国赛答辩/素材/动态版/page05.gif",
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md"
+      ],
+      "texts": [
+        "六项机制协同",
+        "可信观测",
+        "受控行动",
+        "主动观察",
+        "可靠辨认",
+        "受控接触",
+        "时空一致",
+        "地图一致",
+        "分层调度",
+        "工程机制示意"
+      ],
+      "source_time": {
+        "start_seconds": null,
+        "duration_seconds": null
+      }
+    },
+    {
+      "page": 6,
+      "gif": "国赛答辩/素材/动态版/page06.gif",
+      "poster": "国赛答辩/素材/动态版/page06_poster.png",
+      "dimensions": [
+        960,
+        560
+      ],
+      "fps": 8,
+      "frames": 64,
+      "sampled_frames": 64,
+      "duration_seconds": 8.0,
+      "frame_duration_ms": "alternating 120 / 130",
+      "loop": "infinite",
+      "kind": "recorded_video",
+      "description": "原连续录屏裁剪与8 fps采样；保持画面原有运动速度、检测框及目标，不添加检测结果。",
+      "sources": [
+        {
+          "file": "国赛答辩/B09018834.mp4",
+          "sha256": "18969dffc484baaff4374eb0278e0a9ebc0d0ec85d653a648e18e0f8146aec5d"
+        }
+      ],
+      "bytes": 3523519,
+      "sha256": "c8096b0000a51bb2723e52c8ad6b3585d3fd38d0813dccde9e83884caf498efb",
+      "poster_sha256": "77cd388ba3ac0c184f6e465fb52f150f4c838d45f74328ab8610c7ca76ed6b50",
+      "clip_start_seconds": 12,
+      "clip_duration_seconds": 8,
+      "crop_xyxy": [
+        10,
+        704,
+        530,
+        1048
+      ],
+      "source_playback": "原成片已标2倍播放；此处没有追加倍速",
+      "file": "国赛答辩/素材/动态版/page06.gif",
+      "source": [
+        "国赛答辩/B09018834.mp4"
+      ],
+      "texts": [
+        "主动扫描",
+        "当前车载相机实录",
+        "保留实际检测框及漏检画面",
+        "原成片 2×"
+      ],
+      "source_time": {
+        "start_seconds": 12,
+        "duration_seconds": 8
+      }
+    },
+    {
+      "page": 7,
+      "gif": "国赛答辩/素材/动态版/page07.gif",
+      "poster": "国赛答辩/素材/动态版/page07_poster.png",
+      "dimensions": [
+        960,
+        560
+      ],
+      "fps": 8,
+      "frames": 6,
+      "sampled_frames": 48,
+      "duration_seconds": 6.0,
+      "frame_duration_ms": "alternating 120 / 130",
+      "loop": "infinite",
+      "kind": "same_frame_offline_replay",
+      "description": "左右原图固定不变，动画只强调核验链与对照侧；不是新录制实时检测，也不是整段逐帧准确率对照。",
+      "sources": [
+        {
+          "file": "创新点PPT/素材/新版/vision/recovery_same_frame_verified.png",
+          "sha256": "bf08089eba641308255831047753cd79a63be261f579343618cd9a35fec9ac2f"
+        }
+      ],
+      "bytes": 196138,
+      "sha256": "3da7296e8af7069a73e42936102a16e2d726202d648f7c15fcdbbabec82dce25",
+      "poster_sha256": "1e8fcb511ab49e7f457eebd372e7c2aee0e332a8e97e6634d4bbd16048219f73",
+      "derived_image_crop_xyxy": [
+        [
+          20,
+          65,
+          660,
+          515
+        ],
+        [
+          700,
+          65,
+          1340,
+          515
+        ]
+      ],
+      "file": "国赛答辩/素材/动态版/page07.gif",
+      "source": [
+        "创新点PPT/素材/新版/vision/recovery_same_frame_verified.png"
+      ],
+      "texts": [
+        "同帧离线回放",
+        "原链：未检出",
+        "恢复链：已检出",
+        "候选",
+        "图案 / 几何",
+        "局部重检",
+        "同一输入帧",
+        "保留原核对图的检测结果"
+      ],
+      "source_time": {
+        "start_seconds": null,
+        "duration_seconds": null
+      }
+    },
+    {
+      "page": 8,
+      "gif": "国赛答辩/素材/动态版/page08.gif",
+      "poster": "国赛答辩/素材/动态版/page08_poster.png",
+      "dimensions": [
+        960,
+        560
+      ],
+      "fps": 8,
+      "frames": 76,
+      "sampled_frames": 76,
+      "duration_seconds": 9.5,
+      "frame_duration_ms": "alternating 120 / 130",
+      "loop": "infinite",
+      "kind": "recorded_video",
+      "description": "原连续录屏裁剪与8 fps采样；保持画面原有运动速度、检测框及目标，不添加检测结果。",
+      "sources": [
+        {
+          "file": "国赛答辩/B09018834.mp4",
+          "sha256": "18969dffc484baaff4374eb0278e0a9ebc0d0ec85d653a648e18e0f8146aec5d"
+        }
+      ],
+      "bytes": 4817499,
+      "sha256": "e80d14d76af61b32bdcea82bdca0d30ef8493c27a2b59a388e2e580a6cca88bc",
+      "poster_sha256": "39c1d9fb8bc5a48916c666001e4dec7e7d8166211af5472f714fada75cca19cf",
+      "clip_start_seconds": 48.5,
+      "clip_duration_seconds": 9.5,
+      "crop_xyxy": [
+        280,
+        136,
+        1120,
+        606
+      ],
+      "source_playback": "原成片已标2倍播放；此处没有追加倍速",
+      "file": "国赛答辩/素材/动态版/page08.gif",
+      "source": [
+        "国赛答辩/B09018834.mp4"
+      ],
+      "texts": [
+        "受控接触",
+        "推障实录",
+        "实际车头与箱体接触推进",
+        "原成片 2×"
+      ],
+      "source_time": {
+        "start_seconds": 48.5,
+        "duration_seconds": 9.5
+      }
+    },
+    {
+      "page": 9,
+      "gif": "国赛答辩/素材/动态版/page09.gif",
+      "poster": "国赛答辩/素材/动态版/page09_poster.png",
+      "dimensions": [
+        960,
+        560
+      ],
+      "fps": 8,
+      "frames": 56,
+      "sampled_frames": 56,
+      "duration_seconds": 7.0,
+      "frame_duration_ms": "alternating 120 / 130",
+      "loop": "infinite",
+      "kind": "labelled_mechanism",
+      "description": "动云台拍摄与处理时刻不同的原理示意，t0图像仅绑定t0 TF；不使用伪造定位误差或运动遥测。",
+      "sources": [
+        {
+          "file": "avs_ws/src/avs_rescue_sim/avs_rescue_sim/vision_node.py",
+          "sha256": "c03e9b31646c4426124a4f6a107c7853af84b78512d5784196716c0fc002983f"
+        }
+      ],
+      "bytes": 1142317,
+      "sha256": "6420755638facf88a17fcfffbd78dbf364502af51d7d88f1e53f45682b973dea",
+      "poster_sha256": "4ff1cdded464ecad2b499d954d27b31a6279eccdcbd577a840bb0c823f1984c0",
+      "file": "国赛答辩/素材/动态版/page09.gif",
+      "source": [
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/vision_node.py"
+      ],
+      "texts": [
+        "时间配准机制示意",
+        "拍摄 t0",
+        "处理 t1",
+        "绑定 t0 姿态",
+        "camera",
+        "base",
+        "odom",
+        "map",
+        "t_image = t_TF",
+        "图像测量与拍摄时刻的实际姿态配对"
+      ],
+      "source_time": {
+        "start_seconds": null,
+        "duration_seconds": null
+      }
+    },
+    {
+      "page": 10,
+      "gif": "国赛答辩/素材/动态版/page10.gif",
+      "poster": "国赛答辩/素材/动态版/page10_poster.png",
+      "dimensions": [
+        960,
+        560
+      ],
+      "fps": 8,
+      "frames": 56,
+      "sampled_frames": 56,
+      "duration_seconds": 7.0,
+      "frame_duration_ms": "alternating 120 / 130",
+      "loop": "infinite",
+      "kind": "real_map_plus_labelled_mechanism",
+      "description": "真实PGM保持不变，只按原地图分辨率、原点和y翻转投影配置允许区。右侧为三次不同扫描自由证据的处理机制示意，不伪造同次逐格更新前后图。",
+      "sources": [
+        {
+          "file": "avs_ws/src/avs_rescue_sim/maps/rescue_map.pgm",
+          "sha256": "f12756c9b49552084fc6ee01f9090eeabbec4e4fa120c0ebde8485fe73e20645"
+        },
+        {
+          "file": "avs_ws/src/avs_rescue_sim/maps/rescue_map.yaml",
+          "sha256": "5ad03a352071c75a42b65e506d8b93d1cad3118515ac59ac68557cd726daa1e7"
+        },
+        {
+          "file": "avs_ws/src/avs_rescue_sim/config/navigation_map.yaml",
+          "sha256": "a6cf5ecd2414872879cc19317f207e8b690ee7ca695874ce2fe0c253b00de676"
+        },
+        {
+          "file": "avs_ws/src/avs_rescue_sim/avs_rescue_sim/navigation_map_node.py",
+          "sha256": "997e7edd8b7e32e1690c6ff6213a86c770bf2d00da4687d0d50f226a6c00262c"
+        }
+      ],
+      "bytes": 1606734,
+      "sha256": "18dafe3d948fbaa17b6aa4742ef3bdf3650ce48ee3804ea1a710acd0eabf04a0",
+      "poster_sha256": "a2fe926f1d332230a3af18263dd48a624af57a347ccba0229d79843f4a412d9b",
+      "map_resolution_m": 0.02,
+      "map_origin_xy": [
+        -0.104,
+        -0.0121
+      ],
+      "map_allowed_regions_xyxy": [
+        [
+          1.18,
+          0.7,
+          1.72,
+          1.7
+        ],
+        [
+          1.3,
+          2.0,
+          1.42,
+          2.11
+        ]
+      ],
+      "raw_map_pixels_preserved": true,
+      "file": "国赛答辩/素材/动态版/page10.gif",
+      "source": [
+        "avs_ws/src/avs_rescue_sim/maps/rescue_map.pgm",
+        "avs_ws/src/avs_rescue_sim/maps/rescue_map.yaml",
+        "avs_ws/src/avs_rescue_sim/config/navigation_map.yaml",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/navigation_map_node.py"
+      ],
+      "texts": [
+        "处理机制示意",
+        "限定区域",
+        "不同扫描的自由证据",
+        "1",
+        "2",
+        "3",
+        "满足 3 次后局部清除",
+        "原图保留",
+        "实时障碍仍检测",
+        "真实 PGM 底图",
+        "配置允许区",
+        "不代表逐格实测更新"
+      ],
+      "source_time": {
+        "start_seconds": null,
+        "duration_seconds": null
+      }
+    },
+    {
+      "page": 11,
+      "gif": "国赛答辩/素材/动态版/page11.gif",
+      "poster": "国赛答辩/素材/动态版/page11_poster.png",
+      "dimensions": [
+        960,
+        560
+      ],
+      "fps": 8,
+      "frames": 29,
+      "sampled_frames": 56,
+      "duration_seconds": 7.0,
+      "frame_duration_ms": "alternating 120 / 130",
+      "loop": "infinite",
+      "kind": "historical_measurement_animation",
+      "description": "读取历史无界面基准310.82s与最终两次均值287.20s，静态数字始终可见；动画仅呈现条形长度，不暗示本次录屏加速或新增统计。",
+      "sources": [
+        {
+          "file": "avs_ws/docs/speed_tuning_validation.json",
+          "sha256": "9030fdcece0585ccedaf5744cf539fc795278225ab886c3dfcb5953bd5d908dc"
+        }
+      ],
+      "bytes": 596548,
+      "sha256": "efb01f4461ec496a8d925025132d80f47f4644b760ef37401523c2b60ef48669",
+      "poster_sha256": "ab1e2f616839fdf2e9a8d7b8bdba22713bf55050a2207e845341153faff78f6e",
+      "baseline_runs": 1,
+      "selected_runs": 2,
+      "baseline_seconds": 310.81981086730957,
+      "selected_mean_seconds": 287.1957393884659,
+      "reduction_percent": 7.60056812753448,
+      "file": "国赛答辩/素材/动态版/page11.gif",
+      "source": [
+        "avs_ws/docs/speed_tuning_validation.json"
+      ],
+      "texts": [
+        "历史无界面对照",
+        "−7.6%",
+        "任务用时",
+        "分层调度",
+        "通行效率与末端精度协调",
+        "基准",
+        "最终均值",
+        "310.82 s",
+        "287.20 s",
+        "1 次基准 / 2 次最终",
+        "同一计时口径"
+      ],
+      "source_time": {
+        "start_seconds": null,
+        "duration_seconds": null
+      }
+    },
+    {
+      "page": 12,
+      "gif": "国赛答辩/素材/动态版/page12.gif",
+      "poster": "国赛答辩/素材/动态版/page12_poster.png",
+      "dimensions": [
+        960,
+        560
+      ],
+      "fps": 8,
+      "frames": 56,
+      "sampled_frames": 56,
+      "duration_seconds": 7.0,
+      "frame_duration_ms": "alternating 120 / 130",
+      "loop": "infinite",
+      "kind": "labelled_evidence_relationship",
+      "description": "已有源码、构建、运行与验收证据的关系示意；不表示自动化平台或新增试验。",
+      "sources": [
+        {
+          "file": "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/evaluation.json",
+          "sha256": "9226af6699b9042e7f279fcae5afed825ad09b5ffe05b60638850520ce684fd2"
+        },
+        {
+          "file": "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+          "sha256": "1429255a4737e6b4b5791c7cb8a7c4b9c3a83e285fb5d5252ec00b7e1f17dea2"
+        }
+      ],
+      "bytes": 1208042,
+      "sha256": "3a9bfe6422b6fff0118bda9b5a646aece4713b02715ce09953a76cec8c068999",
+      "poster_sha256": "f93490b8362b879d6014a049c9b084d4ecbd84d462bc65cb92368afd458bbde0",
+      "file": "国赛答辩/素材/动态版/page12.gif",
+      "source": [
+        "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/evaluation.json",
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md"
+      ],
+      "texts": [
+        "已形成可追溯证据链",
+        "源文件",
+        "构建",
+        "运行",
+        "验收",
+        "代码 / 配置",
+        "哈希 / 日志",
+        "录屏 / 评估",
+        "证据关系示意"
+      ],
+      "source_time": {
+        "start_seconds": null,
+        "duration_seconds": null
+      }
+    },
+    {
+      "page": 13,
+      "gif": "国赛答辩/素材/动态版/page13.gif",
+      "poster": "国赛答辩/素材/动态版/page13_poster.png",
+      "dimensions": [
+        960,
+        560
+      ],
+      "fps": 8,
+      "frames": 48,
+      "sampled_frames": 48,
+      "duration_seconds": 6.0,
+      "frame_duration_ms": "alternating 120 / 130",
+      "loop": "infinite",
+      "kind": "labelled_deliverables",
+      "description": "三个已完成交付类别的结构示意，不新增个人分工、论文、专利或实车验证。",
+      "sources": [
+        {
+          "file": "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+          "sha256": "1429255a4737e6b4b5791c7cb8a7c4b9c3a83e285fb5d5252ec00b7e1f17dea2"
+        }
+      ],
+      "bytes": 1065642,
+      "sha256": "86bdf419afb198b1e8f5812487acbf7bfe4bed88bbdefde669c7663b66fc511b",
+      "poster_sha256": "fa430b78c64e1f27708baaf0ce3be751e3c208e6d9fae618bfba7a23a9eb565f",
+      "file": "国赛答辩/素材/动态版/page13.gif",
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md"
+      ],
+      "texts": [
+        "三类成果均已完成",
+        "仿真系统",
+        "连续运行",
+        "追溯交付",
+        "代码 + 场景",
+        "录屏 + 事件",
+        "配置 + 验收",
+        "成果结构示意"
+      ],
+      "source_time": {
+        "start_seconds": null,
+        "duration_seconds": null
+      }
+    }
+  ]
+}

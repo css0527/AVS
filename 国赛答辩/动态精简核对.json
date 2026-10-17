@@ -1,0 +1,572 @@
+{
+  "audit": "AVS 动图与精简版 PPT 只读核验",
+  "count_note": "可见文字字数统计 PPT 文本对象中的汉字；GIF 画面内文字另需目视检查。",
+  "checks": {
+    "required_files": {
+      "pass": true,
+      "missing": []
+    },
+    "no_unfinished_phrases_in_content_and_script": {
+      "pass": true,
+      "json_matches": [],
+      "markdown_matches": []
+    },
+    "source_page_structure": {
+      "pass": true,
+      "total": 18,
+      "main_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "hidden_pages": [
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    "time_budget_under_480_seconds": {
+      "pass": true,
+      "actual_seconds": 457.5,
+      "content_meta_seconds": 457.5,
+      "manifest_seconds": 457.5,
+      "margin_seconds": 22.5
+    },
+    "package_page_structure": {
+      "pass": true,
+      "total": 18,
+      "main": 14,
+      "hidden_pages": [
+        15,
+        16,
+        17,
+        18
+      ]
+    },
+    "motion_coverage": {
+      "pass": true,
+      "expected_pages": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "actual_pages": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "manifest_animated_pages": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    "gif_frames_loops_hashes": {
+      "pass": true,
+      "errors": []
+    },
+    "source_content_motion_links_match_package": {
+      "pass": true,
+      "mismatches": []
+    },
+    "package_text_matches_manifest": {
+      "pass": true,
+      "mismatch_pages": []
+    },
+    "markdown_and_notes_match": {
+      "pass": true,
+      "mismatches": []
+    },
+    "no_unfinished_phrases_in_package": {
+      "pass": true,
+      "matches": []
+    },
+    "no_video_result_numbers_repeated_on_main_slides": {
+      "pass": true,
+      "matches": []
+    },
+    "main_visible_text_reduced": {
+      "pass": true,
+      "before": 1946,
+      "now": 640,
+      "reduction_percent": 67.1,
+      "pages_with_more_text": []
+    },
+    "video_matches_completed_voiceover": {
+      "pass": true,
+      "expected_sha256": "18969dffc484baaff4374eb0278e0a9ebc0d0ec85d653a648e18e0f8146aec5d",
+      "embedded_movies": [
+        {
+          "page": 3,
+          "package_part": "ppt/media/media1.mp4",
+          "sha256": "18969dffc484baaff4374eb0278e0a9ebc0d0ec85d653a648e18e0f8146aec5d"
+        }
+      ],
+      "external_videos": {
+        "国赛答辩/B09018834.mp4": "18969dffc484baaff4374eb0278e0a9ebc0d0ec85d653a648e18e0f8146aec5d",
+        "avs_ws/submission/B09018834.mp4": "18969dffc484baaff4374eb0278e0a9ebc0d0ec85d653a648e18e0f8146aec5d"
+      },
+      "manifest_sha256": "18969dffc484baaff4374eb0278e0a9ebc0d0ec85d653a648e18e0f8146aec5d"
+    },
+    "video_audio_subtitle_duration": {
+      "pass": true,
+      "duration_seconds": 166.5,
+      "stream_types": [
+        "video",
+        "audio"
+      ],
+      "audio_audit_duration_seconds": 166.5
+    }
+  },
+  "slides": [
+    {
+      "page": 1,
+      "title": "救援无人车仿真系统",
+      "hidden": false,
+      "cjk_visible_text_before": 100,
+      "cjk_visible_text_now": 58,
+      "cjk_reduction": 42,
+      "reduction_percent": 42.0,
+      "notes_match_markdown": true,
+      "images": [
+        {
+          "package_part": "ppt/media/image1.gif",
+          "sha256": "fbecf7f7caef4090b726d60e25b23b68de937b68f9cba39d0cd144374c6316c1",
+          "format": "GIF",
+          "frames": 48,
+          "loop": 0,
+          "duration_ms": 6000,
+          "min_frame_duration_ms": 120,
+          "distinct_rendered_frames": 48,
+          "size": [
+            960,
+            560
+          ],
+          "original_file": "国赛答辩/素材/动态版/page01.gif",
+          "source_sha_matches": true
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "title": "仿真闭环任务已完成",
+      "hidden": false,
+      "cjk_visible_text_before": 129,
+      "cjk_visible_text_now": 37,
+      "cjk_reduction": 92,
+      "reduction_percent": 71.3,
+      "notes_match_markdown": true,
+      "images": [
+        {
+          "package_part": "ppt/media/image2.gif",
+          "sha256": "a747a6e746d10bd519d943ac32a0f99ed3b2d0740479a88bf1a99c81df590edd",
+          "format": "GIF",
+          "frames": 48,
+          "loop": 0,
+          "duration_ms": 6000,
+          "min_frame_duration_ms": 120,
+          "distinct_rendered_frames": 48,
+          "size": [
+            960,
+            560
+          ],
+          "original_file": "国赛答辩/素材/动态版/page02.gif",
+          "source_sha_matches": true
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "title": "完整运行演示",
+      "hidden": false,
+      "cjk_visible_text_before": 40,
+      "cjk_visible_text_now": 0,
+      "cjk_reduction": 40,
+      "reduction_percent": 100.0,
+      "notes_match_markdown": true,
+      "images": [
+        {
+          "package_part": "ppt/media/image3.jpg",
+          "sha256": "c017f51783043b390fb33cf382d2b1e15024b675dffab7a65374987752ff7f98"
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "title": "四类问题，牵动整套系统",
+      "hidden": false,
+      "cjk_visible_text_before": 148,
+      "cjk_visible_text_now": 54,
+      "cjk_reduction": 94,
+      "reduction_percent": 63.5,
+      "notes_match_markdown": true,
+      "images": [
+        {
+          "package_part": "ppt/media/image4.gif",
+          "sha256": "66596d8049931406f36cd5ab9ddaaa1a7c2633c5715d6a2e8b7a1af1c22375bc",
+          "format": "GIF",
+          "frames": 48,
+          "loop": 0,
+          "duration_ms": 6000,
+          "min_frame_duration_ms": 120,
+          "distinct_rendered_frames": 48,
+          "size": [
+            960,
+            560
+          ],
+          "original_file": "国赛答辩/素材/动态版/page04.gif",
+          "source_sha_matches": true
+        }
+      ]
+    },
+    {
+      "page": 5,
+      "title": "六项改进，协同完成闭环",
+      "hidden": false,
+      "cjk_visible_text_before": 189,
+      "cjk_visible_text_now": 14,
+      "cjk_reduction": 175,
+      "reduction_percent": 92.6,
+      "notes_match_markdown": true,
+      "images": [
+        {
+          "package_part": "ppt/media/image5.gif",
+          "sha256": "b01f368cc91c71632b43fecbfb6b926fa079419e8f836a7a7616d9aa7be2ba19",
+          "format": "GIF",
+          "frames": 48,
+          "loop": 0,
+          "duration_ms": 6000,
+          "min_frame_duration_ms": 120,
+          "distinct_rendered_frames": 48,
+          "size": [
+            960,
+            560
+          ],
+          "original_file": "国赛答辩/素材/动态版/page05.gif",
+          "source_sha_matches": true
+        }
+      ]
+    },
+    {
+      "page": 6,
+      "title": "确认到位，再推进任务",
+      "hidden": false,
+      "cjk_visible_text_before": 157,
+      "cjk_visible_text_now": 55,
+      "cjk_reduction": 102,
+      "reduction_percent": 65.0,
+      "notes_match_markdown": true,
+      "images": [
+        {
+          "package_part": "ppt/media/image6.gif",
+          "sha256": "c8096b0000a51bb2723e52c8ad6b3585d3fd38d0813dccde9e83884caf498efb",
+          "format": "GIF",
+          "frames": 64,
+          "loop": 0,
+          "duration_ms": 8000,
+          "min_frame_duration_ms": 120,
+          "distinct_rendered_frames": 64,
+          "size": [
+            960,
+            560
+          ],
+          "original_file": "国赛答辩/素材/动态版/page06.gif",
+          "source_sha_matches": true
+        }
+      ]
+    },
+    {
+      "page": 7,
+      "title": "多级核验，约束同色干扰",
+      "hidden": false,
+      "cjk_visible_text_before": 128,
+      "cjk_visible_text_now": 65,
+      "cjk_reduction": 63,
+      "reduction_percent": 49.2,
+      "notes_match_markdown": true,
+      "images": [
+        {
+          "package_part": "ppt/media/image7.gif",
+          "sha256": "3da7296e8af7069a73e42936102a16e2d726202d648f7c15fcdbbabec82dce25",
+          "format": "GIF",
+          "frames": 6,
+          "loop": 0,
+          "duration_ms": 6000,
+          "min_frame_duration_ms": 1000,
+          "distinct_rendered_frames": 6,
+          "size": [
+            960,
+            560
+          ],
+          "original_file": "国赛答辩/素材/动态版/page07.gif",
+          "source_sha_matches": true
+        }
+      ]
+    },
+    {
+      "page": 8,
+      "title": "必要接触有界，整车保护持续",
+      "hidden": false,
+      "cjk_visible_text_before": 161,
+      "cjk_visible_text_now": 62,
+      "cjk_reduction": 99,
+      "reduction_percent": 61.5,
+      "notes_match_markdown": true,
+      "images": [
+        {
+          "package_part": "ppt/media/image8.gif",
+          "sha256": "e80d14d76af61b32bdcea82bdca0d30ef8493c27a2b59a388e2e580a6cca88bc",
+          "format": "GIF",
+          "frames": 76,
+          "loop": 0,
+          "duration_ms": 9500,
+          "min_frame_duration_ms": 120,
+          "distinct_rendered_frames": 76,
+          "size": [
+            960,
+            560
+          ],
+          "original_file": "国赛答辩/素材/动态版/page08.gif",
+          "source_sha_matches": true
+        }
+      ]
+    },
+    {
+      "page": 9,
+      "title": "按拍摄时刻，完成姿态配准",
+      "hidden": false,
+      "cjk_visible_text_before": 185,
+      "cjk_visible_text_now": 58,
+      "cjk_reduction": 127,
+      "reduction_percent": 68.6,
+      "notes_match_markdown": true,
+      "images": [
+        {
+          "package_part": "ppt/media/image9.gif",
+          "sha256": "6420755638facf88a17fcfffbd78dbf364502af51d7d88f1e53f45682b973dea",
+          "format": "GIF",
+          "frames": 56,
+          "loop": 0,
+          "duration_ms": 7000,
+          "min_frame_duration_ms": 120,
+          "distinct_rendered_frames": 56,
+          "size": [
+            960,
+            560
+          ],
+          "original_file": "国赛答辩/素材/动态版/page09.gif",
+          "source_sha_matches": true
+        }
+      ]
+    },
+    {
+      "page": 10,
+      "title": "用自由证据，修正地图残影",
+      "hidden": false,
+      "cjk_visible_text_before": 162,
+      "cjk_visible_text_now": 68,
+      "cjk_reduction": 94,
+      "reduction_percent": 58.0,
+      "notes_match_markdown": true,
+      "images": [
+        {
+          "package_part": "ppt/media/image10.gif",
+          "sha256": "18dafe3d948fbaa17b6aa4742ef3bdf3650ce48ee3804ea1a710acd0eabf04a0",
+          "format": "GIF",
+          "frames": 56,
+          "loop": 0,
+          "duration_ms": 7000,
+          "min_frame_duration_ms": 120,
+          "distinct_rendered_frames": 36,
+          "size": [
+            960,
+            560
+          ],
+          "original_file": "国赛答辩/素材/动态版/page10.gif",
+          "source_sha_matches": true
+        }
+      ]
+    },
+    {
+      "page": 11,
+      "title": "分阶段控制，优化完整任务耗时",
+      "hidden": false,
+      "cjk_visible_text_before": 172,
+      "cjk_visible_text_now": 63,
+      "cjk_reduction": 109,
+      "reduction_percent": 63.4,
+      "notes_match_markdown": true,
+      "images": [
+        {
+          "package_part": "ppt/media/image11.gif",
+          "sha256": "efb01f4461ec496a8d925025132d80f47f4644b760ef37401523c2b60ef48669",
+          "format": "GIF",
+          "frames": 29,
+          "loop": 0,
+          "duration_ms": 7000,
+          "min_frame_duration_ms": 120,
+          "distinct_rendered_frames": 28,
+          "size": [
+            960,
+            560
+          ],
+          "original_file": "国赛答辩/素材/动态版/page11.gif",
+          "source_sha_matches": true
+        }
+      ]
+    },
+    {
+      "page": 12,
+      "title": "证据完整留存，成果可以复核",
+      "hidden": false,
+      "cjk_visible_text_before": 164,
+      "cjk_visible_text_now": 33,
+      "cjk_reduction": 131,
+      "reduction_percent": 79.9,
+      "notes_match_markdown": true,
+      "images": [
+        {
+          "package_part": "ppt/media/image12.gif",
+          "sha256": "3a9bfe6422b6fff0118bda9b5a646aece4713b02715ce09953a76cec8c068999",
+          "format": "GIF",
+          "frames": 56,
+          "loop": 0,
+          "duration_ms": 7000,
+          "min_frame_duration_ms": 120,
+          "distinct_rendered_frames": 56,
+          "size": [
+            960,
+            560
+          ],
+          "original_file": "国赛答辩/素材/动态版/page12.gif",
+          "source_sha_matches": true
+        }
+      ]
+    },
+    {
+      "page": 13,
+      "title": "团队完成系统集成与独立验收",
+      "hidden": false,
+      "cjk_visible_text_before": 171,
+      "cjk_visible_text_now": 45,
+      "cjk_reduction": 126,
+      "reduction_percent": 73.7,
+      "notes_match_markdown": true,
+      "images": [
+        {
+          "package_part": "ppt/media/image13.gif",
+          "sha256": "86bdf419afb198b1e8f5812487acbf7bfe4bed88bbdefde669c7663b66fc511b",
+          "format": "GIF",
+          "frames": 48,
+          "loop": 0,
+          "duration_ms": 6000,
+          "min_frame_duration_ms": 120,
+          "distinct_rendered_frames": 48,
+          "size": [
+            960,
+            560
+          ],
+          "original_file": "国赛答辩/素材/动态版/page13.gif",
+          "source_sha_matches": true
+        }
+      ]
+    },
+    {
+      "page": 14,
+      "title": "让自主动作有条件、有反馈、有证据",
+      "hidden": false,
+      "cjk_visible_text_before": 40,
+      "cjk_visible_text_now": 28,
+      "cjk_reduction": 12,
+      "reduction_percent": 30.0,
+      "notes_match_markdown": true,
+      "images": []
+    },
+    {
+      "page": 15,
+      "title": "评分要求与证据对应",
+      "hidden": true,
+      "cjk_visible_text_before": 185,
+      "cjk_visible_text_now": 89,
+      "cjk_reduction": 96,
+      "reduction_percent": 51.9,
+      "notes_match_markdown": true,
+      "images": []
+    },
+    {
+      "page": 16,
+      "title": "关键参数与适用条件",
+      "hidden": true,
+      "cjk_visible_text_before": 150,
+      "cjk_visible_text_now": 81,
+      "cjk_reduction": 69,
+      "reduction_percent": 46.0,
+      "notes_match_markdown": true,
+      "images": []
+    },
+    {
+      "page": 17,
+      "title": "历史对照与模型指标",
+      "hidden": true,
+      "cjk_visible_text_before": 132,
+      "cjk_visible_text_now": 65,
+      "cjk_reduction": 67,
+      "reduction_percent": 50.8,
+      "notes_match_markdown": true,
+      "images": []
+    },
+    {
+      "page": 18,
+      "title": "实现机制与验证范围",
+      "hidden": true,
+      "cjk_visible_text_before": 184,
+      "cjk_visible_text_now": 73,
+      "cjk_reduction": 111,
+      "reduction_percent": 60.3,
+      "notes_match_markdown": true,
+      "images": []
+    }
+  ],
+  "potential_issues": [],
+  "all_checks_pass": true,
+  "failed_checks": []
+}

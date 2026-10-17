@@ -1,21 +1,125 @@
 {
-  "slides": 17,
-  "main": 13,
-  "hidden": [
-    14,
+  "final_video_hash": "18969dffc484baaff4374eb0278e0a9ebc0d0ec85d653a648e18e0f8146aec5d",
+  "external_video_copies_match": {
+    "国赛答辩/配音制作/B09018834_AI配音版.mp4": true,
+    "国赛答辩/B09018834.mp4": true,
+    "avs_ws/submission/B09018834.mp4": true
+  },
+  "proof_hash_matches": true,
+  "proof_status_complete": true,
+  "plan_status_complete": true,
+  "video_stream_unchanged": true,
+  "duration_seconds": 166.5,
+  "video_frames": [
+    3996
+  ],
+  "audio_streams": 1,
+  "subtitle_streams": 0,
+  "all_segments_fit_windows": true,
+  "segments_do_not_overlap": true,
+  "final_metrics_only_after_complete": true,
+  "opening_uses_we": true,
+  "max_segment_gap_seconds": 4.0444,
+  "semantic_sentence_pause_seconds": 0.4,
+  "slides": 18,
+  "hidden_slide_numbers": [
     15,
     16,
-    17
+    17,
+    18
   ],
-  "pdf_pages": 17,
-  "voice_cjk_chars": 524,
-  "spoken_cjk_chars": 1028,
+  "embedded_movie_entries": [
+    "ppt/media/media1.mp4"
+  ],
+  "embedded_movie_hashes": {
+    "ppt/media/media1.mp4": "18969dffc484baaff4374eb0278e0a9ebc0d0ec85d653a648e18e0f8146aec5d"
+  },
+  "embedded_movie_hash_matches": true,
+  "slide3_movie_targets": [
+    "ppt/media/media1.mp4",
+    "ppt/media/media1.mp4"
+  ],
+  "slide3_uses_matching_embedded_movie": true,
+  "script_note_alignment": true,
+  "notes_have_no_pending_audio_status": true,
+  "voice_cjk_chars": 498,
+  "spoken_cjk_chars": 948,
   "shared_10_character_spoken_phrases": [],
   "video_metric_repetition": false,
-  "script_note_alignment": true,
-  "embedded_movie_hash_matches": true,
-  "preview_pages": 17,
-  "visual_review": "All pages rendered and inspected; two detailed pages rechecked after final edits.",
-  "new_audio_recorded": false,
-  "target_seconds": 437.5686
+  "pdf_pages": 18,
+  "preview_pages": 18,
+  "main_slides": 14,
+  "target_seconds": 457.5,
+  "stale_audio_or_page_status": {},
+  "all_automated_checks_pass": true,
+  "date": "2026-10-17",
+  "new_audio_generated": true,
+  "new_audio_recorded": true,
+  "original_human_voice_removed": true,
+  "voice": "普通话女声 / Kokoro v1.1 zf_001（离线）",
+  "audio_quality": {
+    "measurement": "ffmpeg loudnorm input measurement on final WAV",
+    "integrated_loudness_lufs": -17.07,
+    "true_peak_dbtp": -1.5,
+    "loudness_range_lu": 4.2,
+    "audio_clipping": false
+  },
+  "pause_revision": {
+    "opening_uses_we": true,
+    "sentence_pause_seconds": 0.4,
+    "old_opening_gap_seconds": 3.4931,
+    "new_opening_gap_seconds": 0.7922,
+    "old_max_segment_gap_seconds": 8.946,
+    "new_max_segment_gap_seconds": 4.0444,
+    "long_blank_sections_replaced_by_matching_action_narration": true,
+    "previous_version_backup": "国赛答辩/历史版本/停顿调整前_20261017/"
+  },
+  "revision_video": "国赛答辩/配音制作/B09018834_AI配音_停顿调整版.mp4",
+  "revision_audio": "国赛答辩/配音制作/AI女声_停顿调整版.mp3",
+  "latest_revision": "2026-10-17_motion_focus_completed",
+  "this_revision_changed_audio": false,
+  "motion_revision": {
+    "animated_pages": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13
+    ],
+    "animated_count": 12,
+    "gif_bytes": 26264739,
+    "all_gifs_multiple_distinct_frames_infinite_loop_and_embedded_hash_match": true,
+    "unfinished_phrases_removed": true,
+    "script_notes_aligned": true,
+    "native_cjk_text_counts_exclude_labels_in_gifs": {
+      "pass": true,
+      "before": 1946,
+      "now": 640,
+      "reduction_percent": 67.1,
+      "pages_with_more_text": []
+    },
+    "detailed_motion_check": "国赛答辩/动态精简核对.json",
+    "static_visual_review": {
+      "pages": 18,
+      "overflow_or_overlap_found": false,
+      "missing_glyphs_found": false,
+      "reviewers": "主代理与独立审阅代理"
+    },
+    "powerpoint_desktop_runtime_tested": false,
+    "view_note": "桌面版PowerPoint幻灯片放映视图播放GIF；PDF与JPG是静态代表帧。",
+    "backup": "国赛答辩/历史版本/动态精简前_20261017/"
+  },
+  "deliverable_hashes": {
+    "国赛答辩/AVS_国赛答辩.pptx": "9d52dba8c8e44ae225da21c2418599f453875e6bad791704a989c8e3f6c4b280",
+    "国赛答辩/AVS_国赛答辩.pdf": "a400a59e2110a92eb361cb477a78137f2564de941d1ec4a21c220ce760f48510",
+    "国赛答辩/AVS_国赛答辩逐页讲稿.md": "f7a07eaced6a2382e20959edc0bd9c996f8391b4259f1a7cf376c9e56a25383a",
+    "国赛答辩/AVS_国赛答辩逐页讲稿.txt": "ba7a9fad58a8969b57fec9bf4bee45e1596cc3bf8eb739968738f7d6d347bf1d"
+  }
 }

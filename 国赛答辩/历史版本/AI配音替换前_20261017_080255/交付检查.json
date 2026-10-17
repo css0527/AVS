@@ -1,0 +1,21 @@
+{
+  "slides": 17,
+  "main": 13,
+  "hidden": [
+    14,
+    15,
+    16,
+    17
+  ],
+  "pdf_pages": 17,
+  "voice_cjk_chars": 524,
+  "spoken_cjk_chars": 1028,
+  "shared_10_character_spoken_phrases": [],
+  "video_metric_repetition": false,
+  "script_note_alignment": true,
+  "embedded_movie_hash_matches": true,
+  "preview_pages": 17,
+  "visual_review": "All pages rendered and inspected; two detailed pages rechecked after final edits.",
+  "new_audio_recorded": false,
+  "target_seconds": 437.5686
+}

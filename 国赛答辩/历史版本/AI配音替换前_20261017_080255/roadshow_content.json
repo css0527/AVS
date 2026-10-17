@@ -1,0 +1,872 @@
+{
+  "meta": {
+    "version": "2026-10-17_problem_solution_innovation",
+    "purpose": "新国赛答辩主讲与视频配音互补；不重复视频流程及本次实测数字",
+    "main_slides": 14,
+    "hidden_slides": 4,
+    "planned_total_seconds": 458.0,
+    "video_seconds": 166.5686,
+    "page12_seconds": 175,
+    "planned_nonvideo_seconds": 283.0,
+    "main_speech_chinese_characters": 1025,
+    "main_speech_characters": 1134,
+    "content_policy": [
+      "主讲不复述完整视频流程与本次验收数量和误差",
+      "只将 7.6% 标为历史无界面对照，保留样本数",
+      "承认无模块消融、无多场景实车验证",
+      "不编造商业收入、客户、专利或个人分工",
+      "视频提前到第3页；主讲先宣布任务完成，再解释实现机制"
+    ],
+    "source_root": "/home/c/AVS",
+    "video_duration_source": "主代理已用 ffprobe 核对当前两份 MP4，取代旧文档的 170.934 s 口径",
+    "date": "2026-10-17",
+    "page3_seconds": 175,
+    "page_order": "封面 → 已完成内容 → 完整视频 → 问题总览 → 方案总览 → 六项创新 → 验证 → 团队 → 结尾"
+  },
+  "slides": [
+    {
+      "id": 1,
+      "hidden": false,
+      "kicker": "Simulator · B09018834",
+      "title": "救援无人车仿真系统",
+      "subtitle": "让主动观察、受约束接触与导航决策协同工作",
+      "bullets": [
+        "封闭厂区事故后的无人勘探",
+        "六项工程改进 · 同一系统验证"
+      ],
+      "speech": "各位评委老师好，我们是 Simulator 队。面向封闭厂区事故后的无人勘探，我们把工作重点放在感知、接触和导航之间的衔接，形成六项可追溯的工程改进。",
+      "seconds": 15,
+      "notes": [
+        "封面不口播完整任务流程与本次结果，具体画面和验收数字由视频配音承担。",
+        "队伍、成员和教师信息以技术报告为准。"
+      ],
+      "visual": "完整车辆图与厂区场景组合；采用真实截图或准确标注的 SDF 结构渲染。",
+      "sources": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md"
+      ],
+      "page": 1,
+      "backup": false,
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md"
+      ],
+      "problem": "",
+      "solution": "",
+      "innovation": "",
+      "layout": "cover"
+    },
+    {
+      "id": 2,
+      "hidden": false,
+      "layout": "completion",
+      "kicker": "已完成 / RESULT FIRST",
+      "title": "我们已经完成一条闭环任务",
+      "subtitle": "先看结果，再解释这些结果背后的问题、方案和创新",
+      "bullets": [
+        "从起点出发",
+        "走廊标识识别",
+        "入口箱体清障",
+        "核心标记标定与识别",
+        "返航起点"
+      ],
+      "speech": "我们已经完成一条从起点出发、完成走廊标识识别、入口箱体清障、核心标记标定与识别，并返回起点的闭环任务。下面先播放完整运行视频，再解释这些结果背后的问题、方案和创新。",
+      "seconds": 20,
+      "notes": [
+        "此页先给评委明确成果范围，不报告箱体位移、标记误差和返航误差；具体实测数字由视频配音承担。",
+        "“完成”指当前连续录屏中的任务流程完成，后续页面说明实现机制、验证证据和适用边界。"
+      ],
+      "visual": "四项任务交付卡片与场景俯视图；不放本次运行的精确验收数字。",
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "B09-仿真技术赛道-无人车仿真组比赛规则及评审（裁判）标准.docx"
+      ],
+      "problem": "",
+      "solution": "",
+      "innovation": "",
+      "page": 2
+    },
+    {
+      "id": 12,
+      "hidden": false,
+      "kicker": "完整任务视频 / DEMO",
+      "title": "完整运行视频：先看成果，再看过程",
+      "subtitle": "视频播放期间由配音说明画面，现场主讲不插话",
+      "bullets": [
+        "完整连续录屏 · 画面标注倍速 · 当前成片约 2 分 47 秒"
+      ],
+      "speech": "下面播放完整运行视频。请先看任务完成结果，视频结束后我再说明这些结果背后的问题、方案和创新。",
+      "seconds": 175,
+      "notes": [
+        "仅说一次转场后播放；播放期间不二次解说流程或结果。",
+        "当前用户视频由ffprobe 复核为 166.5686 s（约 2 分 47 秒），带有音轨。本页 175 s 包含转场及操作余量。",
+        "现有视频音轨尚未按新稿重录；此提示仅供制作与演练核对，无需现场口播。",
+        "此处不重复视频中的类别数量、箱体位移、地图误差和返航误差。"
+      ],
+      "visual": "近满幅嵌入完整连续视频，避免额外结果表与流程弹幕。",
+      "sources": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "AVS作品配音讲稿_纯文本.txt",
+        "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/evaluation.json",
+        "avs_ws/submission/B09018834.mp4",
+        "国赛答辩/B09018834.mp4"
+      ],
+      "page": 3,
+      "backup": false,
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "AVS作品配音讲稿_纯文本.txt",
+        "avs_ws/acceptance/recording_submission_20261013_gimbal_run2/evidence/evaluation.json",
+        "avs_ws/submission/B09018834.mp4",
+        "国赛答辩/B09018834.mp4"
+      ],
+      "problem": "",
+      "solution": "",
+      "innovation": "",
+      "layout": "video"
+    },
+    {
+      "id": 2,
+      "hidden": false,
+      "kicker": "场景需求 / WHY",
+      "title": "狭窄救援场景带来四个工程矛盾",
+      "subtitle": "问题出现在模块的交界处，单独跑通算法仍不够",
+      "cards": [
+        {
+          "title": "观察稳定性",
+          "text": "侧墙目标短时可见，同色干扰又会诱发误判"
+        },
+        {
+          "title": "接触可控性",
+          "text": "清障要求主动接触，安全层仍须保护整车"
+        },
+        {
+          "title": "时空一致性",
+          "text": "云台持续转动，图像与当前姿态可能错配"
+        },
+        {
+          "title": "通行与效率",
+          "text": "箱体移动留下旧占用，统一提速增加末端纠偏"
+        }
+      ],
+      "speech": "在狭窄场景中，我们遇到四组矛盾：侧墙目标短时可见，却容易被同色物体干扰；清障必须接触，安全层又需要保护整车；云台运动会放大图像与姿态的时间差；地图残留和末端纠偏则拖慢通行。",
+      "seconds": 22,
+      "notes": [
+        "本页描述已在技术报告中记录的实际问题；不编造市场规模、灾害实战效果或商业合作。",
+        "后续页面逐项说明对应实现与边界。"
+      ],
+      "visual": "四个问题卡片，分别以侧墙、推板接触、旋转云台、门洞栅格小图支撑。",
+      "sources": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "创新点PPT/创新点核对.md"
+      ],
+      "page": 4,
+      "backup": false,
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "创新点PPT/创新点核对.md"
+      ],
+      "problem": "",
+      "solution": "",
+      "innovation": "",
+      "layout": "scene"
+    },
+    {
+      "id": 3,
+      "hidden": false,
+      "kicker": "系统方案 / HOW",
+      "title": "六项改进围绕“可信观测、受控行动”展开",
+      "subtitle": "问题 → 对应方案 → 工程创新点",
+      "rows": [
+        [
+          "观测窗口短",
+          "扫描、停稳与事件确认",
+          "主动观察和任务状态协同"
+        ],
+        [
+          "同色误报、小目标漏检",
+          "负例训练、图案几何核验、局部重检",
+          "候选到任务事件的核验链"
+        ],
+        [
+          "接触与保护冲突",
+          "V 形推板、里程计闭环、有界接触",
+          "机构与完整轮廓保护协同"
+        ],
+        [
+          "运动图像与姿态错配",
+          "拍摄时刻 TF、筛选与位置融合",
+          "动态云台的时空一致标注"
+        ],
+        [
+          "旧占用封堵通道",
+          "局部多次激光自由证据",
+          "保留原图的派生导航图"
+        ],
+        [
+          "提速后反复纠偏",
+          "阶段速度、位置朝向分离",
+          "按任务约束分配速度与精度"
+        ]
+      ],
+      "speech": "我们的方案按问题组织：用事件确认把观测接入任务，用多级核验约束识别，用机构和控制共同约束接触，再用时间同步、局部地图处理和阶段控制维持导航一致性。六项改进都有对应实现和证据入口。",
+      "seconds": 20,
+      "notes": [
+        "六项为场景化工程创新，不将第三方基础算法改称原创。",
+        "展示统一结构，不在此逐条展开技术参数。"
+      ],
+      "visual": "六行问题—方案映射，颜色与后续六页编号保持一致。",
+      "sources": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "创新点PPT/创新点核对.md"
+      ],
+      "page": 5,
+      "backup": false,
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "创新点PPT/创新点核对.md"
+      ],
+      "problem": "",
+      "solution": "",
+      "innovation": "",
+      "layout": "mapping"
+    },
+    {
+      "id": 4,
+      "hidden": false,
+      "kicker": "工程创新 01 / 主动观察",
+      "title": "以可靠确认触发任务，减少短时观测的不确定性",
+      "subtitle": "实际问题：侧墙目标一闪而过，单帧框不能代表任务已确认",
+      "problem": "侧墙目标短时可见；只按固定等待时间切换，容易带着漏检继续行驶。",
+      "solution": "持续云台扫描并积累空间关联确认；到观察点核对停稳、目标确认状态与最低等待时间，再继续任务。",
+      "innovation": "把观察动作、识别时序与任务状态联动，让“何时继续”有明确条件。",
+      "proof": [
+        "当前显示、历史计数、任务事件分别管理",
+        "未确认则继续等待，超时停车中止"
+      ],
+      "speech": "侧墙观察的难点是可见时间短，单帧结果不足以推动任务。我们持续积累空间关联后的确认事件，到点后核对底盘停稳、目标确认和最低等待时间，超时则中止。创新在于把观察动作、识别可靠性和任务推进连接起来。",
+      "seconds": 24,
+      "notes": [
+        "云台扫描持续运行，停车不等于此时才启动扫描。",
+        "危险标识确认要求连续三个空间关联处理帧；显示框可在当前核验帧出现。",
+        "目前没有单独关闭扫描或取消停车等待的消融对照，不能量化各措施的独立增益。",
+        "确认可先于停车产生；任务检查保留的检测集合，并满足停车后的最低等待条件，不要求三帧必须全部发生在停车之后。"
+      ],
+      "visual": "三道状态门：停稳核对 → 关联确认 → 任务放行；辅以同一停车点扫描示意，避免再展示视频时间轴。",
+      "sources": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/camera_scan_node.py",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/mission_node.py",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/hazard_tracker.py"
+      ],
+      "page": 6,
+      "backup": false,
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/camera_scan_node.py",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/mission_node.py",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/hazard_tracker.py"
+      ],
+      "display_problem": "目标短时可见；\n单帧结果会波动。",
+      "display_solution": "云台扫描 + 到点停稳\n空间关联 + 事件确认",
+      "display_innovation": "观察动作、视觉确认与任务推进形成闭环",
+      "layout": "innov1"
+    },
+    {
+      "id": 5,
+      "hidden": false,
+      "kicker": "工程创新 02 / 可靠辨认",
+      "title": "从“颜色相似”走向“图案与几何共同核验”",
+      "subtitle": "实际问题：车身、起点和箱体曾被误报；远距小牌存在瞬时漏检",
+      "problem": "旧训练负例不足，同色物体易误报；小目标、斜视与截断会漏检。",
+      "solution": "加入场景负例；候选经过注册图案与牌边拟合；必要时对同帧已核验区域放大重检。",
+      "innovation": "训练、图案、几何和时序共同约束，从候选检测走到可信任务事件。",
+      "proof": [
+        "红箱 / 蓝起点 / 黄车身 / 同色空白牌进入负例",
+        "局部放大后仍须重新由模型分类"
+      ],
+      "speech": "早期模型会把车身、起点和箱体误当成灾害牌。我们补充针对性负例，并要求候选通过图案和牌边核验。远距小目标可在同一帧局部放大后重新分类，再进入时序确认。贡献是围绕实际误报建立核验链，各环节的独立收益仍需消融验证。",
+      "seconds": 26,
+      "notes": [
+        "模型为项目内实现的轻量 YOLOv5 风格网络，采用 C3/SPPF/PAN 和三尺度检测，不宣称架构原创。",
+        "局部重检只由已通过图案核验的区域启动；不能写为无条件降低全图阈值。",
+        "存在瞬时漏检；合成验证指标不能当作整段视频的逐帧准确率。"
+      ],
+      "visual": "真实干扰物小图 + 全图候选 → 图案/牌边 → 同帧局部重检 → 时序确认流程。不要伪造前后检测框。",
+      "sources": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/yolov5_detector.py",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/panel_geometry.py",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/hazard_tracker.py",
+        "avs_ws/src/avs_rescue_sim/models/yolov5/hazard_yolov5.json"
+      ],
+      "page": 7,
+      "backup": false,
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/yolov5_detector.py",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/panel_geometry.py",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/hazard_tracker.py",
+        "avs_ws/src/avs_rescue_sim/models/yolov5/hazard_yolov5.json"
+      ],
+      "display_problem": "同色物体误报；\n远距小牌漏检。",
+      "display_solution": "场景负例 + 图案核验\n牌边拟合 + 局部重检",
+      "display_innovation": "以图案、几何与时序证据约束检测结果",
+      "layout": "innov2"
+    },
+    {
+      "id": 6,
+      "hidden": false,
+      "kicker": "工程创新 03 / 受控接触",
+      "title": "主动接触有授权，整车保护有边界",
+      "subtitle": "实际问题：普通避障会阻止清障；取消保护又可能伤及侧后方",
+      "problem": "清障需要正面接触，普通避障会停车；扩大接触例外又会误放行其他障碍。",
+      "solution": "V 形推板引导小偏差；里程计闭环约束推进；完整轮廓检查指令与实际速度，接触授权限阶段、限区域。",
+      "innovation": "机构引导、偏差闭环与有界接触共同设计，使必要接触和侧后保护同时成立。",
+      "proof": [
+        "推板、车轮一并纳入停车扫掠区",
+        "脱离例外固定在原接触区域，并限制时间与平移"
+      ],
+      "speech": "清障遇到的冲突是：普通避障会阻止接触，直接放宽保护又会扩大风险。我们以 V 形推板引导小偏差，用里程计约束推进，并把推板和车轮纳入完整轮廓检查。接触权限只在指定阶段和窄区域生效，脱离权限也固定在原区域，形成机构与安全控制的协同。",
+      "seconds": 29,
+      "notes": [
+        "V 形推板为被动结构，无主动夹持；只引导小偏差，不保证任意偏移自定心。",
+        "未配置力传感器；接触窗口依赖已知入口、对正和阶段授权，本身不是语义识别。",
+        "安全检查包含指令速度和未裁剪实际速度；传感器或必要 TF 失效停车。",
+        "墙体检查采用离散采样，不能据此声称连续无碰撞的形式化保证。"
+      ],
+      "visual": "完整车体顶视原理图，突出前方窄接触区、侧后保护、固定脱离区；标“控制原理示意”。",
+      "sources": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/src/avs_rescue_sim/models/rescue_rover/model.sdf",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/mission_node.py",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/safety_node.py",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/motion_safety.py"
+      ],
+      "page": 8,
+      "backup": false,
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/src/avs_rescue_sim/models/rescue_rover/model.sdf",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/mission_node.py",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/safety_node.py",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/motion_safety.py"
+      ],
+      "display_problem": "避障阻止必要接触；\n取消保护又扩大风险。",
+      "display_solution": "V 形推板 + 偏差闭环\n完整轮廓 + 有界接触",
+      "display_innovation": "机构引导、运动反馈与接触权限共同设计",
+      "layout": "innov3"
+    },
+    {
+      "id": 7,
+      "hidden": false,
+      "kicker": "工程创新 04 / 时空一致",
+      "title": "让图像使用拍摄时刻的云台姿态",
+      "subtitle": "实际问题：处理完成时的姿态，可能已经偏离拍摄时刻",
+      "problem": "相机持续转动且图像处理有延迟，使用当前姿态会把视觉坐标投到错误方向。",
+      "solution": "按图像时间戳查询实际云台与底盘 TF；筛除异常观测，再进行多次位置融合。",
+      "innovation": "保持视觉测量与运动姿态的时间一致性，将动态观测稳定转换到地图。",
+      "proof": [
+        "曝光时刻 TF，而非处理完成时刻 TF",
+        "重投影筛选、离群拒收、中值与平滑融合"
+      ],
+      "speech": "相机在转动时，处理完成时的姿态已不一定对应拍摄瞬间。我们按图像时间戳查询实际云台与底盘变换，再筛除重投影异常，融合多次位置观测。工程贡献是保证动态观测的时间一致性，地图定位本身的漂移仍会影响结果。",
+      "seconds": 24,
+      "notes": [
+        "AprilTag 与 PnP 是所采用的既有方法；创新表述落在运动云台的时间同步和工程融合。",
+        "至少四次有效观测，不要求连续；缺帧不会清空有效样本。",
+        "定位不读取模型真值；当前未提供取消时间同步的同条件消融对照。",
+        "必要 TF 暂时不可用时保留图像等待；图像年龄超过 1 秒则丢弃，不是遇到 TF 暂缺就立即丢弃。"
+      ],
+      "visual": "拍摄时间线与 camera_optical → camera_link → base_link → odom → map 变换链，突出同一 t_image。",
+      "sources": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/vision_node.py"
+      ],
+      "page": 9,
+      "backup": false,
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/vision_node.py"
+      ],
+      "display_problem": "处理有延迟；\n相机姿态已经变化。",
+      "display_solution": "图像时刻 TF 配准\n质量筛选 + 位置融合",
+      "display_innovation": "让视觉测量匹配拍摄时刻的实际运动姿态",
+      "layout": "innov4"
+    },
+    {
+      "id": 8,
+      "hidden": false,
+      "kicker": "工程创新 05 / 地图一致",
+      "title": "用局部自由证据处理移动障碍的地图残影",
+      "subtitle": "实际问题：障碍已经移开，静态占用仍可能让规划器认为门被堵住",
+      "problem": "箱体移动后，旧静态占用仍封堵路线；整图清空会伤及固定结构。",
+      "solution": "保留原图，在排除墙体的限定区域内累计不同扫描的自由证据，形成派生导航图。",
+      "innovation": "把局部先验与多次传感证据结合，恢复通行同时保留实时障碍检测。",
+      "proof": [
+        "局部区域边界明确，固定墙体排除",
+        "新障碍位置仍由实时障碍层标记"
+      ],
+      "speech": "箱体移动后，规划器可能仍被旧占用挡住。我们保留原图，只在排除墙体的限定区域累计多次激光自由证据，再发布派生导航图。这样既处理历史残影，也保留对新障碍的检测。目前保存了通行与轨迹证据，逐格地图更新还需补录。",
+      "seconds": 23,
+      "notes": [
+        "同格需要三个不同时间戳的扫描自由证据，不要求连续。",
+        "射线在测得障碍前截止；区域由配置给出，属于有先验的局部处理。",
+        "没有保存同次逐格更新的前后地图，不能把区域示意称为实测前后对照。",
+        "不称通用动态 SLAM 或未知场景实时重建。"
+      ],
+      "visual": "真实占据地图底图 + 明确标注的处理区域与自由射线原理示意。",
+      "sources": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/navigation_map_node.py",
+        "avs_ws/src/avs_rescue_sim/config/navigation_map.yaml",
+        "avs_ws/docs/report_assets/navigation_map_regions.png"
+      ],
+      "page": 10,
+      "backup": false,
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/src/avs_rescue_sim/avs_rescue_sim/navigation_map_node.py",
+        "avs_ws/src/avs_rescue_sim/config/navigation_map.yaml",
+        "avs_ws/docs/report_assets/navigation_map_regions.png"
+      ],
+      "display_problem": "障碍已被移开；\n旧地图仍把门堵住。",
+      "display_solution": "限定区域累积自由证据\n保留原图，更新派生图",
+      "display_innovation": "区域先验与重复传感证据共同约束地图修正",
+      "layout": "innov5"
+    },
+    {
+      "id": 9,
+      "hidden": false,
+      "kicker": "工程创新 06 / 效率协同",
+      "title": "按阶段分配速度与精度，历史任务耗时下降 7.6%",
+      "subtitle": "实际问题：统一提速增加门洞风险，终点位置与朝向耦合又会反复纠偏",
+      "problem": "更高速度未必缩短完整任务；定位更新后追旧终点，会产生额外纠偏。",
+      "solution": "普通路段与精细阶段分档；先到位置，再基于当前位置对正朝向；保留原观察确认条件。",
+      "innovation": "优化完整任务的速度—精度分配，而非单独提高车辆速度。",
+      "proof": [
+        "历史无界面试验：310.82 s → 287.20 s（两次均值）",
+        "基准 1 次，最终配置 2 次；样本有限"
+      ],
+      "speech": "统一提速后，门洞保护和末端纠偏反而会增加耗时。我们按任务阶段分配速度，并把位置到达与朝向对正分开，观察确认条件保持不变。历史无界面试验中，完整任务平均耗时下降百分之七点六；基准一次、最终两次的样本仍不足以说明普遍最优。",
+      "seconds": 27,
+      "notes": [
+        "仅引用 2026-10-12 历史无界面试验，不与本次有界面录屏做直接耗时比较。",
+        "计时口径为首次导航到任务完成，包含观察和精细操作，排除编译、启动和采集尾段。",
+        "最终配置两次 286.07 / 288.32 s，平均 287.20 s；基准 310.82 s。",
+        "存在失败候选；不能声称统计显著性、全局最优或多场景成功率。",
+        "历史两次最终配置使用同一源码；不将这一历史哈希结论扩大为与今日整车所有文件一致。"
+      ],
+      "visual": "简洁对比柱图 + 阶段速度色带；图内明确“历史无界面试验，1 次基准 / 2 次最终配置”。",
+      "sources": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/docs/speed_tuning_validation.md",
+        "avs_ws/docs/speed_tuning_validation.json"
+      ],
+      "page": 11,
+      "backup": false,
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/docs/speed_tuning_validation.md",
+        "avs_ws/docs/speed_tuning_validation.json"
+      ],
+      "display_problem": "统一提速增加纠偏；\n局部更快，整体更慢。",
+      "display_solution": "按阶段配置速度与精度\n位置到达、朝向对正分离",
+      "display_innovation": "从完整任务耗时评价速度与精度的协同",
+      "layout": "innov6"
+    },
+    {
+      "id": 10,
+      "hidden": false,
+      "kicker": "验证体系 / EVIDENCE",
+      "title": "把“实现了”与“验证到什么程度”分别说清",
+      "subtitle": "机制检查、历史对照、独立验收形成三层证据",
+      "cards": [
+        {
+          "title": "机制检查",
+          "text": "源码、配置、历史回归记录",
+          "caption": "证明实现与边界条件"
+        },
+        {
+          "title": "历史对照",
+          "text": "统一计时、文件哈希、失败候选",
+          "caption": "支撑阶段控制的有限收益"
+        },
+        {
+          "title": "独立验收",
+          "text": "轨迹、事件、图像、标注、真值对齐",
+          "caption": "核对同一次运行的目标完成"
+        }
+      ],
+      "speech": "我们把证据分为三层：源码与配置核对机制，历史对照检查方案收益，独立验收关联同一次运行的轨迹、事件和标注。真值只用于验收，不进入控制。当前证据支持已知场地的闭环运行，不能外推为复杂灾害环境中的可靠性保证。",
+      "seconds": 22,
+      "notes": [
+        "不再口播本次任务完成数量、箱体位移、标记误差和返航误差；这些由视频配音承担。",
+        "历史 165 项回归通过是历史记录，不写为本次重新执行。",
+        "独立验收使用记录的 map←odom 对齐真值与视觉结果；不借其他运行的 TF 改写结果。",
+        "模型合成验证、完整任务验收和视频样例属于不同证据口径。"
+      ],
+      "visual": "三层证据链与原始记录小图；用文件/记录类型取代本次指标大表。",
+      "sources": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/src/avs_rescue_sim/tools/run_acceptance.py",
+        "avs_ws/src/avs_rescue_sim/tools/evaluate_run.py",
+        "avs_ws/docs/report_assets/sources.json"
+      ],
+      "page": 12,
+      "backup": false,
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/src/avs_rescue_sim/tools/run_acceptance.py",
+        "avs_ws/src/avs_rescue_sim/tools/evaluate_run.py",
+        "avs_ws/docs/report_assets/sources.json"
+      ],
+      "problem": "",
+      "solution": "",
+      "innovation": "",
+      "layout": "evidence"
+    },
+    {
+      "id": 11,
+      "hidden": false,
+      "kicker": "团队贡献 / OWNERSHIP",
+      "title": "团队贡献落在场景适配、关键耦合与验证工具",
+      "subtitle": "陈莎莎 · 梁辰瑜 · 赖丽燕 · 初冉｜指导教师：蒋玉莲 · 王俊",
+      "cards": [
+        {
+          "title": "场景与机构",
+          "text": "自建场地和无文字图案；推板、云台与模型一致"
+        },
+        {
+          "title": "感知与控制",
+          "text": "核验链、时间同步、接触约束、地图处理、阶段控制"
+        },
+        {
+          "title": "工程与复现",
+          "text": "任务配置、启动检查、独立验收与记录留档"
+        }
+      ],
+      "foundation": [
+        "ROS 2 / Gazebo / Nav2 / slam_toolbox",
+        "PyTorch / OpenCV / AprilTag / YOLOv5 架构思想"
+      ],
+      "speech": "团队完成了场景和机构适配、感知核验、任务约束与验收工具；基础导航、视觉框架和编码标记方法明确引用第三方。下一步优先补齐模块消融、不同箱体偏移与摩擦条件测试，再开展实车标定和接触验证。",
+      "seconds": 21,
+      "notes": [
+        "技术报告只确认成员名单与团队整体工作，未提供个人职责证明，因此不虚构成员分工。",
+        "无专利、客户、收入或实车部署资料，页面不引入相关商业化宣称。",
+        "当前为仿真系统，尚未完成多场景和实车验证。"
+      ],
+      "visual": "团队成员信息条 + 三组真实工程贡献；底部以较小字明确第三方基础组件。",
+      "sources": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/docs/third_party.md"
+      ],
+      "page": 13,
+      "backup": false,
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/docs/third_party.md"
+      ],
+      "problem": "",
+      "solution": "",
+      "innovation": "",
+      "layout": "team"
+    },
+    {
+      "id": 13,
+      "hidden": false,
+      "kicker": "系统价值 / VALUE",
+      "title": "让每一个自主动作都有条件、有反馈、有证据",
+      "subtitle": "以工程约束连接感知、机构和导航，形成可复现的救援仿真系统",
+      "bullets": [
+        "问题驱动设计",
+        "边界写入控制",
+        "证据对应结论"
+      ],
+      "speech": "我们的价值，是把真实遇到的问题变成可执行的约束，再让观测、接触和通行相互衔接。感谢各位评委老师。",
+      "seconds": 10,
+      "notes": [
+        "结尾不复述视频结果，不增加未经验证的推广价值。"
+      ],
+      "visual": "三词价值主张与整车主视觉，保持留白。",
+      "sources": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "创新点PPT/创新点核对.md"
+      ],
+      "page": 14,
+      "backup": false,
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "创新点PPT/创新点核对.md"
+      ],
+      "problem": "",
+      "solution": "",
+      "innovation": "",
+      "layout": "closing"
+    },
+    {
+      "id": 14,
+      "hidden": true,
+      "kicker": "备份 A / 规则与证据",
+      "title": "规则要求与证据入口对应",
+      "subtitle": "国赛 8 分钟包含视频与设计讲解；问答在展示结束后进行",
+      "rows": [
+        [
+          "环境构建与建图",
+          "15 分",
+          "自建 world/SDF；二维地图与建图留档"
+        ],
+        [
+          "走廊视觉识别",
+          "20 分",
+          "终端确认事件；原图与标注图"
+        ],
+        [
+          "入口清障交互",
+          "20 分",
+          "物理接触画面；独立箱体轨迹"
+        ],
+        [
+          "核心标定与识别",
+          "20 分",
+          "相机标签与 RViz Marker 对应；坐标转换记录"
+        ],
+        [
+          "返回起点",
+          "5 分",
+          "同次车辆轨迹与最终位置记录"
+        ],
+        [
+          "方案创新性答辩",
+          "20 分",
+          "问题—方案—创新点；机制与边界说明"
+        ]
+      ],
+      "speech": "",
+      "seconds": 0,
+      "notes": [
+        "本页仅用于问答，正常放映隐藏。",
+        "规则要求自主设计、图案互异，核心标识附加或嵌套 AprilTag；场地具体尺寸为团队选择。",
+        "一键启动、参数配置、导航移动、完整录屏和画面倍速标注的要求来自本届规则。",
+        "不将团队自定验收阈值称为比赛统一评分阈值。"
+      ],
+      "visual": "紧凑证据映射表；突出 8 分钟时间约束。",
+      "sources": [
+        "B09-仿真技术赛道-无人车仿真组比赛规则及评审（裁判）标准.docx",
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md"
+      ],
+      "page": 15,
+      "backup": true,
+      "source": [
+        "B09-仿真技术赛道-无人车仿真组比赛规则及评审（裁判）标准.docx",
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md"
+      ],
+      "problem": "",
+      "solution": "",
+      "innovation": "",
+      "layout": "backup_rules"
+    },
+    {
+      "id": 15,
+      "hidden": true,
+      "kicker": "备份 B / 参数与条件",
+      "title": "关键参数只在适用条件下解释",
+      "subtitle": "当前场地与配置，参数不代表跨场景最优值",
+      "rows": [
+        [
+          "观察确认",
+          "危险标识连续 3 个关联处理帧；标签至少 4 次有效观测"
+        ],
+        [
+          "停稳与超时",
+          "至少停车 0.8 s，并核对实际速度；观察上限 28 s"
+        ],
+        [
+          "推进控制",
+          "里程计目标 1.08 m；上限 0.10 m/s；横偏 0.04 m、航向 0.12 rad 中止"
+        ],
+        [
+          "接触授权",
+          "前方窄窗口；侧后保护保留；脱离最长 12 s、平移不超 0.06 m"
+        ],
+        [
+          "地图证据",
+          "同格 3 次不同时间戳扫描；限定区域；障碍前 0.08 m 截止"
+        ],
+        [
+          "时间与融合",
+          "图像时刻 TF；2.5 px 重投影筛选；最多 20 个位置样本"
+        ],
+        [
+          "阶段速度",
+          "普通 0.20 / 精细 0.12 / 推障 0.10 m/s"
+        ]
+      ],
+      "speech": "",
+      "seconds": 0,
+      "notes": [
+        "车辆推进目标与箱体实际位移是不同测量对象。",
+        "真实关节角进入 TF；没有增加未实现的俯仰轴。",
+        "接触窗口依赖场地先验和任务授权，不是语义目标确认器。",
+        "传感器、指令、里程计或必要 TF 失效，安全节点输出零速度。"
+      ],
+      "visual": "两列参数与条件表，避免只有数字而没有含义。",
+      "sources": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/src/avs_rescue_sim/config/mission_params.yaml",
+        "avs_ws/src/avs_rescue_sim/config/nav_params.yaml",
+        "avs_ws/src/avs_rescue_sim/config/navigation_map.yaml"
+      ],
+      "page": 16,
+      "backup": true,
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/src/avs_rescue_sim/config/mission_params.yaml",
+        "avs_ws/src/avs_rescue_sim/config/nav_params.yaml",
+        "avs_ws/src/avs_rescue_sim/config/navigation_map.yaml"
+      ],
+      "problem": "",
+      "solution": "",
+      "innovation": "",
+      "layout": "backup_params"
+    },
+    {
+      "id": 16,
+      "hidden": true,
+      "kicker": "备份 C / 评估口径",
+      "title": "模型指标与历史任务耗时分别统计",
+      "subtitle": "所有数值保留各自数据集、时间口径和样本量",
+      "tables": [
+        {
+          "title": "合成验证集的模型指标",
+          "columns": [
+            "项目",
+            "数值 / 条件"
+          ],
+          "rows": [
+            [
+              "样本与阈值",
+              "160 张；IoU ≥ 0.50；全图置信度 0.45"
+            ],
+            [
+              "Precision / Recall",
+              "85.62% / 70.81%"
+            ],
+            [
+              "无目标图像误报",
+              "59 张中 2 张，图像级 3.39%"
+            ],
+            [
+              "解释边界",
+              "不是视频逐帧指标，不含整条核验链的综合准确率"
+            ]
+          ]
+        },
+        {
+          "title": "2026-10-12 历史无界面试验",
+          "columns": [
+            "配置",
+            "首次导航至完成"
+          ],
+          "rows": [
+            [
+              "原速基准（1 次）",
+              "310.82 s"
+            ],
+            [
+              "最终分档 0.20（2 次）",
+              "286.07 / 288.32 s"
+            ],
+            [
+              "最终配置均值",
+              "287.20 s，下降 7.6%"
+            ],
+            [
+              "失败候选",
+              "全程 0.24 / 分档 0.30；未计入提速成绩"
+            ]
+          ]
+        }
+      ],
+      "speech": "",
+      "seconds": 0,
+      "notes": [
+        "历史速度对照包含行驶、转向、观察、推障与返航；排除编译、启动及采集尾段。",
+        "分档 0.24 通过但更慢，不能推导速度越大越快。",
+        "少量重复不支持统计显著性、普遍成功率或全局最优。",
+        "没有整段视频逐帧人工标注，不能声称零误报、零漏报或 100% 识别准确。"
+      ],
+      "visual": "上下两张表，清楚区分合成模型验证与完整任务历史试验。",
+      "sources": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/docs/speed_tuning_validation.md",
+        "avs_ws/src/avs_rescue_sim/models/yolov5/hazard_yolov5.json"
+      ],
+      "page": 17,
+      "backup": true,
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "avs_ws/docs/speed_tuning_validation.md",
+        "avs_ws/src/avs_rescue_sim/models/yolov5/hazard_yolov5.json"
+      ],
+      "problem": "",
+      "solution": "",
+      "innovation": "",
+      "layout": "backup_metrics"
+    },
+    {
+      "id": 17,
+      "hidden": true,
+      "kicker": "备份 D / 问答边界",
+      "title": "可复现的部分与下一步验证任务",
+      "subtitle": "回答以当前代码、记录和已完成测试为准",
+      "qa": [
+        {
+          "q": "是否为固定轨迹？",
+          "a": "YAML 给目标与条件，Nav2 规划实际路径；当前有场地先验。"
+        },
+        {
+          "q": "接触窗口认识箱体吗？",
+          "a": "当前依赖阶段、已知位置与窄几何窗口；尚无语义接触授权。"
+        },
+        {
+          "q": "清地图能跨场地通用吗？",
+          "a": "允许区须重新配置；尚未实现通用动态 SLAM。"
+        },
+        {
+          "q": "定位误差如何计算？",
+          "a": "利用同次 map←odom 变换统一坐标；含 AMCL 与地图漂移。"
+        },
+        {
+          "q": "验收为何可信？",
+          "a": "旁路读取真值，任务与视觉不订阅；离散采样不能证明连续零碰撞。"
+        }
+      ],
+      "speech": "",
+      "seconds": 0,
+      "notes": [
+        "按评委问题调用，不作为正常展示的追加内容。",
+        "不要将历史记录称为本次重跑，不把机制设计升级为未经测试的效果保证。",
+        "扩展追问：能否量化每个创新点的独立收益？ 当前仅有阶段速度的历史对照，其余有机制、样例和完整任务证据，尚无同条件模块消融。",
+        "扩展追问：是否已证明实车和多场景可靠？ 尚未完成。需要相机与底盘标定、驱动适配，以及不同布局、箱体偏移和摩擦条件的重复测试。",
+        "扩展追问：团队原创具体在哪里？ 场景、机构适配、核验链、任务约束、地图处理和验收工具；第三方框架与算法思想明确引用。"
+      ],
+      "visual": "六条短问答，优先突出适用边界和下一步测试。",
+      "sources": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "创新点PPT/创新点核对.md",
+        "avs_ws/docs/third_party.md"
+      ],
+      "page": 18,
+      "backup": true,
+      "source": [
+        "avs_ws/submission/B09018834/avs_ws/TECHNICAL_REPORT.md",
+        "创新点PPT/创新点核对.md",
+        "avs_ws/docs/third_party.md"
+      ],
+      "problem": "",
+      "solution": "",
+      "innovation": "",
+      "layout": "backup_qa"
+    }
+  ]
+}

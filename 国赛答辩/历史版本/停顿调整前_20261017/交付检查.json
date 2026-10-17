@@ -1,0 +1,66 @@
+{
+  "final_video_hash": "0c811c95eee0ae26fc62c1b27496a7181105456d40cd8ec92f90eb79febb4eb4",
+  "external_video_copies_match": {
+    "国赛答辩/配音制作/B09018834_AI配音版.mp4": true,
+    "国赛答辩/B09018834.mp4": true,
+    "avs_ws/submission/B09018834.mp4": true
+  },
+  "proof_hash_matches": true,
+  "proof_status_complete": true,
+  "plan_status_complete": true,
+  "video_stream_unchanged": true,
+  "duration_seconds": 166.5,
+  "video_frames": [
+    3996
+  ],
+  "audio_streams": 1,
+  "subtitle_streams": 0,
+  "all_segments_fit_windows": true,
+  "segments_do_not_overlap": true,
+  "final_metrics_only_after_complete": true,
+  "slides": 18,
+  "hidden_slide_numbers": [
+    15,
+    16,
+    17,
+    18
+  ],
+  "embedded_movie_entries": [
+    "ppt/media/media1.mp4"
+  ],
+  "embedded_movie_hashes": {
+    "ppt/media/media1.mp4": "0c811c95eee0ae26fc62c1b27496a7181105456d40cd8ec92f90eb79febb4eb4"
+  },
+  "embedded_movie_hash_matches": true,
+  "slide3_movie_targets": [
+    "ppt/media/media1.mp4",
+    "ppt/media/media1.mp4"
+  ],
+  "slide3_uses_matching_embedded_movie": true,
+  "script_note_alignment": true,
+  "notes_have_no_pending_audio_status": true,
+  "voice_cjk_chars": 438,
+  "spoken_cjk_chars": 1122,
+  "shared_10_character_spoken_phrases": [],
+  "video_metric_repetition": false,
+  "pdf_pages": 18,
+  "preview_pages": 18,
+  "main_slides": 14,
+  "target_seconds": 457.5,
+  "stale_audio_or_page_status": {},
+  "all_automated_checks_pass": true,
+  "date": "2026-10-17",
+  "new_audio_generated": true,
+  "new_audio_recorded": true,
+  "original_human_voice_removed": true,
+  "voice": "普通话女声 / Kokoro v1.1 zf_001（离线）",
+  "audio_quality": {
+    "measurement": "ffmpeg loudnorm input measurement on final WAV",
+    "integrated_loudness_lufs": -17.16,
+    "true_peak_dbtp": -1.5,
+    "loudness_range_lu": 4.7,
+    "audio_clipping": false
+  },
+  "visual_review": "保留已核对的18页版式；本次替换第3页内嵌媒体及讲者备注；录屏画面流逐字节一致。",
+  "original_backup": "国赛答辩/历史版本/AI配音替换前_20261017_080255/"
+}
